@@ -20,7 +20,9 @@
 
 <body>
     <?
-
+    if (!isset($_SESSION['uname'])) {
+        header("Location:" . getBaseUrl() . "user/login");
+    }
     ?>
     <div class="layer"></div>
     <!-- ! Body -->
