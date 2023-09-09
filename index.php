@@ -10,6 +10,7 @@ $params = array();
 for ($i = 3; $i < count($parts); $i++) {
     $params[] = $parts[$i];
 }
+// echo $controller;
 $controllerClassname = ucfirst($controller) . "Controller";
 $controllerInstance = new  $controllerClassname();
 $controllerInstance->$method($params);

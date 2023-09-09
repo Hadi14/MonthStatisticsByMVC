@@ -20,9 +20,9 @@
 
 <body>
     <?
-    if (!isset($_SESSION['uname'])) {
-        header("Location:" . getBaseUrl() . "user/login");
-    }
+    // if (!isset($_SESSION['uname'])) {
+    //     header("Location:" . getBaseUrl() . "user/login");
+    // }
     ?>
     <div class="layer"></div>
     <!-- ! Body -->
@@ -320,6 +320,7 @@
             <!-- ! Main -->
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
+                    <?= $out ?>
                 </div>
             </main>
             <!-- ! Footer -->

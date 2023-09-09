@@ -39,6 +39,6 @@
         // $content = "HelloWord";
         //    echo "Loginform";
         $ar['abc'] = "Loginform-Parameter";
-        Render::render('/user/login.php', $ar);
+        Render::renderlogin('/user/login.php', $ar);
     }
 }
