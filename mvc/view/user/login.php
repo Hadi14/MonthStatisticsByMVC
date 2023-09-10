@@ -1,3 +1,8 @@
+<?
+if (isset($_SESSION['suname'])) {
+    header("Location:" . getBaseUrl() . 'page/home/');
+}
+?>
 <main class="page-center">
     <article class="sign-up">
         <!-- <h5 style="font-size: 15px;" class="sign-up__title">سامانه آماری کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری</h5> -->
