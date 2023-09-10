@@ -13,3 +13,11 @@ input:valid+ ::after {
     content: "*";
     color: green;
 }
+
+#faillogin {
+    color: red !important;
+    text-align: right !important;
+
+    font-size: 10px !important;
+
+}

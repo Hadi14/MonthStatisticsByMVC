@@ -9,12 +9,12 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
-    <link rel="stylesheet" href="../css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-icons.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/font.css">
-    <link rel="stylesheet" href="../css/Custome-style.css">
-    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/style.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/font.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/Custome-style.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/all.min.css">
 
 </head>
 
@@ -200,7 +200,7 @@
                 <a href="##" class="sidebar-user">
                     <span class="sidebar-user-img">
                         <picture>
-                            <source srcset="../img/avatar/avatar-illustrated-03.webp" type="image/webp"><img src="../img/avatar/avatar-illustrated-03.png" alt="User name">
+                            <source srcset="<?= getBaseUrl() ?>img/avatar/avatar-illustrated-03.webp" type="image/webp"><img src="<?= getBaseUrl() ?>img/avatar/avatar-illustrated-03.png" alt="User name">
                         </picture>
                     </span>
                     <div class="sidebar-user-info">
@@ -295,7 +295,7 @@
                                 <span class="sr-only">My profile</span>
                                 <span class="nav-user-img">
                                     <picture>
-                                        <source srcset="../img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="../img/avatar/avatar-illustrated-02.png" alt="User name">
+                                        <source srcset="<?= getBaseUrl() ?>img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="<?= getBaseUrl() ?>img/avatar/avatar-illustrated-02.png" alt="User name">
                                     </picture>
                                 </span>
                             </button>
@@ -339,12 +339,12 @@
         </div>
     </div>
     <!-- Chart library -->
-    <script src="../plugins/chart.min.js"></script>
+    <script src="<?= getBaseUrl() ?>plugins/chart.min.js"></script>
     <!-- Icons library -->
     <script src="plugins/feather.min.js"></script>
     <!-- Custom scripts -->
-    <script src="../js/script.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="<?= getBaseUrl() ?>js/script.js"></script>
+    <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
