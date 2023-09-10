@@ -341,7 +341,7 @@
     <!-- Chart library -->
     <script src="<?= getBaseUrl() ?>plugins/chart.min.js"></script>
     <!-- Icons library -->
-    <script src="plugins/feather.min.js"></script>
+    <script src="<?= getBaseUrl() ?>plugins/feather.min.js"></script>
     <!-- Custom scripts -->
     <script src="<?= getBaseUrl() ?>js/script.js"></script>
     <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
