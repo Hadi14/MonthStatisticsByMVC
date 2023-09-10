@@ -10,7 +10,9 @@
     <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrapicon/bootstrap-icons.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/style.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/font.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/Custome-style.css">
@@ -53,37 +55,37 @@
                 <div class="sidebar-body">
                     <ul class="sidebar-body-menu">
                         <li>
-                            <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>صفحه اصلی</a>
+                            <a class="active" href="<?= getBaseUrl() ?>user/login/"><span class="icon home" aria-hidden="true"></span>صفحه اصلی</a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="##">
+                            <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon document" aria-hidden="true"></span>حوزه حمایت
-                                <span class="category__btn transparent-btn" title="Open list">
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="./insert-poplulation.php">آمار جمعیتی</a>
+                                    <a href="#">آمار جمعیتی</a>
                                 </li>
                                 <li>
-                                    <a href="./economy.php"> آمار معیشت</a>
+                                    <a href="#"> آمار معیشت</a>
                                 </li>
                                 <li>
-                                    <a href="dowry.php">جهیزیه</a>
+                                    <a href="#">جهیزیه</a>
                                 </li>
                                 <li>
-                                    <a href="insurance.php">بیمه های اجتماعی</a>
+                                    <a href="#">بیمه های اجتماعی</a>
                                 </li>
                             </ul>
                         </li>
 
 
                         <li>
-                            <a class="show-cat-btn" href="##">
+                            <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon folder" aria-hidden="true"></span>صندوق امدادولایت
-                                <span class="category__btn transparent-btn" title="Open list">
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
@@ -97,9 +99,9 @@
 
 
                         <li>
-                            <a class="show-cat-btn" href="##">
+                            <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon folder" aria-hidden="true"></span>فرهنگی
-                                <span class="category__btn transparent-btn" title="Open list">
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
@@ -114,9 +116,9 @@
 
 
                         <li>
-                            <a class="show-cat-btn" href="##">
+                            <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon image" aria-hidden="true"></span>مسکن و ساختمان
-                                <span class="category__btn transparent-btn" title="Open list">
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
@@ -129,9 +131,9 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="##">
+                            <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon paper" aria-hidden="true"></span>اشتغال و خودکفایی
-                                <span class="category__btn transparent-btn" title="Open list">
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
@@ -345,6 +347,7 @@
     <!-- Custom scripts -->
     <script src="<?= getBaseUrl() ?>js/script.js"></script>
     <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
+    <script src="<?= getBaseUrl() ?>js/custom-script.js"></script>
 </body>
 
 </html>
