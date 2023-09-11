@@ -163,6 +163,29 @@
 
                 <form action="<?= getBaseUrl() ?>/" class="insert-form p-5 rounded" method="post">
                     <div class="row">
+                        <div class="col-md-3">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected value="1">سال 1402</option>
+                                <option value="2">سال 1403</option>
+                                <option value="3">سال 1404</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected value="1">شهریور</option>
+                                <option value="2">مهر</option>
+                                <option value="3">آبان</option>
+                            </select>
+                        </div>
+                        <div class="d-grid gap-2 d-md-block col-md-3">
+                            <button class="btn btn-primary" type="button">ثبت</button>
+
+                        </div>
+                        <div class="d-grid gap-2 d-md-block col-md-3">
+                            <button class="btn btn-primary" type="button">فعال سازی/غیرفعال سازی</button>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <div class="input-group mb-2">
                                 <span class="input-group-text">
