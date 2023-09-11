@@ -164,14 +164,14 @@
                 <form action="<?= getBaseUrl() ?>/" class="insert-form p-5 rounded" method="post">
                     <div class="row">
                         <div class="col-md-3">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected value="1">سال 1402</option>
                                 <option value="2">سال 1403</option>
                                 <option value="3">سال 1404</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select name="month" class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected value="1">شهریور</option>
                                 <option value="2">مهر</option>
                                 <option value="3">آبان</option>
@@ -191,7 +191,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="familycity" type="number" class="form-control" placeholder="تعداد خانوار شهری">
+                                <input required name="familycity" type="number" class="form-control familycity" placeholder="تعداد خانوار شهری">
                             </div>
                             <!-- <span>*</span> -->
                         </div>
@@ -200,7 +200,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="familyrural" type="number" class="form-control" placeholder="تعداد خانوار روستایی">
+                                <input required name="familyrural" type="number" class="form-control familyrural" placeholder="تعداد خانوار روستایی">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -208,7 +208,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="familymen" type="number" class="form-control" placeholder="تعداد خانوار باسرپرست مرد">
+                                <input required name="familymen" type="number" class="form-control familymen" placeholder="تعداد خانوار باسرپرست مرد">
                             </div>
                         </div>
 
@@ -218,7 +218,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="familywomen" type="number" class="form-control " placeholder="تعداد خانوار باسرپرست زن">
+                                <input required name="familywomen" id="familywomen" type="number" class="form-control familywomen" placeholder="تعداد خانوار باسرپرست زن">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">

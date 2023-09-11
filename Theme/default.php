@@ -348,6 +348,7 @@
     <script src="<?= getBaseUrl() ?>js/script.js"></script>
     <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
     <script src="<?= getBaseUrl() ?>js/custom-script.js"></script>
+    <script src="<?= getBaseUrl() ?>js/jquery-3.7.0.js"></script>
 </body>
 
 </html>
