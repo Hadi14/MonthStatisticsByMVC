@@ -14,13 +14,9 @@
     /*-----------------------------*/
     private function LoginCheck()
     {
-
         $u = $_POST['uname'];
         $p = $_POST['pass'];
         $record = UserModel::getFirst($u, $p);
-        // echo "UUUUUUU";
-        // dump($record);
-        // $record = array();
         if ($record == null) {
             if (isset($_POST['uname'])) {
                 $ar['abc'] = "نام کاربری یا رمز عبور اشتباه وارد شده است.";
@@ -29,18 +25,12 @@
         } else {
             $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
             $_SESSION['suname'] = $u;
-            // $ar['abc'] ="";
-            // Render::render('/statistic/home.php');
             header("Location:" . getBaseUrl() . 'page/home/');
         }
     }
     /*-----------------------------*/
     private function LoginForm()
     {
-        // echo "Login Form";
-        // $content = "HelloWord";
-        //    echo "Loginform";
-        // $ar['abc'] = "Loginform-Parameter";
         $ar['abc'] = "";
         Render::renderlogin('/user/login.php', $ar);
     }

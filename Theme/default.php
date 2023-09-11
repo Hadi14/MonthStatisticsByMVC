@@ -67,7 +67,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="#">آمار جمعیتی</a>
+                                    <a href="<?= getBaseUrl() ?>page/population">آمار جمعیتی</a>
                                 </li>
                                 <li>
                                     <a href="#"> آمار معیشت</a>
@@ -92,7 +92,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="bank.php">صندوق امدادولایت</a>
+                                    <a href="##">صندوق امدادولایت</a>
                                 </li>
                             </ul>
                         </li>
@@ -108,7 +108,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="categories.php">فرهنگی</a>
+                                    <a href="##">فرهنگی</a>
                                 </li>
                             </ul>
                         </li>
@@ -125,7 +125,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="media-01.php">ثبت آمار مسکن</a>
+                                    <a href="##">ثبت آمار مسکن</a>
                                 </li>
 
                             </ul>
@@ -140,13 +140,13 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="pages.php">ثبت آمار اشتغال</a>
+                                    <a href="##">ثبت آمار اشتغال</a>
                                 </li>
 
                             </ul>
                         </li>
                         <li>
-                            <a href="comments.php">
+                            <a href="###">
                                 <span class="icon message" aria-hidden="true"></span>
                                 نیروی انسانی
                             </a>
