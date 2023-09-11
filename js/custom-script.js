@@ -1,5 +1,3 @@
-
-
 var show = document.querySelectorAll('.cat-rt');
 show.forEach(element => {
     element.addEventListener('click', (e) => {

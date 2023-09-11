@@ -165,9 +165,9 @@
                     <div class="row">
                         <div class="col-md-3">
                             <select name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                <option selected value="1">سال 1402</option>
-                                <option value="2">سال 1403</option>
-                                <option value="3">سال 1404</option>
+                                <option selected value="1402">سال 1402</option>
+                                <option value="1403">سال 1403</option>
+                                <option value="1404">سال 1404</option>
                             </select>
                         </div>
                         <div class="col-md-3">
@@ -304,6 +304,209 @@
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="row mt-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">عنوان/ماه</th>
+                        <th scope="col">فروردین</th>
+                        <th scope="col">اردیبهشت</th>
+                        <th scope="col">خرداد</th>
+                        <th scope="col">تیر</th>
+                        <th scope="col">مرداد</th>
+                        <th scope="col">شهریور</th>
+                        <th scope="col">مهر</th>
+                        <th scope="col">آبان</th>
+                        <th scope="col">آذر</th>
+                        <th scope="col">دی</th>
+                        <th scope="col">بهمن</th>
+                        <th scope="col">اسفند</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">تعداد خانوار شهری</th>
+                        <td>103425</td>
+                        <td>103425</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                        <td>103428</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خانوار روستایی</th>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                        <td>43547</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خانوار باسرپرست زن</th>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                        <td>59876</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خانوار باسرپرست مرد</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد کل خانوار</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد کل نفرات</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خانوار سالمند شهری</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خانوار سالمند روستایی</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد کل خانوار سالمند</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد نفرات سالمند شهری</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد نفرات سالمند روستایی</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد کل نفرات سالمند</th>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                        <td>96324</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </main>
