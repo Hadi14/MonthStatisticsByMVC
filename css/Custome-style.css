@@ -17,13 +17,14 @@ input:valid+ ::after {
 #faillogin {
     color: red !important;
     text-align: right !important;
-
     font-size: 10px !important;
 }
 
 .bi {
-    /* width: 24px;
-    height: 24px; */
     font-size: 20px;
     margin: 0 5px;
+}
+
+.insert-form input[type="number"]:read-only {
+    background-color: lightgray;
 }
