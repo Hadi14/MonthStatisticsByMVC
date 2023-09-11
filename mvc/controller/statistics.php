@@ -18,7 +18,7 @@
         $year = $_POST['year'];
         $month = $_POST['month'];
         $user = $_SESSION['suname'];
-        // StatisticsModle::insert($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
-        dump($_POST);
+        StatisticsModel::insert($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
+        // dump($_POST);
     }
 }
