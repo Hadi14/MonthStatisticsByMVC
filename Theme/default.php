@@ -100,7 +100,7 @@
 
                         <li>
                             <a class="show-cat-btn cat-rt" href="##">
-                                <span class="icon folder" aria-hidden="true"></span>فرهنگی
+                                <span class="icon bi bi-book" aria-hidden="true"></span>فرهنگی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
