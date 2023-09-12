@@ -367,6 +367,7 @@
                     </tr>
                 </tbody>
             </table>
+            <? dump($records); ?>
         </div>
     </div>
 </main>

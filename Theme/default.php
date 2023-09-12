@@ -160,7 +160,7 @@
                         </li>
                         <li>
                             <a class="show-cat-btn" href="##">
-                                <span class="icon category" aria-hidden="true"></span>Extentions
+                                <span class="icon category" aria-hidden="true"></span>تعاریف
                                 <span class="category__btn transparent-btn" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
@@ -168,7 +168,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="#">Extentions-01</a>
+                                    <a href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
                                 </li>
                                 <li>
                                     <a href="#">Extentions-02</a>
