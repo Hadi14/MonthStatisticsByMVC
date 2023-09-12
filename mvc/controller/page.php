@@ -15,12 +15,16 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            $sc = "<script>document.writeln($('#year').val());</script>";
+
             $un = $_SESSION['suname'];
-            $data['records'] = StatisticsModel::allPopulation($sc, $un);
-            dump($data['records']);
-            echo $sc;
+            $data['records'] = StatisticsModel::allPopulation("1402", $un);
+            // dump($data['records']);
+            // echo "ok" . "<script>alert($('#year').val())</script>";
+
             Render::render('/statistic/population.php');
         }
+        echo "ok" . "<script>let n = document.getElementById('year').value;
+       alert(n);
+        </script>";
     }
 }
