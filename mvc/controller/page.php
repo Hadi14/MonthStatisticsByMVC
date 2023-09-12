@@ -7,7 +7,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/statistic/home.php');
+            Render::render('/statistic/home.php', "population");
         }
     }
     function population()
@@ -28,7 +28,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/statistic/currentpage.php');
+            Render::render('/statistic/currentpage.php', "currentpage");
         }
     }
 }

@@ -1,6 +1,6 @@
 <? class Render
 {
-    public static function render($filePath, $data = array())
+    public static function render($filePath, $jsfile = "custom-script", $data = array())
     {
         // echo "<br>renderform";
 

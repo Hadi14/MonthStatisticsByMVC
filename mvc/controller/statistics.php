@@ -18,7 +18,13 @@
         $year = $_POST['year'];
         $month = $_POST['month'];
         $user = $_SESSION['suname'];
-        StatisticsModel::insert($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
+        StatisticsModel::insertpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
         // dump($_POST);
+    }
+    public  function insertcurrentdate()
+    {
+        $year = $_POST['cyear'];
+        $month = $_POST['cmonth'];
+       
     }
 }
