@@ -11,10 +11,10 @@
         // header("Location: " . getBaseUrl() . "page/population");
     }
     /*********************************************************************/
-    static  function allPopulation($year, $month, $un)
+    static  function allPopulation($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from hemayat where Year='$year' and Month='$month' and user='$un'";
+        $sql = "select * from hemayat where Year='$year' and user='$un'";
         $record = $db->query($sql);
         return $record;
     }

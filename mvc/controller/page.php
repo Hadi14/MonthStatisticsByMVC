@@ -1,3 +1,4 @@
+
 <?
 class PageController
 {
@@ -14,7 +15,11 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            $data['records']=StatisticsModel::allPopulation($year,$month,$un);
+            $sc = "<script>document.writeln($('#year').val());</script>";
+            $un = $_SESSION['suname'];
+            $data['records'] = StatisticsModel::allPopulation($sc, $un);
+            dump($data['records']);
+            echo $sc;
             Render::render('/statistic/population.php');
         }
     }
