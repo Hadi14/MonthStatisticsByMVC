@@ -16,15 +16,11 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
 
+            Render::render('/statistic/population.php');
             $un = $_SESSION['suname'];
             $data['records'] = StatisticsModel::allPopulation("1402", $un);
-            // dump($data['records']);
-            // echo "ok" . "<script>alert($('#year').val())</script>";
-
-            Render::render('/statistic/population.php');
+            dump($data['records']);
+            echo "<script>alert($('#year').val())</script>";
         }
-        echo "ok" . "<script>let n = document.getElementById('year').value;
-       alert(n);
-        </script>";
     }
 }
