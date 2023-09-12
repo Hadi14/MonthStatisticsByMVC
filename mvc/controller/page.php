@@ -14,6 +14,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
+            $data['records']=StatisticsModel::allPopulation($year,$month,$un);
             Render::render('/statistic/population.php');
         }
     }

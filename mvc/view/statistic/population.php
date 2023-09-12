@@ -307,203 +307,63 @@
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
+                <?
+
+                ?>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
-                        <th scope="col">فروردین</th>
-                        <th scope="col">اردیبهشت</th>
-                        <th scope="col">خرداد</th>
-                        <th scope="col">تیر</th>
-                        <th scope="col">مرداد</th>
-                        <th scope="col">شهریور</th>
-                        <th scope="col">مهر</th>
-                        <th scope="col">آبان</th>
-                        <th scope="col">آذر</th>
-                        <th scope="col">دی</th>
-                        <th scope="col">بهمن</th>
-                        <th scope="col">اسفند</th>
+                        <th scope="col">ویرایش</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">تعداد خانوار شهری</th>
-                        <td>103425</td>
-                        <td>103425</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
-                        <td>103428</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار روستایی</th>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
-                        <td>43547</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
-                        <td>59876</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
-                        <td>96324</td>
+                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
