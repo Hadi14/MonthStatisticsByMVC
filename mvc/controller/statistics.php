@@ -25,6 +25,6 @@
     {
         $year = $_POST['cyear'];
         $month = $_POST['cmonth'];
-       
+        StatisticsModel::insertcurrentdate($year, $month);
     }
 }
