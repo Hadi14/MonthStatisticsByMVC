@@ -10,14 +10,12 @@
     <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
-    <!-- <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrapicon/bootstrap-icons.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/style.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/font.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/Custome-style.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/all.min.css">
-
+    <script src="<?= getBaseUrl() ?>js/jquery-3.7.0.js"></script>
 </head>
 
 <body>
@@ -348,7 +346,7 @@
     <script src="<?= getBaseUrl() ?>js/script.js"></script>
     <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
     <script src="<?= getBaseUrl() ?>js/<?= $jsfile ?>.js"></script>
-    <script src=" <?= getBaseUrl() ?>js/jquery-3.7.0.js"></script>
+
 </body>
 
 </html>

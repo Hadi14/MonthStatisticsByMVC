@@ -26,4 +26,15 @@
         $record = $db->query($sql);
         return $record;
     }
+    /*********************************************************************/
+    static  function eninserts()
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='1' where title='enableinsert' ";
+        $rowAffect = $db->modify($sql);
+        if ($rowAffect) {
+            $ar = array("status" => true);
+            echo json_encode($ar);
+        }
+    }
 }

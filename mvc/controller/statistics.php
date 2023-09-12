@@ -27,4 +27,9 @@
         $month = $_POST['cmonth'];
         StatisticsModel::insertcurrentdate($year, $month);
     }
+
+    public  function enableinserts()
+    {
+        StatisticsModel::eninserts();
+    }
 }

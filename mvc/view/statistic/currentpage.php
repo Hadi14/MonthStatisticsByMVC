@@ -49,4 +49,35 @@
             },
         });
     }
+
+    $(document).ready(function() {
+        $('input[type="checkbox"]').click(function() {
+            if ($(this).prop("checked") == true) {
+                $.ajax('/MonthStatisticsByMVC/statistics/enableinserts/', {
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        'cyear': $('#year').val(),
+                        'cmonth': $('#mon').val(),
+                    },
+                    success: function(data) {
+                        alert('فعالسازی با موفقیت انجام شد.');
+                    },
+                });
+            }
+            // else if ($(this).prop("checked") == false) {
+            //     $.ajax('/MonthStatisticsByMVC/statistics/disableinserts/', {
+            //         type: 'post',
+            //         dataType: "json",
+            //         data: {
+            //             'cyear': $('#year').val(),
+            //             'cmonth': $('#mon').val(),
+            //         },
+            //         success: function(data) {
+            //             alert('غیرفعالسازی با موفقیت انجام شد.');
+            //         },
+            //     });
+            // }
+        });
+    });
 </script>
