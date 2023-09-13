@@ -59,4 +59,14 @@
         // dump($insertStatus[0]['value']);
         echo json_encode($ar);
     }
+    /*****************************************************************/
+    static  function getcurrdate()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from currentdate order by Year desc, Month desc limit 1";
+        $currdate = $db->query($sql);
+        return $currdate;
+        // echo "aaa";
+        // dump($currdate);
+    }
 }
