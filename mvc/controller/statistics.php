@@ -40,9 +40,12 @@
     {
         StatisticsModel::getinsertstatus();
     }
-    public  function getallpopulation($year, $u)
+    public  function getallpopulation()
     {
-        StatisticsModel::allPopulation($year, $u);
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = StatisticsModel::allPopulation($year, $u);
+        echo json_encode($recs);
     }
     // public  function getcurrentdate()
     // {

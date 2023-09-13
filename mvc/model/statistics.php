@@ -24,7 +24,9 @@
         $db = Db::getInstance();
         $sql = "select * from hemayat where Year='$year' and user='$un'";
         $record = $db->query($sql);
+        // dump($record);
         return $record;
+        // echo json_encode($record);
     }
     /*********************************************************************/
     static  function eninserts()

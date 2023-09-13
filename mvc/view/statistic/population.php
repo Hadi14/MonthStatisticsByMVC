@@ -163,8 +163,8 @@
                 <form action="<?= getBaseUrl() ?>statistics/insertPopulation" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
-                        <span id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></span>
-                        <span id="cm" class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></span>
+                        <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
+                        <label id="cm" class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></label>
 
                     </div>
                     <div class="row">
@@ -345,15 +345,22 @@
     </div>
 </main>
 <script>
+    // $('<td>Another 2</td>').insertAfter($('tbody tr th'));
+
     $(document).ready(function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
             type: 'post',
             dataType: "json",
             data: {
-                year: $('#cy').val()
+                year: <?= $data['Year']; ?>
             },
             success: function(data) {
-
+                console.log(data);
+                var i = 0;
+                data.forEach(element => {
+                    $("<td>" + element['Year'] + "</td>").insertAfter($('thead tr th'));
+                    $("<td>" + element[i++] + "</td>").insertAfter($('tbody tr th'));
+                });
             },
         });
     });
