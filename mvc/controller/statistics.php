@@ -32,6 +32,10 @@
     {
         StatisticsModel::eninserts();
     }
+    public  function disableinserts()
+    {
+        StatisticsModel::disinserts();
+    }
 
     public  function getinsertsstatus()
     {

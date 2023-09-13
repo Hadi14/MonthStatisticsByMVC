@@ -57,39 +57,38 @@
                 $.ajax('/MonthStatisticsByMVC/statistics/enableinserts/', {
                     type: 'post',
                     dataType: "json",
-                    data: {
-                        'cyear': $('#year').val(),
-                        'cmonth': $('#mon').val(),
-                    },
+                    // data: {
+                    //     'cyear': $('#year').val(),
+                    //     'cmonth': $('#mon').val(),
+                    // },
                     success: function(data) {
                         alert('فعالسازی با موفقیت انجام شد.');
                     },
                 });
+            } else if ($(this).prop("checked") == false) {
+                $.ajax('/MonthStatisticsByMVC/statistics/disableinserts/', {
+                    type: 'post',
+                    dataType: "json",
+                    // data: {
+                    //     'cyear': $('#year').val(),
+                    //     'cmonth': $('#mon').val(),
+                    // },
+                    success: function(data) {
+                        alert('غیرفعالسازی با موفقیت انجام شد.');
+                    },
+                });
             }
-            // else if ($(this).prop("checked") == false) {
-            //     $.ajax('/MonthStatisticsByMVC/statistics/disableinserts/', {
-            //         type: 'post',
-            //         dataType: "json",
-            //         data: {
-            //             'cyear': $('#year').val(),
-            //             'cmonth': $('#mon').val(),
-            //         },
-            //         success: function(data) {
-            //             alert('غیرفعالسازی با موفقیت انجام شد.');
-            //         },
-            //     });
-            // }
         });
     });
 
 
-    // alert($('#flexSwitchCheckDefault').prop('checked'));
 
     $(document).ready(function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getinsertsstatus/', {
             type: 'post',
             dataType: "json",
             success: function(data) {
+                // important. must be write --> "==1" and "==0"
                 if (data.status[0] == 1) {
                     $('#flexSwitchCheckDefault').prop('checked', true);
                 } else if (data.status[0] == 0) {

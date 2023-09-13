@@ -38,6 +38,17 @@
         }
     }
     /***************************************************************** */
+    static  function disinserts()
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='0' where title='enableinsert' ";
+        $rowAffect = $db->modify($sql);
+        if ($rowAffect) {
+            $ar = array("status" => true);
+            echo json_encode($ar);
+        }
+    }
+    /***************************************************************** */
     static  function getinsertstatus()
     {
         $db = Db::getInstance();
