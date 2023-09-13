@@ -34,3 +34,10 @@ th,
 table {
     text-align: center;
 }
+
+.currentDate {
+    font-size: 16px;
+    margin: 0 5px;
+    vertical-align: middle;
+    /* line-height: 16px; */
+}

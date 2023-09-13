@@ -164,8 +164,8 @@
                 <form action="<?= getBaseUrl() ?>statistics/insertPopulation" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
-                        <span class="badge rounded-pill text-bg-info col-md-2">سال: <?= $currentYear ?></span>
-                        <span class="badge rounded-pill text-bg-light col-md-2">ماه: <?= $currentMonth ?></span>
+                        <span class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></span>
+                        <span class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></span>
 
                     </div>
                     <div class="row">
@@ -341,7 +341,7 @@
                     </tr>
                 </tbody>
             </table>
-            <? dump($records); ?>
+
         </div>
     </div>
 </main>

@@ -36,15 +36,15 @@
     {
         StatisticsModel::disinserts();
     }
-
     public  function getinsertsstatus()
     {
         StatisticsModel::getinsertstatus();
     }
-    public  function getcurrentdate()
-    {
-        $currdt = StatisticsModel::getcurrdate();
-        $currentYear = $currdt[0]['Year'];
-        $currentMonth = $currdt[0]['Month'];
-    }
+    // public  function getcurrentdate()
+    // {
+    //     $currdt = StatisticsModel::getcurrdate();
+    //     // $currentYear = $currdt[0]['Year'];
+    //     // $currentMonth = $currdt[0]['Month'];
+    //     return $currdt;
+    // }
 }
