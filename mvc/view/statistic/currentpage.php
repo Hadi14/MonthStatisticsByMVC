@@ -27,6 +27,7 @@
             <button class="btn btn-primary" onclick="insertcurrent()" type="button">ثبت</button>
         </div>
 </form>
+<!-- <button class="btn btn-primary mt-4" id="alertbtn" type="button">وضعیت</button> -->
 <div class="form-check form-switch mt-5">
     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
     <label class="form-check-label" for="flexSwitchCheckDefault">فعال سازی/غیرفعال سازی ثبت</label>
@@ -78,6 +79,27 @@
             //         },
             //     });
             // }
+        });
+    });
+
+
+    // alert($('#flexSwitchCheckDefault').prop('checked'));
+
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getinsertsstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data.status[0]) {
+                    // $('#flexSwitchCheckDefault').prop('checked', true);
+                    $('#flexSwitchCheckDefault').attr('checked', 'checked');
+                    console.log(data.status[0]);
+                } else {
+                    $('#flexSwitchCheckDefault').removeAttr('checked');
+                    console.log(data.status[0]);
+                    // $('#flexSwitchCheckDefault').prop('checked', false);
+                }
+            },
         });
     });
 </script>

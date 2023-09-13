@@ -32,4 +32,9 @@
     {
         StatisticsModel::eninserts();
     }
+
+    public  function getinsertsstatus()
+    {
+        StatisticsModel::getinsertstatus();
+    }
 }
