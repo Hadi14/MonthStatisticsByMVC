@@ -40,6 +40,10 @@
     {
         StatisticsModel::getinsertstatus();
     }
+    public  function getallpopulation($year, $u)
+    {
+        StatisticsModel::allPopulation($year, $u);
+    }
     // public  function getcurrentdate()
     // {
     //     $currdt = StatisticsModel::getcurrdate();

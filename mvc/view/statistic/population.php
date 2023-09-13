@@ -3,7 +3,6 @@
         <h2 class="main-title">آمار جمعیتی ماه اخیر ...</h2>
         <div class="row stat-cards">
 
-
             <!-- **** -->
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
@@ -164,8 +163,8 @@
                 <form action="<?= getBaseUrl() ?>statistics/insertPopulation" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
-                        <span class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></span>
-                        <span class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></span>
+                        <span id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></span>
+                        <span id="cm" class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></span>
 
                     </div>
                     <div class="row">
@@ -345,3 +344,17 @@
         </div>
     </div>
 </main>
+<script>
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: $('#cy').val()
+            },
+            success: function(data) {
+
+            },
+        });
+    });
+</script>
