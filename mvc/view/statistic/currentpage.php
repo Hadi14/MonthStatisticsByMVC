@@ -90,14 +90,10 @@
             type: 'post',
             dataType: "json",
             success: function(data) {
-                if (data.status[0]) {
-                    // $('#flexSwitchCheckDefault').prop('checked', true);
-                    $('#flexSwitchCheckDefault').attr('checked', 'checked');
-                    console.log(data.status[0]);
-                } else {
-                    $('#flexSwitchCheckDefault').removeAttr('checked');
-                    console.log(data.status[0]);
-                    // $('#flexSwitchCheckDefault').prop('checked', false);
+                if (data.status[0] == 1) {
+                    $('#flexSwitchCheckDefault').prop('checked', true);
+                } else if (data.status[0] == 0) {
+                    $('#flexSwitchCheckDefault').removeProp('checked');
                 }
             },
         });
