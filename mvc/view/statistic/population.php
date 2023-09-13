@@ -356,10 +356,11 @@
             },
             success: function(data) {
                 console.log(data);
-                var i = 0;
+                // var i = 0;
                 data.forEach(element => {
-                    $("<td>" + element['Year'] + "</td>").insertAfter($('thead tr th'));
-                    $("<td>" + element[i++] + "</td>").insertAfter($('tbody tr th'));
+                    $("<th>" + element['Year'] + "</th>").insertAfter($('thead tr th:nth(0)'));
+                    $("<td>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+
                 });
             },
         });
