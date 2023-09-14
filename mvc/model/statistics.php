@@ -72,10 +72,10 @@
         // dump($currdate);
     }
     /*****************************************************************/
-    static  function getGoal($goal, $year, $month)
+    static  function getGoal($goal, $year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select $goal from hemayat where Year='$year' and Month='$month'";
+        $sql = "select $goal from hemayat where Year='$year' and Month='$month' and user='$un'";
         $g = $db->query($sql);
         return $g;
     }

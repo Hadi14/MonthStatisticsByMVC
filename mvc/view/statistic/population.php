@@ -159,7 +159,7 @@
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-             
+
                 <form action="<?= getBaseUrl() ?>statistics/insertPopulation" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
@@ -296,47 +296,47 @@
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار روستایی</th>
-                        <td><a onclick="editRecord('تعداد خانوار روستایی')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار روستایی','Hmy_RuralFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td><a onclick="editRecord('تعداد خانوار باسرپرست زن')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار باسرپرست زن','Hmy_WomenFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td><a onclick="editRecord('تعداد خانوار باسرپرست مرد')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار باسرپرست مرد','Hmy_MenFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار</th>
-                        <td><a onclick="editRecord('تعداد کل خانوار')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل خانوار','Hmy_AllFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات</th>
-                        <td><a onclick="editRecord('تعداد کل نفرات')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل نفرات','Hmy_AllPop')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td><a onclick="editRecord('تعداد خانوار سالمند شهری')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار سالمند شهری','Hmy_OldFamCity')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td><a onclick="editRecord('تعداد خانوار سالمند روستایی')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار سالمند روستایی','Hmy_OldFamRural')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td><a onclick="editRecord('تعداد کل خانوار سالمند')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل خانوار سالمند','Hmy_AllOldFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td><a onclick="editRecord('تعداد نفرات سالمند شهری')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد نفرات سالمند شهری','Hmy_OldPopCity')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td><a onclick="editRecord('تعداد نفرات سالمند روستایی')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد نفرات سالمند روستایی','Hmy_OldPopRural')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td><a onclick="editRecord('تعداد کل نفرات سالمند')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل نفرات سالمند','Hmy_AllPopOld')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -403,26 +403,18 @@
         let t = 'ویرایش ' + title;
         $('#exampleModalLabel').text(t);
         $('#filedlabel').text(title + ":");
-
-        // alert(<? //= $data['Month']; 
-                    ?>);
-
-
-        // $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         'gf': goalField,
-        //         'yr': <? //= $data['Year']; 
-                            ?>,
-        //         'mn': <? //= $data['Month']; 
-                            ?>,
-        //     },
-        //     success: function(data) {
-        //         $('#recipient-name1').val(data[0]['Hmy_CityFamily']);
-        //     },
-        // });
-
-
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'gf': goalField,
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                $('#recipient-name1').val(data[0][goalField]);
+            },
+        });
     }
 </script>
