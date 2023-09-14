@@ -159,7 +159,7 @@
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-
+             
                 <form action="<?= getBaseUrl() ?>statistics/insertPopulation" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
@@ -292,51 +292,51 @@
                 <tbody>
                     <tr>
                         <th scope="row">تعداد خانوار شهری</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href="#" onclick="editRecord('تعداد خانوار شهری','Hmy_CityFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار روستایی</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار روستایی')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار باسرپرست زن')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار باسرپرست مرد')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل خانوار')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل نفرات')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار سالمند شهری')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار سالمند روستایی')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل خانوار سالمند')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد نفرات سالمند شهری')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد نفرات سالمند روستایی')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td><a href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل نفرات سالمند')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -344,9 +344,32 @@
         </div>
     </div>
 </main>
-<script>
-    // $('<td>Another 2</td>').insertAfter($('tbody tr th'));
 
+<!--------------------------- Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">ویرایش اطلاعات رکورد</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-0">
+                        <label id="filedlabel" for="recipient-name1" class="col-form-label"></label>
+                        <input name="id" type="text" class="form-control" id="recipient-name1">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editNote()">ویرایش</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
+<script>
     $(document).ready(function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
             type: 'post',
@@ -356,13 +379,50 @@
             },
             success: function(data) {
                 console.log(data);
-                // var i = 0;
                 data.forEach(element => {
-                    $("<th>" + element['Year'] + "</th>").insertAfter($('thead tr th:nth(0)'));
+                    $("<th>" + element['Year'] + "-" + element['Month'] + "</th>").insertAfter($('thead tr th:nth(0)'));
                     $("<td>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+                    $("<td>" + element['Hmy_RuralFamily'] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+                    $("<td>" + element['Hmy_WomenFamily'] + "</td>").insertAfter($('tbody tr th:nth(2)'));
+                    $("<td>" + element['Hmy_MenFamily'] + "</td>").insertAfter($('tbody tr th:nth(3)'));
+                    $("<td>" + element['Hmy_AllFamily'] + "</td>").insertAfter($('tbody tr th:nth(4)'));
+                    $("<td>" + element['Hmy_AllPop'] + "</td>").insertAfter($('tbody tr th:nth(5)'));
+                    $("<td>" + element['Hmy_OldFamCity'] + "</td>").insertAfter($('tbody tr th:nth(6)'));
+                    $("<td>" + element['Hmy_OldFamRural'] + "</td>").insertAfter($('tbody tr th:nth(7)'));
+                    $("<td>" + element['Hmy_AllOldFamily'] + "</td>").insertAfter($('tbody tr th:nth(8)'));
+                    $("<td>" + element['Hmy_OldPopCity'] + "</td>").insertAfter($('tbody tr th:nth(9)'));
+                    $("<td>" + element['Hmy_OldPopRural'] + "</td>").insertAfter($('tbody tr th:nth(10)'));
+                    $("<td>" + element['Hmy_AllPopOld'] + "</td>").insertAfter($('tbody tr th:nth(11)'));
 
                 });
             },
         });
     });
+
+    function editRecord(title, goalField) {
+        let t = 'ویرایش ' + title;
+        $('#exampleModalLabel').text(t);
+        $('#filedlabel').text(title + ":");
+
+        // alert(<? //= $data['Month']; 
+                    ?>);
+
+
+        // $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
+        //     type: 'post',
+        //     dataType: "json",
+        //     data: {
+        //         'gf': goalField,
+        //         'yr': <? //= $data['Year']; 
+                            ?>,
+        //         'mn': <? //= $data['Month']; 
+                            ?>,
+        //     },
+        //     success: function(data) {
+        //         $('#recipient-name1').val(data[0]['Hmy_CityFamily']);
+        //     },
+        // });
+
+
+    }
 </script>

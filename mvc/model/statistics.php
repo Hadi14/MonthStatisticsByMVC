@@ -71,4 +71,12 @@
         // echo "aaa";
         // dump($currdate);
     }
+    /*****************************************************************/
+    static  function getGoal($goal, $year, $month)
+    {
+        $db = Db::getInstance();
+        $sql = "select $goal from hemayat where Year='$year' and Month='$month'";
+        $g = $db->query($sql);
+        return $g;
+    }
 }

@@ -47,11 +47,14 @@
         $recs = StatisticsModel::allPopulation($year, $u);
         echo json_encode($recs);
     }
-    // public  function getcurrentdate()
-    // {
-    //     $currdt = StatisticsModel::getcurrdate();
-    //     // $currentYear = $currdt[0]['Year'];
-    //     // $currentMonth = $currdt[0]['Month'];
-    //     return $currdt;
-    // }
+    public  function getGoalField()
+    {
+        $GF = $_POST['gf'];
+        
+        $year = $_POST['yr'];
+        $month = $_POST['mn'];
+        $goal = StatisticsModel::getGoal($GF, $year, $month);
+        // dump($goal);
+        echo json_encode($goal);
+    }
 }
