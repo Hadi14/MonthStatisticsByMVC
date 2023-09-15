@@ -358,7 +358,6 @@
                     <div class="mb-0">
                         <label id="forAllfiledlabel1" for="forAllrecipientName1" class="col-form-label">تعداد خانوار شهری:</label>
                         <input id="forAllrecipientName1" name="forAllid" type="text" class="form-control">
-                        <!-- <input id="forAllgfield" type="hidden" value=""> -->
                     </div>
                     <div class="mb-0">
                         <label id="forAllfiledlabel2" for="recipientName2" class="col-form-label">تعداد خانوار روستایی:</label>
@@ -375,7 +374,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editpopulation()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editAllpopulation()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -561,18 +560,13 @@
         }
     }
 
-    function editpopulation() {
-        let newvalue = $('#recipient-name1').val();
-        newvalue = Number(newvalue);
-        const all = ["Hmy_CityFamily", "Hmy_RuralFamily", "Hmy_WomenFamily", "Hmy_MenFamily"];
-        const oldfamily = ["Hmy_OldFamCity", "Hmy_OldFamRural"];
-        const oldpeople = ["Hmy_OldPopCity", "Hmy_OldPopRural"];
-        // alert($('#gfield').val());
-        if (all.includes($('#gfield').val())) {
-
-        } else if (oldfamily.includes($('#gfield').val())) {
-
-        } else if (oldpeople.includes($('#gfield').val())) {
+    function editAllpopulation() {
+        // alert(typeof + $('#forAllrecipientName1').val());
+        if (+$('#forAllrecipientName1').val() + +$('#forAllrecipientName2').val() != +$('#forAllrecipientName3').val() + +$('#forAllrecipientName4').val()) {
+            alert("جمع خانوارشهری و روستایی با خانوار با سرپرست مرد و زن برابر نیست!!!")
+            $('#forAllModal').addClass('show');
+            // $('#forAllModal').css('display', 'block');
+        } else {
 
         }
     }
