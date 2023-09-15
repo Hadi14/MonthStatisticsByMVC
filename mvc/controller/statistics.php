@@ -49,12 +49,10 @@
     }
     public  function getGoalField()
     {
-        $GF = $_POST['gf'];
-
         $year = $_POST['yr'];
         $month = $_POST['mn'];
         $un = $_SESSION['suname'];
-        $goal = StatisticsModel::getGoal($GF, $year, $month, $un);
+        $goal = StatisticsModel::getGoal($year, $month, $un);
         echo json_encode($goal);
     }
 }

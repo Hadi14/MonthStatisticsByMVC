@@ -292,51 +292,51 @@
                 <tbody>
                     <tr>
                         <th scope="row">تعداد خانوار شهری</th>
-                        <td><a href="#" onclick="editRecord('تعداد خانوار شهری','Hmy_CityFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href="#" onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار روستایی</th>
-                        <td><a onclick="editRecord('تعداد خانوار روستایی','Hmy_RuralFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td><a onclick="editRecord('تعداد خانوار باسرپرست زن','Hmy_WomenFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td><a onclick="editRecord('تعداد خانوار باسرپرست مرد','Hmy_MenFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار</th>
-                        <td><a onclick="editRecord('تعداد کل خانوار','Hmy_AllFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات</th>
-                        <td><a onclick="editRecord('تعداد کل نفرات','Hmy_AllPop')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد کل نفرات','Hmy_AllPop')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td><a onclick="editRecord('تعداد خانوار سالمند شهری','Hmy_OldFamCity')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار سالمند شهری','Hmy_OldFamCity')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td><a onclick="editRecord('تعداد خانوار سالمند روستایی','Hmy_OldFamRural')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد خانوار سالمند روستایی','Hmy_OldFamRural')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td><a onclick="editRecord('تعداد کل خانوار سالمند','Hmy_AllOldFamily')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled data-bs-toggle=" modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td><a onclick="editRecord('تعداد نفرات سالمند شهری','Hmy_OldPopCity')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد نفرات سالمند شهری','Hmy_OldPopCity')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td><a onclick="editRecord('تعداد نفرات سالمند روستایی','Hmy_OldPopRural')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('تعداد نفرات سالمند روستایی','Hmy_OldPopRural')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td><a onclick="editRecord('تعداد کل نفرات سالمند','Hmy_AllPopOld')" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -345,24 +345,89 @@
     </div>
 </main>
 
-<!--------------------------- Edit modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!---------------------------for All Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="forAllModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">ویرایش اطلاعات رکورد</h1>
+                <h1 class="modal-title fs-5" id="forAllModalLabel">ویرایش اطلاعات رکورد</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="filedlabel" for="recipient-name1" class="col-form-label"></label>
-                        <input name="id" type="text" class="form-control" id="recipient-name1">
+                        <label id="forAllfiledlabel1" for="forAllrecipientName1" class="col-form-label">تعداد خانوار شهری:</label>
+                        <input id="forAllrecipientName1" name="forAllid" type="text" class="form-control">
+                        <!-- <input id="forAllgfield" type="hidden" value=""> -->
+                    </div>
+                    <div class="mb-0">
+                        <label id="forAllfiledlabel2" for="recipientName2" class="col-form-label">تعداد خانوار روستایی:</label>
+                        <input id="forAllrecipientName2" name="forAllid" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="forAllfiledlabel3" for="recipientName3" class="col-form-label">تعداد خانوار باسرپرست زن:</label>
+                        <input id="forAllrecipientName3" name="forAllid" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="forAllfiledlabel4" for="recipientName4" class="col-form-label">تعداد خانوار باسرپرست مرد:</label>
+                        <input id="forAllrecipientName4" name="forAllid" type="text" class="form-control">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editNote()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editpopulation()">ویرایش</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
+
+<!---------------------------for Old Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="forOldModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="forOldModalLabel">ویرایش اطلاعات رکورد</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-0">
+                        <label id="forOldfiledlabel" for="recipient-name1" class="col-form-label"></label>
+                        <input name="id" type="text" class="form-control" id="forOldrecipient-name1">
+                        <input id="foroldgfield" type="hidden" value="">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editpopulation()">ویرایش</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
+
+<!--------------------------- other Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="otherModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">ویرایش اطلاعات رکورد</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-0">
+                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label"></label>
+                        <input name="id" type="text" class="form-control" id="otherrecipient-name1">
+                        <input id="othergfield" type="hidden" value="">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editpopulation()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -378,7 +443,7 @@
                 year: <?= $data['Year']; ?>
             },
             success: function(data) {
-                console.log(data);
+                // console.log(data);
                 data.forEach(element => {
                     $("<th>" + element['Year'] + "-" + element['Month'] + "</th>").insertAfter($('thead tr th:nth(0)'));
                     $("<td>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
@@ -399,22 +464,45 @@
         });
     });
 
-    function editRecord(title, goalField) {
-        let t = 'ویرایش ' + title;
-        $('#exampleModalLabel').text(t);
-        $('#filedlabel').text(title + ":");
+    function editRecord() {
+
+
         let s = String(<?= json_encode($data['Month']); ?>);
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'gf': goalField,
                 'yr': <?= $data['Year']; ?>,
                 'mn': s,
             },
             success: function(data) {
-                $('#recipient-name1').val(data[0][goalField]);
+                console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#forAllrecipientName1').val(dValues[0]);
+                $('#forAllrecipientName2').val(dValues[1]);
+                $('#forAllrecipientName3').val(dValues[3]);
+                $('#forAllrecipientName4').val(dValues[2]);
             },
         });
+    }
+
+    function editpopulation() {
+        let newvalue = $('#recipient-name1').val();
+        newvalue = Number(newvalue);
+        const all = ["Hmy_CityFamily", "Hmy_RuralFamily", "Hmy_WomenFamily", "Hmy_MenFamily"];
+        const oldfamily = ["Hmy_OldFamCity", "Hmy_OldFamRural"];
+        const oldpeople = ["Hmy_OldPopCity", "Hmy_OldPopRural"];
+        // alert($('#gfield').val());
+        if (all.includes($('#gfield').val())) {
+
+        } else if (oldfamily.includes($('#gfield').val())) {
+
+        } else if (oldpeople.includes($('#gfield').val())) {
+
+        }
+    }
+
+    function getAll() {
+
     }
 </script>
