@@ -292,51 +292,51 @@
                 <tbody>
                     <tr>
                         <th scope="row">تعداد خانوار شهری</th>
-                        <td><a href="#" onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار روستایی</th>
-                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار</th>
-                        <td><a style="color: gray;" disabled data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات</th>
-                        <td><a onclick="editRecord('تعداد کل نفرات','Hmy_AllPop')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="othereditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td><a onclick="editRecord('تعداد خانوار سالمند شهری','Hmy_OldFamCity')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="OldeditRecord('6')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td><a onclick="editRecord('تعداد خانوار سالمند روستایی','Hmy_OldFamRural')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="OldeditRecord('7')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td><a style="color: gray;" disabled data-bs-toggle=" modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td><a onclick="editRecord('تعداد نفرات سالمند شهری','Hmy_OldPopCity')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="OldeditRecord('9')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td><a onclick="editRecord('تعداد نفرات سالمند روستایی','Hmy_OldPopRural')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="OldeditRecord('10')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td><a style="color: gray;" disabled data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -394,9 +394,14 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="forOldfiledlabel" for="recipient-name1" class="col-form-label"></label>
-                        <input name="id" type="text" class="form-control" id="forOldrecipient-name1">
-                        <input id="foroldgfield" type="hidden" value="">
+                        <label id="forOldfiledlabel1" for="recipient-name1" class="col-form-label"></label>
+                        <input id="forOldrecipientName1" name="id" type="text" class="form-control">
+                        <!-- <input id="foroldgfield" type="hidden" value=""> -->
+                    </div>
+                    <div class="mb-0">
+                        <label id="forOldfiledlabel2" for="recipient-name1" class="col-form-label"></label>
+                        <input id="forOldrecipientName2" name="id" type="text" class="form-control">
+                        <!-- <input id="foroldgfield" type="hidden" value=""> -->
                     </div>
                 </form>
             </div>
@@ -421,8 +426,7 @@
                 <form>
                     <div class="mb-0">
                         <label id="otherfiledlabel" for="recipient-name1" class="col-form-label"></label>
-                        <input name="id" type="text" class="form-control" id="otherrecipient-name1">
-                        <input id="othergfield" type="hidden" value="">
+                        <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
                     </div>
                 </form>
             </div>
@@ -464,9 +468,7 @@
         });
     });
 
-    function editRecord() {
-
-
+    function editRecord(id) {
         let s = String(<?= json_encode($data['Month']); ?>);
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
@@ -476,7 +478,7 @@
                 'mn': s,
             },
             success: function(data) {
-                console.log(data[0]);
+                // console.log(data[0]);
                 const dValues = Object.values(data[0]);
                 $('#forAllrecipientName1').val(dValues[0]);
                 $('#forAllrecipientName2').val(dValues[1]);
@@ -484,6 +486,77 @@
                 $('#forAllrecipientName4').val(dValues[2]);
             },
         });
+        $('#forAllrecipientName1').removeClass('goalfiled');
+        $('#forAllrecipientName2').removeClass('goalfiled');
+        $('#forAllrecipientName3').removeClass('goalfiled');
+        $('#forAllrecipientName4').removeClass('goalfiled');
+        if (id == 0) {
+            $('#forAllrecipientName1').addClass('goalfiled');
+            // $("#forAllrecipientName1").focus();
+
+        } else if (id == 1) {
+            $('#forAllrecipientName2').addClass('goalfiled');
+            // $('#forAllrecipientName2').focus();
+        } else if (id == 2) {
+            $('#forAllrecipientName3').addClass('goalfiled');
+            // $('#forAllrecipientName3').focus();
+        } else if (id == 3) {
+            $('#forAllrecipientName4').addClass('goalfiled');
+            // $('#forAllrecipientName4').focus();
+        }
+    }
+
+    function othereditRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#otherrecipientName1').val(dValues[5]);
+
+            },
+        });
+        $('#otherrecipientName1').addClass('goalfiled');
+    }
+
+    function OldeditRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                if (id == 6 || id == 7) {
+                    $('#forOldrecipientName1').val(dValues[6]);
+                    $('#forOldrecipientName2').val(dValues[7]);
+                } else if (id == 9 || id == 10) {
+                    $('#forOldrecipientName1').val(dValues[9]);
+                    $('#forOldrecipientName2').val(dValues[10]);
+                }
+
+
+            },
+        });
+
+        $('#forOldrecipientName1').removeClass('goalfiled');
+        $('#forOldrecipientName2').removeClass('goalfiled');
+
+        if (id == 6 || id == 9) {
+            $('#forOldrecipientName1').addClass('goalfiled');
+        } else if (id == 7 || id == 10) {
+            $('#forOldrecipientName2').addClass('goalfiled');
+        }
     }
 
     function editpopulation() {

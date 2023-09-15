@@ -42,3 +42,8 @@ table {
     /* line-height: 16px; */
 }
 
+.goalfiled {
+    background-color: lightblue !important;
+    border: 2px solid !important;
+    font-weight: bold;
+}
