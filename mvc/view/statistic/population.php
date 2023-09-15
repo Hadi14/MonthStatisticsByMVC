@@ -465,21 +465,34 @@
         });
     });
 
+    function getAllPopulation() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                fillPageTable(data);
+            },
+        });
+    }
+
     function fillPageTable(data) {
         data.forEach(element => {
-            $("<th>" + element['Year'] + "-" + element['Month'] + "</th>").insertAfter($('thead tr th:nth(0)'));
-            $("<td>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
-            $("<td>" + element['Hmy_RuralFamily'] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-            $("<td>" + element['Hmy_WomenFamily'] + "</td>").insertAfter($('tbody tr th:nth(2)'));
-            $("<td>" + element['Hmy_MenFamily'] + "</td>").insertAfter($('tbody tr th:nth(3)'));
-            $("<td>" + element['Hmy_AllFamily'] + "</td>").insertAfter($('tbody tr th:nth(4)'));
-            $("<td>" + element['Hmy_AllPop'] + "</td>").insertAfter($('tbody tr th:nth(5)'));
-            $("<td>" + element['Hmy_OldFamCity'] + "</td>").insertAfter($('tbody tr th:nth(6)'));
-            $("<td>" + element['Hmy_OldFamRural'] + "</td>").insertAfter($('tbody tr th:nth(7)'));
-            $("<td>" + element['Hmy_AllOldFamily'] + "</td>").insertAfter($('tbody tr th:nth(8)'));
-            $("<td>" + element['Hmy_OldPopCity'] + "</td>").insertAfter($('tbody tr th:nth(9)'));
-            $("<td>" + element['Hmy_OldPopRural'] + "</td>").insertAfter($('tbody tr th:nth(10)'));
-            $("<td>" + element['Hmy_AllPopOld'] + "</td>").insertAfter($('tbody tr th:nth(11)'));
+            $("<th class='newColumn'>" + element['Year'] + "-" + element['Month'] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            $("<td class='newColumn'>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+            $("<td class='newColumn'>" + element['Hmy_RuralFamily'] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+            $("<td class='newColumn'>" + element['Hmy_WomenFamily'] + "</td>").insertAfter($('tbody tr th:nth(2)'));
+            $("<td class='newColumn'>" + element['Hmy_MenFamily'] + "</td>").insertAfter($('tbody tr th:nth(3)'));
+            $("<td class='newColumn'>" + element['Hmy_AllFamily'] + "</td>").insertAfter($('tbody tr th:nth(4)'));
+            $("<td class='newColumn'>" + element['Hmy_AllPop'] + "</td>").insertAfter($('tbody tr th:nth(5)'));
+            $("<td class='newColumn'>" + element['Hmy_OldFamCity'] + "</td>").insertAfter($('tbody tr th:nth(6)'));
+            $("<td class='newColumn'>" + element['Hmy_OldFamRural'] + "</td>").insertAfter($('tbody tr th:nth(7)'));
+            $("<td class='newColumn'>" + element['Hmy_AllOldFamily'] + "</td>").insertAfter($('tbody tr th:nth(8)'));
+            $("<td class='newColumn'>" + element['Hmy_OldPopCity'] + "</td>").insertAfter($('tbody tr th:nth(9)'));
+            $("<td class='newColumn'>" + element['Hmy_OldPopRural'] + "</td>").insertAfter($('tbody tr th:nth(10)'));
+            $("<td class='newColumn'>" + element['Hmy_AllPopOld'] + "</td>").insertAfter($('tbody tr th:nth(11)'));
 
         });
     }
@@ -600,7 +613,10 @@
                 },
                 success: function(data) {
                     console.log(data);
-                    alert('بروزرسانی با موفقیت انجام شد.')
+                    alert('بروزرسانی با موفقیت انجام شد.');
+                    $('.newColumn').remove();
+                    getAllPopulation();
+
                 },
             });
         }
