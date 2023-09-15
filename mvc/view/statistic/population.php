@@ -395,6 +395,7 @@
                     <div class="mb-0">
                         <label id="forOldfiledlabel1" for="recipient-name1" class="col-form-label"></label>
                         <input id="forOldrecipientName1" name="id" type="text" class="form-control">
+                        <input id="gfiled" type="hidden" name="">
                     </div>
                     <div class="mb-0">
                         <label id="forOldfiledlabel2" for="recipient-name1" class="col-form-label"></label>
@@ -403,7 +404,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editpopulation()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editOldPopulation()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -428,7 +429,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editpopulation()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editAllPeoplePopulation()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -546,20 +547,18 @@
                     $('#forOldfiledlabel1').text('تعداد خانوار سالمند شهری:');
                     $('#forOldrecipientName2').val(dValues[7]);
                     $('#forOldfiledlabel2').text('تعداد خانوار سالمند روستایی:');
+                    $('#gfiled').val('6');
                 } else if (id == 9 || id == 10) {
                     $('#forOldrecipientName1').val(dValues[9]);
                     $('#forOldfiledlabel1').text('تعداد نفرات سالمند شهری:');
                     $('#forOldrecipientName2').val(dValues[10]);
                     $('#forOldfiledlabel2').text('تعداد نفرات سالمند روستایی:');
+                    $('#gfiled').val('9');
                 }
-
-
             },
         });
-
         $('#forOldrecipientName1').removeClass('goalfiled');
         $('#forOldrecipientName2').removeClass('goalfiled');
-
         if (id == 6 || id == 9) {
             $('#forOldrecipientName1').addClass('goalfiled');
         } else if (id == 7 || id == 10) {
@@ -568,7 +567,6 @@
     }
 
     function editAllpopulation() {
-        // alert(typeof + $('#forAllrecipientName1').val());
         if (+$('#forAllrecipientName1').val() + +$('#forAllrecipientName2').val() != +$('#forAllrecipientName3').val() + +$('#forAllrecipientName4').val()) {
             alert("جمع خانوارشهری و روستایی با خانوار با سرپرست مرد و زن برابر نیست!!!")
             $('#forAllModal').addClass('show');
@@ -587,17 +585,52 @@
                     'mn': s,
                 },
                 success: function(data) {
-                    console.log(data);
+                    // console.log(data);
                     alert('بروزرسانی با موفقیت انجام شد.');
                     $('.newColumn').remove();
                     getAllPopulation();
-
                 },
             });
         }
     }
 
-    function getAll() {
+    function editOldPopulation() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/updateOldPopulation/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'one': +$('#forOldrecipientName1').val(),
+                'two': +$('#forOldrecipientName2').val(),
+                'goalFields': +$('#gfiled').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getAllPopulation();
+            },
+        });
+    }
 
+    function editAllPeoplePopulation() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/updateAllPeoplePopulation/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'AllPeople': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getAllPopulation();
+            },
+        });
     }
 </script>

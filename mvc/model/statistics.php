@@ -19,6 +19,29 @@
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
+    /********************************************************************** */
+    static function updateOldpopulation($one, $two, $goalFields, $sum, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        if ($goalFields == 6) {
+            $sql = "update hemayat set Hmy_OldFamCity=$one ,Hmy_OldFamRural=$two ,Hmy_AllOldFamily=$sum  where Year= '$y' and Month= '$m' and user='$un'";
+        } else if ($goalFields == 9) {
+            $sql = "update hemayat set Hmy_OldPopCity=$one ,Hmy_OldPopRural=$two ,Hmy_AllPopOld=$sum  where Year= '$y' and Month= '$m' and user='$un'";
+        }
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /********************************************************************** */
+    static function updateAllPeoplePopulation($all, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $sql = "update hemayat set Hmy_AllPop=$all where Year= '$y' and Month= '$m' and user='$un'";
+
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
     /*********************************************************************/
     static  function insertcurrentdate($y, $m)
     {

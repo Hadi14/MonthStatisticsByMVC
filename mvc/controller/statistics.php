@@ -39,7 +39,31 @@
     }
     public  function updateOldPopulation()
     {
+        // updateAllpopulation
+        $one = $_POST['one'];
+        $two = $_POST['two'];
+        $goalFields = $_POST['goalFields'];
+        $sum = $_POST['one'] + $_POST['two'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateOldpopulation($one, $two, $goalFields, $sum, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
     }
+    public  function updateAllPeoplePopulation()
+    {
+        $AllPeople = $_POST['AllPeople'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateAllPeoplePopulation( $AllPeople, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+
     public  function updateAllPepoplePopulation()
     {
     }
