@@ -396,12 +396,10 @@
                     <div class="mb-0">
                         <label id="forOldfiledlabel1" for="recipient-name1" class="col-form-label"></label>
                         <input id="forOldrecipientName1" name="id" type="text" class="form-control">
-                        <!-- <input id="foroldgfield" type="hidden" value=""> -->
                     </div>
                     <div class="mb-0">
                         <label id="forOldfiledlabel2" for="recipient-name1" class="col-form-label"></label>
                         <input id="forOldrecipientName2" name="id" type="text" class="form-control">
-                        <!-- <input id="foroldgfield" type="hidden" value=""> -->
                     </div>
                 </form>
             </div>
@@ -425,7 +423,7 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label"></label>
+                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">تعداد کل نفرات:</label>
                         <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
                     </div>
                 </form>
@@ -539,10 +537,14 @@
                 const dValues = Object.values(data[0]);
                 if (id == 6 || id == 7) {
                     $('#forOldrecipientName1').val(dValues[6]);
+                    $('#forOldfiledlabel1').text('تعداد خانوار سالمند شهری:');
                     $('#forOldrecipientName2').val(dValues[7]);
+                    $('#forOldfiledlabel2').text('تعداد خانوار سالمند روستایی:');
                 } else if (id == 9 || id == 10) {
                     $('#forOldrecipientName1').val(dValues[9]);
+                    $('#forOldfiledlabel1').text('تعداد نفرات سالمند شهری:');
                     $('#forOldrecipientName2').val(dValues[10]);
+                    $('#forOldfiledlabel2').text('تعداد نفرات سالمند روستایی:');
                 }
 
 
