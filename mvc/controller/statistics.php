@@ -21,6 +21,28 @@
         StatisticsModel::insertpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
         // dump($_POST);
     }
+    public  function updateAllPopulation()
+    {
+        // updateAllpopulation
+        $CityFamily = $_POST['familycity'];
+        $RuralFamily = $_POST['familyrural'];
+        $MenFamily = $_POST['familymen'];
+        $WomenFamily = $_POST['familywomen'];
+        $AllFamily = $_POST['familycity'] + $_POST['familyrural'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily,  $AllFamily, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+    public  function updateOldPopulation()
+    {
+    }
+    public  function updateAllPepoplePopulation()
+    {
+    }
     public  function insertcurrentdate()
     {
         $year = $_POST['cyear'];

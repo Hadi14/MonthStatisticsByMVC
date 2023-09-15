@@ -567,7 +567,23 @@
             $('#forAllModal').addClass('show');
             // $('#forAllModal').css('display', 'block');
         } else {
-
+            let s = String(<?= json_encode($data['Month']); ?>);
+            $.ajax('/MonthStatisticsByMVC/statistics/updateAllPopulation/', {
+                type: 'post',
+                dataType: "json",
+                data: {
+                    'familycity': +$('#forAllrecipientName1').val(),
+                    'familyrural': +$('#forAllrecipientName2').val(),
+                    'familymen': +$('#forAllrecipientName3').val(),
+                    'familywomen': +$('#forAllrecipientName4').val(),
+                    'yr': <?= $data['Year']; ?>,
+                    'mn': s,
+                },
+                success: function(data) {
+                    console.log(data);
+                    alert('بروزرسانی با موفقیت انجام شد.')
+                },
+            });
         }
     }
 

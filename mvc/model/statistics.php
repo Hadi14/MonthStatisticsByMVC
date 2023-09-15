@@ -11,6 +11,15 @@
         // header("Location: " . getBaseUrl() . "page/population");
     }
     /*********************************************************************/
+    static  function updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $year, $month, $user)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $sql = "update hemayat set Hmy_CityFamily=$CityFamily ,Hmy_RuralFamily=$RuralFamily ,Hmy_MenFamily=$MenFamily,Hmy_WomenFamily=$WomenFamily,Hmy_AllFamily=$AllFamily  where Year= '$year' and Month= '$month' and user='$user'";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /*********************************************************************/
     static  function insertcurrentdate($y, $m)
     {
         $db = Db::getInstance();
