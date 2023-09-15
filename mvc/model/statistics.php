@@ -31,7 +31,7 @@
     static  function allPopulation($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from hemayat where Year='$year' and user='$un'";
+        $sql = "select * from hemayat where Year='$year' and user='$un' order by Year desc, Month desc";
         $record = $db->query($sql);
         // dump($record);
         return $record;
