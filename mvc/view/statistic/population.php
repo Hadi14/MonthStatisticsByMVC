@@ -280,9 +280,6 @@
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-                <?
-
-                ?>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>

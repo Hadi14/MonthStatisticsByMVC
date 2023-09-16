@@ -22,6 +22,17 @@
         StatisticsModel::insertpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/population");
     }
+    /****************************************************************************************** */
+    public  function insertMoney($param)
+    {
+        $money = $_POST['mny'];
+        $year = $param[0];
+        $month = $param[1];
+        $user = $_SESSION['suname'];
+        StatisticsModel::insertmoney($money, $year, $month, $user);
+        header("Location:" . getBaseUrl() . "page/money");
+    }
+    /****************************************************************************************** */
     public  function updateAllPopulation()
     {
         // updateAllpopulation
@@ -53,6 +64,7 @@
             echo json_encode($rowAffect);
         }
     }
+    /******************************************************** */
     public  function updateAllPeoplePopulation()
     {
         $AllPeople = $_POST['AllPeople'];
@@ -64,7 +76,19 @@
             echo json_encode($rowAffect);
         }
     }
-
+    /******************************************************** */
+    public  function updatemoney()
+    {
+        $mny = $_POST['mny'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateMoney($mny, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+    /************************************************************* */
     public  function updateAllPepoplePopulation()
     {
     }
@@ -92,6 +116,13 @@
         $recentMonth = StatisticsModel::recentMonth();
         echo json_encode($recentMonth);
     }
+    /**************************************************** */
+    public  function getrecentmoneymonth()
+    {
+        $recentMonth = StatisticsModel::recentMoneyMonth();
+        echo json_encode($recentMonth);
+    }
+    /**************************************************** */
     public  function getallpopulation()
     {
         $year = $_POST['year'];
@@ -99,12 +130,30 @@
         $recs = StatisticsModel::allPopulation($year, $u);
         echo json_encode($recs);
     }
+    /**************************************************** */
+    public  function getallmoney()
+    {
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = StatisticsModel::getallmoney($year, $u);
+        echo json_encode($recs);
+    }
+    /**************************************************** */
     public  function getGoalField()
     {
         $year = $_POST['yr'];
         $month = $_POST['mn'];
         $un = $_SESSION['suname'];
         $goal = StatisticsModel::getGoal($year, $month, $un);
+        echo json_encode($goal);
+    }
+    /************************************************ */
+    public  function getMoneyGoalField()
+    {
+        $year = $_POST['yr'];
+        $month = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $goal = StatisticsModel::getMoneyGoal($year, $month, $un);
         echo json_encode($goal);
     }
 }

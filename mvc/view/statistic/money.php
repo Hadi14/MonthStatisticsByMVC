@@ -10,7 +10,7 @@
                         <p class="stat-cards-info__num">مبلغ معیشت ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="FRural" class="stat-cards-info__title">43,159</p>
+                            <p id="money" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -41,7 +41,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="familycity" type="number" class="form-control familycity" placeholder="مبلغ معیشت (میلیارد ريال)">
+                                <input required name="mny" type="number" class="form-control familycity" placeholder="مبلغ معیشت (میلیارد ريال)">
                             </div>
 
                         </div>
@@ -84,7 +84,7 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">تعداد کل نفرات:</label>
+                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">مبلغ معیشت:</label>
                         <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
                     </div>
                 </form>
@@ -97,3 +97,83 @@
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<script>
+    $(document).ready(function() {
+        // console.log("OOOsadfsdf");
+        recentMonth();
+        getmoney();
+    });
+
+    function recentMonth() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getrecentmoneymonth/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#recentYR').text(dValues[1]);
+                $('#recentMn').text(dValues[2]);
+                $('#mny').text(dValues[0]);
+            },
+        });
+    }
+
+    function getmoney() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getallmoney/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                fillPageTable(data);
+            },
+        });
+    }
+
+    function fillPageTable(data) {
+        const dValues = Object.values(data[0]);
+        data.forEach(element => {
+            $("<th class='newColumn'>" + dValues[1] + "-" + dValues[2] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+        });
+    }
+
+    function editMoney() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/updatemoney/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'mny': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getmoney();
+            },
+        });
+    }
+
+    function editRecord() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getMoneyGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#otherrecipientName1').val(dValues[0]);
+
+            },
+        });
+        $('#otherrecipientName1').addClass('goalfiled');
+    }
+</script>

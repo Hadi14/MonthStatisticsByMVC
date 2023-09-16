@@ -11,6 +11,13 @@
         // header("Location: " . getBaseUrl() . "page/population");
     }
     /*********************************************************************/
+    static  function insertmoney($money, $year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $db->insert("insert into money (M_money,M_Year,M_month,M_user)values($money,'$year','$month','$un')");
+    }
+    /*********************************************************************/
     static  function updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $year, $month, $user)
     {
         $db = Db::getInstance();
@@ -42,6 +49,16 @@
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
+    /********************************************************************** */
+    static function updateMoney($mny, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $sql = "update money set M_money=$mny where M_Year= '$y' and M_Month= '$m' and M_user='$un'";
+
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
     /*********************************************************************/
     static  function insertcurrentdate($y, $m)
     {
@@ -55,6 +72,16 @@
     {
         $db = Db::getInstance();
         $sql = "select * from hemayat where Year='$year' and user='$un' order by Year desc, Month desc";
+        $record = $db->query($sql);
+        // dump($record);
+        return $record;
+        // echo json_encode($record);
+    }
+    /*********************************************************************/
+    static  function getallmoney($year, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from money where M_Year='$year' and M_user='$un' order by M_Year desc, M_Month desc";
         $record = $db->query($sql);
         // dump($record);
         return $record;
@@ -110,13 +137,28 @@
         $sql = "select * from hemayat order by Year desc, Month desc limit 1";
         $recentM = $db->query($sql);
         return $recentM;
-      
+    }
+    /*****************************************************************/
+    static  function recentMoneyMonth()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from money order by M_Year desc, M_Month desc limit 1";
+        $recentM = $db->query($sql);
+        return $recentM;
     }
     /*****************************************************************/
     static  function getGoal($year, $month, $un)
     {
         $db = Db::getInstance();
         $sql = "select * from hemayat where Year='$year' and Month='$month' and user='$un'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /*****************************************************************/
+    static  function getMoneyGoal($year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select M_money from money where M_Year='$year' and M_Month='$month' and M_user='$un'";
         $g = $db->query($sql);
         return $g;
     }
