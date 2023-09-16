@@ -88,6 +88,16 @@
         // echo json_encode($record);
     }
     /*********************************************************************/
+    static  function getallDowry($year, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from dowry where D_Year='$year' and D_user='$un' order by D_Year desc, D_Month desc";
+        $record = $db->query($sql);
+        // dump($record);
+        return $record;
+        // echo json_encode($record);
+    }
+    /*********************************************************************/
     static  function eninserts()
     {
         $db = Db::getInstance();
@@ -143,6 +153,14 @@
     {
         $db = Db::getInstance();
         $sql = "select * from money order by M_Year desc, M_Month desc limit 1";
+        $recentM = $db->query($sql);
+        return $recentM;
+    }
+    /*****************************************************************/
+    static  function recentDowryMonth()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from dowry order by D_Year desc, D_Month desc limit 1";
         $recentM = $db->query($sql);
         return $recentM;
     }

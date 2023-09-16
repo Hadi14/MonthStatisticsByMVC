@@ -35,7 +35,6 @@
     /****************************************************************************************** */
     public  function updateAllPopulation()
     {
-        // updateAllpopulation
         $CityFamily = $_POST['familycity'];
         $RuralFamily = $_POST['familyrural'];
         $MenFamily = $_POST['familymen'];
@@ -49,6 +48,7 @@
             echo json_encode($rowAffect);
         }
     }
+    /**************************************************** */
     public  function updateOldPopulation()
     {
         // updateAllpopulation
@@ -88,29 +88,29 @@
             echo json_encode($rowAffect);
         }
     }
-    /************************************************************* */
-    public  function updateAllPepoplePopulation()
-    {
-    }
+    /**************************************************** */
     public  function insertcurrentdate()
     {
         $year = $_POST['cyear'];
         $month = $_POST['cmonth'];
         StatisticsModel::insertcurrentdate($year, $month);
     }
-
+    /**************************************************** */
     public  function enableinserts()
     {
         StatisticsModel::eninserts();
     }
+    /**************************************************** */
     public  function disableinserts()
     {
         StatisticsModel::disinserts();
     }
+    /**************************************************** */
     public  function getinsertsstatus()
     {
         StatisticsModel::getinsertstatus();
     }
+    /**************************************************** */
     public  function getrecentmonth()
     {
         $recentMonth = StatisticsModel::recentMonth();
@@ -120,6 +120,12 @@
     public  function getrecentmoneymonth()
     {
         $recentMonth = StatisticsModel::recentMoneyMonth();
+        echo json_encode($recentMonth);
+    }
+    /**************************************************** */
+    public  function getrecentdowrymonth()
+    {
+        $recentMonth = StatisticsModel::recentDowryMonth();
         echo json_encode($recentMonth);
     }
     /**************************************************** */
@@ -136,6 +142,14 @@
         $year = $_POST['year'];
         $u = $_SESSION['suname'];
         $recs = StatisticsModel::getallmoney($year, $u);
+        echo json_encode($recs);
+    }
+    /**************************************************** */
+    public  function getalldowry()
+    {
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = StatisticsModel::getallDowry($year, $u);
         echo json_encode($recs);
     }
     /**************************************************** */

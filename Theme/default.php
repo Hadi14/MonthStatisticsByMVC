@@ -71,10 +71,10 @@
                                     <a href="<?= getBaseUrl() ?>page/money"> آمار معیشت</a>
                                 </li>
                                 <li>
-                                    <a href="#">جهیزیه</a>
+                                    <a href="<?= getBaseUrl() ?>page/dowry">جهیزیه</a>
                                 </li>
                                 <li>
-                                    <a href="#">بیمه های اجتماعی</a>
+                                    <a href="<?= getBaseUrl() ?>page/???????????">بیمه های اجتماعی</a>
                                 </li>
                             </ul>
                         </li>

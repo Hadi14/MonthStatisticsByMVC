@@ -36,4 +36,13 @@ class PageController
             Render::render('/statistic/money.php', "money", $currdt[0]);
         }
     }
+    function dowry()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/dowry.php', "dowry", $currdt[0]);
+        }
+    }
 }
