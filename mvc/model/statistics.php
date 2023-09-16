@@ -104,6 +104,15 @@
         // dump($currdate);
     }
     /*****************************************************************/
+    static  function recentMonth()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from hemayat order by Year desc, Month desc limit 1";
+        $recentM = $db->query($sql);
+        return $recentM;
+      
+    }
+    /*****************************************************************/
     static  function getGoal($year, $month, $un)
     {
         $db = Db::getInstance();

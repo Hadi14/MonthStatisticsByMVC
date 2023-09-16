@@ -1,6 +1,6 @@
 <main class="main users chart-page" id="skip-target">
     <div class="container">
-        <h2 class="main-title">آمار جمعیتی ماه اخیر ...</h2>
+        <h2 class="main-title">آمار جمعیتی ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
         <div class="row stat-cards">
 
             <!-- **** -->
@@ -10,7 +10,7 @@
                         <p class="stat-cards-info__num">تعداد خانوار روستایی ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FRural" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -28,7 +28,7 @@
                         <p class="stat-cards-info__num">تعداد خانوار شهری ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FCity" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -46,7 +46,7 @@
                         <p class="stat-cards-info__num">تعداد خانوار مرد سرپرست ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FMen" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -64,7 +64,7 @@
                         <p class="stat-cards-info__num"> تعداد خانوار زن سرپرست ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-currency-dollar mx-2 stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FWonem" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -88,7 +88,7 @@
                         <p class="stat-cards-info__num">تعداد کل خانوار ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FAll" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -106,7 +106,7 @@
                         <p class="stat-cards-info__num">تعداد کل نفرات ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="PAll" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -124,7 +124,7 @@
                         <p class="stat-cards-info__num">تعداد خانوار سالمند شهری ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FOCity" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -142,7 +142,7 @@
                         <p class="stat-cards-info__num"> تعداد خانوار سالمند روستایی ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-currency-dollar mx-2 stat-cards-icon primary"></i>
-                            <p class="stat-cards-info__title">43,159</p>
+                            <p id="FORural" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -160,7 +160,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                <form action="<?= getBaseUrl() ?>statistics/insertPopulation" class="insert-form p-5 rounded" method="post">
+                <form action="<?= getBaseUrl() ?>statistics/insertPopulation/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
@@ -438,8 +438,30 @@
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
     $(document).ready(function() {
+        recentMonth();
         getAllPopulation();
     });
+
+    function recentMonth() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getrecentmonth/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#recentYR').text(dValues[13]);
+                $('#recentMn').text(dValues[12]);
+                $('#FRural').text(dValues[1]);
+                $('#FCity').text(dValues[0]);
+                $('#FMen').text(dValues[2]);
+                $('#FWonem').text(dValues[3]);
+                $('#FAll').text(dValues[4]);
+                $('#PAll').text(dValues[5]);
+                $('#FOCity').text(dValues[6]);
+                $('#FORural').text(dValues[7]);
+            },
+        });
+    }
 
     function getAllPopulation() {
         $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {

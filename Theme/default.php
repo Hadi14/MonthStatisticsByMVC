@@ -308,7 +308,7 @@
                                         <i data-feather="settings" aria-hidden="true"></i>
                                         <span>تنظیمات</span>
                                     </a></li>
-                                <li><a class="danger" href="##">
+                                <li><a class="log-out danger" href="<?= getBaseUrl() ?>user/logoute">
                                         <i data-feather="log-out" aria-hidden="true"></i>
                                         <span>خروج</span>
                                     </a></li>

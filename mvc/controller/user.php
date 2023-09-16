@@ -34,4 +34,9 @@
         $ar['abc'] = "";
         Render::renderlogin('/user/login.php', $ar);
     }
+    function logoute()
+    {
+        session_destroy();
+        header("Location:" . getBaseUrl() . "user/login/");
+    }
 }

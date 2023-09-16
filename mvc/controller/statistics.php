@@ -1,8 +1,9 @@
 <? class StatisticsController
 {
     /****************************************************************************************** */
-    public  function insertPopulation()
+    public  function insertPopulation($param)
     {
+        // dump($_POST);
         $CityFamily = $_POST['familycity'];
         $RuralFamily = $_POST['familyrural'];
         $MenFamily = $_POST['familymen'];
@@ -15,11 +16,11 @@
         $OldPopCity = $_POST['peopleoldcity'];
         $OldPopRural = $_POST['peopleoldrural'];
         $AllPopOld = $_POST['alloldpeople'];
-        $year = $_POST['year'];
-        $month = $_POST['month'];
+        $year = $param[0];
+        $month = $param[1];
         $user = $_SESSION['suname'];
         StatisticsModel::insertpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
-        // dump($_POST);
+        header("Location:" . getBaseUrl() . "page/population");
     }
     public  function updateAllPopulation()
     {
@@ -58,7 +59,7 @@
         $y = $_POST['yr'];
         $m = $_POST['mn'];
         $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateAllPeoplePopulation( $AllPeople, $y, $m, $un);
+        $rowAffect = StatisticsModel::updateAllPeoplePopulation($AllPeople, $y, $m, $un);
         if ($rowAffect) {
             echo json_encode($rowAffect);
         }
@@ -85,6 +86,11 @@
     public  function getinsertsstatus()
     {
         StatisticsModel::getinsertstatus();
+    }
+    public  function getrecentmonth()
+    {
+        $recentMonth = StatisticsModel::recentMonth();
+        echo json_encode($recentMonth);
     }
     public  function getallpopulation()
     {
