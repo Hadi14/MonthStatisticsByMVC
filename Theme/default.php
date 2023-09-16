@@ -68,7 +68,7 @@
                                     <a href="<?= getBaseUrl() ?>page/population">آمار جمعیتی</a>
                                 </li>
                                 <li>
-                                    <a href="#"> آمار معیشت</a>
+                                    <a href="<?= getBaseUrl() ?>page/money"> آمار معیشت</a>
                                 </li>
                                 <li>
                                     <a href="#">جهیزیه</a>
