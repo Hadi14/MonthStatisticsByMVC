@@ -180,4 +180,12 @@
         $g = $db->query($sql);
         return $g;
     }
+    /*****************************************************************/
+    static  function getdowryGoal($year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from dowry where D_Year='$year' and D_Month='$month' and D_user='$un'";
+        $g = $db->query($sql);
+        return $g;
+    }
 }

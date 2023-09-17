@@ -79,9 +79,6 @@
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-                <?
-
-                ?>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -91,11 +88,11 @@
                 <tbody>
                     <tr>
                         <th scope="row">تعداد جهیزیه</th>
-                        <td><a onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ جهیزیه</th>
-                        <td><a onclick="editRecord()" data-bs-toggle="modal" data-bs-target="#dowryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
 
                 </tbody>
@@ -106,7 +103,7 @@
 </main>
 
 <!--------------------------- other Edit modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="dowryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="dryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
             <div class="modal-header">
@@ -116,8 +113,8 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">مبلغ معیشت:</label>
-                        <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                     </div>
                 </form>
             </div>
@@ -191,22 +188,25 @@
         // });
     }
 
-    function editRecord() {
-        // let s = String(<?= json_encode($data['Month']); ?>);
-        // $.ajax('/MonthStatisticsByMVC/statistics/getMoneyGoalField/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         'yr': <?= $data['Year']; ?>,
-        //         'mn': s,
-        //     },
-        //     success: function(data) {
-        //         // console.log(data[0]);
-        //         const dValues = Object.values(data[0]);
-        //         $('#otherrecipientName1').val(dValues[0]);
+    function editRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getDowryGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                if (id == 0)
+                    $('#otherrecipientName1').val(dValues[0]);
+                else if (id == 1)
+                    $('#otherrecipientName1').val(dValues[1]);
 
-        //     },
-        // });
-        // $('#otherrecipientName1').addClass('goalfiled');
+            },
+        });
+        $('#otherrecipientName1').addClass('goalfiled');
     }
 </script>

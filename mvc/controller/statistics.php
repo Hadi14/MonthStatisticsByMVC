@@ -170,4 +170,13 @@
         $goal = StatisticsModel::getMoneyGoal($year, $month, $un);
         echo json_encode($goal);
     }
+    /************************************************ */
+    public  function getDowryGoalField()
+    {
+        $year = $_POST['yr'];
+        $month = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $goal = StatisticsModel::getdowryGoal($year, $month, $un);
+        echo json_encode($goal);
+    }
 }
