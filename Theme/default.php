@@ -144,6 +144,22 @@
                             </ul>
                         </li>
                         <li>
+                            <a class="show-cat-btn cat-rt" href="##">
+                                <span class="icon paper" aria-hidden="true"></span> مشارکت های مردمی
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
+                                    <span class="sr-only">Open list</span>
+                                    <span class="icon arrow-down" aria-hidden="true"></span>
+                                </span>
+                            </a>
+                            <ul class="cat-sub-menu">
+                                <li>
+                                    <a href="##">ثبت آمار درآمدها</a>
+                                    <a href="##">ثبت آمار اکرام</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
                             <a href="###">
                                 <span class="icon message" aria-hidden="true"></span>
                                 نیروی انسانی
