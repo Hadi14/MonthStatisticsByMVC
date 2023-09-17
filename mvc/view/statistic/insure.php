@@ -1,6 +1,6 @@
 <main class="main users chart-page" id="skip-target">
     <div class="container">
-        <h2 class="main-title">آمار جهیزیه ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
+        <h2 class="main-title">آمار بیمه های اجتماعی ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
         <div class="row stat-cards">
 
             <!-- **** -->
@@ -122,11 +122,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">تعداد جهیزیه</th>
+                        <th scope="row">تعداد زنان سرپرست خانوار</th>
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ جهیزیه</th>
+                        <th scope="row">تعداد مجریان طرح اشتغال</th>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">جمع تعداد</th>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">مبلغ بیمه های اجتماعی</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
 

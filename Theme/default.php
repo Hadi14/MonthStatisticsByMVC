@@ -74,7 +74,7 @@
                                     <a href="<?= getBaseUrl() ?>page/dowry">جهیزیه</a>
                                 </li>
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/???????????">بیمه های اجتماعی</a>
+                                    <a href="<?= getBaseUrl() ?>page/insure">بیمه های اجتماعی</a>
                                 </li>
                             </ul>
                         </li>
@@ -90,7 +90,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="##">صندوق امدادولایت</a>
+                                    <a href="<?= getBaseUrl() ?>page/sandogh">صندوق امدادولایت</a>
                                 </li>
                             </ul>
                         </li>

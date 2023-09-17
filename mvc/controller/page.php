@@ -45,4 +45,13 @@ class PageController
             Render::render('/statistic/dowry.php', "dowry", $currdt[0]);
         }
     }
+    function insure()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/insure.php', "insure", $currdt[0]);
+        }
+    }
 }
