@@ -58,7 +58,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="familyrural" type="number" class="form-control familyrural" placeholder="تعداد جهیزیه">
+                                <input required name="dnum" type="number" class="form-control familyrural" placeholder="تعداد جهیزیه">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -66,7 +66,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="familymen" type="number" class="form-control familymen" placeholder="مبلغ جهیزیه">
+                                <input required name="mny" type="number" class="form-control familymen" placeholder="مبلغ جهیزیه">
                             </div>
                         </div>
 

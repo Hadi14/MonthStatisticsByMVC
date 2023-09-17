@@ -18,11 +18,11 @@
         $db->insert("insert into money (M_money,M_Year,M_month,M_user)values($money,'$year','$month','$un')");
     }
     /*********************************************************************/
-    static  function insertDowry($dNum,$dMoney, $year, $month, $un)
+    static  function insertDowry($dNum, $dMoney, $year, $month, $un)
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into dowry (D_NumberDowry,D_Year,D_Year,D_month,D_user)values($dNum,$dMoney,'$year','$month','$un')");
+        $db->insert("insert into dowry (D_NumberDowry,D_MoneyDowry,D_Year,D_month,D_user)values($dNum,$dMoney,'$year','$month','$un')");
     }
     /*********************************************************************/
     static  function updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $year, $month, $user)

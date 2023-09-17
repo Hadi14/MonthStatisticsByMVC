@@ -40,8 +40,8 @@
         $year = $param[0];
         $month = $param[1];
         $user = $_SESSION['suname'];
-        StatisticsModel::insertDowry($dnum,$money, $year, $month, $user);
-        header("Location:" . getBaseUrl() . "page/money");
+        StatisticsModel::insertDowry($dnum, $money, $year, $month, $user);
+        header("Location:" . getBaseUrl() . "page/dowry");
     }
     /****************************************************************************************** */
     public  function updateAllPopulation()
@@ -106,7 +106,7 @@
         $y = $_POST['yr'];
         $m = $_POST['mn'];
         $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateDowry($param[0],$goalf, $y, $m, $un);
+        $rowAffect = StatisticsModel::updateDowry($param[0], $goalf, $y, $m, $un);
         if ($rowAffect) {
             echo json_encode($rowAffect);
         }
