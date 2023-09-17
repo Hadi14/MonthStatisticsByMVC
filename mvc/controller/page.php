@@ -54,4 +54,13 @@ class PageController
             Render::render('/statistic/insure.php', "insure", $currdt[0]);
         }
     }
+    function sandogh()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/sandogh.php', "sandogh", $currdt[0]);
+        }
+    }
 }

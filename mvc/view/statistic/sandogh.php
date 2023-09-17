@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                <form action="<?= getBaseUrl() ?>statistics/insertDowry/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
+                <form action="<?= getBaseUrl() ?>sandogh/insertsandogh/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
@@ -58,7 +58,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="dnum" type="number" class="form-control familyrural" placeholder="تعداد جهیزیه">
+                                <input required name="snum" type="number" class="form-control familyrural" placeholder="تعداد وامهای پرداخت شده">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -66,7 +66,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="mny" type="number" class="form-control familymen" placeholder="مبلغ جهیزیه">
+                                <input required name="smny" type="number" class="form-control familymen" placeholder="مبلغ وامهای پرداخت شده">
                             </div>
                         </div>
 
