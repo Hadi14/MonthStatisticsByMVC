@@ -115,11 +115,12 @@
                     <div class="mb-0">
                         <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                        <input id="goal" type="hidden">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editMoney()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editDowry()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -169,23 +170,24 @@
         });
     }
 
-    function editMoney() {
-        // let s = String(<?= json_encode($data['Month']); ?>);
-        // $.ajax('/MonthStatisticsByMVC/statistics/updatemoney/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         'mny': +$('#otherrecipientName1').val(),
-        //         'yr': <?= $data['Year']; ?>,
-        //         'mn': s,
-        //     },
-        //     success: function(data) {
-        //         // console.log(data);
-        //         alert('بروزرسانی با موفقیت انجام شد.');
-        //         $('.newColumn').remove();
-        //         getdowry();
-        //     },
-        // });
+    function editDowry() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        gfield = $('#goal').val();
+        $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'goalf': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getdowry();
+            },
+        });
     }
 
     function editRecord(id) {
@@ -200,11 +202,12 @@
             success: function(data) {
                 // console.log(data[0]);
                 const dValues = Object.values(data[0]);
+
+                $('#goal').val(id);
                 if (id == 0)
                     $('#otherrecipientName1').val(dValues[0]);
                 else if (id == 1)
                     $('#otherrecipientName1').val(dValues[1]);
-
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');

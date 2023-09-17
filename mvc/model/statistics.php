@@ -59,6 +59,22 @@
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
+    /********************************************************************** */
+    /********************************************************************** */
+    static function updateDowry($Goal, $goalf, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        if ($Goal == 0) {
+            $retVal = 'D_NumberDowry';
+        } else {
+            $retVal = 'D_MoneyDowry';
+        }
+        $sql = "update dowry set $retVal=$goalf where D_Year= '$y' and D_Month= '$m' and D_user='$un'";
+
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
     /*********************************************************************/
     static  function insertcurrentdate($y, $m)
     {

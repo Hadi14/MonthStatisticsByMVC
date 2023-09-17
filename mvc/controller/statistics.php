@@ -88,6 +88,18 @@
             echo json_encode($rowAffect);
         }
     }
+    /******************************************************** */
+    public  function updateDowry($param)
+    {
+        $goalf = $_POST['goalf'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateDowry($param[0],$goalf, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
     /**************************************************** */
     public  function insertcurrentdate()
     {
