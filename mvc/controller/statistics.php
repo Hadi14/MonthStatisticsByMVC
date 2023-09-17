@@ -33,6 +33,17 @@
         header("Location:" . getBaseUrl() . "page/money");
     }
     /****************************************************************************************** */
+    public  function insertDowry($param)
+    {
+        $money = $_POST['mny'];
+        $dnum = $_POST['dnum'];
+        $year = $param[0];
+        $month = $param[1];
+        $user = $_SESSION['suname'];
+        StatisticsModel::insertDowry($dnum,$money, $year, $month, $user);
+        header("Location:" . getBaseUrl() . "page/money");
+    }
+    /****************************************************************************************** */
     public  function updateAllPopulation()
     {
         $CityFamily = $_POST['familycity'];
