@@ -7,12 +7,19 @@
         values  ($snum,$smny'$year','$month','$user')");
     }
     /*********************************************************************/
-    static  function recentDowryMonth()
+    static  function recentSandoghMonth()
     {
         $db = Db::getInstance();
-        $sql = "select * from dowry order by D_Year desc, D_Month desc limit 1";
+        $sql = "select * from sandogh order by S_Year desc, S_Month desc limit 1";
         $recentM = $db->query($sql);
         return $recentM;
     }
     /*********************************************************************/
+    static  function getAllSandogh($year, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from sandogh where S_Year='$year' and S_user='$un' order by S_Year desc, S_Month desc";
+        $record = $db->query($sql);
+        return $record;
+    }
 }

@@ -1,4 +1,4 @@
-<? class StatisticsController
+<? class SandoghController
 {
     public  function insertsandogh($param)
     {
@@ -7,13 +7,21 @@
         $year = $param[0];
         $month = $param[1];
         $user = $_SESSION['suname'];
-        SandoghModel::insertSandogh($snum,$smoney, $year, $month, $user);
+        SandoghModel::insertSandogh($snum, $smoney, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/sandogh");
     }
     /****************************************************************************************** */
-    public  function getrecentdowrymonth()
+    public  function getrecentsandoghmonth()
     {
-        $recentMonth = StatisticsModel::recentDowryMonth();
+        $recentMonth = SandoghModel::recentSandoghMonth();
         echo json_encode($recentMonth);
+    }
+    /**************************************************** */
+    public  function getAllSndgh()
+    {
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = SandoghModel::getAllSandogh($year, $u);
+        echo json_encode($recs);
     }
 }

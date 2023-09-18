@@ -10,7 +10,7 @@
                         <p class="stat-cards-info__num">تعداد وام های ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="dn" class="stat-cards-info__title">43,159</p>
+                            <p id="ln" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -28,7 +28,7 @@
                         <p class="stat-cards-info__num">مبلغ جهیزیه ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="dm" class="stat-cards-info__title">43,159</p>
+                            <p id="lm" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -130,45 +130,45 @@
 <script>
     $(document).ready(function() {
         recentMonth();
-        // getdowry();
+        getsandogh();
     });
 
     function recentMonth() {
-        $.ajax('/MonthStatisticsByMVC/statistics/getrecentdowrymonth/', {
+        $.ajax('/MonthStatisticsByMVC/sandogh/getrecentsandoghmonth/', {
             type: 'post',
             dataType: "json",
             success: function(data) {
-                // console.log(data[0]);
+                // cnsole.log(data[0]);
                 const dValues = Object.values(data[0]);
                 $('#recentYR').text(dValues[2]);
                 $('#recentMn').text(dValues[3]);
-                $('#dn').text(dValues[0]);
-                $('#dm').text(dValues[1]);
+                $('#ln').text(dValues[0]);
+                $('#lm').text(dValues[1]);
             },
         });
     }
 
-    // function getdowry() {
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getalldowry/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             year: <?= $data['Year']; ?>
-    //         },
-    //         success: function(data) {
-    //             fillPageTable(data);
-    //         },
-    //     });
-    // }
+    function getsandogh() {
+        $.ajax('/MonthStatisticsByMVC/sandogh/getAllSndgh/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                fillPageTable(data);
+            },
+        });
+    }
 
-    // function fillPageTable(data) {
-    //     const dValues = Object.values(data[0]);
-    //     data.forEach(element => {
-    //         $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-    //     });
-    // }
+    function fillPageTable(data) {
+        const dValues = Object.values(data[0]);
+        data.forEach(element => {
+            $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+        });
+    }
 
     // function editDowry() {
     //     let s = String(<?= json_encode($data['Month']); ?>);
