@@ -10,7 +10,7 @@
                         <p class="stat-cards-info__num">تعداد تعمیرات مسکن ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="FRural" class="stat-cards-info__title">43,159</p>
+                            <p id="c_fix" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -28,7 +28,7 @@
                         <p class="stat-cards-info__num">تعداد سرویس بهداشتی و گازکشی ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
-                            <p id="FCity" class="stat-cards-info__title">43,159</p>
+                            <p id="c_wc" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -46,7 +46,7 @@
                         <p class="stat-cards-info__num">تعداد خرید مسکن شهری ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
-                            <p id="FMen" class="stat-cards-info__title">43,159</p>
+                            <p id="c_buyc" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -64,7 +64,7 @@
                         <p class="stat-cards-info__num"> تعداد خرید مسکن روستایی ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-currency-dollar mx-2 stat-cards-icon primary"></i>
-                            <p id="FWonem" class="stat-cards-info__title">43,159</p>
+                            <p id="c_buyr" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -88,7 +88,7 @@
                         <p class="stat-cards-info__num">تعداد احداث مسکن شهری ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="FAll" class="stat-cards-info__title">43,159</p>
+                            <p id="c_crtc" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -106,7 +106,7 @@
                         <p class="stat-cards-info__num">تعداد احداث مسکن روستایی ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
-                            <p id="PAll" class="stat-cards-info__title">43,159</p>
+                            <p id="c_crtr" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -124,7 +124,7 @@
                         <p class="stat-cards-info__num">تعداد تفاهم نامه با بنیاد مستضعفان ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
-                            <p id="FOCity" class="stat-cards-info__title">43,159</p>
+                            <p id="c_tbm" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -142,7 +142,7 @@
                         <p class="stat-cards-info__num"> تعداد تفاهم نامه ساخت با سپاه ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-currency-dollar mx-2 stat-cards-icon primary"></i>
-                            <p id="FORural" class="stat-cards-info__title">43,159</p>
+                            <p id="c_tsep" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -328,47 +328,62 @@
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
-    // $(document).ready(function() {
-    //     recentMonth();
-    //     getsandogh();
-    // });
+    $(document).ready(function() {
+        recentMonth();
+        getmaskan();
+    });
 
-    // function recentMonth() {
-    //     $.ajax('/MonthStatisticsByMVC/sandogh/getrecentsandoghmonth/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         success: function(data) {
-    //             // cnsole.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#recentYR').text(dValues[2]);
-    //             $('#recentMn').text(dValues[3]);
-    //             $('#ln').text(dValues[0]);
-    //             $('#lm').text(dValues[1]);
-    //         },
-    //     });
-    // }
+    function recentMonth() {
+        $.ajax('/MonthStatisticsByMVC/maskan/getrecentmonth/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                // cnsole.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#recentYR').text(dValues[9]);
+                $('#recentMn').text(dValues[10]);
+                $('#c_fix').text(dValues[0]);
+                $('#c_wc').text(dValues[1]);
+                $('#c_buyc').text(dValues[2]);
+                $('#c_buyr').text(dValues[3]);
+                $('#c_crtc').text(dValues[4]);
+                $('#c_crtr').text(dValues[5]);
+                $('#c_tbm').text(dValues[6]);
+                $('#c_tsep').text(dValues[7]);
+                $('#c_sum').text(dValues[8]);
+            },
+        });
+    }
 
-    // function getsandogh() {
-    //     $.ajax('/MonthStatisticsByMVC/sandogh/getAllSndgh/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             year: <?= $data['Year']; ?>
-    //         },
-    //         success: function(data) {
-    //             fillPageTable(data);
-    //         },
-    //     });
-    // }
 
-    // function fillPageTable(data) {
-    //     const dValues = Object.values(data[0]);
-    //     data.forEach(element => {
-    //         $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-    //     });
-    // }
+    function getmaskan() {
+        $.ajax('/MonthStatisticsByMVC/maskan/getAllmskn/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                fillPageTable(data);
+            },
+        });
+    }
+
+    function fillPageTable(data) {
+        const dValues = Object.values(data[0]);
+        data.forEach(element => {
+            $("<th class='newColumn'>" + dValues[9] + "-" + dValues[10] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+            $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
+            $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
+            $("<td class='newColumn'>" + dValues[4] + "</td>").insertAfter($('tbody tr th:nth(4)'));
+            $("<td class='newColumn'>" + dValues[5] + "</td>").insertAfter($('tbody tr th:nth(5)'));
+            $("<td class='newColumn'>" + dValues[6] + "</td>").insertAfter($('tbody tr th:nth(6)'));
+            $("<td class='newColumn'>" + dValues[7] + "</td>").insertAfter($('tbody tr th:nth(7)'));
+            $("<td class='newColumn'>" + dValues[8] + "</td>").insertAfter($('tbody tr th:nth(8)'));
+        });
+    }
 
 
 

@@ -17,4 +17,18 @@
         MaskanModel::insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $sum, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/maskan");
     }
+    /****************************************************************************************** */
+    public  function getrecentmonth()
+    {
+        $recentMonth = MaskanModel::recentmsknMonth();
+        echo json_encode($recentMonth);
+    }
+    /**************************************************** */
+    public  function getAllmskn()
+    {
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = MaskanModel::getAllMaskan($year, $u);
+        echo json_encode($recs);
+    }
 }
