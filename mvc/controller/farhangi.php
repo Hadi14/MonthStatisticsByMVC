@@ -1,14 +1,14 @@
 <? class FarhangiController
 {
-    public  function insertsandogh($param)
+    public  function insertFrng($param)
     {
-        $snum = $_POST['snum'];
-        $smoney = $_POST['smny'];
+        $stu = $_POST['stu'];
+
         $year = $param[0];
         $month = $param[1];
         $user = $_SESSION['suname'];
-        SandoghModel::insertSandogh($snum, $smoney, $year, $month, $user);
-        header("Location:" . getBaseUrl() . "page/sandogh");
+        FarhangiModel::insertFarhangi($stu, $year, $month, $user);
+        header("Location:" . getBaseUrl() . "page/farhangi");
     }
     /****************************************************************************************** */
     public  function getrecentfarhangimonth()

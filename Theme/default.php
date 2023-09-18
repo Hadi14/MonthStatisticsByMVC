@@ -123,7 +123,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="##">ثبت آمار مسکن</a>
+                                    <a href="<?= getBaseUrl() ?>page/maskan">ثبت آمار مسکن</a>
                                 </li>
 
                             </ul>
@@ -138,7 +138,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="##">ثبت آمار اشتغال</a>
+                                    <a href="<?= getBaseUrl() ?>page/job">ثبت آمار اشتغال</a>
                                 </li>
 
                             </ul>
@@ -153,8 +153,23 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="##">ثبت آمار درآمدها</a>
-                                    <a href="##">ثبت آمار اکرام</a>
+                                    <a href="<?= getBaseUrl() ?>page/incomes">ثبت آمار درآمدها</a>
+                                    <a href="<?= getBaseUrl() ?>page/ekram">ثبت آمار اکرام</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="show-cat-btn cat-rt" href="##">
+                                <span class="icon paper" aria-hidden="true"></span>نیروی انسانی
+                                <span class="category__btn transparent-btn r-t" id="" title="Open list">
+                                    <span class="sr-only">Open list</span>
+                                    <span class="icon arrow-down" aria-hidden="true"></span>
+                                </span>
+                            </a>
+                            <ul class="cat-sub-menu">
+                                <li>
+                                    <a href="<?= getBaseUrl() ?>page/employees">ثبت آمار نیروی انسانی</a>
                                 </li>
 
                             </ul>

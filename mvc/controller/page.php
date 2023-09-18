@@ -72,4 +72,13 @@ class PageController
             Render::render('/statistic/farhangi.php', "farhangi", $currdt[0]);
         }
     }
+    function maskan()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/maskan.php', "maskan", $currdt[0]);
+        }
+    }
 }

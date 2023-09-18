@@ -2,8 +2,8 @@
 {
     public  function insertsandogh($param)
     {
-        $snum = $_POST['snum'];
-        $smoney = $_POST['smny'];
+        $snum = $_POST['s_num'];
+        $smoney = $_POST['s_mny'];
         $year = $param[0];
         $month = $param[1];
         $user = $_SESSION['suname'];

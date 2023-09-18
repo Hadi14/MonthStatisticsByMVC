@@ -58,7 +58,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="snum" type="number" class="form-control familyrural" placeholder="تعداد وامهای پرداخت شده">
+                                <input required name="s_num" type="number" class="form-control familyrural" placeholder="تعداد وامهای پرداخت شده">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -66,7 +66,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="smny" type="number" class="form-control familymen" placeholder="مبلغ وامهای پرداخت شده">
+                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="مبلغ وامهای پرداخت شده">
                             </div>
                         </div>
 

@@ -1,10 +1,10 @@
 <? class FarhangiModel
 {
-    static  function insertSandogh($snum, $smny, $year, $month, $user)
+    static  function insertFarhangi($stu, $year, $month, $user)
     {
         $db = Db::getInstance();
-        $db->insert("insert into sandogh (,Year,Month,user) 
-        values  ($snum,$smny'$year','$month','$user')");
+        $db->insert("insert into farhangi (F_numStu,F_Year,F_Month,F_user) 
+        values  ($stu,'$year','$month','$user')");
     }
     /*********************************************************************/
     static  function recentFarhangiMonth()

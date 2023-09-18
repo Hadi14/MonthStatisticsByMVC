@@ -1,0 +1,417 @@
+<main class="main users chart-page" id="skip-target">
+    <div class="container">
+        <h2 class="main-title">آمار مسکن ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
+        <div class="row stat-cards">
+
+            <!-- **** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد تعمیرات مسکن ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
+                            <p id="FRural" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد سرویس بهداشتی و گازکشی ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
+                            <p id="FCity" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد خرید مسکن شهری ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
+                            <p id="FMen" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num"> تعداد خرید مسکن روستایی ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="bi bi-currency-dollar mx-2 stat-cards-icon primary"></i>
+                            <p id="FWonem" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+
+        </div>
+        <div class="row stat-cards">
+
+
+            <!-- **** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد احداث مسکن شهری ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
+                            <p id="FAll" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد احداث مسکن روستایی ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
+                            <p id="PAll" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد تفاهم نامه با بنیاد مستضعفان ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
+                            <p id="FOCity" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num"> تعداد تفاهم نامه ساخت با سپاه ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="bi bi-currency-dollar mx-2 stat-cards-icon primary"></i>
+                            <p id="FORural" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- ****** -->
+        </div>
+
+        <!-- ******************** -->
+        <div class="row">
+            <div class="col-lg-9">
+
+                <form action="<?= getBaseUrl() ?>maskan/insertMskn/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
+                    <div class="row">
+
+                        <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
+                        <label id="cm" class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></label>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input required name="fix" id="fix" type="number" class="form-control familycity" placeholder="تعداد تعمیرات ">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input required name="wc" id="wc" type="number" class="form-control familyrural" placeholder="تعداد س.بهداشتی،گازکشی">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <input required name="buyc" id="buyc" type="number" class="form-control familymen" placeholder="تعداد خرید مسکن شهری">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input required name="buyr" id="buyr" type="number" class="form-control familywomen" placeholder="تعداد خرید مسکن روستایی">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input required name="crtc" id="crtc" type="number" class="form-control familywomen" placeholder="تعداد احداث مسکن شهری">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                                <input required name="crtr" id="crtr" type="number" class="form-control familywomen" placeholder="تعداد احداث مسکن روستایی">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input required name="tbm" id="tbm" type="number" class="form-control allfamily" placeholder="تعداد ت.نامه بنیاد مستضعفان">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input required name="tsep" id="tsep" type="number" class="form-control" placeholder="تعداد ت.نامه با سپاه">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <input readonly required name="sum" id="sum" type="number" class="form-control familyoldcity" placeholder="جمع تعداد">
+                            </div>
+                        </div>
+                        <div class="pt-4">
+                            <input name="submit" type="submit" value="ارسال" class="btn btn-primary  w-100 f-800">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">عنوان/ماه</th>
+                        <th scope="col">ویرایش</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">تعداد تعمیرات مسکن</th>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">احداث سرویس بهداشتی و گازکشی</th>
+                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خرید مسکن شهری</th>
+                        <td><a onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد خرید مسکن روستایی</th>
+                        <td><a onclick="editRecord('3')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد احداث مسکن شهری</th>
+                        <td><a onclick="editRecord('4')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد احداث مسکن روستایی</th>
+                        <td><a onclick="editRecord('5')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تفاهم نامه با بنیاد مستضعفان</th>
+                        <td><a onclick="editRecord('6')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تفاهم نامه با سپاه</th>
+                        <td><a onclick="editRecord('7')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">جمع تعداد</th>
+                        <td><a onclick="editRecord('8')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</main>
+
+<!--------------------------- other Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="dryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">ویرایش اطلاعات رکورد</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-0">
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                        <input id="goal" type="hidden">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editSandogh()">ویرایش</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
+<script>
+    // $(document).ready(function() {
+    //     recentMonth();
+    //     getsandogh();
+    // });
+
+    // function recentMonth() {
+    //     $.ajax('/MonthStatisticsByMVC/sandogh/getrecentsandoghmonth/', {
+    //         type: 'post',
+    //         dataType: "json",
+    //         success: function(data) {
+    //             // cnsole.log(data[0]);
+    //             const dValues = Object.values(data[0]);
+    //             $('#recentYR').text(dValues[2]);
+    //             $('#recentMn').text(dValues[3]);
+    //             $('#ln').text(dValues[0]);
+    //             $('#lm').text(dValues[1]);
+    //         },
+    //     });
+    // }
+
+    // function getsandogh() {
+    //     $.ajax('/MonthStatisticsByMVC/sandogh/getAllSndgh/', {
+    //         type: 'post',
+    //         dataType: "json",
+    //         data: {
+    //             year: <?= $data['Year']; ?>
+    //         },
+    //         success: function(data) {
+    //             fillPageTable(data);
+    //         },
+    //     });
+    // }
+
+    // function fillPageTable(data) {
+    //     const dValues = Object.values(data[0]);
+    //     data.forEach(element => {
+    //         $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
+    //         $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+    //         $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+    //     });
+    // }
+
+
+
+    // function editRecord(id) {
+    //     let s = String(<?= json_encode($data['Month']); ?>);
+    //     $.ajax('/MonthStatisticsByMVC/sandogh/getSndghGoalField/', {
+    //         type: 'post',
+    //         dataType: "json",
+    //         data: {
+    //             'yr': <?= $data['Year']; ?>,
+    //             'mn': s,
+    //         },
+    //         success: function(data) {
+    //             // console.log(data[0]);
+    //             const dValues = Object.values(data[0]);
+    //             $('#goal').val(id);
+    //             if (id == 0)
+    //                 $('#otherrecipientName1').val(dValues[0]);
+    //             else if (id == 1)
+    //                 $('#otherrecipientName1').val(dValues[1]);
+    //         },
+    //     });
+    //     $('#otherrecipientName1').addClass('goalfiled');
+    // }
+
+
+    // function editSandogh() {
+    //     let s = String(<?= json_encode($data['Month']); ?>);
+    //     gfield = $('#goal').val();
+    //     $.ajax('/MonthStatisticsByMVC/sandogh/updateSndgh/' + gfield, {
+    //         type: 'post',
+    //         dataType: "json",
+    //         data: {
+    //             'goalf': +$('#otherrecipientName1').val(),
+    //             'yr': <?= $data['Year']; ?>,
+    //             'mn': s,
+    //         },
+    //         success: function(data) {
+    //             // console.log(data);
+    //             alert('بروزرسانی با موفقیت انجام شد.');
+    //             $('.newColumn').remove();
+    //             getsandogh();
+    //         },
+    //     });
+    // }
+</script>
