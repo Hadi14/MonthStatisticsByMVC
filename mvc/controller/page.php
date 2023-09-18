@@ -63,4 +63,13 @@ class PageController
             Render::render('/statistic/sandogh.php', "sandogh", $currdt[0]);
         }
     }
+    function farhangi()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/farhangi.php', "farhangi", $currdt[0]);
+        }
+    }
 }

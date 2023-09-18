@@ -106,7 +106,7 @@
                             </a>
                             <ul class="cat-sub-menu ">
                                 <li>
-                                    <a href="##">ثبت آمار فرهنگی</a>
+                                    <a href="<?= getBaseUrl() ?>page/farhangi">ثبت آمار فرهنگی</a>
                                 </li>
                             </ul>
                         </li>
