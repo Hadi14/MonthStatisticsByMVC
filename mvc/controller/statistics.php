@@ -44,6 +44,19 @@
         header("Location:" . getBaseUrl() . "page/dowry");
     }
     /****************************************************************************************** */
+    public  function insertInsure($param)
+    {
+        $wn = $_POST['wnum'];
+        $jn = $_POST['jnum'];
+        $is = $_POST['isum'];
+        $imoney = $_POST['imoney'];
+        $year = $param[0];
+        $month = $param[1];
+        $user = $_SESSION['suname'];
+        StatisticsModel::inserInsure($wn, $jn, $is, $imoney, $year, $month, $user);
+        header("Location:" . getBaseUrl() . "page/insure");
+    }
+    /****************************************************************************************** */
     public  function updateAllPopulation()
     {
         $CityFamily = $_POST['familycity'];
@@ -111,6 +124,31 @@
             echo json_encode($rowAffect);
         }
     }
+    /******************************************************** */
+    public  function updateNumInsure()
+    {
+        $wn = $_POST['wn'];
+        $jn = $_POST['jn'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateNumInsure($wn, $jn, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+    /******************************************************** */
+    public  function updateMonyInsure()
+    {
+        $mn = $_POST['im'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = StatisticsModel::updateMoneyInsure($mn, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
     /**************************************************** */
     public  function insertcurrentdate()
     {
@@ -152,6 +190,12 @@
         echo json_encode($recentMonth);
     }
     /**************************************************** */
+    public  function getrecentinsuremonth()
+    {
+        $recentMonth = StatisticsModel::recentInsureMonth();
+        echo json_encode($recentMonth);
+    }
+    /**************************************************** */
     public  function getallpopulation()
     {
         $year = $_POST['year'];
@@ -173,6 +217,14 @@
         $year = $_POST['year'];
         $u = $_SESSION['suname'];
         $recs = StatisticsModel::getallDowry($year, $u);
+        echo json_encode($recs);
+    }
+    /**************************************************** */
+    public  function getallinsure()
+    {
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = StatisticsModel::getallInsure($year, $u);
         echo json_encode($recs);
     }
     /**************************************************** */
@@ -200,6 +252,15 @@
         $month = $_POST['mn'];
         $un = $_SESSION['suname'];
         $goal = StatisticsModel::getdowryGoal($year, $month, $un);
+        echo json_encode($goal);
+    }
+    /************************************************ */
+    public  function getInsureGoalField()
+    {
+        $year = $_POST['yr'];
+        $month = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $goal = StatisticsModel::getinsureGoal($year, $month, $un);
         echo json_encode($goal);
     }
 }

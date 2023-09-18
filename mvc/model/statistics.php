@@ -25,6 +25,13 @@
         $db->insert("insert into dowry (D_NumberDowry,D_MoneyDowry,D_Year,D_month,D_user)values($dNum,$dMoney,'$year','$month','$un')");
     }
     /*********************************************************************/
+    static  function inserInsure($wNum, $jNum, $sum, $money, $year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $db->insert("insert into insure (I_NumWomen,I_NumJob,I_Sum,I_Money,I_Year,I_month,I_user)values($wNum, $jNum,$sum,$money,'$year','$month','$un')");
+    }
+    /*********************************************************************/
     static  function updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $year, $month, $user)
     {
         $db = Db::getInstance();
@@ -67,7 +74,6 @@
         return $rowAffect;
     }
     /********************************************************************** */
-    /********************************************************************** */
     static function updateDowry($Goal, $goalf, $y, $m, $un)
     {
         $db = Db::getInstance();
@@ -79,6 +85,24 @@
         }
         $sql = "update dowry set $retVal=$goalf where D_Year= '$y' and D_Month= '$m' and D_user='$un'";
 
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /********************************************************************** */
+    static function updateNumInsure($wn, $jn, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $sql = "update insure set I_NumWomen=$wn ,I_NumJob=$jn  where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /********************************************************************** */
+    static function updateMoneyInsure($im, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $sql = "update insure set I_Money=$im  where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
@@ -119,6 +143,14 @@
         // dump($record);
         return $record;
         // echo json_encode($record);
+    }
+    /*********************************************************************/
+    static  function getallInsure($year, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from insure where I_Year='$year' and I_user='$un' order by I_Year desc, I_Month desc";
+        $record = $db->query($sql);
+        return $record;
     }
     /*********************************************************************/
     static  function eninserts()
@@ -188,6 +220,14 @@
         return $recentM;
     }
     /*****************************************************************/
+    static  function recentInsureMonth()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from insure order by I_Year desc, I_Month desc limit 1";
+        $recentM = $db->query($sql);
+        return $recentM;
+    }
+    /*****************************************************************/
     static  function getGoal($year, $month, $un)
     {
         $db = Db::getInstance();
@@ -208,6 +248,14 @@
     {
         $db = Db::getInstance();
         $sql = "select * from dowry where D_Year='$year' and D_Month='$month' and D_user='$un'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /*****************************************************************/
+    static  function getinsureGoal($year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from insure where I_Year='$year' and I_Month='$month' and I_user='$un'";
         $g = $db->query($sql);
         return $g;
     }

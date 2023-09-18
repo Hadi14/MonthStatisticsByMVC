@@ -10,7 +10,7 @@
                         <p class="stat-cards-info__num">تعداد زنان سرپرست خانوار ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="dn" class="stat-cards-info__title">43,159</p>
+                            <p id="wn" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -29,7 +29,7 @@
                         <p class="stat-cards-info__num">تعداد مجریان طرحهای اشتغال ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="dn" class="stat-cards-info__title">43,159</p>
+                            <p id="jn" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -47,7 +47,7 @@
                         <p class="stat-cards-info__num">مبلغ هزینه بیمه های اجتماعی ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="dm" class="stat-cards-info__title">43,159</p>
+                            <p id="im" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                <form action="<?= getBaseUrl() ?>statistics/insertinsure/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
+                <form action="<?= getBaseUrl() ?>statistics/insertInsure/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
@@ -77,7 +77,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="familyrural" type="number" class="form-control familyrural" placeholder="تعداد زنان سرپرست خانوار">
+                                <input id="wnum" required name="wnum" type="number" class="form-control Inums" placeholder="تعداد زنان سرپرست خانوار">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -85,7 +85,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="familymen" type="number" class="form-control familymen" placeholder="تعداد مجریان طرح های اشتغال">
+                                <input id="jnum" required name="jnum" type="number" class="form-control Inums" placeholder="تعداد مجریان طرح های اشتغال">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -93,7 +93,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input readonly required name="familymen" type="number" class="form-control familymen" placeholder="جمع تعداد">
+                                <input id="isum" readonly required name="isum" type="number" class="form-control " placeholder="جمع تعداد">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -101,7 +101,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="familymen" type="number" class="form-control familymen" placeholder="مبلغ بیمه های اجتماعی">
+                                <input required name="imoney" type="number" class="form-control familymen" placeholder="مبلغ بیمه های اجتماعی(میلیون ريال)">
                             </div>
                         </div>
 
@@ -123,28 +123,54 @@
                 <tbody>
                     <tr>
                         <th scope="row">تعداد زنان سرپرست خانوار</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد مجریان طرح اشتغال</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('1')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع تعداد</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ بیمه های اجتماعی</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editMoneyRecord()" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
-
                 </tbody>
             </table>
 
         </div>
     </div>
 </main>
-
+<!---------------------------for Nums Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="forNumModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="forOldModalLabel">ویرایش اطلاعات رکورد</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-0">
+                        <label id="forNumfiledlabel1" for="forNumrecipientName1" class="col-form-label"></label>
+                        <input id="forNumrecipientName1" name="wn" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="forNumfiledlabel2" for="forNumrecipientName2" class="col-form-label"></label>
+                        <input id="forNumrecipientName2" name="jn" type="text" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editNumsInsure()">ویرایش</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
 <!--------------------------- other Edit modal  ------------------------------------------------------------------------->
 <div class="modal fade" id="dryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
@@ -158,12 +184,11 @@
                     <div class="mb-0">
                         <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
-                        <input id="goal" type="hidden">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editDowry()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editMoneyInsure()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -171,88 +196,125 @@
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
-    // $(document).ready(function() {
-    //     recentMonth();
-    //     getdowry();
-    // });
+    $(document).ready(function() {
+        recentMonth();
+        getInsure();
+    });
 
-    // function recentMonth() {
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getrecentdowrymonth/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#recentYR').text(dValues[2]);
-    //             $('#recentMn').text(dValues[3]);
-    //             $('#dn').text(dValues[0]);
-    //             $('#dm').text(dValues[1]);
-    //         },
-    //     });
-    // }
+    function recentMonth() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getrecentinsuremonth/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                $('#recentYR').text(dValues[4]);
+                $('#recentMn').text(dValues[5]);
+                $('#wn').text(dValues[0]);
+                $('#jn').text(dValues[1]);
+                $('#im').text(dValues[3]);
+            },
+        });
+    }
 
-    // function getdowry() {
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getalldowry/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             year: <?= $data['Year']; ?>
-    //         },
-    //         success: function(data) {
-    //             fillPageTable(data);
-    //         },
-    //     });
-    // }
+    function getInsure() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getallinsure/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                fillPageTable(data);
+            },
+        });
+    }
 
-    // function fillPageTable(data) {
-    //     const dValues = Object.values(data[0]);
-    //     data.forEach(element => {
-    //         $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-    //     });
-    // }
+    function fillPageTable(data) {
+        const dValues = Object.values(data[0]);
+        data.forEach(element => {
+            $("<th class='newColumn'>" + dValues[4] + "-" + dValues[5] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+            $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
+            $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
+        });
+    }
 
-    // function editDowry() {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     gfield = $('#goal').val();
-    //     $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'goalf': +$('#otherrecipientName1').val(),
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data);
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getdowry();
-    //         },
-    //     });
-    // }
+    function editRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getInsureGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                $('#forNumrecipientName1').val(dValues[0]);
+                $('#forNumrecipientName2').val(dValues[1]);
+                if (id == 0) {
+                    $('#forNumrecipientName1').addClass('goalfiled');
+                    $('#forNumrecipientName2').removeClass('goalfiled');
+                } else if (id == 1) {
+                    $('#forNumrecipientName2').addClass('goalfiled');
+                    $('#forNumrecipientName1').removeClass('goalfiled');
+                }
+            },
+        });
+    }
 
-    // function editRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getDowryGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
+    function editMoneyRecord() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/getInsureGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                $('#otherrecipientName1').val(dValues[3]);
+            },
+        });
+        $('#otherrecipientName1').addClass('goalfiled');
+    }
 
-    //             $('#goal').val(id);
-    //             if (id == 0)
-    //                 $('#otherrecipientName1').val(dValues[0]);
-    //             else if (id == 1)
-    //                 $('#otherrecipientName1').val(dValues[1]);
-    //         },
-    //     });
-    //     $('#otherrecipientName1').addClass('goalfiled');
-    // }
+    function editNumsInsure() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/updateNumInsure/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'wn': +$('#forNumrecipientName1').val(),
+                'jn': +$('#forNumrecipientName2').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getInsure();
+            },
+        });
+    }
+
+    function editMoneyInsure() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/statistics/updateMonyInsure/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'im': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getInsure();
+            },
+        });
+    }
 </script>
