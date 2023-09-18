@@ -97,16 +97,16 @@
 
 
                         <li>
-                            <a class="show-cat-btn cat-rt" href="##">
+                            <a class="show-cat-btn cat-rt " href="##">
                                 <span class="icon bi bi-book" aria-hidden="true"></span>فرهنگی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
                             </a>
-                            <ul class="cat-sub-menu">
+                            <ul class="cat-sub-menu ">
                                 <li>
-                                    <a href="##">فرهنگی</a>
+                                    <a href="##">ثبت آمار فرهنگی</a>
                                 </li>
                             </ul>
                         </li>

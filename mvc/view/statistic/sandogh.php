@@ -87,11 +87,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">تعداد جهیزیه</th>
+                        <th scope="row">تعداد وام های پرداخت شده</th>
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ جهیزیه</th>
+                        <th scope="row">مبلغ وام های پرداخت شده</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
 
@@ -127,10 +127,10 @@
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
-<!-- <script>
+<script>
     $(document).ready(function() {
         recentMonth();
-        getdowry();
+        // getdowry();
     });
 
     function recentMonth() {
@@ -148,68 +148,68 @@
         });
     }
 
-    function getdowry() {
-        $.ajax('/MonthStatisticsByMVC/statistics/getalldowry/', {
-            type: 'post',
-            dataType: "json",
-            data: {
-                year: <?= $data['Year']; ?>
-            },
-            success: function(data) {
-                fillPageTable(data);
-            },
-        });
-    }
+    // function getdowry() {
+    //     $.ajax('/MonthStatisticsByMVC/statistics/getalldowry/', {
+    //         type: 'post',
+    //         dataType: "json",
+    //         data: {
+    //             year: <?= $data['Year']; ?>
+    //         },
+    //         success: function(data) {
+    //             fillPageTable(data);
+    //         },
+    //     });
+    // }
 
-    function fillPageTable(data) {
-        const dValues = Object.values(data[0]);
-        data.forEach(element => {
-            $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
-            $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
-            $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-        });
-    }
+    // function fillPageTable(data) {
+    //     const dValues = Object.values(data[0]);
+    //     data.forEach(element => {
+    //         $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
+    //         $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+    //         $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+    //     });
+    // }
 
-    function editDowry() {
-        let s = String(<?= json_encode($data['Month']); ?>);
-        gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
-            type: 'post',
-            dataType: "json",
-            data: {
-                'goalf': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
-            },
-            success: function(data) {
-                // console.log(data);
-                alert('بروزرسانی با موفقیت انجام شد.');
-                $('.newColumn').remove();
-                getdowry();
-            },
-        });
-    }
+    // function editDowry() {
+    //     let s = String(<?= json_encode($data['Month']); ?>);
+    //     gfield = $('#goal').val();
+    //     $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
+    //         type: 'post',
+    //         dataType: "json",
+    //         data: {
+    //             'goalf': +$('#otherrecipientName1').val(),
+    //             'yr': <?= $data['Year']; ?>,
+    //             'mn': s,
+    //         },
+    //         success: function(data) {
+    //             // console.log(data);
+    //             alert('بروزرسانی با موفقیت انجام شد.');
+    //             $('.newColumn').remove();
+    //             getdowry();
+    //         },
+    //     });
+    // }
 
-    function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
-        $.ajax('/MonthStatisticsByMVC/statistics/getDowryGoalField/', {
-            type: 'post',
-            dataType: "json",
-            data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
-            },
-            success: function(data) {
-                // console.log(data[0]);
-                const dValues = Object.values(data[0]);
+    // function editRecord(id) {
+    //     let s = String(<?= json_encode($data['Month']); ?>);
+    //     $.ajax('/MonthStatisticsByMVC/statistics/getDowryGoalField/', {
+    //         type: 'post',
+    //         dataType: "json",
+    //         data: {
+    //             'yr': <?= $data['Year']; ?>,
+    //             'mn': s,
+    //         },
+    //         success: function(data) {
+    //             // console.log(data[0]);
+    //             const dValues = Object.values(data[0]);
 
-                $('#goal').val(id);
-                if (id == 0)
-                    $('#otherrecipientName1').val(dValues[0]);
-                else if (id == 1)
-                    $('#otherrecipientName1').val(dValues[1]);
-            },
-        });
-        $('#otherrecipientName1').addClass('goalfiled');
-    }
-</script> -->
+    //             $('#goal').val(id);
+    //             if (id == 0)
+    //                 $('#otherrecipientName1').val(dValues[0]);
+    //             else if (id == 1)
+    //                 $('#otherrecipientName1').val(dValues[1]);
+    //         },
+    //     });
+    //     $('#otherrecipientName1').addClass('goalfiled');
+    // }
+</script>

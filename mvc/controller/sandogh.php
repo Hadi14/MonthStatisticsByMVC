@@ -11,4 +11,9 @@
         header("Location:" . getBaseUrl() . "page/sandogh");
     }
     /****************************************************************************************** */
+    public  function getrecentdowrymonth()
+    {
+        $recentMonth = StatisticsModel::recentDowryMonth();
+        echo json_encode($recentMonth);
+    }
 }
