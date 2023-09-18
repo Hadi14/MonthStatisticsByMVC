@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                <form action="<?= getBaseUrl() ?>statistics/insertPopulation/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
+                <form action="<?= getBaseUrl() ?>statistics/insertinsure/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
