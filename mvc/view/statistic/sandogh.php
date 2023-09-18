@@ -120,7 +120,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editDowry()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editSandogh()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -170,46 +170,48 @@
         });
     }
 
-    // function editDowry() {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     gfield = $('#goal').val();
-    //     $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'goalf': +$('#otherrecipientName1').val(),
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data);
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getdowry();
-    //         },
-    //     });
-    // }
 
-    // function editRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getDowryGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
 
-    //             $('#goal').val(id);
-    //             if (id == 0)
-    //                 $('#otherrecipientName1').val(dValues[0]);
-    //             else if (id == 1)
-    //                 $('#otherrecipientName1').val(dValues[1]);
-    //         },
-    //     });
-    //     $('#otherrecipientName1').addClass('goalfiled');
-    // }
+    function editRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/sandogh/getSndghGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#goal').val(id);
+                if (id == 0)
+                    $('#otherrecipientName1').val(dValues[0]);
+                else if (id == 1)
+                    $('#otherrecipientName1').val(dValues[1]);
+            },
+        });
+        $('#otherrecipientName1').addClass('goalfiled');
+    }
+
+
+    function editSandogh() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        gfield = $('#goal').val();
+        $.ajax('/MonthStatisticsByMVC/sandogh/updateSndgh/' + gfield, {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'goalf': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getsandogh();
+            },
+        });
+    }
 </script>

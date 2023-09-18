@@ -22,4 +22,28 @@
         $record = $db->query($sql);
         return $record;
     }
+
+    /*****************************************************************/
+    static  function getSandoghGoal($year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from sandogh where S_Year='$year' and S_Month='$month' and S_user='$un'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /********************************************************************** */
+    static function updateSandogh($Goal, $goalf, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        if ($Goal == 0) {
+            $retVal = 'S_numLeon';
+        } else {
+            $retVal = 'S_moneyLeon';
+        }
+        $sql = "update sandogh set $retVal=$goalf where S_Year= '$y' and S_Month= '$m' and S_user='$un'";
+
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
 }
