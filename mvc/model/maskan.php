@@ -21,4 +21,22 @@
         $record = $db->query($sql);
         return $record;
     }
+    /*****************************************************************/
+    static  function getMaskanGoal($year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from maskan where M_Year='$year' and M_Month='$month' and M_user='$un'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /*****************************************************************/
+    static function updateMaskan($Goal, $goalf, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $ar = array("M_fix", "M_wcGas", "M_Bmc", "M_Bmr", "M_Cmc", "M_Cmr", "M_Tbm", "M_TSep", "M_sum");
+        $sql = "update maskan set $ar[$Goal]=$goalf where M_Year= '$y' and M_Month= '$m' and M_user='$un'";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
 }

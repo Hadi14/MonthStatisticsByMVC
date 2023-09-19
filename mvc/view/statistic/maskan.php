@@ -313,14 +313,14 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <label id="msknfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editSandogh()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editMaskan()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -368,7 +368,40 @@
             },
         });
     }
-
+    /************************************************************************************** */
+    function upsum() {
+        $.ajax('/MonthStatisticsByMVC/maskan/getAllmskn/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                let sum = 0;
+                for (let i = 0; i < dValues.length - 4; i++) {
+                    sum += +dValues[i];
+                }
+                let s = String(<?= json_encode($data['Month']); ?>);
+                gfield = 8;
+                $.ajax('/MonthStatisticsByMVC/maskan/updateMskn/' + gfield, {
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        'goalf': sum,
+                        'yr': <?= $data['Year']; ?>,
+                        'mn': s,
+                    },
+                    success: function(data) {
+                        alert('بروزرسانی با موفقیت انجام شد.');
+                        $('.newColumn').remove();
+                        getmaskan();
+                    },
+                });
+            },
+        });
+    }
+    /**************************************************************************************/
     function fillPageTable(data) {
         const dValues = Object.values(data[0]);
         data.forEach(element => {
@@ -387,46 +420,64 @@
 
 
 
-    // function editRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/sandogh/getSndghGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#goal').val(id);
-    //             if (id == 0)
-    //                 $('#otherrecipientName1').val(dValues[0]);
-    //             else if (id == 1)
-    //                 $('#otherrecipientName1').val(dValues[1]);
-    //         },
-    //     });
-    //     $('#otherrecipientName1').addClass('goalfiled');
-    // }
+    function editRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/maskan/getmsknGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#goal').val(id);
+                if (id == 0) {
+                    $('#otherrecipientName1').val(dValues[0]);
+                    $('#msknfiledlabel1').text("تعداد تعمیرات مسکن:");
+                } else if (id == 1) {
+                    $('#otherrecipientName1').val(dValues[1]);
+                    $('#msknfiledlabel1').text("احداث سرویس بهداشتی و گازکشی:");
+                } else if (id == 2) {
+                    $('#otherrecipientName1').val(dValues[2]);
+                    $('#msknfiledlabel1').text("تعداد خرید مسکن شهری:");
+                } else if (id == 3) {
+                    $('#otherrecipientName1').val(dValues[3]);
+                    $('#msknfiledlabel1').text("تعداد خرید مسکن روستایی:");
+                } else if (id == 4) {
+                    $('#otherrecipientName1').val(dValues[4]);
+                    $('#msknfiledlabel1').text("تعداد احداث مسکن شهری:");
+                } else if (id == 5) {
+                    $('#otherrecipientName1').val(dValues[5]);
+                    $('#msknfiledlabel1').text("تعداد احداث مسکن روستایی:");
+                } else if (id == 6) {
+                    $('#otherrecipientName1').val(dValues[6]);
+                    $('#msknfiledlabel1').text("تفاهم نامه با بنیاد مستضعفان:");
+                } else if (id == 7) {
+                    $('#otherrecipientName1').val(dValues[7]);
+                    $('#msknfiledlabel1').text("تفاهم نامه با سپاه:");
+                }
+            },
+        });
+        $('#otherrecipientName1').addClass('goalfiled');
+    }
 
 
-    // function editSandogh() {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     gfield = $('#goal').val();
-    //     $.ajax('/MonthStatisticsByMVC/sandogh/updateSndgh/' + gfield, {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'goalf': +$('#otherrecipientName1').val(),
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data);
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getsandogh();
-    //         },
-    //     });
-    // }
+    function editMaskan() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        gfield = $('#goal').val();
+        $.ajax('/MonthStatisticsByMVC/maskan/updateMskn/' + gfield, {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'goalf': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                upsum();
+            },
+        });
+    }
 </script>
