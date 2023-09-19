@@ -217,11 +217,11 @@
                 <tbody>
                     <tr>
                         <th scope="row">اشتغال مستقیم از طریق کاریابی</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#DirectModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#JobModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">اشتغال مستقیم از طریق پرداخت تسهیلات</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#DirectModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع اشتغال مستقیم</th>
@@ -229,7 +229,7 @@
                     </tr>
                     <tr>
                         <th scope="row">اشتغال غیر مستقیم ایجاد شده</th>
-                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#noDirectModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع کل اشتغال (مستقیم و غیر مستقیم)</th>
@@ -237,15 +237,15 @@
                     </tr>
                     <tr>
                         <th scope="row">مبلغ کل تسهیلات پرداخت شده (میلیارد ریال)</th>
-                        <td><a onclick="othereditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="otherEditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">آموزش های مهارتی و فنی و حرفه ای </th>
-                        <td><a onclick="OldeditRecord('6')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="otherEditRecord('6')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">طرح های اشتغال فعال تحت نظارت </th>
-                        <td><a onclick="OldeditRecord('7')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a onclick="otherEditRecord('7')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -253,8 +253,8 @@
     </div>
 </main>
 
-<!---------------------------for Direct Job modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="DirectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!---------------------------for Direct& nonDirect Job modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="JobModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
             <div class="modal-header">
@@ -275,6 +275,14 @@
                         <label id="forAllfiledlabel3" for="recipientName3" class="col-form-label">جمع اشتغال مستقیم:</label>
                         <input readonly id="forAllrecipientName3" name="forAllid" type="text" class="form-control">
                     </div>
+                    <div class="mb-0">
+                        <label id="forAllfiledlabel4" for="recipientName3" class="col-form-label">اشتغال غیر مستقیم ایجاد شده:</label>
+                        <input id="forAllrecipientName4" name="forAllid" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="forAllfiledlabel5" for="recipientName3" class="col-form-label">جمع کل اشتغال(مستقیم و غیر مستقیم):</label>
+                        <input readonly id="forAllrecipientName5" name="forAllid" type="text" class="form-control">
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -286,35 +294,6 @@
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 
-<!---------------------------for No Direct Job modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="noDirectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" dir="rtl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="forOldModalLabel">ویرایش اطلاعات رکورد</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-0">
-                        <label id="forOldfiledlabel1" for="recipient-name1" class="col-form-label">اشتغال غیر مستقیم ایجاد شده</label>
-                        <input id="forOldrecipientName1" name="id" type="text" class="form-control">
-                        <input id="gfiled" type="hidden" name="">
-                    </div>
-                    <div class="mb-0">
-                        <label id="forOldfiledlabel2" for="recipient-name1" class="col-form-label">جمع کل اشتغال(مستقیم و غیر مستقیم)</label>
-                        <input id="forOldrecipientName2" name="id" type="text" class="form-control">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editOldPopulation()">ویرایش</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--------------------------------- End of Modal ----------------------------------------------------------->
 
 <!--------------------------- other Edit modal  ------------------------------------------------------------------------->
 <div class="modal fade" id="otherModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -345,7 +324,7 @@
 <script>
     $(document).ready(function() {
         recentMonth();
-        // getAllPopulation();
+        getAllJobes();
     });
 
     function recentMonth() {
@@ -367,130 +346,104 @@
         });
     }
 
-    // function getAllPopulation() {
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getalljob/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             year: <?= $data['Year']; ?>
-    //         },
-    //         success: function(data) {
-    //             fillPageTable(data);
-    //         },
-    //     });
-    // }
+    function getAllJobes() {
+        $.ajax('/MonthStatisticsByMVC/job/getalljob/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $data['Year']; ?>
+            },
+            success: function(data) {
+                fillPageTable(data);
+            },
+        });
+    }
 
-    // function fillPageTable(data) {
-    //     data.forEach(element => {
-    //         $("<th class='newColumn'>" + element['Year'] + "-" + element['Month'] + "</th>").insertAfter($('thead tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
-    //         $("<td class='newColumn'>" + element['Hmy_RuralFamily'] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-    //         $("<td class='newColumn'>" + element['Hmy_WomenFamily'] + "</td>").insertAfter($('tbody tr th:nth(2)'));
-    //         $("<td class='newColumn'>" + element['Hmy_MenFamily'] + "</td>").insertAfter($('tbody tr th:nth(3)'));
-    //         $("<td class='newColumn'>" + element['Hmy_AllFamily'] + "</td>").insertAfter($('tbody tr th:nth(4)'));
-    //         $("<td class='newColumn'>" + element['Hmy_AllPop'] + "</td>").insertAfter($('tbody tr th:nth(5)'));
-    //         $("<td class='newColumn'>" + element['Hmy_OldFamCity'] + "</td>").insertAfter($('tbody tr th:nth(6)'));
-    //         $("<td class='newColumn'>" + element['Hmy_OldFamRural'] + "</td>").insertAfter($('tbody tr th:nth(7)'));
-    //         $("<td class='newColumn'>" + element['Hmy_AllOldFamily'] + "</td>").insertAfter($('tbody tr th:nth(8)'));
-    //         $("<td class='newColumn'>" + element['Hmy_OldPopCity'] + "</td>").insertAfter($('tbody tr th:nth(9)'));
-    //         $("<td class='newColumn'>" + element['Hmy_OldPopRural'] + "</td>").insertAfter($('tbody tr th:nth(10)'));
-    //         $("<td class='newColumn'>" + element['Hmy_AllPopOld'] + "</td>").insertAfter($('tbody tr th:nth(11)'));
+    function fillPageTable(data) {
+        const dValues = Object.values(data[0]);
+        data.forEach(element => {
+            $("<th class='newColumn'>" + dValues[8] + "-" + dValues[9] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+            $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+            $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
+            $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
+            $("<td class='newColumn'>" + dValues[4] + "</td>").insertAfter($('tbody tr th:nth(4)'));
+            $("<td class='newColumn'>" + dValues[5] + "</td>").insertAfter($('tbody tr th:nth(5)'));
+            $("<td class='newColumn'>" + dValues[6] + "</td>").insertAfter($('tbody tr th:nth(6)'));
+            $("<td class='newColumn'>" + dValues[7] + "</td>").insertAfter($('tbody tr th:nth(7)'));
+        });
+    }
 
-    //     });
-    // }
 
-    // function editRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#forAllrecipientName1').val(dValues[0]);
-    //             $('#forAllrecipientName2').val(dValues[1]);
-    //             $('#forAllrecipientName3').val(dValues[3]);
-    //             $('#forAllrecipientName4').val(dValues[2]);
-    //         },
-    //     });
-    //     $('#forAllrecipientName1').removeClass('goalfiled');
-    //     $('#forAllrecipientName2').removeClass('goalfiled');
-    //     $('#forAllrecipientName3').removeClass('goalfiled');
-    //     $('#forAllrecipientName4').removeClass('goalfiled');
-    //     if (id == 0) {
-    //         $('#forAllrecipientName1').addClass('goalfiled');
-    //         // $("#forAllrecipientName1").focus();
+    function editRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/job/getJobGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#forAllrecipientName1').val(dValues[0]);
+                $('#forAllrecipientName2').val(dValues[1]);
+                $('#forAllrecipientName3').val(dValues[2]);
+                $('#forAllrecipientName4').val(dValues[3]);
+                $('#forAllrecipientName5').val(dValues[4]);
+            },
+        });
+        $('#forAllrecipientName1').removeClass('goalfiled');
+        $('#forAllrecipientName2').removeClass('goalfiled');
+        $('#forAllrecipientName3').removeClass('goalfiled');
+        $('#forAllrecipientName4').removeClass('goalfiled');
+        if (id == 0) {
+            $('#forAllrecipientName1').addClass('goalfiled');
+            // $("#forAllrecipientName1").focus();
+        } else if (id == 1) {
+            $('#forAllrecipientName2').addClass('goalfiled');
+            // $('#forAllrecipientName2').focus();
+        } else if (id == 2) {
+            $('#forAllrecipientName3').addClass('goalfiled');
+            // $('#forAllrecipientName3').focus();
+        } else if (id == 3) {
+            $('#forAllrecipientName4').addClass('goalfiled');
+            // $('#forAllrecipientName4').focus();
+        } else if (id == 4) {
+            $('#forAllrecipientName5').addClass('goalfiled');
+            // $('#forAllrecipientName4').focus();
+        }
+    }
 
-    //     } else if (id == 1) {
-    //         $('#forAllrecipientName2').addClass('goalfiled');
-    //         // $('#forAllrecipientName2').focus();
-    //     } else if (id == 2) {
-    //         $('#forAllrecipientName3').addClass('goalfiled');
-    //         // $('#forAllrecipientName3').focus();
-    //     } else if (id == 3) {
-    //         $('#forAllrecipientName4').addClass('goalfiled');
-    //         // $('#forAllrecipientName4').focus();
-    //     }
-    // }
+    function otherEditRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/job/getJobGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#otherrecipientName1').val(dValues[id]);
 
-    // function othereditRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#otherrecipientName1').val(dValues[5]);
+            },
+        });
+        if (id == 5) {
+            $('#otherfiledlabel').text('مبلغ کل تسهیلات پرداخت شده (میلیارد ریال):');
+        } else if (id == 6) {
+            $('#otherfiledlabel').text('آموزش های مهارتی و فنی و حرفه ای:');
+        } else if (id == 7) {
+            $('#otherfiledlabel').text('طرح های اشتغال فعال تحت نظارت:');
+        }
+        $('#otherrecipientName1').addClass('goalfiled');
 
-    //         },
-    //     });
-    //     $('#otherrecipientName1').addClass('goalfiled');
-    // }
+    }
 
-    // function OldeditRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             if (id == 6 || id == 7) {
-    //                 $('#forOldrecipientName1').val(dValues[6]);
-    //                 $('#forOldfiledlabel1').text('تعداد خانوار سالمند شهری:');
-    //                 $('#forOldrecipientName2').val(dValues[7]);
-    //                 $('#forOldfiledlabel2').text('تعداد خانوار سالمند روستایی:');
-    //                 $('#gfiled').val('6');
-    //             } else if (id == 9 || id == 10) {
-    //                 $('#forOldrecipientName1').val(dValues[9]);
-    //                 $('#forOldfiledlabel1').text('تعداد نفرات سالمند شهری:');
-    //                 $('#forOldrecipientName2').val(dValues[10]);
-    //                 $('#forOldfiledlabel2').text('تعداد نفرات سالمند روستایی:');
-    //                 $('#gfiled').val('9');
-    //             }
-    //         },
-    //     });
-    //     $('#forOldrecipientName1').removeClass('goalfiled');
-    //     $('#forOldrecipientName2').removeClass('goalfiled');
-    //     if (id == 6 || id == 9) {
-    //         $('#forOldrecipientName1').addClass('goalfiled');
-    //     } else if (id == 7 || id == 10) {
-    //         $('#forOldrecipientName2').addClass('goalfiled');
-    //     }
-    // }
+
 
     // function editAllpopulation() {
     //     if (+$('#forAllrecipientName1').val() + +$('#forAllrecipientName2').val() != +$('#forAllrecipientName3').val() + +$('#forAllrecipientName4').val()) {

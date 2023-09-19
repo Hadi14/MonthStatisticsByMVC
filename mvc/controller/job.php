@@ -23,4 +23,20 @@
         echo json_encode($recentMonth);
     }
     /**************************************************** */
+    public  function getalljob()
+    {
+        $year = $_POST['year'];
+        $u = $_SESSION['suname'];
+        $recs = JobModel::getAllJob($year, $u);
+        echo json_encode($recs);
+    }
+    /************************************************ */
+    public  function getJobGoalField()
+    {
+        $year = $_POST['yr'];
+        $month = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $goal = JobModel::getJOBGoal($year, $month, $un);
+        echo json_encode($goal);
+    }
 }
