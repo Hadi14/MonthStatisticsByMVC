@@ -39,4 +39,33 @@
         $goal = JobModel::getJOBGoal($year, $month, $un);
         echo json_encode($goal);
     }
+    /****************************************************************************************** */
+    public  function updatejob()
+    {
+        $djsrch = $_POST['DNjob1'];
+        $djleon = $_POST['DNjob2'];
+        $djsum = $_POST['DNjob3'];
+        $ndj = $_POST['DNjob4'];
+        $sum = $_POST['DNjob5'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = JobModel::updateJob($djsrch, $djleon, $djsum, $ndj,  $sum, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+    /******************************************************** */
+    public  function updateotherfielJob()
+    {
+        $gfield = $_POST['gfield'];
+        $value = $_POST['value'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = JobModel::updateOtherFeildJob($gfield, $value, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
 }

@@ -264,29 +264,29 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel1" for="forAllrecipientName1" class="col-form-label">اشتغال مستقیم از طریق کاریابی:</label>
-                        <input id="forAllrecipientName1" name="forAllid" type="text" class="form-control">
+                        <label id="forAllfiledlabel1" for="DNjob1" class="col-form-label">اشتغال مستقیم از طریق کاریابی:</label>
+                        <input id="DNjob1" name="forAllid" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel2" for="recipientName2" class="col-form-label">اشتغال مستقیم از طریق پرداخت تسهیلات:</label>
-                        <input id="forAllrecipientName2" name="forAllid" type="text" class="form-control">
+                        <label id="forAllfiledlabel2" for="DNjob2" class="col-form-label">اشتغال مستقیم از طریق پرداخت تسهیلات:</label>
+                        <input id="DNjob2" name="forAllid" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel3" for="recipientName3" class="col-form-label">جمع اشتغال مستقیم:</label>
-                        <input readonly id="forAllrecipientName3" name="forAllid" type="text" class="form-control">
+                        <label id="forAllfiledlabel3" for="DNjob3" class="col-form-label">جمع اشتغال مستقیم:</label>
+                        <input readonly id="DNjob3" name="forAllid" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel4" for="recipientName3" class="col-form-label">اشتغال غیر مستقیم ایجاد شده:</label>
-                        <input id="forAllrecipientName4" name="forAllid" type="text" class="form-control">
+                        <label id="forAllfiledlabel4" for="DNjob4" class="col-form-label">اشتغال غیر مستقیم ایجاد شده:</label>
+                        <input id="DNjob4" name="forAllid" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel5" for="recipientName3" class="col-form-label">جمع کل اشتغال(مستقیم و غیر مستقیم):</label>
-                        <input readonly id="forAllrecipientName5" name="forAllid" type="text" class="form-control">
+                        <label id="forAllfiledlabel5" for="DNjob5" class="col-form-label">جمع کل اشتغال(مستقیم و غیر مستقیم):</label>
+                        <input readonly id="DNjob5" name="forAllid" type="text" class="form-control">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editAllpopulation()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editjob()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -313,7 +313,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editAllPeoplePopulation()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editotherfieldJob()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -387,32 +387,26 @@
             success: function(data) {
                 // console.log(data[0]);
                 const dValues = Object.values(data[0]);
-                $('#forAllrecipientName1').val(dValues[0]);
-                $('#forAllrecipientName2').val(dValues[1]);
-                $('#forAllrecipientName3').val(dValues[2]);
-                $('#forAllrecipientName4').val(dValues[3]);
-                $('#forAllrecipientName5').val(dValues[4]);
+                $('#DNjob1').val(dValues[0]);
+                $('#DNjob2').val(dValues[1]);
+                $('#DNjob3').val(dValues[2]);
+                $('#DNjob4').val(dValues[3]);
+                $('#DNjob5').val(dValues[4]);
             },
         });
-        $('#forAllrecipientName1').removeClass('goalfiled');
-        $('#forAllrecipientName2').removeClass('goalfiled');
-        $('#forAllrecipientName3').removeClass('goalfiled');
-        $('#forAllrecipientName4').removeClass('goalfiled');
+        $('#DNjob1').removeClass('goalfiled');
+        $('#DNjob2').removeClass('goalfiled');
+        $('#DNjob3').removeClass('goalfiled');
+        $('#DNjob4').removeClass('goalfiled');
         if (id == 0) {
-            $('#forAllrecipientName1').addClass('goalfiled');
-            // $("#forAllrecipientName1").focus();
+            $('#DNjob1').addClass('goalfiled');
+            // $("#DNjob1").focus();
         } else if (id == 1) {
-            $('#forAllrecipientName2').addClass('goalfiled');
-            // $('#forAllrecipientName2').focus();
-        } else if (id == 2) {
-            $('#forAllrecipientName3').addClass('goalfiled');
-            // $('#forAllrecipientName3').focus();
+            $('#DNjob2').addClass('goalfiled');
+            // $('#DNjob2').focus();
         } else if (id == 3) {
-            $('#forAllrecipientName4').addClass('goalfiled');
-            // $('#forAllrecipientName4').focus();
-        } else if (id == 4) {
-            $('#forAllrecipientName5').addClass('goalfiled');
-            // $('#forAllrecipientName4').focus();
+            $('#DNjob4').addClass('goalfiled');
+            // $('#DNjob4').focus();
         }
     }
 
@@ -439,77 +433,56 @@
         } else if (id == 7) {
             $('#otherfiledlabel').text('طرح های اشتغال فعال تحت نظارت:');
         }
+        $('#goalf').val(id);
         $('#otherrecipientName1').addClass('goalfiled');
 
     }
 
 
 
-    // function editAllpopulation() {
-    //     if (+$('#forAllrecipientName1').val() + +$('#forAllrecipientName2').val() != +$('#forAllrecipientName3').val() + +$('#forAllrecipientName4').val()) {
-    //         alert("جمع خانوارشهری و روستایی با خانوار با سرپرست مرد و زن برابر نیست!!!")
-    //         $('#forAllModal').addClass('show');
-    //         // $('#forAllModal').css('display', 'block');
-    //     } else {
-    //         let s = String(<?= json_encode($data['Month']); ?>);
-    //         $.ajax('/MonthStatisticsByMVC/statistics/updateAllPopulation/', {
-    //             type: 'post',
-    //             dataType: "json",
-    //             data: {
-    //                 'familycity': +$('#forAllrecipientName1').val(),
-    //                 'familyrural': +$('#forAllrecipientName2').val(),
-    //                 'familymen': +$('#forAllrecipientName3').val(),
-    //                 'familywomen': +$('#forAllrecipientName4').val(),
-    //                 'yr': <?= $data['Year']; ?>,
-    //                 'mn': s,
-    //             },
-    //             success: function(data) {
-    //                 // console.log(data);
-    //                 alert('بروزرسانی با موفقیت انجام شد.');
-    //                 $('.newColumn').remove();
-    //                 getAllPopulation();
-    //             },
-    //         });
-    //     }
-    // }
+    function editjob() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/job/updatejob/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'DNjob1': +$('#DNjob1').val(),
+                'DNjob2': +$('#DNjob2').val(),
+                'DNjob3': +$('#DNjob3').val(),
+                'DNjob4': +$('#DNjob4').val(),
+                'DNjob5': +$('#DNjob5').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getAllJobes();
+            },
+        });
 
-    // function editOldPopulation() {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/updateOldPopulation/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'one': +$('#forOldrecipientName1').val(),
-    //             'two': +$('#forOldrecipientName2').val(),
-    //             'goalFields': +$('#gfiled').val(),
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data);
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getAllPopulation();
-    //         },
-    //     });
-    // }
+    }
 
-    // function editAllPeoplePopulation() {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/updateAllPeoplePopulation/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'AllPeople': +$('#otherrecipientName1').val(),
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data);
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getAllPopulation();
-    //         },
-    //     });
-    // }
+
+    function editotherfieldJob() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        let value = $('#goalf').val();
+        $.ajax('/MonthStatisticsByMVC/job/updateotherfielJob/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'gfield': +$('#goalf').val(),
+                'value': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getAllJobes();
+            },
+        });
+    }
 </script>

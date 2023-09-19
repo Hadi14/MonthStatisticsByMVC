@@ -21,12 +21,37 @@
         $record = $db->query($sql);
         return $record;
     }
-        /*****************************************************************/
-        static  function getJOBGoal($year, $month, $un)
-        {
-            $db = Db::getInstance();
-            $sql = "select * from job where J_Year='$year' and J_Month='$month' and J_user='$un'";
-            $g = $db->query($sql);
-            return $g;
+    /*****************************************************************/
+    static  function getJOBGoal($year, $month, $un)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from job where J_Year='$year' and J_Month='$month' and J_user='$un'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /*********************************************************************/
+    static  function updateJob($djsrch, $djleon, $djsum, $ndj,  $sum, $year, $month, $user)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        $sql = "update job set J_djSrch=$djsrch , J_djLeon=$djleon , J_djSum=$djsum , J_ndj=$ndj , J_sum=$sum  where J_Year= '$year' and J_Month= '$month' and J_user='$user'";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /********************************************************************** */
+    static function updateOtherFeildJob($gfield, $value, $y, $m, $un)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['suname'];
+        if ($gfield == 5) {
+            $goalF = 'J_leonMny';
+        } else if ($gfield == 6) {
+            $goalF = 'J_faniLearn';
+        } else if ($gfield == 7) {
+            $goalF = 'J_Supervision';
         }
+        $sql = "update job set $goalF=$value where J_Year= '$y' and J_Month= '$m' and J_user='$un'";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
 }
