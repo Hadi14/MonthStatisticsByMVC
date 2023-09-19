@@ -81,4 +81,13 @@ class PageController
             Render::render('/statistic/maskan.php', "maskan", $currdt[0]);
         }
     }
+    function job()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/job.php', "job", $currdt[0]);
+        }
+    }
 }
