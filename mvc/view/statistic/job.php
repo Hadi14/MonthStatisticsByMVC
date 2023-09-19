@@ -10,7 +10,7 @@
                         <p class="stat-cards-info__num">اشتغال مستقیم از طریق کاریابی</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="FRural" class="stat-cards-info__title">43,159</p>
+                            <p id="jds" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -28,7 +28,7 @@
                         <p class="stat-cards-info__num">اشتغال مستقیم از طریق پرداخت تسهیلات</p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
-                            <p id="FCity" class="stat-cards-info__title">43,159</p>
+                            <p id="jdl" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -46,7 +46,7 @@
                         <p class="stat-cards-info__num">اشتغال غیر مستقیم ایجاد شده</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
-                            <p id="FMen" class="stat-cards-info__title">43,159</p>
+                            <p id="nj" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -67,7 +67,7 @@
                         <p class="stat-cards-info__num">مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
-                            <p id="FAll" class="stat-cards-info__title">43,159</p>
+                            <p id="jmoney" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -85,7 +85,7 @@
                         <p class="stat-cards-info__num">آموزش های مهارتی و فنی و حرفه ای </p>
                         <div class="d-flex  align-items-center">
                             <i class="bi bi-cash-stack mx-2 stat-cards-icon primary"></i>
-                            <p id="PAll" class="stat-cards-info__title">43,159</p>
+                            <p id="flearn" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -103,7 +103,7 @@
                         <p class="stat-cards-info__num">طرح های اشتغال فعال تحت نظارت </p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid fa-user-nurse  mx-2 stat-cards-icon primary"></i>
-                            <p id="FOCity" class="stat-cards-info__title">43,159</p>
+                            <p id="supervi" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
                             <span class="stat-cards-info__profit success mx-1">
@@ -122,7 +122,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                <form action="<?= getBaseUrl() ?>maskan/insertMskn/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
+                <form action="<?= getBaseUrl() ?>job/insertjob/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
@@ -135,7 +135,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="fix" id="fix" type="number" class="form-control familycity" placeholder="اشتغال مستقیم کاریابی ">
+                                <input required name="i_jds" id="i_jds" type="number" class="form-control familycity" placeholder="اشتغال مستقیم کاریابی ">
                             </div>
 
                         </div>
@@ -144,7 +144,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="wc" id="wc" type="number" class="form-control familyrural" placeholder="اشتغال مستقیم پرداخت تسهیلات
+                                <input required name="i_jdl" id="i_jdl" type="number" class="form-control familyrural" placeholder="اشتغال مستقیم پرداخت تسهیلات
 
 ">
                             </div>
@@ -154,7 +154,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="buyc" id="buyc" type="number" class="form-control familymen" placeholder="جمع اشتغال مستقیم">
+                                <input readonly required name="i_jdsum" id="i_jdsum" type="number" class="form-control familymen" placeholder="جمع اشتغال مستقیم">
                             </div>
                         </div>
 
@@ -164,7 +164,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="buyr" id="buyr" type="number" class="form-control familywomen" placeholder="اشتغال غیر مستقیم ایجاد شده">
+                                <input required name="i_nj" id="i_nj" type="number" class="form-control familywomen" placeholder="اشتغال غیر مستقیم ایجاد شده">
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -172,7 +172,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="crtc" id="crtc" type="number" class="form-control familywomen" placeholder="جمع کل اشتغال(مستقیم و غیر مستقیم)">
+                                <input readonly required name="i_jsum" id="i_jsum" type="number" class="form-control familywomen" placeholder="جمع کل اشتغال(مستقیم و غیر مستقیم)">
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -180,7 +180,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="crtc" id="crtc" type="number" class="form-control familywomen" placeholder="مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)">
+                                <input required name="i_jmoney" id="i_jmoney" type="number" class="form-control familywomen" placeholder="مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)">
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -188,7 +188,7 @@
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="crtr" id="crtr" type="number" class="form-control familywomen" placeholder="آموزش های مهارتی و فنی و حرفه ای ">
+                                <input required name="i_flearn" id="i_flearn" type="number" class="form-control familywomen" placeholder="آموزش های مهارتی و فنی و حرفه ای ">
                             </div>
                         </div>
                         <div class="col-md-6 ">
@@ -196,7 +196,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="tbm" id="tbm" type="number" class="form-control allfamily" placeholder="طرح های اشتغال فعال تحت نظارت">
+                                <input required name="i_supervi" id="i_supervi" type="number" class="form-control allfamily" placeholder="طرح های اشتغال فعال تحت نظارت">
                             </div>
                         </div>
                         <div class="pt-4">
@@ -216,62 +216,45 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">تعداد خانوار شهری</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <th scope="row">اشتغال مستقیم از طریق کاریابی</th>
+                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#DirectModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد خانوار روستایی</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <th scope="row">اشتغال مستقیم از طریق پرداخت تسهیلات</th>
+                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#DirectModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td><a onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">تعداد کل خانوار</th>
+                        <th scope="row">جمع اشتغال مستقیم</th>
                         <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد کل نفرات</th>
+                        <th scope="row">اشتغال غیر مستقیم ایجاد شده</th>
+                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#noDirectModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">جمع کل اشتغال (مستقیم و غیر مستقیم)</th>
+                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">مبلغ کل تسهیلات پرداخت شده (میلیارد ریال)</th>
                         <td><a onclick="othereditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td><a onclick="OldeditRecord('6')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <th scope="row">آموزش های مهارتی و فنی و حرفه ای </th>
+                        <td><a onclick="OldeditRecord('6')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td><a onclick="OldeditRecord('7')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td><a onclick="OldeditRecord('9')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td><a onclick="OldeditRecord('10')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <th scope="row">طرح های اشتغال فعال تحت نظارت </th>
+                        <td><a onclick="OldeditRecord('7')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
 </main>
 
 <!---------------------------for Direct Job modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="forAllModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="DirectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
             <div class="modal-header">
@@ -281,20 +264,16 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel1" for="forAllrecipientName1" class="col-form-label">تعداد خانوار شهری:</label>
+                        <label id="forAllfiledlabel1" for="forAllrecipientName1" class="col-form-label">اشتغال مستقیم از طریق کاریابی:</label>
                         <input id="forAllrecipientName1" name="forAllid" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel2" for="recipientName2" class="col-form-label">تعداد خانوار روستایی:</label>
+                        <label id="forAllfiledlabel2" for="recipientName2" class="col-form-label">اشتغال مستقیم از طریق پرداخت تسهیلات:</label>
                         <input id="forAllrecipientName2" name="forAllid" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forAllfiledlabel3" for="recipientName3" class="col-form-label">تعداد خانوار باسرپرست زن:</label>
-                        <input id="forAllrecipientName3" name="forAllid" type="text" class="form-control">
-                    </div>
-                    <div class="mb-0">
-                        <label id="forAllfiledlabel4" for="recipientName4" class="col-form-label">تعداد خانوار باسرپرست مرد:</label>
-                        <input id="forAllrecipientName4" name="forAllid" type="text" class="form-control">
+                        <label id="forAllfiledlabel3" for="recipientName3" class="col-form-label">جمع اشتغال مستقیم:</label>
+                        <input readonly id="forAllrecipientName3" name="forAllid" type="text" class="form-control">
                     </div>
                 </form>
             </div>
@@ -308,7 +287,7 @@
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 
 <!---------------------------for No Direct Job modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="forOldModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="noDirectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
             <div class="modal-header">
@@ -318,12 +297,12 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="forOldfiledlabel1" for="recipient-name1" class="col-form-label"></label>
+                        <label id="forOldfiledlabel1" for="recipient-name1" class="col-form-label">اشتغال غیر مستقیم ایجاد شده</label>
                         <input id="forOldrecipientName1" name="id" type="text" class="form-control">
                         <input id="gfiled" type="hidden" name="">
                     </div>
                     <div class="mb-0">
-                        <label id="forOldfiledlabel2" for="recipient-name1" class="col-form-label"></label>
+                        <label id="forOldfiledlabel2" for="recipient-name1" class="col-form-label">جمع کل اشتغال(مستقیم و غیر مستقیم)</label>
                         <input id="forOldrecipientName2" name="id" type="text" class="form-control">
                     </div>
                 </form>
@@ -348,8 +327,9 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">تعداد کل نفرات:</label>
+                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label"></label>
                         <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
+                        <input id="goalf" type="hidden">
                     </div>
                 </form>
             </div>
@@ -363,34 +343,32 @@
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <!-- ***************************************************************************************************************** -->
 <script>
-    // $(document).ready(function() {
-    //     recentMonth();
-    //     getAllPopulation();
-    // });
+    $(document).ready(function() {
+        recentMonth();
+        // getAllPopulation();
+    });
 
-    // function recentMonth() {
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getrecentmonth/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#recentYR').text(dValues[13]);
-    //             $('#recentMn').text(dValues[12]);
-    //             $('#FRural').text(dValues[1]);
-    //             $('#FCity').text(dValues[0]);
-    //             $('#FMen').text(dValues[2]);
-    //             $('#FWonem').text(dValues[3]);
-    //             $('#FAll').text(dValues[4]);
-    //             $('#PAll').text(dValues[5]);
-    //             $('#FOCity').text(dValues[6]);
-    //             $('#FORural').text(dValues[7]);
-    //         },
-    //     });
-    // }
+    function recentMonth() {
+        $.ajax('/MonthStatisticsByMVC/job/getrecentJobmonth/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#recentYR').text(dValues[8]);
+                $('#recentMn').text(dValues[9]);
+                $('#jds').text(dValues[0]);
+                $('#jdl').text(dValues[1]);
+                $('#nj').text(dValues[3]);
+                $('#jmoney').text(dValues[5]);
+                $('#flearn').text(dValues[6]);
+                $('#supervi').text(dValues[7]);
+            },
+        });
+    }
 
     // function getAllPopulation() {
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
+    //     $.ajax('/MonthStatisticsByMVC/statistics/getalljob/', {
     //         type: 'post',
     //         dataType: "json",
     //         data: {
