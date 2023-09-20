@@ -26,4 +26,26 @@
         $recs = EmployeeModel::getallEmployee($year, $u);
         echo json_encode($recs);
     }
+    /************************************************ */
+    public  function getEmplGoalField()
+    {
+        $year = $_POST['yr'];
+        $month = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $goal = EmployeeModel::getEmployeeGoal($year, $month, $un);
+        echo json_encode($goal);
+    }
+    /******************************************************** */
+    public  function updateEkram($param)
+    {
+        $goalf = $_POST['goalf'];
+        $y = $_POST['yr'];
+        $m = $_POST['mn'];
+        $un = $_SESSION['suname'];
+        $rowAffect = EkramModel::updateEkram($param[0], $goalf, $y, $m, $un);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+
 }

@@ -91,12 +91,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">تعداد ایتام و محسنین</th>
+                        <th scope="row">تعداد نیروهای رسمی</th>
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد حامیان</th>
+                        <th scope="row">تعداد نیروهای غیر رسمی</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد کل نیروها</th>
+                        <td><a onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -115,14 +119,22 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="Ekrmfiledlabel1" for="otherrecipientName1" class="col-form-label"></label>
+                        <label id="Emplfiledlabel1" for="otherrecipientName1" class="col-form-label"></label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
+                    </div>
+                    <div class="mb-0">
+                        <label id="Emplfiledlabel2" for="otherrecipientName2" class="col-form-label"></label>
+                        <input id="otherrecipientName2" name="otherrecipientName1" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="Emplfiledlabel3" for="otherrecipientName3" class="col-form-label"></label>
+                        <input id="otherrecipientName3" name="otherrecipientName1" type="text" class="form-control">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editIncome()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editEmployee()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -132,7 +144,7 @@
 <script>
     $(document).ready(function() {
         recentEmplMonth();
-        // getEkram();
+        getEmployee();
     });
 
     function recentEmplMonth() {
@@ -173,51 +185,58 @@
         });
     }
 
-    // function editRecord(id) {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     $.ajax('/MonthStatisticsByMVC/ekram/getEkrmGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data[0]);
-    //             const dValues = Object.values(data[0]);
-    //             $('#goal').val(id);
-    //             if (id == 0) {
-    //                 $('#otherrecipientName1').val(dValues[0]);
-    //                 $('#Ekrmfiledlabel1').text('تعداد ایتام و محسنین:');
+    function editRecord(id) {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        $.ajax('/MonthStatisticsByMVC/employee/getEmplGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data[0]);
+                const dValues = Object.values(data[0]);
+                $('#goal').val(id);
+                $('#otherrecipientName1').val(dValues[0]);
+                $('#Emplfiledlabel1').text('تعداد کارکنان رسمی:');
+                $('#otherrecipientName2').val(dValues[1]);
+                $('#Emplfiledlabel2').text('تعداد کارکنان غیر رسمی:');
+                $('#otherrecipientName3').val(dValues[2]);
+                $('#Emplfiledlabel3').text('تعداد کل حامیان:');
 
-    //             } else if (id == 1) {
-    //                 $('#otherrecipientName1').val(dValues[1]);
-    //                 $('#Ekrmfiledlabel1').text('تعداد حامیان:');
-    //             }
+                $('#otherrecipientName1').removeClass('goalfiled');
+                $('#otherrecipientName2').removeClass('goalfiled');
+                $('#otherrecipientName3').removeClass('goalfiled');
+                if (id == 0) {
+                    $('#otherrecipientName1').addClass('goalfiled');
+                } else if (id == 1) {
+                    $('#otherrecipientName2').addClass('goalfiled');
+                } else if (id == 2) {
+                    $('#otherrecipientName3').addClass('goalfiled');
+                }
+            }
+        });
+    }
 
-    //         },
-    //     });
-    //     $('#otherrecipientName1').addClass('goalfiled');
-    // }
 
-
-    // function editIncome() {
-    //     let s = String(<?= json_encode($data['Month']); ?>);
-    //     gfield = $('#goal').val();
-    //     $.ajax('/MonthStatisticsByMVC/ekram/updateEkram/' + gfield, {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'goalf': +$('#otherrecipientName1').val(),
-    //             'yr': <?= $data['Year']; ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             // console.log(data);
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getEmployee();
-    //         },
-    //     });
-    // }
+    function editEmployee() {
+        let s = String(<?= json_encode($data['Month']); ?>);
+        gfield = $('#goal').val();
+        $.ajax('/MonthStatisticsByMVC/employee/updateEkram/' + gfield, {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'goalf': +$('#otherrecipientName1').val(),
+                'yr': <?= $data['Year']; ?>,
+                'mn': s,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getEmployee();
+            },
+        });
+    }
 </script>
