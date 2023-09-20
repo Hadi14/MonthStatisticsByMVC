@@ -90,4 +90,22 @@ class PageController
             Render::render('/statistic/job.php', "job", $currdt[0]);
         }
     }
+    function income()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/income.php', "income", $currdt[0]);
+        }
+    }
+    function ekram()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/ekram.php', "ekram", $currdt[0]);
+        }
+    }
 }

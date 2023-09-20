@@ -153,7 +153,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/incomes">ثبت آمار درآمدها</a>
+                                    <a href="<?= getBaseUrl() ?>page/income">ثبت آمار درآمدها</a>
                                     <a href="<?= getBaseUrl() ?>page/ekram">ثبت آمار اکرام</a>
                                 </li>
 
