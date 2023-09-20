@@ -152,7 +152,6 @@
             type: 'post',
             dataType: "json",
             success: function(data) {
-                // console.log(data[0]);
                 const dValues = Object.values(data[0]);
                 $('#recentYR').text(dValues[3]);
                 $('#recentMn').text(dValues[4]);
@@ -195,7 +194,6 @@
                 'mn': s,
             },
             success: function(data) {
-                // console.log(data[0]);
                 const dValues = Object.values(data[0]);
                 $('#goal').val(id);
                 $('#otherrecipientName1').val(dValues[0]);
@@ -223,16 +221,17 @@
     function editEmployee() {
         let s = String(<?= json_encode($data['Month']); ?>);
         gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/employee/updateEkram/' + gfield, {
+        $.ajax('/MonthStatisticsByMVC/employee/updateEkram/', {
             type: 'post',
             dataType: "json",
             data: {
-                'goalf': +$('#otherrecipientName1').val(),
+                'em_offic': +$('#otherrecipientName1').val(),
+                'em_comp': +$('#otherrecipientName2').val(),
+                'em_sum': +$('#otherrecipientName3').val(),
                 'yr': <?= $data['Year']; ?>,
                 'mn': s,
             },
             success: function(data) {
-                // console.log(data);
                 alert('بروزرسانی با موفقیت انجام شد.');
                 $('.newColumn').remove();
                 getEmployee();

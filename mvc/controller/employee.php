@@ -38,14 +38,15 @@
     /******************************************************** */
     public  function updateEkram($param)
     {
-        $goalf = $_POST['goalf'];
+        $offic = $_POST['em_offic'];
+        $comp = $_POST['em_comp'];
+        $sum = $_POST['em_sum'];
         $y = $_POST['yr'];
         $m = $_POST['mn'];
         $un = $_SESSION['suname'];
-        $rowAffect = EkramModel::updateEkram($param[0], $goalf, $y, $m, $un);
+        $rowAffect = EmployeeModel::updateEmployee($offic, $comp, $sum, $y, $m, $un);
         if ($rowAffect) {
             echo json_encode($rowAffect);
         }
     }
-
 }

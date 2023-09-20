@@ -31,16 +31,12 @@
         return $g;
     }
     /********************************************************************** */
-    static function updateEkramBBBBBBBBBBB($Goal, $value, $y, $m, $un)
+    static function updateEmployee($offic, $comp, $sum, $y, $m, $un)
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        if ($Goal == 0) {
-            $retVal = 'E_orphan';
-        } else  if ($Goal == 1) {
-            $retVal = 'E_supports';
-        }
-        $sql = "update employee set $retVal=$value where E_Year= '$y' and E_Month= '$m' and E_user='$un'";
+
+        $sql = "update employee set Em_official=$offic,Em_company=$comp ,Em_sum=$sum where Em_Year= '$y' and Em_Month= '$m' and Em_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
