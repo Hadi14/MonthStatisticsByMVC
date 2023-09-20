@@ -20,4 +20,12 @@
         $out = ob_get_clean();
         require_once('theme/logintheme.php');
     }
+    public static function renderReport($filePath,  $data = array())
+    {
+        extract($data);
+        ob_start();
+        require_once("mvc/view/" . $filePath);
+        $out = ob_get_clean();
+        require_once('theme/reporttheme.php');
+    }
 }

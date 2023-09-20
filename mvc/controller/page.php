@@ -117,4 +117,13 @@ class PageController
             Render::render('/statistic/employee.php', "employee", $currdt[0]);
         }
     }
+    function report()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::renderReport('/report/reportwn.php', $currdt[0]);
+        }
+    }
 }

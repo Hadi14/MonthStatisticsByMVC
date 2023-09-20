@@ -205,7 +205,7 @@
                         </li>
                         <li>
                             <a class="show-cat-btn" href="##">
-                                <span class="icon user-3" aria-hidden="true"></span>Users
+                                <span class="icon user-3" aria-hidden="true"></span>گزارشات
                                 <span class="category__btn transparent-btn" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
@@ -213,7 +213,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="#">Users-01</a>
+                                    <a href="<?= getBaseUrl() ?>page/report">گزارش ماه اخیر</a>
                                 </li>
                                 <li>
                                     <a href="#">Users-02</a>
@@ -347,13 +347,13 @@
                     </div>
                 </div>
             </nav>
-            <!-- ! Main -->
+            <!--Main !-->
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
                     <?= $out ?>
                 </div>
             </main>
-            <!-- ! Footer -->
+            <!--Footer !-->
             <footer class="footer">
                 <div class="container footer--flex">
                     <div class="footer-start">

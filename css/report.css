@@ -1,0 +1,31 @@
+@font-face {
+    font-family: vazirf;
+    src: url("../fonts/Vazir.ttf");
+}
+
+@font-face {
+    font-family: vazir-digit;
+    src: url("../fonts/Vazir-FD.ttf");
+}
+
+body {
+    text-align: center;
+}
+
+table {
+    border: 1px solid gray;
+
+
+}
+
+td,
+th {
+    border: 1px solid lightgray;
+    vertical-align: middle !important;
+    font-family: vazir-digit;
+}
+
+
+td:nth-last-child(2) {
+    text-align: right;
+}
