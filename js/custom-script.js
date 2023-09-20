@@ -1,15 +1,4 @@
-var show = document.querySelectorAll('.cat-rt');
-show.forEach(element => {
-    element.addEventListener('click', (e) => {
-        e.target.childNodes[3].classList.toggle('rotated');
-    })
-});
-
-
 // var logout = document.querySelector('.log-out');
 // logout.addEventListener('click', () => {
 //     sessionStorage.clear();
 // })
-
-
-

@@ -177,8 +177,7 @@
                         <li>
                             <a href="###">
                                 <span class="icon message" aria-hidden="true"></span>
-                                نیروی انسانی
-                            </a>
+                                تست </a>
                             <span class="msg-counter">7</span>
                         </li>
                     </ul>
@@ -376,6 +375,7 @@
     <!-- Custom scripts -->
     <script src="<?= getBaseUrl() ?>js/script.js"></script>
     <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
+    <script src="<?= getBaseUrl() ?>js/common.js"></script>
     <script src="<?= getBaseUrl() ?>js/<?= $jsfile ?>.js"></script>
 
 </body>
