@@ -108,4 +108,13 @@ class PageController
             Render::render('/statistic/ekram.php', "ekram", $currdt[0]);
         }
     }
+    function employee()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/employee.php', "employee", $currdt[0]);
+        }
+    }
 }

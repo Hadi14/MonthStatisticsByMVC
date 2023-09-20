@@ -169,7 +169,7 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/employees">ثبت آمار نیروی انسانی</a>
+                                    <a href="<?= getBaseUrl() ?>page/employee">ثبت آمار نیروی انسانی</a>
                                 </li>
 
                             </ul>
