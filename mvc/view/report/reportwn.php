@@ -90,12 +90,12 @@
             <tr>
                 <th scope="row">7</th>
                 <td colspan="4">تعداد وام ازدواج پرداخت شده</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="MrgLnum">عدم ثبت</td>
             </tr>
             <tr>
                 <th scope="row">8</th>
                 <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیارد ريال)</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="MrgLmoney">عدم ثبت</td>
             </tr>
             <tr>
                 <th scope="row">9</th>
@@ -187,68 +187,68 @@
                 <th rowspan="4" scope="row">14</th>
                 <td rowspan="4">بیمه های اجتماعی</td>
                 <td colspan="3">تعداد زنان سرپرست خانوار</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="inwom">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">تعداد مجریان طرح های اشتغال</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="insjob">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">جمع</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="insall">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">میزان هزینه(میلیون ریال)</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="insmoney">عدم ثبت</td>
             </tr>
             <tr>
                 <th rowspan="8" scope="row">15</th>
                 <td rowspan="8">مشارکتهای مردمی</td>
                 <td colspan="3">صدقات (میلیارد ریال)</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="charity">عدم ثبت</td>
             </tr>
             <tr>
                 <td rowspan="3">اکرام</td>
                 <td colspan="2">مبلغ پرداختی حامیان به ایتام(میلیارد ریال )</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="orphmoney">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="2">تعداد ایتام و محسنین دارای حامی</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="orphnum">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="2">تعداد حامیان طرح اکرام(حقیقی و حقوقی)و محسنین</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="supports">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">زکات و کفارات (میلیارد ریال)</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="zakat">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">مبتنی بر نیاز</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="basneed">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">میزان کل درآمدهای اختصاصی و وجوهات امانی(میلیارد ریال) </td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="allmoney">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">مراکز نیکوکاری(در جمع کل درآمدها لحاظ گردیده است-میلیارد ریال)</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="marakezmoney">عدم ثبت</td>
             </tr>
             <tr>
                 <th rowspan="3" scope="row">16</th>
                 <td rowspan="3">تعداد پرسنل</td>
                 <td colspan="3">رسمی</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="offi">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">غیررسمی</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="comp">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">جمع کل</td>
-                <td id="BBBBBB">عدم ثبت</td>
+                <td id="esum">عدم ثبت</td>
             </tr>
         </tbody>
     </table>
@@ -269,6 +269,7 @@
         job();
         insure();
         mosharekat();
+        ekram();
         employee();
     });
     // ***********************************************************
@@ -395,9 +396,7 @@
     }
     // ***********************************************************
     function job() {
-        // insure();
-        // mosharekat();
-        // employee();
+
         let s = String(<?= json_encode($mn); ?>);
         $.ajax('/MonthStatisticsByMVC/report/getSelectedJBRpt/', {
             type: 'post',
@@ -423,76 +422,82 @@
     // ***********************************************************
     function insure() {
 
-        // let s = String(<?= json_encode($mn); ?>);
-        // $.ajax('/MonthStatisticsByMVC/report/getSelectedJBRpt/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         year: <?= $yr; ?>,
-        //         month: s
-        //     },
-        //     success: function(data) {
-        //         // console.log(data);
-        //         const dValues = Object.values(data[0]);
-        //         $('#dsicj').text(dValues[0]);
-        //         $('#dljob').text(dValues[1]);
-        //         $('#alldic').text(dValues[2]);
-        //         $('#ndjob').text(dValues[3]);
-        //         $('#alljob').text(dValues[4]);
-        //         $('#jleonmoney').text(dValues[5]);
-        //         $('#flearn').text(dValues[6]);
-        //         $('#jsup').text(dValues[7]);
-        //     },
-        // });
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getSelectedInsuRpt/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                // console.log(data);
+                const dValues = Object.values(data[0]);
+                $('#inwom').text(dValues[0]);
+                $('#insjob').text(dValues[1]);
+                $('#insall').text(dValues[2]);
+                $('#insmoney').text(dValues[3]);
+            },
+        });
     }
     // ***********************************************************
     function mosharekat() {
-
-        // let s = String(<?= json_encode($mn); ?>);
-        // $.ajax('/MonthStatisticsByMVC/report/getSelectedJBRpt/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         year: <?= $yr; ?>,
-        //         month: s
-        //     },
-        //     success: function(data) {
-        //         // console.log(data);
-        //         const dValues = Object.values(data[0]);
-        //         $('#dsicj').text(dValues[0]);
-        //         $('#dljob').text(dValues[1]);
-        //         $('#alldic').text(dValues[2]);
-        //         $('#ndjob').text(dValues[3]);
-        //         $('#alljob').text(dValues[4]);
-        //         $('#jleonmoney').text(dValues[5]);
-        //         $('#flearn').text(dValues[6]);
-        //         $('#jsup').text(dValues[7]);
-        //     },
-        // });
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getSelectedIncmRpt/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                // console.log(data);
+                const dValues = Object.values(data[0]);
+                $('#charity').text(dValues[0]);
+                $('#orphmoney').text(dValues[1]);
+                $('#zakat').text(dValues[2]);
+                $('#basneed').text(dValues[3]);
+                $('#allmoney').text(dValues[4]);
+                $('#marakezmoney').text(dValues[5]);
+            },
+        });
+    }
+    // ***********************************************************
+    function ekram() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getSelectedEkrmRpt/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                // console.log(data);
+                const dValues = Object.values(data[0]);
+                $('#orphnum').text(dValues[0]);
+                $('#supports').text(dValues[1]);
+            },
+        });
     }
     // ***********************************************************
     function employee() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getSelectedEmpRpt/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                // console.log(data);
+                const dValues = Object.values(data[0]);
+                $('#offi').text(dValues[0]);
+                $('#comp').text(dValues[1]);
+                $('#esum').text(dValues[2]);
 
-        // let s = String(<?= json_encode($mn); ?>);
-        // $.ajax('/MonthStatisticsByMVC/report/getSelectedJBRpt/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         year: <?= $yr; ?>,
-        //         month: s
-        //     },
-        //     success: function(data) {
-        //         // console.log(data);
-        //         const dValues = Object.values(data[0]);
-        //         $('#dsicj').text(dValues[0]);
-        //         $('#dljob').text(dValues[1]);
-        //         $('#alldic').text(dValues[2]);
-        //         $('#ndjob').text(dValues[3]);
-        //         $('#alljob').text(dValues[4]);
-        //         $('#jleonmoney').text(dValues[5]);
-        //         $('#flearn').text(dValues[6]);
-        //         $('#jsup').text(dValues[7]);
-        //     },
-        // });
+            },
+        });
     }
 </script>

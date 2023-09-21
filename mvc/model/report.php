@@ -57,4 +57,36 @@
         $record = $db->query($sql);
         return $record;
     }
+    /*********************************************************************/
+    static  function getSelectedInsureRpt($year, $mn)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from insure where I_Year='$year' and I_Month='$mn'";
+        $record = $db->query($sql);
+        return $record;
+    }
+    /*********************************************************************/
+    static  function getSelectedIncomeRpt($year, $mn)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from incomes where In_Year='$year' and In_Month='$mn'";
+        $record = $db->query($sql);
+        return $record;
+    }
+    /*********************************************************************/
+    static  function getSelectedEkramRpt($year, $mn)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from ekram where E_Year='$year' and E_Month='$mn'";
+        $record = $db->query($sql);
+        return $record;
+    }
+    /*********************************************************************/
+    static  function getSelectedEmployeeRpt($year, $mn)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from employee where Em_Year='$year' and Em_Month='$mn'";
+        $record = $db->query($sql);
+        return $record;
+    }
 }

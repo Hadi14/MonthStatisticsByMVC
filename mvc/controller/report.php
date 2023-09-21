@@ -56,4 +56,36 @@
         $recs = ReportModel::getSelectedJobRpt($year, $mn);
         echo json_encode($recs);
     }
+    /**************************************************** */
+    public  function getSelectedInsuRpt()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getSelectedInsureRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /**************************************************** */
+    public  function getSelectedIncmRpt()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getSelectedIncomeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /**************************************************** */
+    public  function getSelectedEkrmRpt()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getSelectedEkramRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /**************************************************** */
+    public  function getSelectedEmpRpt()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getSelectedEmployeeRpt($year, $mn);
+        echo json_encode($recs);
+    }
 }
