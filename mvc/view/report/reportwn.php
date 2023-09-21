@@ -350,6 +350,8 @@
                 const dValues = Object.values(data[0]);
                 $('#leonnum').text(dValues[0]);
                 $('#leonmoney').text(dValues[1]);
+                $('#MrgLnum').text(dValues[2]);
+                $('#MrgLmoney').text(dValues[3]);
             },
         });
     }

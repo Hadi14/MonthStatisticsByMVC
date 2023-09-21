@@ -162,8 +162,8 @@
     }
 
     function fillPageTable(data) {
-        const dValues = Object.values(data[0]);
         data.forEach(element => {
+            const dValues = Object.values(element);
             $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));

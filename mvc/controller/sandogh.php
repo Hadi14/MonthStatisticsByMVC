@@ -4,10 +4,12 @@
     {
         $snum = $_POST['s_num'];
         $smoney = $_POST['s_mny'];
+        $mrgnum = $_POST['s_Mrgnum'];
+        $mrgmonry = $_POST['s_MrgMonry'];
         $year = $param[0];
         $month = $param[1];
         $user = $_SESSION['suname'];
-        SandoghModel::insertSandogh($snum, $smoney, $year, $month, $user);
+        SandoghModel::insertSandogh($mrgnum, $mrgmonry, $snum, $smoney, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/sandogh");
     }
     /****************************************************************************************** */

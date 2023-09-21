@@ -10,6 +10,42 @@
                         <p class="stat-cards-info__num">تعداد وام های ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
+                            <p id="mrglnum" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- **** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">مبلغ جهیزیه ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
+                            <p id="mrglmoney" class="stat-cards-info__title">43,159</p>
+                        </div>
+                        <p class="stat-cards-info__progress mt-3">
+                            <span class="stat-cards-info__profit success mx-1">
+                                <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                            </span>
+                            تغییر نسبت به ماه قبل
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- **** -->
+            <div class="col-md-6 col-xl-3">
+                <article class="stat-cards-item">
+                    <div class="stat-cards-info">
+                        <p class="stat-cards-info__num">تعداد وام های ماه قبل</p>
+                        <div class="d-flex  align-items-center">
+                            <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="ln" class="stat-cards-info__title">43,159</p>
                         </div>
                         <p class="stat-cards-info__progress mt-3">
@@ -58,7 +94,23 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="s_num" type="number" class="form-control familyrural" placeholder="تعداد وامهای پرداخت شده">
+                                <input required name="s_Mrgnum" type="number" class="form-control familyrural" placeholder="تعداد وام ازدواج پرداخت شده">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input required name="s_MrgMonry" type="number" class="form-control familyrural" placeholder="مبلغ وام ازدواج پرداخت شده">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input required name="s_num" type="number" class="form-control familyrural" placeholder="تعداد کل وامهای پرداخت شده">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -66,7 +118,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="مبلغ وامهای پرداخت شده">
+                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="مبلغ کل وامهای پرداخت شده">
                             </div>
                         </div>
 
@@ -87,12 +139,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">تعداد وام های پرداخت شده</th>
+                        <th scope="row">تعداد وام ازدواج پرداخت شده</th>
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ وام های پرداخت شده</th>
+                        <th scope="row">مبلغ وام ازدواج پرداخت شده</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تعداد کل وام های پرداخت شده</th>
+                        <td><a onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">مبلغ کل وام های پرداخت شده</th>
+                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
 
                 </tbody>
@@ -140,10 +200,12 @@
             success: function(data) {
                 // cnsole.log(data[0]);
                 const dValues = Object.values(data[0]);
-                $('#recentYR').text(dValues[2]);
-                $('#recentMn').text(dValues[3]);
-                $('#ln').text(dValues[0]);
-                $('#lm').text(dValues[1]);
+                $('#recentYR').text(dValues[4]);
+                $('#recentMn').text(dValues[5]);
+                $('#mrglnum').text(dValues[0]);
+                $('#mrglmoney').text(dValues[1]);
+                $('#ln').text(dValues[2]);
+                $('#lm').text(dValues[3]);
             },
         });
     }
@@ -162,11 +224,13 @@
     }
 
     function fillPageTable(data) {
-        const dValues = Object.values(data[0]);
         data.forEach(element => {
-            $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            const dValues = Object.values(element);
+            $("<th class='newColumn'>" + dValues[4] + "-" + dValues[5] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+            $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
+            $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
         });
     }
 
