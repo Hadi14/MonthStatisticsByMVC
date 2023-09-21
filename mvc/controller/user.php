@@ -34,9 +34,17 @@
         $ar['abc'] = "";
         Render::renderlogin('/user/login.php', $ar);
     }
+    // *****************************************************
     function logoute()
     {
         session_destroy();
         header("Location:" . getBaseUrl() . "user/login/");
+    }
+    // *****************************************************
+    function getAllUsers()
+    {
+     
+        $recs = UserModel::getAllUsers();
+        echo json_encode($recs);
     }
 }

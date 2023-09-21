@@ -135,4 +135,13 @@ class PageController
             Render::render('/report/reportselect.php', $currdt[0]);
         }
     }
+    function registeruser()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/user/registeruser.php', $currdt[0]);
+        }
+    }
 }

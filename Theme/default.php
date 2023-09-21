@@ -196,10 +196,10 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
+                                    <a href="<?= getBaseUrl() ?>page/registeruser">تعریف کاربر</a>
                                 </li>
                                 <li>
-                                    <a href="#">Extentions-02</a>
+                                    <a href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
                                 </li>
                             </ul>
                         </li>
