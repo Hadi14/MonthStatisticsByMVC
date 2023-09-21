@@ -2,8 +2,9 @@
     <?
     $yr = $_POST['year'];
     $mn = $_POST['month'];
+    $mon = (int)$mn;
     ?>
-    <h4 class="digitfont">عملکرد 5 ماهه کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری</h4>
+    <h5 class="digitfont">عملکرد <?= $mon ?> ماهه کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری سال <?= $yr ?></h5>
 </header>
 <main>
     <table class="table table-striped">
@@ -285,20 +286,27 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#citf').text(dValues[0]);
-                $('#rurf').text(dValues[1]);
-                $('#menf').text(dValues[2]);
-                $('#womf').text(dValues[3]);
-                $('#allf').text(dValues[4]);
-                $('#allpeop').text(dValues[5]);
-                $('#ocityf').text(dValues[6]);
-                $('#orurf').text(dValues[7]);
-                $('#alloldf').text(dValues[8]);
-                $('#ocitypeop').text(dValues[9]);
-                $('#orurpeop').text(dValues[10]);
-                $('#alloldpeop').text(dValues[11]);
+                // let n = +dValues[0];
+                $('#citf').text(toLocalStr(dValues[0]));
+
+                $('#rurf').text(toLocalStr(dValues[1]));
+                $('#menf').text(toLocalStr(dValues[2]));
+                $('#womf').text(toLocalStr(dValues[3]));
+                $('#allf').text(toLocalStr(dValues[4]));
+                $('#allpeop').text(toLocalStr(dValues[5]));
+                $('#ocityf').text(toLocalStr(dValues[6]));
+                $('#orurf').text(toLocalStr(dValues[7]));
+                $('#alloldf').text(toLocalStr(dValues[8]));
+                $('#ocitypeop').text(toLocalStr(dValues[9]));
+                $('#orurpeop').text(toLocalStr(dValues[10]));
+                $('#alloldpeop').text(toLocalStr(dValues[11]));
             },
         });
+    }
+    // ***********************************************************
+    function toLocalStr(n) {
+        num = +n;
+        return num.toLocaleString("en-US");
     }
     // ***********************************************************
     function money() {
@@ -313,7 +321,7 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#Mmoney').text(dValues[0]);
+                $('#Mmoney').text(toLocalStr(dValues[0]));
             },
         });
     }
@@ -330,8 +338,8 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#downum').text(dValues[0]);
-                $('#dowmoney').text(dValues[1]);
+                $('#downum').text(toLocalStr(dValues[0]));
+                $('#dowmoney').text(toLocalStr(dValues[1]));
             },
         });
     }
@@ -348,10 +356,10 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#leonnum').text(dValues[0]);
-                $('#leonmoney').text(dValues[1]);
-                $('#MrgLnum').text(dValues[2]);
-                $('#MrgLmoney').text(dValues[3]);
+                $('#leonnum').text(toLocalStr(dValues[0]));
+                $('#leonmoney').text(toLocalStr(dValues[1]));
+                $('#MrgLnum').text(toLocalStr(dValues[2]));
+                $('#MrgLmoney').text(toLocalStr(dValues[3]));
             },
         });
     }
@@ -368,7 +376,7 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#stunum').text(dValues[0]);
+                $('#stunum').text(toLocalStr(dValues[0]));
             },
         });
     }
@@ -385,14 +393,14 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#fix').text(dValues[0]);
-                $('#wc').text(dValues[1]);
-                $('#buyc').text(dValues[2]);
-                $('#buyrur').text(dValues[3]);
-                $('#crtcity').text(dValues[4]);
-                $('#crtrural').text(dValues[5]);
-                $('#bonyad').text(dValues[6]);
-                $('#allmaskan').text(dValues[7]);
+                $('#fix').text(toLocalStr(dValues[0]));
+                $('#wc').text(toLocalStr(dValues[1]));
+                $('#buyc').text(toLocalStr(dValues[2]));
+                $('#buyrur').text(toLocalStr(dValues[3]));
+                $('#crtcity').text(toLocalStr(dValues[4]));
+                $('#crtrural').text(toLocalStr(dValues[5]));
+                $('#bonyad').text(toLocalStr(dValues[6]));
+                $('#allmaskan').text(toLocalStr(dValues[7]));
             },
         });
     }
@@ -410,14 +418,14 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#dsicj').text(dValues[0]);
-                $('#dljob').text(dValues[1]);
-                $('#alldic').text(dValues[2]);
-                $('#ndjob').text(dValues[3]);
-                $('#alljob').text(dValues[4]);
-                $('#jleonmoney').text(dValues[5]);
-                $('#flearn').text(dValues[6]);
-                $('#jsup').text(dValues[7]);
+                $('#dsicj').text(toLocalStr(dValues[0]));
+                $('#dljob').text(toLocalStr(dValues[1]));
+                $('#alldic').text(toLocalStr(dValues[2]));
+                $('#ndjob').text(toLocalStr(dValues[3]));
+                $('#alljob').text(toLocalStr(dValues[4]));
+                $('#jleonmoney').text(toLocalStr(dValues[5]));
+                $('#flearn').text(toLocalStr(dValues[6]));
+                $('#jsup').text(toLocalStr(dValues[7]));
             },
         });
     }
@@ -435,10 +443,10 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#inwom').text(dValues[0]);
-                $('#insjob').text(dValues[1]);
-                $('#insall').text(dValues[2]);
-                $('#insmoney').text(dValues[3]);
+                $('#inwom').text(toLocalStr(dValues[0]));
+                $('#insjob').text(toLocalStr(dValues[1]));
+                $('#insall').text(toLocalStr(dValues[2]));
+                $('#insmoney').text(toLocalStr(dValues[3]));
             },
         });
     }
@@ -455,12 +463,12 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#charity').text(dValues[0]);
-                $('#orphmoney').text(dValues[1]);
-                $('#zakat').text(dValues[2]);
-                $('#basneed').text(dValues[3]);
-                $('#allmoney').text(dValues[4]);
-                $('#marakezmoney').text(dValues[5]);
+                $('#charity').text(toLocalStr(dValues[0]));
+                $('#orphmoney').text(toLocalStr(dValues[1]));
+                $('#zakat').text(toLocalStr(dValues[2]));
+                $('#basneed').text(toLocalStr(dValues[3]));
+                $('#allmoney').text(toLocalStr(dValues[4]));
+                $('#marakezmoney').text(toLocalStr(dValues[5]));
             },
         });
     }
@@ -477,8 +485,8 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#orphnum').text(dValues[0]);
-                $('#supports').text(dValues[1]);
+                $('#orphnum').text(toLocalStr(dValues[0]));
+                $('#supports').text(toLocalStr(dValues[1]));
             },
         });
     }
@@ -495,9 +503,9 @@
             success: function(data) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
-                $('#offi').text(dValues[0]);
-                $('#comp').text(dValues[1]);
-                $('#esum').text(dValues[2]);
+                $('#offi').text(toLocalStr(dValues[0]));
+                $('#comp').text(toLocalStr(dValues[1]));
+                $('#esum').text(toLocalStr(dValues[2]));
 
             },
         });

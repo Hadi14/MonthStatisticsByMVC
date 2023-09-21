@@ -23,6 +23,7 @@ th {
     border: 1px solid lightgray;
     vertical-align: middle !important;
     font-family: vazir-digit;
+    padding: 0 .5rem !important;
 }
 
 
