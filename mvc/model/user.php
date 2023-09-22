@@ -27,9 +27,14 @@
     static function EditUser($name, $family, $un, $pass, $level, $scope)
     {
         $db = Db::getInstance();
-        $un = $_SESSION['suname'];
         $sql = "update users set password='$pass',level='$level',name='$name',family='$family',scope='$scope'  where user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
+    }
+    /*********************************************************************/
+    static  function inserUser($user, $password, $level, $name, $family, $scope)
+    {
+        $db = Db::getInstance();
+        $db->insert("insert into users (user, password, level, name, family, scope) values('$user', '$password','$level','$name','$family','$scope')");
     }
 }

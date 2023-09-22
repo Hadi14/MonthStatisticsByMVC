@@ -68,4 +68,17 @@
             echo json_encode($rowAffect);
         }
     }
+    /****************************************************************************************** */
+    public  function insertUsr()
+    {
+       
+        $name = $_POST['usr_name'];
+        $family=$_POST['usr_family'];
+        $user=$_POST['usr_un'];
+        $password=$_POST['usr_pass'];
+        $level=$_POST['usr_level'];
+        $scope=$_POST['usr_scope'];
+        UserModel::inserUser($user, $password,$level,$name,$family,$scope);
+        header("Location:" . getBaseUrl() . "page/registeruser");
+    }
 }

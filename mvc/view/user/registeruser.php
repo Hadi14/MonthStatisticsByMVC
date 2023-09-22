@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-9">
 
-                <form action="<?= getBaseUrl() ?>statistics/insertInsure/" class="insert-form p-5 rounded" method="post">
+                <form action="<?= getBaseUrl() ?>user/insertUsr/" class="insert-form p-5 rounded" method="post">
                     <h3>تعریف کاربر:</h3>
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
@@ -13,7 +13,7 @@
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input id="wnum" required name="wnum" type="text" class="form-control Inums" placeholder="نام">
+                                <input id="usr_name" required name="usr_name" type="text" class="form-control Inums" placeholder="نام">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -21,7 +21,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input id="jnum" required name="jnum" type="text" class="form-control Inums" placeholder="نام خانوادگی">
+                                <input id="usr_family" required name="usr_family" type="text" class="form-control Inums" placeholder="نام خانوادگی">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -29,7 +29,7 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input id="isum" required name="isum" type="text" class="form-control " placeholder="نام کاربری">
+                                <input id="usr_un" required name="usr_un" type="text" class="form-control " placeholder="نام کاربری">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -37,11 +37,11 @@
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="imoney" type="text" class="form-control familymen" placeholder="پسورد">
+                                <input id="usr_pass" required name="usr_pass" type="text" class="form-control familymen" placeholder="پسورد">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <select id="year" name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select id="usr_level" name="usr_level" class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected disabled value="-1">سطح دسترسی</option>
                                 <option value="2">کاریر ثبت کننده</option>
                                 <option value="1">مدیر</option>
@@ -49,7 +49,7 @@
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <select id="year" name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select id="usr_scope" name="usr_scope" class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected disabled value="0">حوزه مربوطه</option>
                                 <option value="برنامه ریزی">برنامه ریزی</option>
                                 <option value="فرهنگی">فرهنگی</option>
@@ -98,20 +98,20 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">نام</label>
-                        <input id="userrecipientName1" name="userrecipientName1" type="text" class="form-control">
+                        <label id="dowryfiledlabel1" for="userrecipientName1" class="col-form-label">نام</label>
+                        <input id="userrecipientName1" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
                         <label id="dowryfiledlabel2" for="userrecipientName2" class="col-form-label">نام خانوادگی</label>
-                        <input id="userrecipientName2" name="userrecipientName2" type="text" class="form-control">
+                        <input id="userrecipientName2" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
                         <label id="dowryfiledlabel3" for="userrecipientName3" class="col-form-label">نام کاربری</label>
-                        <input readonly id="userrecipientName3" name="userrecipientName3" type="text" class="form-control">
+                        <input readonly id="userrecipientName3" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
                         <label id="dowryfiledlabel4" for="userrecipientName4" class="col-form-label">رمز عبور</label>
-                        <input id="userrecipientName4" name="userrecipientName4" type="text" class="form-control">
+                        <input id="userrecipientName4" type="text" class="form-control">
                     </div>
                     <div class="col-md-3">
                         <select id="level" name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -191,13 +191,7 @@
     }
 
     function editUser() {
-        // console.log($('#userrecipientName1').val());
-        // console.log($('#userrecipientName2').val());
         // console.log($('#userrecipientName3').val());
-        // console.log($('#userrecipientName4').val());
-        // console.log($('#level').val());
-        // console.log($('#uscope').val());
-
         $.ajax('/MonthStatisticsByMVC/user/EditUserRecord', {
             type: 'post',
             dataType: "json",
