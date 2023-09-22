@@ -570,6 +570,7 @@ html {
 input[type="text"],
 input[type="password"] {
   background: rgba(66, 146, 29, 0.7);
+  font-family: vazir-digit;
 }
 
 form .row .input-group {
