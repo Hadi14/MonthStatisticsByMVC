@@ -43,8 +43,29 @@
     // *****************************************************
     function getAllUsers()
     {
-     
+
         $recs = UserModel::getAllUsers();
         echo json_encode($recs);
+    }
+    /************************************************ */
+    public  function getUsrGoalField()
+    {
+        $user = $_POST['ukey'];
+        $goal = UserModel::getUserGoal($user);
+        echo json_encode($goal);
+    }
+    /******************************************************** */
+    public  function EditUserRecord()
+    {
+        $name = $_POST['nam'];
+        $family = $_POST['fam'];
+        $un = $_POST['un'];
+        $pass = $_POST['pass'];
+        $level = $_POST['level'];
+        $scope = $_POST['scope'];
+        $rowAffect = UserModel::EditUser($name, $family, $un, $pass, $level, $scope);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
     }
 }

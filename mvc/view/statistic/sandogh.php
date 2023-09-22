@@ -154,7 +154,7 @@
                         <th scope="row">مبلغ کل وام های پرداخت شده</th>
                         <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
-
+                    <!-- <a onclick='editRecord('3')' data-bs-toggle='modal' data-bs-target='#dryModal' href='#'>-->
                 </tbody>
             </table>
 

@@ -51,12 +51,12 @@
                         <div class="col-md-3">
                             <select id="year" name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected disabled value="0">حوزه مربوطه</option>
-                                <option value="0">برنامه ریزی</option>
-                                <option value="1">فرهنگی</option>
-                                <option value="2">مشارکت</option>
-                                <option value="3">اشتغال</option>
-                                <option value="4">مسکن</option>
-                                <option value="5">مالی</option>
+                                <option value="برنامه ریزی">برنامه ریزی</option>
+                                <option value="فرهنگی">فرهنگی</option>
+                                <option value="مشارکت">مشارکت</option>
+                                <option value="اشتغال">اشتغال</option>
+                                <option value="مسکن">مسکن</option>
+                                <option value="مالی">مالی</option>
                             </select>
                         </div>
                         <div class="pt-4">
@@ -77,61 +77,18 @@
                         <th scope="col">رمز عبور</th>
                         <th scope="col">سطح دسترسی</th>
                         <th scope="col">حوزه مربوطه</th>
+                        <th scope="col">ویرایش</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr> -->
-                    <!-- <th scope="row">تعداد زنان سرپرست خانوار</th> -->
-                    <!-- <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td> -->
-                    <!-- </tr> -->
-                    <!-- <tr> -->
-                    <!-- <th scope="row">تعداد مجریان طرح اشتغال</th> -->
-                    <!-- <td><a onclick="editRecord('1')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td> -->
-                    <!-- </tr> -->
-                    <!-- <tr> -->
-                    <!-- <th scope="row">جمع تعداد</th> -->
-                    <!-- <td><a style="color: gray;" disabled href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td> -->
-                    <!-- </tr> -->
-                    <!-- <tr> -->
-                    <!-- <th scope="row">مبلغ بیمه های اجتماعی</th> -->
-                    <!-- <td><a onclick="editMoneyRecord()" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td> -->
-                    <!-- </tr> -->
                 </tbody>
             </table>
 
         </div>
     </div>
 </main>
-<!---------------------------for Nums Edit modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="forNumModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" dir="rtl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="forOldModalLabel">ویرایش اطلاعات رکورد</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-0">
-                        <label id="forNumfiledlabel1" for="forNumrecipientName1" class="col-form-label"></label>
-                        <input id="forNumrecipientName1" name="wn" type="text" class="form-control">
-                    </div>
-                    <div class="mb-0">
-                        <label id="forNumfiledlabel2" for="forNumrecipientName2" class="col-form-label"></label>
-                        <input id="forNumrecipientName2" name="jn" type="text" class="form-control">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editNumsInsure()">ویرایش</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--------------------------------- End of Modal ----------------------------------------------------------->
 <!--------------------------- other Edit modal  ------------------------------------------------------------------------->
-<div class="modal fade" id="dryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" dir="rtl">
         <div class="modal-content">
             <div class="modal-header">
@@ -141,13 +98,44 @@
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
-                        <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">نام</label>
+                        <input id="userrecipientName1" name="userrecipientName1" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="dowryfiledlabel2" for="userrecipientName2" class="col-form-label">نام خانوادگی</label>
+                        <input id="userrecipientName2" name="userrecipientName2" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="dowryfiledlabel3" for="userrecipientName3" class="col-form-label">نام کاربری</label>
+                        <input readonly id="userrecipientName3" name="userrecipientName3" type="text" class="form-control">
+                    </div>
+                    <div class="mb-0">
+                        <label id="dowryfiledlabel4" for="userrecipientName4" class="col-form-label">رمز عبور</label>
+                        <input id="userrecipientName4" name="userrecipientName4" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <select id="level" name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected disabled value="-1">سطح دسترسی</option>
+                            <option value="2">کاریر ثبت کننده</option>
+                            <option value="1">مدیر</option>
+                            <option value="0">مدیر اصلی</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select id="uscope" name="year" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected disabled value="0">حوزه مربوطه</option>
+                            <option value="برنامه ریزی">برنامه ریزی</option>
+                            <option value="فرهنگی">فرهنگی</option>
+                            <option value="مشارکت">مشارکت</option>
+                            <option value="اشتغال">اشتغال</option>
+                            <option value="مسکن">مسکن</option>
+                            <option value="مالی">مالی</option>
+                        </select>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editMoneyInsure()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editUser()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -177,95 +165,55 @@
         data.forEach(element => {
             const dValues = Object.values(element);
 
-            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[3] + "</td><td class='newColumn'>" + dValues[4] + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'>" + dValues[5] + "</td></tr>";
+            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[3] + "</td><td class='newColumn'>" + dValues[4] + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'>" + dValues[5] + "</td><td class='newColumn'><a onclick=editRecord(" + "'" + dValues[0] + "'" + ") data-bs-toggle='modal' data-bs-target='#userModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
 
             $('tbody').append(row);
         });
     }
 
-    // function editRecord(id) {
-    //     let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getInsureGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <? //= $data['Year']; 
-                            ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             const dValues = Object.values(data[0]);
-    //             $('#forNumrecipientName1').val(dValues[0]);
-    //             $('#forNumrecipientName2').val(dValues[1]);
-    //             if (id == 0) {
-    //                 $('#forNumrecipientName1').addClass('goalfiled');
-    //                 $('#forNumrecipientName2').removeClass('goalfiled');
-    //             } else if (id == 1) {
-    //                 $('#forNumrecipientName2').addClass('goalfiled');
-    //                 $('#forNumrecipientName1').removeClass('goalfiled');
-    //             }
-    //         },
-    //     });
-    // }
+    function editRecord(ukey) {
+        $.ajax('/MonthStatisticsByMVC/user/getUsrGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'ukey': ukey,
+            },
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                $('#userrecipientName1').val(dValues[3]);
+                $('#userrecipientName2').val(dValues[4]);
+                $('#userrecipientName3').val(dValues[0]);
+                $('#userrecipientName4').val(dValues[1]);
+                $('#level').val(dValues[2]);
+                $('#uscope').val(dValues[5]);
+            },
+        });
+    }
 
-    // function editMoneyRecord() {
-    //     let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/getInsureGoalField/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'yr': <? //= $data['Year']; 
-                            ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             const dValues = Object.values(data[0]);
-    //             $('#otherrecipientName1').val(dValues[3]);
-    //         },
-    //     });
-    //     $('#otherrecipientName1').addClass('goalfiled');
-    // }
+    function editUser() {
+        // console.log($('#userrecipientName1').val());
+        // console.log($('#userrecipientName2').val());
+        // console.log($('#userrecipientName3').val());
+        // console.log($('#userrecipientName4').val());
+        // console.log($('#level').val());
+        // console.log($('#uscope').val());
 
-    // function editNumsInsure() {
-    //     let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/updateNumInsure/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'wn': +$('#forNumrecipientName1').val(),
-    //             'jn': +$('#forNumrecipientName2').val(),
-    //             'yr': <? //= $data['Year']; 
-                            ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getInsure();
-    //         },
-    //     });
-    // }
-
-    // function editMoneyInsure() {
-    //     let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
-    //     $.ajax('/MonthStatisticsByMVC/statistics/updateMonyInsure/', {
-    //         type: 'post',
-    //         dataType: "json",
-    //         data: {
-    //             'im': +$('#otherrecipientName1').val(),
-    //             'yr': <? //= $data['Year']; 
-                            ?>,
-    //             'mn': s,
-    //         },
-    //         success: function(data) {
-    //             alert('بروزرسانی با موفقیت انجام شد.');
-    //             $('.newColumn').remove();
-    //             getInsure();
-    //         },
-    //     });
-    // }
+        $.ajax('/MonthStatisticsByMVC/user/EditUserRecord', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'nam': $('#userrecipientName1').val(),
+                'fam': $('#userrecipientName2').val(),
+                'un': $('#userrecipientName3').val(),
+                'pass': $('#userrecipientName4').val(),
+                'level': $('#level').val(),
+                'scope': $('#uscope').val(),
+            },
+            success: function(data) {
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getInsure();
+            },
+        });
+    }
 </script>
