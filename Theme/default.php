@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
     <!-- Custom styles -->
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>img/bootstrap-icons-1.11.1/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/style.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/font.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/Custome-style.css">

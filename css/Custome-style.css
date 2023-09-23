@@ -47,3 +47,14 @@ table {
     border: 2px solid !important;
     font-weight: bold;
 }
+
+div .row.mt-5 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* 
+.col-lg-9 form {
+    background-color: #126EFF;
+} */
