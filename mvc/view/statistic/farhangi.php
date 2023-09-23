@@ -57,7 +57,7 @@
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
-                        <th scope="col">ویرایش</th>
+                        <th scope="col">ویرایش ماه اخیر</th>
                     </tr>
                 </thead>
                 <tbody>

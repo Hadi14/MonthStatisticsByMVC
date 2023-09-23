@@ -18,7 +18,8 @@
     static  function getAllFarhangi($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from farhangi where F_Year='$year' and F_user='$un' order by F_Year desc, F_Month desc";
+        // $sql = "select * from farhangi where F_Year='$year' and F_user='$un' order by F_Year desc, F_Month desc";
+        $sql = "select * from farhangi where F_Year='$year' order by F_Year desc, F_Month desc";
         $record = $db->query($sql);
         return $record;
     }
@@ -27,7 +28,8 @@
     static  function getFarhangiGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' and F_user='$un'";
+        // $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' and F_user='$un'";
+        $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' ";
         $g = $db->query($sql);
         return $g;
     }
