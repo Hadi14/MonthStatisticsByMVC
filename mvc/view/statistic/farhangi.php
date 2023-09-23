@@ -139,13 +139,17 @@
     }
 
     function editRecord() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        // let s = String(<? //= json_encode($data['Month']); 
+                            ?>);
+
         $.ajax('/MonthStatisticsByMVC/farhangi/getFrngGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                // 'yr': <? //= $data['Year']; recentYR
+                            ?>,
+                'yr': $('#recentYR').text(),
+                'mn': $('#recentMn').text(),
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -166,7 +170,8 @@
             data: {
                 'stu': +$('#otherrecipientName1').val(),
                 'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                // 'mn': s,
+                'mn': $('#recentMn').text(),
             },
             success: function(data) {
                 // console.log(data);

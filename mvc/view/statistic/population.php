@@ -493,13 +493,20 @@
     }
 
     function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        // let s = String(<? //= json_encode($data['Month']); 
+                            ?>);
+        let m = $('#recentYR').text();
+        let y = $('#recentMn').text();
+        console.log(y, m);
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                // 'yr': <? //= $data['Year']; 
+                            //                     
+                            ?>//,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -517,7 +524,6 @@
         if (id == 0) {
             $('#forAllrecipientName1').addClass('goalfiled');
             // $("#forAllrecipientName1").focus();
-
         } else if (id == 1) {
             $('#forAllrecipientName2').addClass('goalfiled');
             // $('#forAllrecipientName2').focus();
