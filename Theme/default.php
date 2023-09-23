@@ -19,11 +19,7 @@
 </head>
 
 <body>
-    <?
-    // if (!isset($_SESSION['uname'])) {
-    //     header("Location:" . getBaseUrl() . "user/login");
-    // }
-    ?>
+
     <div class="layer"></div>
     <!-- ! Body -->
     <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
@@ -55,7 +51,7 @@
                         <li>
                             <a class="active" href="<?= getBaseUrl() ?>user/login/"><span class="icon home" aria-hidden="true"></span>صفحه اصلی</a>
                         </li>
-                        <li>
+                        <li class="hemayat_LI">
                             <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon document" aria-hidden="true"></span>حوزه حمایت
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -80,7 +76,7 @@
                         </li>
 
 
-                        <li>
+                        <li class="sandogh_LI">
                             <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon folder" aria-hidden="true"></span>صندوق امدادولایت
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -96,7 +92,7 @@
                         </li>
 
 
-                        <li>
+                        <li class="fargangi_LI">
                             <a class="show-cat-btn cat-rt " href="##">
                                 <span class="icon bi bi-book" aria-hidden="true"></span>فرهنگی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -113,8 +109,8 @@
 
 
 
-                        <li>
-                            <a class="show-cat-btn cat-rt" href="##">
+                        <li class="maskan_LI">
+                            <a class=" show-cat-btn cat-rt" href="##">
                                 <span class="icon image" aria-hidden="true"></span>مسکن و ساختمان
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
                                     <span class="sr-only">Open list</span>
@@ -128,7 +124,7 @@
 
                             </ul>
                         </li>
-                        <li>
+                        <li class="job_LI">
                             <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon paper" aria-hidden="true"></span>اشتغال و خودکفایی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -143,7 +139,7 @@
 
                             </ul>
                         </li>
-                        <li>
+                        <li class="mosharekat_LI">
                             <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon paper" aria-hidden="true"></span> مشارکت های مردمی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -159,7 +155,7 @@
 
                             </ul>
                         </li>
-                        <li>
+                        <li class="employeet_LI">
                             <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon paper" aria-hidden="true"></span>نیروی انسانی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -182,7 +178,7 @@
                         </li>
                     </ul>
                     <span class="system-menu__title mt-5">پنل مدیر سیستم</span>
-                    <ul class="sidebar-body-menu">
+                    <ul class="sidebar-body-menu admin_menu">
                         <li>
                             <a href="#"><span class="icon edit" aria-hidden="true"></span>تعریف و ویرایش کاربران</a>
                         </li>
@@ -381,3 +377,18 @@
 </body>
 
 </html>
+
+<?
+if ($_SESSION['scope'] == "فرهنگی") {
+?>
+    <script>
+        $('.hemayat_LI').css('display', 'none');
+        $('.sandogh_LI').css('display', 'none');
+        $('.maskan_LI').css('display', 'none');
+        $('.job_LI').css('display', 'none');
+        $('.mosharekat_LI').css('display', 'none');
+        $('.employeet_LI').css('display', 'none');
+        $('.system-menu__title').css('display', 'none');
+        $('.admin_menu').css('display', 'none');
+    </script>
+<? } ?>

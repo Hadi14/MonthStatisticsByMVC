@@ -1,5 +1,8 @@
 <? class FarhangiModel
 {
+    public function __construct()
+    {
+    }
     static  function insertFarhangi($stu, $year, $month, $user)
     {
         $db = Db::getInstance();

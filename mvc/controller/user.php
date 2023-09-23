@@ -23,8 +23,9 @@
                 Render::renderlogin('/user/login.php', $ar);
             }
         } else {
-            $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
+            // $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
             $_SESSION['suname'] = $u;
+            $_SESSION['scope'] = $record['scope'];
             header("Location:" . getBaseUrl() . 'page/home/');
         }
     }
@@ -71,14 +72,14 @@
     /****************************************************************************************** */
     public  function insertUsr()
     {
-       
+
         $name = $_POST['usr_name'];
-        $family=$_POST['usr_family'];
-        $user=$_POST['usr_un'];
-        $password=$_POST['usr_pass'];
-        $level=$_POST['usr_level'];
-        $scope=$_POST['usr_scope'];
-        UserModel::inserUser($user, $password,$level,$name,$family,$scope);
+        $family = $_POST['usr_family'];
+        $user = $_POST['usr_un'];
+        $password = $_POST['usr_pass'];
+        $level = $_POST['usr_level'];
+        $scope = $_POST['usr_scope'];
+        UserModel::inserUser($user, $password, $level, $name, $family, $scope);
         header("Location:" . getBaseUrl() . "page/registeruser");
     }
 }
