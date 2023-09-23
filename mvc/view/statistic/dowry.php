@@ -171,15 +171,16 @@
     }
 
     function editDowry() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         gfield = $('#goal').val();
         $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
             type: 'post',
             dataType: "json",
             data: {
                 'goalf': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);
@@ -191,13 +192,14 @@
     }
 
     function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getDowryGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr':y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);

@@ -169,7 +169,7 @@
             dataType: "json",
             data: {
                 'stu': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
+                'yr':  $('#recentYR').text(),
                 // 'mn': s,
                 'mn': $('#recentMn').text(),
             },

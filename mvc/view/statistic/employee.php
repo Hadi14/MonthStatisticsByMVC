@@ -185,13 +185,14 @@
     }
 
     function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/employee/getEmplGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 const dValues = Object.values(data[0]);
@@ -219,7 +220,8 @@
 
 
     function editEmployee() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         gfield = $('#goal').val();
         $.ajax('/MonthStatisticsByMVC/employee/updateEkram/', {
             type: 'post',
@@ -228,8 +230,8 @@
                 'em_offic': +$('#otherrecipientName1').val(),
                 'em_comp': +$('#otherrecipientName2').val(),
                 'em_sum': +$('#otherrecipientName3').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 alert('بروزرسانی با موفقیت انجام شد.');

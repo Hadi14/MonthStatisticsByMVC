@@ -140,14 +140,15 @@
     }
 
     function editMoney() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/updatemoney/', {
             type: 'post',
             dataType: "json",
             data: {
                 'mny': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);
@@ -159,13 +160,14 @@
     }
 
     function editRecord() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getMoneyGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);

@@ -237,13 +237,14 @@
 
 
     function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/sandogh/getSndghGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -264,15 +265,16 @@
 
 
     function editSandogh() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         gfield = $('#goal').val();
         $.ajax('/MonthStatisticsByMVC/sandogh/updateSndgh/' + gfield, {
             type: 'post',
             dataType: "json",
             data: {
                 'goalf': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);

@@ -376,13 +376,14 @@
 
 
     function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/job/getJobGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -411,13 +412,14 @@
     }
 
     function otherEditRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/job/getJobGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -441,7 +443,8 @@
 
 
     function editjob() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/job/updatejob/', {
             type: 'post',
             dataType: "json",
@@ -451,8 +454,8 @@
                 'DNjob3': +$('#DNjob3').val(),
                 'DNjob4': +$('#DNjob4').val(),
                 'DNjob5': +$('#DNjob5').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);
@@ -466,7 +469,8 @@
 
 
     function editotherfieldJob() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         let value = $('#goalf').val();
         $.ajax('/MonthStatisticsByMVC/job/updateotherfielJob/', {
             type: 'post',
@@ -474,8 +478,8 @@
             data: {
                 'gfield': +$('#goalf').val(),
                 'value': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);

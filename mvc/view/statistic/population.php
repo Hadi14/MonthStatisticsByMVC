@@ -451,8 +451,8 @@ if ($_SESSION['scope'] == "فرهنگی") {
             success: function(data) {
                 // console.log(data[0]);
                 const dValues = Object.values(data[0]);
-                $('#recentYR').text(dValues[13]);
-                $('#recentMn').text(dValues[12]);
+                $('#recentYR').text(dValues[12]);
+                $('#recentMn').text(dValues[13]);
                 $('#FRural').text(dValues[1]);
                 $('#FCity').text(dValues[0]);
                 $('#FMen').text(dValues[2]);
@@ -500,9 +500,9 @@ if ($_SESSION['scope'] == "فرهنگی") {
     function editRecord(id) {
         // let s = String(<? //= json_encode($data['Month']); 
                             ?>);
-        let m = $('#recentYR').text();
-        let y = $('#recentMn').text();
-        console.log(y, m);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
+        // console.log(y, m);
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
@@ -542,13 +542,18 @@ if ($_SESSION['scope'] == "فرهنگی") {
     }
 
     function othereditRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        // let s = String(<? //= json_encode($data['Month']); 
+                            ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                // 'yr': <? //= $data['Year']; 
+                            ?>,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -561,13 +566,18 @@ if ($_SESSION['scope'] == "فرهنگی") {
     }
 
     function OldeditRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        // let s = String(<? //= json_encode($data['Month']); 
+                            ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                // 'yr': <? //= $data['Year']; 
+                            ?>,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data[0]);
@@ -602,7 +612,9 @@ if ($_SESSION['scope'] == "فرهنگی") {
             $('#forAllModal').addClass('show');
             // $('#forAllModal').css('display', 'block');
         } else {
-            let s = String(<?= json_encode($data['Month']); ?>);
+            // let s = String(<? //= json_encode($data['Month']); 
+                                ?>);
+            let m = $('#recentMn').text();
             $.ajax('/MonthStatisticsByMVC/statistics/updateAllPopulation/', {
                 type: 'post',
                 dataType: "json",
@@ -611,8 +623,8 @@ if ($_SESSION['scope'] == "فرهنگی") {
                     'familyrural': +$('#forAllrecipientName2').val(),
                     'familymen': +$('#forAllrecipientName3').val(),
                     'familywomen': +$('#forAllrecipientName4').val(),
-                    'yr': <?= $data['Year']; ?>,
-                    'mn': s,
+                    'yr': $('#recentYR').text(),
+                    'mn': m,
                 },
                 success: function(data) {
                     // console.log(data);
@@ -625,7 +637,9 @@ if ($_SESSION['scope'] == "فرهنگی") {
     }
 
     function editOldPopulation() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        // let s = String(<? //= json_encode($data['Month']); 
+                            ?>);
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/updateOldPopulation/', {
             type: 'post',
             dataType: "json",
@@ -633,8 +647,8 @@ if ($_SESSION['scope'] == "فرهنگی") {
                 'one': +$('#forOldrecipientName1').val(),
                 'two': +$('#forOldrecipientName2').val(),
                 'goalFields': +$('#gfiled').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': $('#recentYR').text(),
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);
@@ -646,14 +660,16 @@ if ($_SESSION['scope'] == "فرهنگی") {
     }
 
     function editAllPeoplePopulation() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        // let s = String(<? //= json_encode($data['Month']); 
+                            ?>);
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/updateAllPeoplePopulation/', {
             type: 'post',
             dataType: "json",
             data: {
                 'AllPeople': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': $('#recentYR').text(),
+                'mn': m,
             },
             success: function(data) {
                 // console.log(data);

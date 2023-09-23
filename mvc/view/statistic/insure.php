@@ -241,13 +241,14 @@
     }
 
     function editRecord(id) {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getInsureGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'yr': y,
+                'mn': m,
             },
             success: function(data) {
                 const dValues = Object.values(data[0]);
@@ -265,13 +266,14 @@
     }
 
     function editMoneyRecord() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getInsureGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
                 'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'mn': m,
             },
             success: function(data) {
                 const dValues = Object.values(data[0]);
@@ -282,7 +284,8 @@
     }
 
     function editNumsInsure() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/updateNumInsure/', {
             type: 'post',
             dataType: "json",
@@ -290,7 +293,7 @@
                 'wn': +$('#forNumrecipientName1').val(),
                 'jn': +$('#forNumrecipientName2').val(),
                 'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'mn': m,
             },
             success: function(data) {
                 alert('بروزرسانی با موفقیت انجام شد.');
@@ -301,14 +304,15 @@
     }
 
     function editMoneyInsure() {
-        let s = String(<?= json_encode($data['Month']); ?>);
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/updateMonyInsure/', {
             type: 'post',
             dataType: "json",
             data: {
                 'im': +$('#otherrecipientName1').val(),
                 'yr': <?= $data['Year']; ?>,
-                'mn': s,
+                'mn': m,
             },
             success: function(data) {
                 alert('بروزرسانی با موفقیت انجام شد.');
