@@ -9,10 +9,11 @@ input:invalid+ ::after {
     color: red;
 }
 
-input:valid+ ::after {
+/****** important ***********
+/* input:valid+ ::after {
     content: "*";
     color: green;
-}
+} */
 
 #faillogin {
     color: red !important;

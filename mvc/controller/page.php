@@ -144,4 +144,20 @@ class PageController
             Render::render('/user/registeruser.php', $currdt[0]);
         }
     }
+    function defineMenu()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            Render::render('/admin/definemenu.php');
+        }
+    }
+    function allocationaccess()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            Render::render('/admin/allocationaccess.php');
+        }
+    }
 }

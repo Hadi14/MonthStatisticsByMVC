@@ -1,0 +1,50 @@
+<? class AdminModel
+{
+ 
+    /*********************************************************************/
+    static  function getAllMenu()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from menus ";
+        $record = $db->query($sql);
+        return $record;
+    }
+    /*********************************************************************/
+    static  function getAllAllocations()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from accesses ";
+        $record = $db->query($sql);
+        return $record;
+    }
+    /*****************************************************************/
+    static  function getMenuGoal($code)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from menus where M_code='$code'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /********************************************************************** */
+    static function EditMenu($name, $code)
+    {
+        $db = Db::getInstance();
+        $sql = "update menus set M_name='$name' where M_code=$code";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /*********************************************************************/
+    static  function inserMenus($mname, $mcode)
+    {
+        $db = Db::getInstance();
+        $db->insert("insert into menus (M_name, M_code) values('$mname', $mcode)");
+    }
+    /*********************************************************************/
+    static  function inserAllocations($user,$aloHemayat, $aloPopulation,$aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee)
+    {
+        $db = Db::getInstance();
+        $db->insert("insert into accesses (A_user,A_aloHemayat, A_aloPopulation, A_aloMoney, A_aloDowry, A_aloInsure, A_aloSandogh, A_aloFarhangi, A_aloMaskan, A_aloJob, A_aloMosharekat, A_aloIncome, A_aloEkram, A_aloEmployee) values('$user',$aloHemayat, $aloPopulation,$aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee)");
+    }
+}
+
+ 

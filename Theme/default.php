@@ -60,16 +60,16 @@
                                 </span>
                             </a>
                             <ul class="cat-sub-menu">
-                                <li>
+                                <li class="hemayat_LI_Pop">
                                     <a href="<?= getBaseUrl() ?>page/population">آمار جمعیتی</a>
                                 </li>
-                                <li>
+                                <li class="hemayat_LI_Mny">
                                     <a href="<?= getBaseUrl() ?>page/money"> آمار معیشت</a>
                                 </li>
-                                <li>
+                                <li class="hemayat_LI_Dwry">
                                     <a href="<?= getBaseUrl() ?>page/dowry">جهیزیه</a>
                                 </li>
-                                <li>
+                                <li class="hemayat_LI_Insur">
                                     <a href="<?= getBaseUrl() ?>page/insure">بیمه های اجتماعی</a>
                                 </li>
                             </ul>
@@ -148,14 +148,16 @@
                                 </span>
                             </a>
                             <ul class="cat-sub-menu">
-                                <li>
+                                <li class="mosharekat_LI_Inc">
                                     <a href="<?= getBaseUrl() ?>page/income">ثبت آمار درآمدها</a>
+                                </li>
+                                <li class="mosharekat_LI_Ekrm">
                                     <a href="<?= getBaseUrl() ?>page/ekram">ثبت آمار اکرام</a>
                                 </li>
 
                             </ul>
                         </li>
-                        <li class="employeet_LI">
+                        <li class="employee_LI">
                             <a class="show-cat-btn cat-rt" href="##">
                                 <span class="icon paper" aria-hidden="true"></span>نیروی انسانی
                                 <span class="category__btn transparent-btn r-t" id="" title="Open list">
@@ -196,6 +198,12 @@
                                 </li>
                                 <li>
                                     <a href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
+                                </li>
+                                <li>
+                                    <a href="<?= getBaseUrl() ?>page/defineMenu">تعریف منوها</a>
+                                </li>
+                                <li>
+                                    <a href="<?= getBaseUrl() ?>page/allocationaccess">تخصیص دسترسی</a>
                                 </li>
                             </ul>
                         </li>
@@ -379,11 +387,9 @@
 </html>
 
 <?
-$alll = ['برنامه ریزی', 'حمایت', 'صندوق', 'فرهنگی', 'مسکن و ساختمان', 'اشتغال و خودکفایی', 'مشارکتها', 'نیروی انسانی'];
-// $farhangilevel = ['برنامه ریزی', 'حمایت', 'صندوق', 'مسکن و ساختمان', 'اشتغال و خودکفایی', 'مشارکتها', 'نیروی انسانی'];
-// if (in_array($_SESSION['scope'], $levels)) {
+$hemayat = ['hemayat_LI_Pop', 'hemayat_LI_Mny', 'hemayat_LI_Dwry', 'hemayat_LI_Insur'];
+$mosharekat = ['mosharekat_LI_Inc', 'mosharekat_LI_Ekrm'];
 if ($_SESSION['scope'] == 'فرهنگی') {
-
 ?>
     <script>
         $('.hemayat_LI').css('display', 'none');
@@ -391,8 +397,10 @@ if ($_SESSION['scope'] == 'فرهنگی') {
         $('.maskan_LI').css('display', 'none');
         $('.job_LI').css('display', 'none');
         $('.mosharekat_LI').css('display', 'none');
-        $('.employeet_LI').css('display', 'none');
+        $('.employee_LI').css('display', 'none');
         $('.system-menu__title').css('display', 'none');
         $('.admin_menu').css('display', 'none');
     </script>
-<? } ?>
+<? }
+if ($_SESSION['scope'] == 'فرهنگی') {
+} ?>
