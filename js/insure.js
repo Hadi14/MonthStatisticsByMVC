@@ -9,3 +9,5 @@ wnum.addEventListener('input', () => {
 jnum.addEventListener('input', () => {
     $('#isum').val(+$(wnum).val() + +$(jnum).val());
 })
+
+

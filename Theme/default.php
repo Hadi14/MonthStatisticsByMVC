@@ -395,6 +395,23 @@
 
 <?
 $arr = getallaces();
+if ($arr === "") {
+?>
+    <script>
+        alert("هیچگونه دسترسی برای شما تعریف نشده است به مدیر سیستم مراجعه کنید.");
+        $('.hemayat_LI').css('display', 'none');
+        $('.sandogh_LI').css('display', 'none');
+        $('.fargangi_LI').css('display', 'none');
+        $('.maskan_LI').css('display', 'none');
+        $('.job_LI').css('display', 'none');
+        $('.mosharekat_LI').css('display', 'none');
+        $('.employee_LI').css('display', 'none');
+        $('.admin_menu').css('display', 'none');
+        $('.system-menu__title').css('display', 'none');
+    </script>
+<?
+    exit;
+}
 if ($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) {
 ?>
     <script>
