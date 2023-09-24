@@ -118,7 +118,8 @@
     static  function allPopulation($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from hemayat where Year='$year' and user='$un' order by Year desc, Month desc";
+        // $sql = "select * from hemayat where Year='$year' and user='$un' order by Year desc, Month desc";
+        $sql = "select * from hemayat where Year='$year' order by Year desc, Month desc";
         $record = $db->query($sql);
         // dump($record);
         return $record;
@@ -128,7 +129,8 @@
     static  function getallmoney($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from money where M_Year='$year' and M_user='$un' order by M_Year desc, M_Month desc";
+        // $sql = "select * from money where M_Year='$year' and M_user='$un' order by M_Year desc, M_Month desc";
+        $sql = "select * from money where M_Year='$year' order by M_Year desc, M_Month desc";
         $record = $db->query($sql);
         // dump($record);
         return $record;
@@ -138,7 +140,8 @@
     static  function getallDowry($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from dowry where D_Year='$year' and D_user='$un' order by D_Year desc, D_Month desc";
+        // $sql = "select * from dowry where D_Year='$year' and D_user='$un' order by D_Year desc, D_Month desc";
+        $sql = "select * from dowry where D_Year='$year' order by D_Year desc, D_Month desc";
         $record = $db->query($sql);
         // dump($record);
         return $record;
@@ -148,7 +151,8 @@
     static  function getallInsure($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from insure where I_Year='$year' and I_user='$un' order by I_Year desc, I_Month desc";
+        // $sql = "select * from insure where I_Year='$year' and I_user='$un' order by I_Year desc, I_Month desc";
+        $sql = "select * from insure where I_Year='$year' order by I_Year desc, I_Month desc";
         $record = $db->query($sql);
         return $record;
     }

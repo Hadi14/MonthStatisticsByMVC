@@ -19,7 +19,8 @@
     static  function getallEkram($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from ekram where E_Year='$year' and E_user='$un' order by E_Year desc, E_Month desc";
+        // $sql = "select * from ekram where E_Year='$year' and E_user='$un' order by E_Year desc, E_Month desc";
+        $sql = "select * from ekram where E_Year='$year' order by E_Year desc, E_Month desc";
         $record = $db->query($sql);
         return $record;
     }

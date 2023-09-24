@@ -18,7 +18,8 @@
     static  function getallEmployee($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from employee where Em_Year='$year' and Em_user='$un' order by Em_Year desc, Em_Month desc";
+        // $sql = "select * from employee where Em_Year='$year' and Em_user='$un' order by Em_Year desc, Em_Month desc";
+        $sql = "select * from employee where Em_Year='$year' order by Em_Year desc, Em_Month desc";
         $record = $db->query($sql);
         return $record;
     }

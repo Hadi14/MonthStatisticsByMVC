@@ -17,7 +17,8 @@
     static  function getAllJob($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from job where J_Year='$year' and J_user='$un' order by J_Year desc, J_Month desc";
+        // $sql = "select * from job where J_Year='$year' and J_user='$un' order by J_Year desc, J_Month desc";
+        $sql = "select * from job where J_Year='$year' order by J_Year desc, J_Month desc";
         $record = $db->query($sql);
         return $record;
     }

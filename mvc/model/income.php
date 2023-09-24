@@ -19,7 +19,8 @@
     static  function getallIncomes($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from incomes where In_Year='$year' and In_user='$un' order by In_Year desc, In_Month desc";
+        // $sql = "select * from incomes where In_Year='$year' and In_user='$un' order by In_Year desc, In_Month desc";
+        $sql = "select * from incomes where In_Year='$year' order by In_Year desc, In_Month desc";
         $record = $db->query($sql);
         return $record;
     }

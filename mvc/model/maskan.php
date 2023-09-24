@@ -17,7 +17,8 @@
     static  function getAllMaskan($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from maskan where M_Year='$year' and M_user='$un' order by M_Year desc, M_Month desc";
+        // $sql = "select * from maskan where M_Year='$year' and M_user='$un' order by M_Year desc, M_Month desc";
+        $sql = "select * from maskan where M_Year='$year' order by M_Year desc, M_Month desc";
         $record = $db->query($sql);
         return $record;
     }

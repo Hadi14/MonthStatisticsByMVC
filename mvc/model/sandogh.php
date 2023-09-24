@@ -17,7 +17,8 @@
     static  function getAllSandogh($year, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from sandogh where S_Year='$year' and S_user='$un' order by S_Year desc, S_Month desc";
+        // $sql = "select * from sandogh where S_Year='$year' and S_user='$un' order by S_Year desc, S_Month desc";
+        $sql = "select * from sandogh where S_Year='$year' order by S_Year desc, S_Month desc";
         $record = $db->query($sql);
         return $record;
     }

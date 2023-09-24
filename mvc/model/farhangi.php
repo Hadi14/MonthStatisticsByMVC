@@ -22,7 +22,7 @@
     {
         $db = Db::getInstance();
         // $sql = "select * from farhangi where F_Year='$year' and F_user='$un' order by F_Year desc, F_Month desc";
-        $sql = "select * from farhangi where F_Year='$year' order by F_Year desc, F_Month desc";
+        $sql = "select * from farhangi where F_Year='$year' order by F_Year desc, F_Month desc"; //این خط برای اینه که کاربر هم حوزه ای بتونه اطلاعاتی که همکار خودش ثبت کرده رو ببینه
         $record = $db->query($sql);
         return $record;
     }
@@ -31,8 +31,8 @@
     static  function getFarhangiGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        // $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' and F_user='$un'";
-        $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' ";
+        $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' and F_user='$un'";
+        // $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' ";  این خط برای اینکه شخص هم حوزه ای بتونه اطلاعاتی که همکار خودش ثبت کرده را ویرایش کنه
         $g = $db->query($sql);
         return $g;
     }
