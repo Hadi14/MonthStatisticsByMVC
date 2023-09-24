@@ -6,7 +6,7 @@ if (isset($_SESSION['suname'])) {
 <main class="page-center">
     <article class="sign-up">
         <!-- <h5 style="font-size: 15px;" class="sign-up__title">سامانه آماری کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری</h5> -->
-        <h1 class="sign-up__title">خوش برگشتی!</h1>
+        <h1 class="sign-up__title">خوش آمدید</h1>
         <p class="sign-up__subtitle">برای ورود نام کاربری و رمز عبور را وارد کن</p>
         <form class="sign-up-form form" action="<?= getBaseUrl() ?>user/login" method="post">
             <div id="faillogin"><?= $abc ?></div>
