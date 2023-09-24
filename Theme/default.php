@@ -257,7 +257,13 @@
                             <i data-feather="search" aria-hidden="true"></i>
                             <input type="text" placeholder="جستجو ...." required>
                         </div>
+                        <div class="namelable">
+                            <?
+                            echo "<b>" . $_SESSION['name'] . ' ' . $_SESSION['family'] . "</b>" . ' ' . 'خوش آمدید.';
+                            ?>
+                        </div>
                     </div>
+
                     <div class="main-nav-end">
                         <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
                             <span class="sr-only">Toggle menu</span>
@@ -333,6 +339,7 @@
                                     </picture>
                                 </span>
                             </button>
+
                             <ul class="users-item-dropdown nav-user-dropdown dropdown">
                                 <li><a href="##">
                                         <i data-feather="user" aria-hidden="true"></i>

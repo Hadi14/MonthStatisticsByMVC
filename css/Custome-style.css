@@ -60,6 +60,17 @@ div .row.mt-5 {
     font-family: vazir-digit;
 }
 
+.namelable {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.main-nav-start {
+    display: flex;
+    align-items: center;
+}
+
+
 /* 
 .col-lg-9 form {
     background-color: #126EFF;

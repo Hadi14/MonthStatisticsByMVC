@@ -27,6 +27,8 @@
             $_SESSION['suname'] = $u;
             // $_SESSION['scope'] = $record['scope'];
             $_SESSION['level'] = $record['level'];
+            $_SESSION['name'] = $record['name'];
+            $_SESSION['family'] = $record['family'];
             header("Location:" . getBaseUrl() . 'page/home/');
         }
     }
