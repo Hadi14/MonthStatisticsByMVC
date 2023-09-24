@@ -25,11 +25,27 @@
         $g = $db->query($sql);
         return $g;
     }
+    /*****************************************************************/
+    static  function getAccessGoal($u)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from accesses where A_user='$u'";
+        $g = $db->query($sql);
+        return $g;
+    }
     /********************************************************************** */
     static function EditMenu($name, $code)
     {
         $db = Db::getInstance();
         $sql = "update menus set M_name='$name' where M_code=$code";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
+    /********************************************************************** */
+    static function EditAccess($u, $aloHemayat, $aloPopulation,$aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee)
+    {
+        $db = Db::getInstance();
+        $sql = "update accesses set A_aloHemayat=$aloHemayat,A_aloPopulation=$aloPopulation ,A_aloMoney=$aloMoney, A_aloDowry=$aloDowry, A_aloInsure=$aloInsure, A_aloSandogh=$aloSandogh, A_aloFarhangi=$aloFarhangi, A_aloMaskan=$aloMaskan, A_aloJob=$aloJob, A_aloMosharekat=$aloMosharekat, A_aloIncome=$aloIncome, A_aloEkram=$aloEkram, A_aloEmployee=$aloEmployee where A_user='$u'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }

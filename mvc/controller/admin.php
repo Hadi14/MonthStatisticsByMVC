@@ -18,6 +18,13 @@
         $goal = AdminModel::getMenuGoal($user);
         echo json_encode($goal);
     }
+    /************************************************ */
+    public  function getAccessGoalField()
+    {
+        $user = $_POST['ukey'];
+        $goal = AdminModel::getAccessGoal($user);
+        echo json_encode($goal);
+    }
     /******************************************************** */
     public  function EditMenuRecord()
     {
@@ -25,6 +32,29 @@
         $code = $_POST['cod'];
 
         $rowAffect = AdminModel::EditMenu($name, $code);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+    /******************************************************** */
+    public  function EditAccessRecord()
+    {
+        $u = $_POST['un'];
+        $aloHemayat = $_POST['hemayat_chb'];
+        $aloPopulation = $_POST['popu_chb'];
+        $aloMoney = $_POST['money_chb'];
+        $aloDowry = $_POST['dowry_chb'];
+        $aloInsure = $_POST['insure_chb'];
+        $aloSandogh = $_POST['sandogh_chb'];
+        $aloFarhangi = $_POST['farhangi_chb'];
+        $aloMaskan = $_POST['maskan_chb'];
+        $aloJob = $_POST['job_chb'];
+        $aloMosharekat = $_POST['mosharekat_chb'];
+        $aloIncome = $_POST['income_chb'];
+        $aloEkram = $_POST['ekram_chb'];
+        $aloEmployee = $_POST['employee_chb'];
+
+        $rowAffect = AdminModel::EditAccess($u, $aloHemayat, $aloPopulation, $aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee);
         if ($rowAffect) {
             echo json_encode($rowAffect);
         }

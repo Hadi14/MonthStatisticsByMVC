@@ -182,7 +182,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editMenus()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editAccess()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -209,41 +209,66 @@
         data.forEach(element => {
             const dValues = Object.values(element);
 
-            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'>" + dValues[3] + "</td><td class='newColumn'>" + dValues[4] + "</td><td class='newColumn'>" + dValues[5] + "</td><td class='newColumn'>" + dValues[6] + "</td><td class='newColumn'>" + dValues[7] + "</td><td class='newColumn'>" + dValues[8] + "</td><td class='newColumn'>" + dValues[9] + "</td><td class='newColumn'>" + dValues[10] + "</td><td class='newColumn'>" + dValues[11] + "</td><td class='newColumn'>" + dValues[12] + "</td><td class='newColumn'>" + dValues[13] + "</td><td class='newColumn'><a onclick=editRecord(" + dValues[1] + ") data-bs-toggle='modal' data-bs-target='#AllocModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
+            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'>" + dValues[3] + "</td><td class='newColumn'>" + dValues[4] + "</td><td class='newColumn'>" + dValues[5] + "</td><td class='newColumn'>" + dValues[6] + "</td><td class='newColumn'>" + dValues[7] + "</td><td class='newColumn'>" + dValues[8] + "</td><td class='newColumn'>" + dValues[9] + "</td><td class='newColumn'>" + dValues[10] + "</td><td class='newColumn'>" + dValues[11] + "</td><td class='newColumn'>" + dValues[12] + "</td><td class='newColumn'>" + dValues[13] + "</td><td class='newColumn'><a onclick=editRecord(" + "'" + dValues[0] + "'" + ") data-bs-toggle='modal' data-bs-target='#AllocModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
 
             $('tbody').append(row);
         });
     }
 
     function editRecord(ukey) {
-        // $.ajax('/MonthStatisticsByMVC/admin/getMnuGoalField/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         'ukey': ukey,
-        //     },
-        //     success: function(data) {
-        //         const dValues = Object.values(data[0]);
-        //         $('#otherrecipientName1').val(dValues[0]);
-        //         $('#otherrecipientName2').val(dValues[1]);
-        //     },
-        // });
+        // console.log(ukey);
+        $.ajax('/MonthStatisticsByMVC/admin/getAccessGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'ukey': ukey,
+            },
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                $('#otherrecipientName1').val(ukey);
+                $('#hemayat_chb').prop('checked', +dValues[1]);
+                $('#popu_chb').prop('checked', +dValues[2]);
+                $('#money_chb').prop('checked', +dValues[3]);
+                $('#dowry_chb').prop('checked', +dValues[4]);
+                $('#insure_chb').prop('checked', +dValues[5]);
+                $('#sandogh_chb').prop('checked', +dValues[6]);
+                $('#farhangi_chb').prop('checked', +dValues[7]);
+                $('#maskan_chb').prop('checked', +dValues[8]);
+                $('#job_chb').prop('checked', +dValues[9]);
+                $('#mosharekat_chb').prop('checked', +dValues[10]);
+                $('#income_chb').prop('checked', +dValues[11]);
+                $('#ekram_chb').prop('checked', +dValues[12]);
+                $('#employee_chb').prop('checked', +dValues[13]);
+            },
+        });
     }
 
-    function editMenus() {
-        // $.ajax('/MonthStatisticsByMVC/admin/EditMenuRecord', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         'nam': $('#otherrecipientName1').val(),
-        //         'cod': $('#otherrecipientName2').val(),
-
-        //     },
-        //     success: function(data) {
-        //         alert('بروزرسانی با موفقیت انجام شد.');
-        //         $('.newColumn').remove();
-        //         getMenus();
-        //     },
-        // });
+    function editAccess() {
+        // console.log($('#employee_chb').prop("checked"));
+        $.ajax('/MonthStatisticsByMVC/admin/EditAccessRecord', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'un': $('#otherrecipientName1').val(),
+                'hemayat_chb': $('#hemayat_chb').prop("checked"),
+                'popu_chb': $('#popu_chb').prop("checked"),
+                'money_chb': $('#money_chb').prop("checked"),
+                'dowry_chb': $('#dowry_chb').prop("checked"),
+                'insure_chb': $('#insure_chb').prop("checked"),
+                'sandogh_chb': $('#sandogh_chb').prop("checked"),
+                'farhangi_chb': $('#farhangi_chb').prop("checked"),
+                'maskan_chb': $('#maskan_chb').prop("checked"),
+                'job_chb': $('#job_chb').prop("checked"),
+                'mosharekat_chb': $('#mosharekat_chb').prop("checked"),
+                'income_chb': $('#income_chb').prop("checked"),
+                'ekram_chb': $('#ekram_chb').prop("checked"),
+                'employee_chb': $('#employee_chb').prop("checked"),
+            },
+            success: function(data) {
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getAllocations();
+            },
+        });
     }
 </script>
