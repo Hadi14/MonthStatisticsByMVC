@@ -1,3 +1,8 @@
+<?
+if ($_SESSION['level'] != 0) {
+    exit;
+}
+?>
 <form action="" class="insert-form p-5 rounded" method="post">
     <div class="row">
         <div class="col-md-3">

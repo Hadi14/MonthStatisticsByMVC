@@ -25,7 +25,8 @@
         } else {
             // $msg = "<h4>تبریک شما به سیستم وارد شدید.</h4> <br> <span>برای ورود به صفحه اصلی<a href=" . getBaseUrl() . "page/home> اینجا </a>کلیک کنید</span>";
             $_SESSION['suname'] = $u;
-            $_SESSION['scope'] = $record['scope'];
+            // $_SESSION['scope'] = $record['scope'];
+            $_SESSION['level'] = $record['level'];
             header("Location:" . getBaseUrl() . 'page/home/');
         }
     }

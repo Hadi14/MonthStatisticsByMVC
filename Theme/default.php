@@ -387,18 +387,99 @@
 </html>
 
 <?
-
-$arr=getallaces();
-// if ($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) {
-//     exit;
-// }
+$arr = getallaces();
+if ($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) {
 ?>
+    <script>
+        $('.hemayat_LI').css('display', 'none');
+    </script>
+    <? } else {
+    if ($arr[2] == 0) { ?>
+        <script>
+            $('.hemayat_LI_Pop').css('display', 'none');
+        </script>
+    <? }
+    if ($arr[3] == 0) { ?>
+        <script>
+            $('.hemayat_LI_Mny').css('display', 'none');
+        </script>
+    <? }
+    if ($arr[4] == 0) { ?>
+        <script>
+            $('.hemayat_LI_Dwry').css('display', 'none');
+        </script>
+    <? }
+    if ($arr[5] == 0) { ?>
+        <script>
+            $('.hemayat_LI_Insur').css('display', 'none');
+        </script>
+    <? }
+}
+if ($arr[6] == 0) { ?>
+    <script>
+        $('.sandogh_LI').css('display', 'none');
+    </script>
+<? }
+if ($arr[7] == 0) { ?>
+    <script>
+        $('.fargangi_LI').css('display', 'none');
+    </script>
+<? }
+if ($arr[8] == 0) { ?>
+    <script>
+        $('.maskan_LI').css('display', 'none');
+    </script>
+<? }
+if ($arr[9] == 0) { ?>
+    <script>
+        $('.job_LI').css('display', 'none');
+    </script>
+<? }
+if ($arr[11] == 0 && $arr[12] == 0) { ?>
+    <script>
+        $('.mosharekat_LI').css('display', 'none');
+    </script>
+    <? } else {
+    if ($arr[11] == 0) {
+    ?>
+        <script>
+            $('.mosharekat_LI_Inc').css('display', 'none');
+        </script>
+    <? }
+    if ($arr[12] == 0) { ?>
+        <script>
+            $('.mosharekat_LI_Ekrm').css('display', 'none');
+        </script>
+    <? }
+}
+if ($arr[13] == 0) { ?>
+    <script>
+        $('.employee_LI').css('display', 'none');
+    </script>
+<? } ?>
+<?
+if ($_SESSION['level'] != 0) {
+?>
+    <script>
+        $('.system-menu__title').css('display', 'none');
+        $('.admin_menu').css('display', 'none');
+    </script>
+<?
+}
+?>
+
 <script>
     // $('.hemayat_LI').css('display', 'none');
+    // hemayat_LI_Pop
+    // hemayat_LI_Mny
+    // hemayat_LI_Dwry
+    // hemayat_LI_Insur
     // $('.sandogh_LI').css('display', 'none');
     // $('.maskan_LI').css('display', 'none');
     // $('.job_LI').css('display', 'none');
     // $('.mosharekat_LI').css('display', 'none');
+    // mosharekat_LI_Inc
+    // mosharekat_LI_Ekrm
     // $('.employee_LI').css('display', 'none');
     // $('.system-menu__title').css('display', 'none');
     // $('.admin_menu').css('display', 'none');

@@ -1,3 +1,8 @@
+<?
+if ($_SESSION['level'] != 0) {
+    exit;
+}
+?>
 <header>
     <?
     $yr = $_POST['year'];
