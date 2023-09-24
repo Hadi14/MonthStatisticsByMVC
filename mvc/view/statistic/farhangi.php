@@ -1,3 +1,8 @@
+<?
+if (getaces(7) == 0) {
+    exit;
+}
+?>
 <main class="main users chart-page" id="skip-target">
     <div class="container">
         <h2 class="main-title">آمار فرهنگی ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
@@ -169,7 +174,7 @@
             dataType: "json",
             data: {
                 'stu': +$('#otherrecipientName1').val(),
-                'yr':  $('#recentYR').text(),
+                'yr': $('#recentYR').text(),
                 // 'mn': s,
                 'mn': $('#recentMn').text(),
             },

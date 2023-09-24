@@ -387,20 +387,23 @@
 </html>
 
 <?
-$hemayat = ['hemayat_LI_Pop', 'hemayat_LI_Mny', 'hemayat_LI_Dwry', 'hemayat_LI_Insur'];
-$mosharekat = ['mosharekat_LI_Inc', 'mosharekat_LI_Ekrm'];
-if ($_SESSION['scope'] == 'فرهنگی') {
+
+$arr=getallaces();
+// if ($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) {
+//     exit;
+// }
 ?>
-    <script>
-        $('.hemayat_LI').css('display', 'none');
-        $('.sandogh_LI').css('display', 'none');
-        $('.maskan_LI').css('display', 'none');
-        $('.job_LI').css('display', 'none');
-        $('.mosharekat_LI').css('display', 'none');
-        $('.employee_LI').css('display', 'none');
-        $('.system-menu__title').css('display', 'none');
-        $('.admin_menu').css('display', 'none');
-    </script>
-<? }
-if ($_SESSION['scope'] == 'فرهنگی') {
-} ?>
+<script>
+    // $('.hemayat_LI').css('display', 'none');
+    // $('.sandogh_LI').css('display', 'none');
+    // $('.maskan_LI').css('display', 'none');
+    // $('.job_LI').css('display', 'none');
+    // $('.mosharekat_LI').css('display', 'none');
+    // $('.employee_LI').css('display', 'none');
+    // $('.system-menu__title').css('display', 'none');
+    // $('.admin_menu').css('display', 'none');
+</script>
+<? //}
+// if ($_SESSION['scope'] == 'فرهنگی') {
+//} 
+?>

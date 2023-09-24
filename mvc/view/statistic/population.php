@@ -1,5 +1,5 @@
 <?
-if ($_SESSION['scope'] == "فرهنگی") {
+if (getaces(2) == 0) {
     exit;
 }
 ?>

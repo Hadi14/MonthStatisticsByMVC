@@ -1,3 +1,9 @@
+<?
+if (getaces(8) == 0) {
+    exit;
+}
+?>
+
 <main class="main users chart-page" id="skip-target">
     <div class="container">
         <h2 class="main-title">آمار مسکن ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
