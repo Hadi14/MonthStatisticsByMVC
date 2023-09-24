@@ -20,7 +20,7 @@
         $out = ob_get_clean();
         require_once('theme/logintheme.php');
     }
-    public static function renderReport($filePath,  $data = array())
+    public static function renderReport($filePath,  $data = array(),$cssname)
     {
         extract($data);
         ob_start();

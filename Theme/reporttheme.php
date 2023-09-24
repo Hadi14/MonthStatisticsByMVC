@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/font.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/report.css">
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/<?= $cssname ?>.css">
     <script src="<?= getBaseUrl() ?>js/jquery-3.7.0.js"></script>
     <title>گزارش ماهانه</title>
 </head>

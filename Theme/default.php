@@ -220,7 +220,7 @@
                                     <a href="<?= getBaseUrl() ?>page/reportselect">گزارش ماهیانه</a>
                                 </li>
                                 <li>
-                                    <a href="#">Users-02</a>
+                                    <a href="<?= getBaseUrl() ?>page/reportselectwithname">گزارش ماهیانه (نام)</a>
                                 </li>
                             </ul>
                         </li>
@@ -466,25 +466,4 @@ if ($_SESSION['level'] != 0) {
     </script>
 <?
 }
-?>
-
-<script>
-    // $('.hemayat_LI').css('display', 'none');
-    // hemayat_LI_Pop
-    // hemayat_LI_Mny
-    // hemayat_LI_Dwry
-    // hemayat_LI_Insur
-    // $('.sandogh_LI').css('display', 'none');
-    // $('.maskan_LI').css('display', 'none');
-    // $('.job_LI').css('display', 'none');
-    // $('.mosharekat_LI').css('display', 'none');
-    // mosharekat_LI_Inc
-    // mosharekat_LI_Ekrm
-    // $('.employee_LI').css('display', 'none');
-    // $('.system-menu__title').css('display', 'none');
-    // $('.admin_menu').css('display', 'none');
-</script>
-<? //}
-// if ($_SESSION['scope'] == 'فرهنگی') {
-//} 
 ?>

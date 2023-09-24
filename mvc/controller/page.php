@@ -117,15 +117,37 @@ class PageController
             Render::render('/statistic/employee.php', "employee", $currdt[0]);
         }
     }
+    /**************************************************************** */
     function report()
     {
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::renderReport('/report/reportwn.php', $currdt[0]);
+            Render::renderReport('/report/reportnoname.php', $currdt[0], "reportwithoutn");
         }
     }
+    /**************************************************************** */
+    function reportwithusername()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::renderReport('/report/reportwithname.php', $currdt[0], "reportwithn");
+        }
+    }
+    /**************************************************************** */
+    function reportselectwithname()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/report/reportselectwithnam.php', $currdt[0]);
+        }
+    }
+    /**************************************************************** */
     function reportselect()
     {
         if (!isset($_SESSION['suname'])) {
@@ -135,6 +157,7 @@ class PageController
             Render::render('/report/reportselect.php', $currdt[0]);
         }
     }
+    /**************************************************************** */
     function registeruser()
     {
         if (!isset($_SESSION['suname'])) {
