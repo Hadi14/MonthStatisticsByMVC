@@ -119,8 +119,8 @@ if ($_SESSION['level'] != 0) {
                 <td id="stunum">عدم ثبت</td>
             </tr>
             <tr>
-                <th rowspan="8" scope="row">12</th>
-                <td rowspan="8">فعالیتهای عمرانی انجام شده </td>
+                <th rowspan="9" scope="row">12</th>
+                <td rowspan="9">فعالیتهای عمرانی انجام شده </td>
                 <td colspan="3">تعمیرات مسکن</td>
                 <td id="fix">عدم ثبت</td>
             </tr>
@@ -149,6 +149,10 @@ if ($_SESSION['level'] != 0) {
             <tr>
                 <td colspan="2">تفاهم نامه با بنیاد مستضعفان(ادامه سنوات قبل)</td>
                 <td id="bonyad">عدم ثبت</td>
+            </tr>
+            <tr>
+                <td colspan="3">اجرای تفاهم نامه ساخت مسکن با سپاه(ادامه سنوات قبل)</td>
+                <td id="sepah">عدم ثبت</td>
             </tr>
             <tr>
                 <td colspan="3">جمع</td>
@@ -405,7 +409,8 @@ if ($_SESSION['level'] != 0) {
                 $('#crtcity').text(toLocalStr(dValues[4]));
                 $('#crtrural').text(toLocalStr(dValues[5]));
                 $('#bonyad').text(toLocalStr(dValues[6]));
-                $('#allmaskan').text(toLocalStr(dValues[7]));
+                $('#sepah').text(toLocalStr(dValues[7]));
+                $('#allmaskan').text(toLocalStr(dValues[8]));
             },
         });
     }
