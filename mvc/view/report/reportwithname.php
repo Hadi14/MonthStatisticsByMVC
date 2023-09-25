@@ -317,7 +317,10 @@ if ($_SESSION['level'] != 0) {
 
 </main>
 <footer>
-    <button id="printbtn" onclick="window.print();">چاپ فرم</button>
+    <div class="btns">
+        <button id="printbtn" onclick="window.print();">چاپ فرم</button>
+        <a id="backbtn" href="<?= getBaseUrl() ?>page/reportselectwithname">بازگشت</a>
+    </div>
 </footer>
 
 <script>

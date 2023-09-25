@@ -32,3 +32,10 @@ th {
     padding: 0 .5rem !important;
 }
 
+#backbtn {
+    text-decoration: none;
+    color: black;
+    border: 2px solid rgb(77, 76, 76);
+    background-color: rgb(235, 232, 232);
+    padding: 1px 5px;
+}
