@@ -31,8 +31,12 @@
     static  function getFarhangiGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' and F_user='$un'";
-        // $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' ";  این خط برای اینکه شخص هم حوزه ای بتونه اطلاعاتی که همکار خودش ثبت کرده را ویرایش کنه
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from farhangi where F_Year='$year' and F_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from farhangi where F_Year='$year' and F_Month='$month' and F_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }

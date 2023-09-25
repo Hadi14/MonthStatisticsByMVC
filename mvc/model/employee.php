@@ -27,7 +27,12 @@
     static  function getEmployeeGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from employee where Em_Year='$year' and Em_Month='$month' and Em_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from employee where Em_Year='$year' and Em_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from employee where Em_Year='$year' and Em_Month='$month' and Em_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }

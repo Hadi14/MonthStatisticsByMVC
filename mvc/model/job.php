@@ -26,7 +26,12 @@
     static  function getJOBGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from job where J_Year='$year' and J_Month='$month' and J_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from job where J_Year='$year' and J_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from job where J_Year='$year' and J_Month='$month' and J_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }

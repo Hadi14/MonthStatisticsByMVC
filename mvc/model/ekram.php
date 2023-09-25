@@ -28,7 +28,12 @@
     static  function getEkramGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from ekram where E_Year='$year' and E_Month='$month' and E_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from ekram where E_Year='$year' and E_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from ekram where E_Year='$year' and E_Month='$month' and E_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }

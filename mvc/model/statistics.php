@@ -243,7 +243,12 @@
     static  function getMoneyGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select M_money from money where M_Year='$year' and M_Month='$month' and M_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select M_money from money where M_Year='$year' and M_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select M_money from money where M_Year='$year' and M_Month='$month' and M_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }
@@ -251,7 +256,12 @@
     static  function getdowryGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from dowry where D_Year='$year' and D_Month='$month' and D_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from dowry where D_Year='$year' and D_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from dowry where D_Year='$year' and D_Month='$month' and D_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }
@@ -259,7 +269,12 @@
     static  function getinsureGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from insure where I_Year='$year' and I_Month='$month' and I_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from insure where I_Year='$year' and I_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from insure where I_Year='$year' and I_Month='$month' and I_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }

@@ -28,7 +28,12 @@
     static  function getIncomeGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from incomes where In_Year='$year' and In_Month='$month' and In_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from incomes where In_Year='$year' and In_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from incomes where In_Year='$year' and In_Month='$month' and In_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }

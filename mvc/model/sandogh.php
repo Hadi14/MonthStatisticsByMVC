@@ -27,7 +27,12 @@
     static  function getSandoghGoal($year, $month, $un)
     {
         $db = Db::getInstance();
-        $sql = "select * from sandogh where S_Year='$year' and S_Month='$month' and S_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "select * from sandogh where S_Year='$year' and S_Month='$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "select * from sandogh where S_Year='$year' and S_Month='$month' and S_user='$un'";
+        }
         $g = $db->query($sql);
         return $g;
     }
