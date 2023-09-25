@@ -235,7 +235,7 @@ if (getaces(11) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">مبلغ :</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>

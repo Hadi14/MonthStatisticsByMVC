@@ -30,7 +30,7 @@ if (getaces(4) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ جهیزیه ماه قبل</p>
+                        <p class="stat-cards-info__num">(میلیارد ريال)مبلغ جهیزیه ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="dm" class="stat-cards-info__title">43,159</p>
@@ -71,7 +71,7 @@ if (getaces(4) == 0) {
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="mny" type="number" class="form-control familymen" placeholder="مبلغ جهیزیه">
+                                <input required name="mny" type="number" class="form-control familymen" placeholder="(میلیارد ريال)مبلغ جهیزیه">
                             </div>
                         </div>
 
@@ -96,7 +96,7 @@ if (getaces(4) == 0) {
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ جهیزیه</th>
+                        <th scope="row">(میلیارد ريال)مبلغ جهیزیه</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
 

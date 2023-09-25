@@ -12,7 +12,7 @@ if (getaces(3) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ معیشت ماه قبل</p>
+                        <p class="stat-cards-info__num">مبلغ معیشت ماه قبل(میلیارد ريال)</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="money" class="stat-cards-info__title">43,159</p>
@@ -89,7 +89,7 @@ if (getaces(3) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">مبلغ معیشت:</label>
+                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">مبلغ معیشت(میلیارد ريال):</label>
                         <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
                     </div>
                 </form>

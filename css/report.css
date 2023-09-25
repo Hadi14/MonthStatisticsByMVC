@@ -4,13 +4,17 @@
 }
 
 @font-face {
+    font-family: bmitra;
+    src: url("../fonts/B\ Mitra\ Bold.ttf");
+}
+
+@font-face {
     font-family: vazir-digit;
     src: url("../fonts/Vazir-FD.ttf");
 }
 
 body {
     text-align: center;
-    font-family: "BMitra";
 }
 
 table {
@@ -24,5 +28,7 @@ th {
     border: 1px solid lightgray;
     vertical-align: middle !important;
     font-family: vazir-digit;
+    font-family: bmitra;
     padding: 0 .5rem !important;
 }
+

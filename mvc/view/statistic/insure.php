@@ -140,7 +140,7 @@ if (getaces(5) == 0) {
                         <td><a style="color: gray;" disabled href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ بیمه های اجتماعی</th>
+                        <th scope="row">(میلیون ريال)مبلغ بیمه های اجتماعی</th>
                         <td><a onclick="editMoneyRecord()" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
@@ -188,7 +188,7 @@ if (getaces(5) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد یا مبلغ:</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                     </div>
                 </form>

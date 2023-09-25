@@ -12,7 +12,7 @@ if (getaces(6) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">تعداد وام های ماه قبل</p>
+                        <p class="stat-cards-info__num">تعداد وام ازدواج ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="mrglnum" class="stat-cards-info__title">43,159</p>
@@ -30,7 +30,7 @@ if (getaces(6) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ جهیزیه ماه قبل</p>
+                        <p class="stat-cards-info__num">مبلغ وام ازداج ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="mrglmoney" class="stat-cards-info__title">43,159</p>
@@ -48,7 +48,7 @@ if (getaces(6) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">تعداد وام های ماه قبل</p>
+                        <p class="stat-cards-info__num">تعداد کل وام تا قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="ln" class="stat-cards-info__title">43,159</p>
@@ -66,7 +66,7 @@ if (getaces(6) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ جهیزیه ماه قبل</p>
+                        <p class="stat-cards-info__num">مبلغ کل وام ها تا قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="lm" class="stat-cards-info__title">43,159</p>
@@ -107,7 +107,7 @@ if (getaces(6) == 0) {
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="s_MrgMonry" type="number" class="form-control familyrural" placeholder="مبلغ وام ازدواج پرداخت شده">
+                                <input required name="s_MrgMonry" type="number" class="form-control familyrural" placeholder="(میلیون ريال)مبلغ وام ازدواج پرداخت شده">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -123,7 +123,7 @@ if (getaces(6) == 0) {
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="مبلغ کل وامهای پرداخت شده">
+                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="(میلیارد ريال)مبلغ کل وامهای پرداخت شده">
                             </div>
                         </div>
 
@@ -148,7 +148,7 @@ if (getaces(6) == 0) {
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ وام ازدواج پرداخت شده</th>
+                        <th scope="row">مبلغ وام ازدواج پرداخت شده(میلیون ريال)</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
@@ -156,7 +156,7 @@ if (getaces(6) == 0) {
                         <td><a onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ کل وام های پرداخت شده</th>
+                        <th scope="row">(میلیارد ريال)مبلغ کل وام های پرداخت شده</th>
                         <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <!-- <a onclick='editRecord('3')' data-bs-toggle='modal' data-bs-target='#dryModal' href='#'>-->
@@ -178,7 +178,7 @@ if (getaces(6) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد :</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>

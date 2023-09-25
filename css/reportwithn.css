@@ -1,3 +1,7 @@
 td:nth-last-child(3) {
     text-align: right;
 }
+
+td:nth-last-child(2) {
+    font-family: vazir-digit;
+}
