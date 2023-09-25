@@ -253,16 +253,20 @@ if (getaces(6) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#goal').val(id);
-                if (id == 0)
-                    $('#otherrecipientName1').val(dValues[0]);
-                else if (id == 1)
-                    $('#otherrecipientName1').val(dValues[1]);
-                else if (id == 2)
-                    $('#otherrecipientName1').val(dValues[2]);
-                else if (id == 3)
-                    $('#otherrecipientName1').val(dValues[3]);
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#goal').val(id);
+                    if (id == 0)
+                        $('#otherrecipientName1').val(dValues[0]);
+                    else if (id == 1)
+                        $('#otherrecipientName1').val(dValues[1]);
+                    else if (id == 2)
+                        $('#otherrecipientName1').val(dValues[2]);
+                    else if (id == 3)
+                        $('#otherrecipientName1').val(dValues[3]);
+                }
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');

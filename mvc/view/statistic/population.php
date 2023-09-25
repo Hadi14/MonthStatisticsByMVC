@@ -515,11 +515,15 @@ if (getaces(2) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#forAllrecipientName1').val(dValues[0]);
-                $('#forAllrecipientName2').val(dValues[1]);
-                $('#forAllrecipientName3').val(dValues[3]);
-                $('#forAllrecipientName4').val(dValues[2]);
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#forAllrecipientName1').val(dValues[0]);
+                    $('#forAllrecipientName2').val(dValues[1]);
+                    $('#forAllrecipientName3').val(dValues[3]);
+                    $('#forAllrecipientName4').val(dValues[2]);
+                }
             },
         });
         $('#forAllrecipientName1').removeClass('goalfiled');
@@ -557,9 +561,12 @@ if (getaces(2) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#otherrecipientName1').val(dValues[5]);
-
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#otherrecipientName1').val(dValues[5]);
+                }
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');
@@ -581,19 +588,23 @@ if (getaces(2) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                if (id == 6 || id == 7) {
-                    $('#forOldrecipientName1').val(dValues[6]);
-                    $('#forOldfiledlabel1').text('تعداد خانوار سالمند شهری:');
-                    $('#forOldrecipientName2').val(dValues[7]);
-                    $('#forOldfiledlabel2').text('تعداد خانوار سالمند روستایی:');
-                    $('#gfiled').val('6');
-                } else if (id == 9 || id == 10) {
-                    $('#forOldrecipientName1').val(dValues[9]);
-                    $('#forOldfiledlabel1').text('تعداد نفرات سالمند شهری:');
-                    $('#forOldrecipientName2').val(dValues[10]);
-                    $('#forOldfiledlabel2').text('تعداد نفرات سالمند روستایی:');
-                    $('#gfiled').val('9');
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    if (id == 6 || id == 7) {
+                        $('#forOldrecipientName1').val(dValues[6]);
+                        $('#forOldfiledlabel1').text('تعداد خانوار سالمند شهری:');
+                        $('#forOldrecipientName2').val(dValues[7]);
+                        $('#forOldfiledlabel2').text('تعداد خانوار سالمند روستایی:');
+                        $('#gfiled').val('6');
+                    } else if (id == 9 || id == 10) {
+                        $('#forOldrecipientName1').val(dValues[9]);
+                        $('#forOldfiledlabel1').text('تعداد نفرات سالمند شهری:');
+                        $('#forOldrecipientName2').val(dValues[10]);
+                        $('#forOldfiledlabel2').text('تعداد نفرات سالمند روستایی:');
+                        $('#gfiled').val('9');
+                    }
                 }
             },
         });

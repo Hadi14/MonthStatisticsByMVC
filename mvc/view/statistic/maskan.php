@@ -428,6 +428,7 @@ if (getaces(8) == 0) {
 
     function editRecord(id) {
         let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/maskan/getmsknGoalField/', {
             type: 'post',
             dataType: "json",
@@ -437,32 +438,36 @@ if (getaces(8) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#goal').val(id);
-                if (id == 0) {
-                    $('#otherrecipientName1').val(dValues[0]);
-                    $('#msknfiledlabel1').text("تعداد تعمیرات مسکن:");
-                } else if (id == 1) {
-                    $('#otherrecipientName1').val(dValues[1]);
-                    $('#msknfiledlabel1').text("احداث سرویس بهداشتی و گازکشی:");
-                } else if (id == 2) {
-                    $('#otherrecipientName1').val(dValues[2]);
-                    $('#msknfiledlabel1').text("تعداد خرید مسکن شهری:");
-                } else if (id == 3) {
-                    $('#otherrecipientName1').val(dValues[3]);
-                    $('#msknfiledlabel1').text("تعداد خرید مسکن روستایی:");
-                } else if (id == 4) {
-                    $('#otherrecipientName1').val(dValues[4]);
-                    $('#msknfiledlabel1').text("تعداد احداث مسکن شهری:");
-                } else if (id == 5) {
-                    $('#otherrecipientName1').val(dValues[5]);
-                    $('#msknfiledlabel1').text("تعداد احداث مسکن روستایی:");
-                } else if (id == 6) {
-                    $('#otherrecipientName1').val(dValues[6]);
-                    $('#msknfiledlabel1').text("تفاهم نامه با بنیاد مستضعفان:");
-                } else if (id == 7) {
-                    $('#otherrecipientName1').val(dValues[7]);
-                    $('#msknfiledlabel1').text("تفاهم نامه با سپاه:");
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#goal').val(id);
+                    if (id == 0) {
+                        $('#otherrecipientName1').val(dValues[0]);
+                        $('#msknfiledlabel1').text("تعداد تعمیرات مسکن:");
+                    } else if (id == 1) {
+                        $('#otherrecipientName1').val(dValues[1]);
+                        $('#msknfiledlabel1').text("احداث سرویس بهداشتی و گازکشی:");
+                    } else if (id == 2) {
+                        $('#otherrecipientName1').val(dValues[2]);
+                        $('#msknfiledlabel1').text("تعداد خرید مسکن شهری:");
+                    } else if (id == 3) {
+                        $('#otherrecipientName1').val(dValues[3]);
+                        $('#msknfiledlabel1').text("تعداد خرید مسکن روستایی:");
+                    } else if (id == 4) {
+                        $('#otherrecipientName1').val(dValues[4]);
+                        $('#msknfiledlabel1').text("تعداد احداث مسکن شهری:");
+                    } else if (id == 5) {
+                        $('#otherrecipientName1').val(dValues[5]);
+                        $('#msknfiledlabel1').text("تعداد احداث مسکن روستایی:");
+                    } else if (id == 6) {
+                        $('#otherrecipientName1').val(dValues[6]);
+                        $('#msknfiledlabel1').text("تفاهم نامه با بنیاد مستضعفان:");
+                    } else if (id == 7) {
+                        $('#otherrecipientName1').val(dValues[7]);
+                        $('#msknfiledlabel1').text("تفاهم نامه با سپاه:");
+                    }
                 }
             },
         });

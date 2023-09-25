@@ -257,15 +257,19 @@ if (getaces(5) == 0) {
                 'mn': m,
             },
             success: function(data) {
-                const dValues = Object.values(data[0]);
-                $('#forNumrecipientName1').val(dValues[0]);
-                $('#forNumrecipientName2').val(dValues[1]);
-                if (id == 0) {
-                    $('#forNumrecipientName1').addClass('goalfiled');
-                    $('#forNumrecipientName2').removeClass('goalfiled');
-                } else if (id == 1) {
-                    $('#forNumrecipientName2').addClass('goalfiled');
-                    $('#forNumrecipientName1').removeClass('goalfiled');
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#forNumrecipientName1').val(dValues[0]);
+                    $('#forNumrecipientName2').val(dValues[1]);
+                    if (id == 0) {
+                        $('#forNumrecipientName1').addClass('goalfiled');
+                        $('#forNumrecipientName2').removeClass('goalfiled');
+                    } else if (id == 1) {
+                        $('#forNumrecipientName2').addClass('goalfiled');
+                        $('#forNumrecipientName1').removeClass('goalfiled');
+                    }
                 }
             },
         });

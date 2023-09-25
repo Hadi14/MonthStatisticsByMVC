@@ -200,24 +200,28 @@ if (getaces(13) == 0) {
                 'mn': m,
             },
             success: function(data) {
-                const dValues = Object.values(data[0]);
-                $('#goal').val(id);
-                $('#otherrecipientName1').val(dValues[0]);
-                $('#Emplfiledlabel1').text('تعداد کارکنان رسمی:');
-                $('#otherrecipientName2').val(dValues[1]);
-                $('#Emplfiledlabel2').text('تعداد کارکنان غیر رسمی:');
-                $('#otherrecipientName3').val(dValues[2]);
-                $('#Emplfiledlabel3').text('تعداد کل حامیان:');
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#goal').val(id);
+                    $('#otherrecipientName1').val(dValues[0]);
+                    $('#Emplfiledlabel1').text('تعداد کارکنان رسمی:');
+                    $('#otherrecipientName2').val(dValues[1]);
+                    $('#Emplfiledlabel2').text('تعداد کارکنان غیر رسمی:');
+                    $('#otherrecipientName3').val(dValues[2]);
+                    $('#Emplfiledlabel3').text('تعداد کل حامیان:');
 
-                $('#otherrecipientName1').removeClass('goalfiled');
-                $('#otherrecipientName2').removeClass('goalfiled');
-                $('#otherrecipientName3').removeClass('goalfiled');
-                if (id == 0) {
-                    $('#otherrecipientName1').addClass('goalfiled');
-                } else if (id == 1) {
-                    $('#otherrecipientName2').addClass('goalfiled');
-                } else if (id == 2) {
-                    $('#otherrecipientName3').addClass('goalfiled');
+                    $('#otherrecipientName1').removeClass('goalfiled');
+                    $('#otherrecipientName2').removeClass('goalfiled');
+                    $('#otherrecipientName3').removeClass('goalfiled');
+                    if (id == 0) {
+                        $('#otherrecipientName1').addClass('goalfiled');
+                    } else if (id == 1) {
+                        $('#otherrecipientName2').addClass('goalfiled');
+                    } else if (id == 2) {
+                        $('#otherrecipientName3').addClass('goalfiled');
+                    }
                 }
             }
         });

@@ -158,9 +158,12 @@ if (getaces(7) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#otherrecipientName1').val(dValues[0]);
-
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#otherrecipientName1').val(dValues[0]);
+                }
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');

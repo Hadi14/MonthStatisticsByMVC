@@ -182,17 +182,20 @@ if (getaces(12) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#goal').val(id);
-                if (id == 0) {
-                    $('#otherrecipientName1').val(dValues[0]);
-                    $('#Ekrmfiledlabel1').text('تعداد ایتام و محسنین:');
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#goal').val(id);
+                    if (id == 0) {
+                        $('#otherrecipientName1').val(dValues[0]);
+                        $('#Ekrmfiledlabel1').text('تعداد ایتام و محسنین:');
 
-                } else if (id == 1) {
-                    $('#otherrecipientName1').val(dValues[1]);
-                    $('#Ekrmfiledlabel1').text('تعداد حامیان:');
+                    } else if (id == 1) {
+                        $('#otherrecipientName1').val(dValues[1]);
+                        $('#Ekrmfiledlabel1').text('تعداد حامیان:');
+                    }
                 }
-
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');

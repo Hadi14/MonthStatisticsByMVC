@@ -312,20 +312,24 @@ if (getaces(11) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#goal').val(id);
-                if (id == 0)
-                    $('#otherrecipientName1').val(dValues[0]);
-                else if (id == 1)
-                    $('#otherrecipientName1').val(dValues[1]);
-                else if (id == 2)
-                    $('#otherrecipientName1').val(dValues[2]);
-                else if (id == 3)
-                    $('#otherrecipientName1').val(dValues[3]);
-                else if (id == 4)
-                    $('#otherrecipientName1').val(dValues[4]);
-                else if (id == 5)
-                    $('#otherrecipientName1').val(dValues[5]);
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#goal').val(id);
+                    if (id == 0)
+                        $('#otherrecipientName1').val(dValues[0]);
+                    else if (id == 1)
+                        $('#otherrecipientName1').val(dValues[1]);
+                    else if (id == 2)
+                        $('#otherrecipientName1').val(dValues[2]);
+                    else if (id == 3)
+                        $('#otherrecipientName1').val(dValues[3]);
+                    else if (id == 4)
+                        $('#otherrecipientName1').val(dValues[4]);
+                    else if (id == 5)
+                        $('#otherrecipientName1').val(dValues[5]);
+                }
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');

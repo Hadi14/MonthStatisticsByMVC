@@ -392,12 +392,16 @@ if (getaces(9) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#DNjob1').val(dValues[0]);
-                $('#DNjob2').val(dValues[1]);
-                $('#DNjob3').val(dValues[2]);
-                $('#DNjob4').val(dValues[3]);
-                $('#DNjob5').val(dValues[4]);
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#DNjob1').val(dValues[0]);
+                    $('#DNjob2').val(dValues[1]);
+                    $('#DNjob3').val(dValues[2]);
+                    $('#DNjob4').val(dValues[3]);
+                    $('#DNjob5').val(dValues[4]);
+                }
             },
         });
         $('#DNjob1').removeClass('goalfiled');
@@ -428,9 +432,12 @@ if (getaces(9) == 0) {
             },
             success: function(data) {
                 // console.log(data[0]);
-                const dValues = Object.values(data[0]);
-                $('#otherrecipientName1').val(dValues[id]);
-
+                if (data == null) {
+                    alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
+                } else {
+                    const dValues = Object.values(data[0]);
+                    $('#otherrecipientName1').val(dValues[id]);
+                }
             },
         });
         if (id == 5) {
