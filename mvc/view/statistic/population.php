@@ -195,7 +195,7 @@ if (getaces(2) == 0) {
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="familymen" type="number" class="form-control familymen" placeholder="تعداد خانوار باسرپرست مرد">
+                                <input required name="familywomen" type="number" class="form-control familywomen" placeholder="تعداد خانوار باسرپرست زن">
                             </div>
                         </div>
 
@@ -205,7 +205,7 @@ if (getaces(2) == 0) {
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="familywomen" id="familywomen" type="number" class="form-control familywomen" placeholder="تعداد خانوار باسرپرست زن">
+                                <input required name="familymen" id="familymen" type="number" class="form-control familymen" placeholder="تعداد خانوار باسرپرست مزد">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">

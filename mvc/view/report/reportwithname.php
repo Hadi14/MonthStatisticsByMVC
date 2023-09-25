@@ -440,10 +440,10 @@ if ($_SESSION['level'] != 0) {
                 const dValues = Object.values(data[0]);
                 let un = dValues[6];
 
-                $('#leonnum').text(toLocalStr(dValues[0]));
-                $('#leonmoney').text(toLocalStr(dValues[1]));
-                $('#MrgLnum').text(toLocalStr(dValues[2]));
-                $('#MrgLmoney').text(toLocalStr(dValues[3]));
+                $('#leonnum').text(toLocalStr(dValues[2]));
+                $('#leonmoney').text(toLocalStr(dValues[3]));
+                $('#MrgLnum').text(toLocalStr(dValues[0]));
+                $('#MrgLmoney').text(toLocalStr(dValues[1]));
 
 
                 $('#u_leonnum').text(un);

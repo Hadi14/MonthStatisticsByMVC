@@ -1,4 +1,4 @@
-var familywomen = document.querySelector('#familywomen');
+var familywomen = document.querySelector('#familymen');
 
 familywomen.addEventListener('blur', () => {
     if (+($('.familycity').val()) + +($('.familyrural').val()) != +($('.familymen').val()) + +($('.familywomen').val())) {
