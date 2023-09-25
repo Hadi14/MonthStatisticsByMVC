@@ -60,7 +60,7 @@ if (getaces(13) == 0) {
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="E_official" id="E_official" type="number" class="form-control familyrural" placeholder="تعداد ایتام و محسنین">
+                                <input required name="E_official" id="E_official" type="number" class="form-control familyrural" placeholder="نیروهای رسمی">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -68,7 +68,7 @@ if (getaces(13) == 0) {
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="E_company" id="E_company" type="number" class="form-control familymen" placeholder="تعداد حامیان">
+                                <input required name="E_company" id="E_company" type="number" class="form-control familymen" placeholder="نیروهای غیر رسمی">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
@@ -76,7 +76,7 @@ if (getaces(13) == 0) {
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input readonly required name="E_sum" id="E_sum" type="number" class="form-control familymen" placeholder="تعداد حامیان">
+                                <input readonly required name="E_sum" id="E_sum" type="number" class="form-control familymen" placeholder="تعداد کل نیروها">
                             </div>
                         </div>
                         <div class="pt-4">
