@@ -95,35 +95,39 @@ if (getaces(6) == 0) {
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">تعداد وام ازدواج پرداخت شده:</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="s_Mrgnum" type="number" class="form-control familyrural" placeholder="تعداد وام ازدواج پرداخت شده">
+                                <input required name="s_Mrgnum" type="number" class="form-control familyrural" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">مبلغ وام ازدواج پرداخت شده(میلیون ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="s_MrgMonry" type="number" class="form-control familyrural" placeholder="(میلیون ريال)مبلغ وام ازدواج پرداخت شده">
+                                <input required name="s_MrgMonry" type="number" class="form-control familyrural" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">تعداد کل وامهای پرداخت شده:</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="s_num" type="number" class="form-control familyrural" placeholder="تعداد کل وامهای پرداخت شده">
+                                <input required name="s_num" type="number" class="form-control familyrural" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">مبلغ کل وامهای پرداخت شده(میلیارد ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="(میلیارد ريال)مبلغ کل وامهای پرداخت شده">
+                                <input required name="s_mny" type="number" class="form-control familymen" placeholder="">
                             </div>
                         </div>
 
@@ -152,11 +156,11 @@ if (getaces(6) == 0) {
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">تعداد کل وام های پرداخت شده</th>
+                        <th scope="row"></span>تعداد کل وام های پرداخت شده<span class="spanDescription">(وجوه اداره شده،حمایتی،ودیعه،درمان،فرهنگی،رسالت،مهر)</th>
                         <td><a onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">(میلیارد ريال)مبلغ کل وام های پرداخت شده</th>
+                        <th scope="row">مبلغ کل وام های پرداخت شده(میلیارد ريال)</th>
                         <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <!-- <a onclick='editRecord('3')' data-bs-toggle='modal' data-bs-target='#dryModal' href='#'>-->
@@ -178,7 +182,7 @@ if (getaces(6) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد :</label>
+                        <label id="sandoghfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد :</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>
@@ -258,14 +262,19 @@ if (getaces(6) == 0) {
                 } else {
                     const dValues = Object.values(data[0]);
                     $('#goal').val(id);
-                    if (id == 0)
+                    if (id == 0) {
                         $('#otherrecipientName1').val(dValues[0]);
-                    else if (id == 1)
+                        $('#sandoghfiledlabel1').text('تعداد وام ازدواج پرداخت شده:');
+                    } else if (id == 1) {
                         $('#otherrecipientName1').val(dValues[1]);
-                    else if (id == 2)
+                        $('#sandoghfiledlabel1').text('مبلغ وام ازدواج پرداخت شده(میلیون ريال):');
+                    } else if (id == 2) {
                         $('#otherrecipientName1').val(dValues[2]);
-                    else if (id == 3)
+                        $('#sandoghfiledlabel1').text('تعداد کل وام های پرداخت شده:');
+                    } else if (id == 3) {
                         $('#otherrecipientName1').val(dValues[3]);
+                        $('#sandoghfiledlabel1').text('مبلغ کل وام های پرداخت شده:');
+                    }
                 }
             },
         });

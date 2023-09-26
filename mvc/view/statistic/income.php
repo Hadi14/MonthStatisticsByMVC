@@ -131,7 +131,7 @@ if (getaces(11) == 0) {
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
                             <label class="mt-3 mb-0" for="">صدقات(میلیارد ريال):</label>
-                            <div class="input-group pt-0 pt-0 mb-2">
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
