@@ -130,51 +130,57 @@ if (getaces(11) == 0) {
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">صدقات(میلیارد ريال):</label>
+                            <div class="input-group pt-0 pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fa-solid fa-envelope"></i>
                                 </span>
-                                <input required name="i_charity" type="number" class="form-control familyrural" placeholder="صدقات (میلیارد ريال)">
+                                <input required name="i_charity" type="number" class="form-control familyrural" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">پرداختی حامیان(میلیارد ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="i_Supports" type="number" class="form-control familymen" placeholder="پرداختی حامیان(میلیارد ريال)">
+                                <input required name="i_Supports" type="number" class="form-control familymen" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">زکات و کفارات(میلیارد ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="i_zakat" type="number" class="form-control familymen" placeholder="زکات و کفارات(میلیارد ريال)">
+                                <input required name="i_zakat" type="number" class="form-control familymen" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">مبتنی برنیاز(میلیارد ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="i_bsNeed" type="number" class="form-control familymen" placeholder="مبتنی برنیاز(میلیارد ريال)">
+                                <input required name="i_bsNeed" type="number" class="form-control familymen" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">کل درآمدها(میلیارد ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="i_allIncome" type="number" class="form-control familymen" placeholder="کل درآمدها(میلیارد ريال)">
+                                <input required name="i_allIncome" type="number" class="form-control familymen" placeholder="">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <div class="input-group mb-2">
+                            <label class="mt-3 mb-0" for="">مراکز نیکوکاری(میلیارد ريال):</label>
+                            <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
-                                <input required name="i_Nikookari" type="number" class="form-control familymen" placeholder="مراکز نیکوکاری(میلیارد ريال)">
+                                <input required name="i_Nikookari" type="number" class="form-control familymen" placeholder="">
                             </div>
                         </div>
 
