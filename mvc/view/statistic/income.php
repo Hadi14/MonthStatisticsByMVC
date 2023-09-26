@@ -5,7 +5,7 @@ if (getaces(11) == 0) {
 ?>
 <main class="main users chart-page" id="skip-target">
     <div class="container">
-        <h2 class="main-title">آمار درآمدهای ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>
+        <h2 class="main-title">آمار درآمدهای <span id="recentMn"></span> ماهه سال: <span id="recentYR"></span> (ماه اخیر)</h2>
         <div class="row stat-cards">
 
             <!-- **** -->
@@ -205,7 +205,7 @@ if (getaces(11) == 0) {
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ پرداختی حامیان(میلیارد ریال)</th>
+                        <th scope="row">مبلغ پرداختی حامیان به ایتام(میلیارد ریال)</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
