@@ -375,6 +375,7 @@ if ($_SESSION['level'] != 0) {
                 const dValues = Object.values(data[0]);
                 // let n = +dValues[0];
                 $('#citf').text(toLocalStr(dValues[0]));
+
                 $('#rurf').text(toLocalStr(dValues[1]));
                 $('#menf').text(toLocalStr(dValues[2]));
                 $('#womf').text(toLocalStr(dValues[3]));
@@ -415,6 +416,7 @@ if ($_SESSION['level'] != 0) {
                 $('#ocitypeop2').text(toLocalStr(dValues[9]));
                 $('#orurpeop2').text(toLocalStr(dValues[10]));
                 $('#alloldpeop2').text(toLocalStr(dValues[11]));
+
             },
         });
     }
@@ -825,8 +827,219 @@ if ($_SESSION['level'] != 0) {
                 $('#offi2').text(toLocalStr(dValues[0]));
                 $('#comp2').text(toLocalStr(dValues[1]));
                 $('#esum2').text(toLocalStr(dValues[2]));
-
+                popup();
             },
         });
+    }
+
+    function popup() {
+
+        let citf1 = +$('#citf').text().replace(/,/g, "");
+        let citf2 = +$('#citf2').text().replace(/,/g, "");
+        (citf1 > citf2) ? $('#citf2').css('color', 'red'): 0;
+
+        let rurf = +$('#rurf').text().replace(/,/g, "");
+        let rurf2 = +$('#rurf2').text().replace(/,/g, "");
+        (rurf > rurf2) ? $('#rurf2').css('color', 'red'): 0;
+
+        let womf = +$('#womf').text().replace(/,/g, "");
+        let womf2 = +$('#womf2').text().replace(/,/g, "");
+        (womf > womf2) ? $('#womf2').css('color', 'red'): 0;
+
+        let menf = +$('#menf').text().replace(/,/g, "");
+        let menf2 = +$('#menf2').text().replace(/,/g, "");
+        (menf > menf2) ? $('#menf2').css('color', 'red'): 0;
+
+        let allf = +$('#allf').text().replace(/,/g, "");
+        let allf2 = +$('#allf2').text().replace(/,/g, "");
+        (allf > allf2) ? $('#allf2').css('color', 'red'): 0;
+
+        let allpeop = +$('#allpeop').text().replace(/,/g, "");
+        let allpeop2 = +$('#allpeop2').text().replace(/,/g, "");
+        (allpeop > allpeop2) ? $('#allpeop2').css('color', 'red'): 0;
+
+        let ocityf = +$('#ocityf').text().replace(/,/g, "");
+        let ocityf2 = +$('#ocityf2').text().replace(/,/g, "");
+        (ocityf > ocityf2) ? $('#ocityf2').css('color', 'red'): 0;
+
+        let orurf = +$('#orurf').text().replace(/,/g, "");
+        let orurf2 = +$('#orurf2').text().replace(/,/g, "");
+        (orurf > orurf2) ? $('#orurf2').css('color', 'red'): 0;
+
+        let alloldf = +$('#alloldf').text().replace(/,/g, "");
+        let alloldf2 = +$('#alloldf2').text().replace(/,/g, "");
+        (alloldf > alloldf2) ? $('#alloldf2').css('color', 'red'): 0;
+
+        let ocitypeop = +$('#ocitypeop').text().replace(/,/g, "");
+        let ocitypeop2 = +$('#ocitypeop2').text().replace(/,/g, "");
+        (ocitypeop > ocitypeop2) ? $('#ocitypeop2').css('color', 'red'): 0;
+
+        let orurpeop = +$('#orurpeop').text().replace(/,/g, "");
+        let orurpeop2 = +$('#orurpeop2').text().replace(/,/g, "");
+        (orurpeop > orurpeop2) ? $('#orurpeop2').css('color', 'red'): 0;
+
+        let alloldpeop = +$('#alloldpeop').text().replace(/,/g, "");
+        let alloldpeop2 = +$('#alloldpeop2').text().replace(/,/g, "");
+        (alloldpeop > alloldpeop2) ? $('#alloldpeop2').css('color', 'red'): 0;
+
+        let Mmoney = +$('#Mmoney').text().replace(/,/g, "");
+        let Mmoney2 = +$('#Mmoney2').text().replace(/,/g, "");
+        (Mmoney > Mmoney2) ? $('#Mmoney2').css('color', 'red'): 0;
+
+        let downum = +$('#downum').text().replace(/,/g, "");
+        let downum2 = +$('#downum2').text().replace(/,/g, "");
+        (downum > downum2) ? $('#downum2').css('color', 'red'): 0;
+
+        let dowmoney = +$('#dowmoney').text().replace(/,/g, "");
+        let dowmoney2 = +$('#dowmoney2').text().replace(/,/g, "");
+        (dowmoney > dowmoney2) ? $('#dowmoney2').css('color', 'red'): 0;
+
+        let leonnum = +$('#leonnum').text().replace(/,/g, "");
+        let leonnum2 = +$('#leonnum2').text().replace(/,/g, "");
+        (leonnum > leonnum2) ? $('#leonnum2').css('color', 'red'): 0;
+
+        let leonmoney = +$('#leonmoney').text().replace(/,/g, "");
+        let leonmoney2 = +$('#leonmoney2').text().replace(/,/g, "");
+        (leonmoney > leonmoney2) ? $('#leonmoney2').css('color', 'red'): 0;
+
+        let MrgLnum = +$('#MrgLnum').text().replace(/,/g, "");
+        let MrgLnum2 = +$('#MrgLnum2').text().replace(/,/g, "");
+        (MrgLnum > MrgLnum2) ? $('#MrgLnum2').css('color', 'red'): 0;
+
+        let MrgLmoney = +$('#MrgLmoney').text().replace(/,/g, "");
+        let MrgLmoney2 = +$('#MrgLmoney2').text().replace(/,/g, "");
+        (MrgLmoney > MrgLmoney2) ? $('#MrgLmoney2').css('color', 'red'): 0;
+
+        let stunum = +$('#stunum').text().replace(/,/g, "");
+        let stunum2 = +$('#stunum2').text().replace(/,/g, "");
+        (stunum > stunum2) ? $('#stunum2').css('color', 'red'): 0;
+
+        let fix = +$('#fix').text().replace(/,/g, "");
+        let fix2 = +$('#fix2').text().replace(/,/g, "");
+        (fix > fix2) ? $('#fix2').css('color', 'red'): 0;
+
+        let wc = +$('#wc').text().replace(/,/g, "");
+        let wc2 = +$('#wc2').text().replace(/,/g, "");
+        (wc > wc2) ? $('#wc2').css('color', 'red'): 0;
+
+        let buyc = +$('#buyc').text().replace(/,/g, "");
+        let buyc2 = +$('#buyc2').text().replace(/,/g, "");
+        (buyc > buyc2) ? $('#buyc2').css('color', 'red'): 0;
+
+        let buyrur = +$('#buyrur').text().replace(/,/g, "");
+        let buyrur2 = +$('#buyrur2').text().replace(/,/g, "");
+        (buyrur > buyrur2) ? $('#buyrur2').css('color', 'red'): 0;
+
+        let crtcity = +$('#crtcity').text().replace(/,/g, "");
+        let crtcity2 = +$('#crtcity2').text().replace(/,/g, "");
+        (crtcity > crtcity2) ? $('#crtcity2').css('color', 'red'): 0;
+
+        let crtrural = +$('#crtrural').text().replace(/,/g, "");
+        let crtrural2 = +$('#crtrural2').text().replace(/,/g, "");
+        (crtrural > crtrural2) ? $('#crtrural2').css('color', 'red'): 0;
+
+        let bonyad = +$('#bonyad').text().replace(/,/g, "");
+        let bonyad2 = +$('#bonyad2').text().replace(/,/g, "");
+        (bonyad > bonyad2) ? $('#bonyad2').css('color', 'red'): 0;
+
+        let sepah = +$('#sepah').text().replace(/,/g, "");
+        let sepah2 = +$('#sepah2').text().replace(/,/g, "");
+        (sepah > sepah2) ? $('#sepah2').css('color', 'red'): 0;
+
+        let allmaskan = +$('#allmaskan').text().replace(/,/g, "");
+        let allmaskan2 = +$('#allmaskan2').text().replace(/,/g, "");
+        (allmaskan > allmaskan2) ? $('#allmaskan2').css('color', 'red'): 0;
+
+        let dsicj = +$('#dsicj').text().replace(/,/g, "");
+        let dsicj2 = +$('#dsicj2').text().replace(/,/g, "");
+        (dsicj > dsicj2) ? $('#dsicj2').css('color', 'red'): 0;
+
+        let dljob = +$('#dljob').text().replace(/,/g, "");
+        let dljob2 = +$('#dljob2').text().replace(/,/g, "");
+        (dljob > dljob2) ? $('#dljob2').css('color', 'red'): 0;
+
+        let alldic = +$('#alldic').text().replace(/,/g, "");
+        let alldic2 = +$('#alldic2').text().replace(/,/g, "");
+        (alldic > alldic2) ? $('#alldic2').css('color', 'red'): 0;
+
+        let ndjob = +$('#ndjob').text().replace(/,/g, "");
+        let ndjob2 = +$('#ndjob2').text().replace(/,/g, "");
+        (ndjob > ndjob2) ? $('#ndjob2').css('color', 'red'): 0;
+
+        let alljob = +$('#alljob').text().replace(/,/g, "");
+        let alljob2 = +$('#alljob2').text().replace(/,/g, "");
+        (alljob > alljob2) ? $('#alljob2').css('color', 'red'): 0;
+
+        let jleonmoney = +$('#jleonmoney').text().replace(/,/g, "");
+        let jleonmoney2 = +$('#jleonmoney2').text().replace(/,/g, "");
+        (jleonmoney > jleonmoney2) ? $('#jleonmoney2').css('color', 'red'): 0;
+
+        let flearn = +$('#flearn').text().replace(/,/g, "");
+        let flearn2 = +$('#flearn2').text().replace(/,/g, "");
+        (flearn > flearn2) ? $('#flearn2').css('color', 'red'): 0;
+
+        let jsup = +$('#jsup').text().replace(/,/g, "");
+        let jsup2 = +$('#jsup2').text().replace(/,/g, "");
+        (jsup > jsup2) ? $('#jsup2').css('color', 'red'): 0;
+
+        let inwom = +$('#inwom').text().replace(/,/g, "");
+        let inwom2 = +$('#inwom2').text().replace(/,/g, "");
+        (inwom > inwom2) ? $('#inwom2').css('color', 'red'): 0;
+
+        let insjob = +$('#insjob').text().replace(/,/g, "");
+        let insjob2 = +$('#insjob2').text().replace(/,/g, "");
+        (insjob > insjob2) ? $('#insjob2').css('color', 'red'): 0;
+
+        let insall = +$('#insall').text().replace(/,/g, "");
+        let insall2 = +$('#insall2').text().replace(/,/g, "");
+        (insall > insall2) ? $('#insall2').css('color', 'red'): 0;
+
+        let insmoney = +$('#insmoney').text().replace(/,/g, "");
+        let insmoney2 = +$('#insmoney2').text().replace(/,/g, "");
+        (insmoney > insmoney2) ? $('#insmoney2').css('color', 'red'): 0;
+
+        let charity = +$('#charity').text().replace(/,/g, "");
+        let charity2 = +$('#charity2').text().replace(/,/g, "");
+        (charity > charity2) ? $('#charity2').css('color', 'red'): 0;
+
+        let orphmoney = +$('#orphmoney').text().replace(/,/g, "");
+        let orphmoney2 = +$('#orphmoney2').text().replace(/,/g, "");
+        (orphmoney > orphmoney2) ? $('#orphmoney2').css('color', 'red'): 0;
+
+        let zakat = +$('#zakat').text().replace(/,/g, "");
+        let zakat2 = +$('#zakat2').text().replace(/,/g, "");
+        (zakat > zakat2) ? $('#zakat2').css('color', 'red'): 0;
+
+        let basneed = +$('#basneed').text().replace(/,/g, "");
+        let basneed2 = +$('#basneed2').text().replace(/,/g, "");
+        (basneed > basneed2) ? $('#basneed2').css('color', 'red'): 0;
+
+        let allmoney = +$('#allmoney').text().replace(/,/g, "");
+        let allmoney2 = +$('#allmoney2').text().replace(/,/g, "");
+        (allmoney > allmoney2) ? $('#allmoney2').css('color', 'red'): 0;
+
+        let marakezmoney = +$('#marakezmoney').text().replace(/,/g, "");
+        let marakezmoney2 = +$('#marakezmoney2').text().replace(/,/g, "");
+        (marakezmoney > marakezmoney2) ? $('#marakezmoney2').css('color', 'red'): 0;
+
+        let orphnum = +$('#orphnum').text().replace(/,/g, "");
+        let orphnum2 = +$('#orphnum2').text().replace(/,/g, "");
+        (orphnum > orphnum2) ? $('#orphnum2').css('color', 'red'): 0;
+
+        let supports = +$('#supports').text().replace(/,/g, "");
+        let supports2 = +$('#supports2').text().replace(/,/g, "");
+        (supports > supports2) ? $('#supports2').css('color', 'red'): 0;
+
+        let offi = +$('#offi').text().replace(/,/g, "");
+        let offi2 = +$('#offi2').text().replace(/,/g, "");
+        (offi > offi2) ? $('#offi2').css('color', 'red'): 0;
+
+        let comp = +$('#comp').text().replace(/,/g, "");
+        let comp2 = +$('#comp2').text().replace(/,/g, "");
+        (comp > comp2) ? $('#comp2').css('color', 'red'): 0;
+
+        let esum1 = +$('#esum').text().replace(/,/g, "");
+        let esum2 = +$('#esum2').text().replace(/,/g, "");
+        (esum1 > esum2) ? $('#esum2').css('color', 'red'): 0;
     }
 </script>
