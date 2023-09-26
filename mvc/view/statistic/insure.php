@@ -137,10 +137,10 @@ if (getaces(5) == 0) {
                     </tr>
                     <tr>
                         <th scope="row">جمع تعداد</th>
-                        <td><a style="color: gray;" disabled href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">(میلیون ريال)مبلغ بیمه های اجتماعی</th>
+                        <th scope="row">مبلغ بیمه های اجتماعی(میلیون ريال)</th>
                         <td><a onclick="editMoneyRecord()" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
@@ -160,11 +160,11 @@ if (getaces(5) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="forNumfiledlabel1" for="forNumrecipientName1" class="col-form-label"></label>
+                        <label id="forNumfiledlabel1" for="forNumrecipientName1" class="col-form-label">تعداد زنان سرپرست خانوار:</label>
                         <input id="forNumrecipientName1" name="wn" type="text" class="form-control">
                     </div>
                     <div class="mb-0">
-                        <label id="forNumfiledlabel2" for="forNumrecipientName2" class="col-form-label"></label>
+                        <label id="forNumfiledlabel2" for="forNumrecipientName2" class="col-form-label">تعداد مجریان طرح اشتغال:</label>
                         <input id="forNumrecipientName2" name="jn" type="text" class="form-control">
                     </div>
                 </form>
@@ -188,7 +188,7 @@ if (getaces(5) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد یا مبلغ:</label>
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">مبلغ بیمه های اجتماعی(میلیون ريال):</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                     </div>
                 </form>

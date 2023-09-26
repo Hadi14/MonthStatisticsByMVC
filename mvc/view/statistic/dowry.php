@@ -96,7 +96,7 @@ if (getaces(4) == 0) {
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">(میلیارد ريال)مبلغ جهیزیه</th>
+                        <th scope="row">مبلغ جهیزیه(میلیارد ريال)</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
 

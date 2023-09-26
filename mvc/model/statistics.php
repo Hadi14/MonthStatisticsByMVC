@@ -93,7 +93,7 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update insure set I_NumWomen=$wn ,I_NumJob=$jn  where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
+        $sql = "update insure set I_NumWomen=$wn ,I_NumJob=$jn, I_Sum=$wn+$jn   where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
