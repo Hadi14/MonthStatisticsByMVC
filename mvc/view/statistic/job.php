@@ -237,11 +237,11 @@ if (getaces(9) == 0) {
                         <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">جمع کل اشتغال (مستقیم و غیر مستقیم)</th>
+                        <th scope="row">جمع کل اشتغال(مستقیم و غیر مستقیم)</th>
                         <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th scope="row">مبلغ کل تسهیلات پرداخت شده (میلیارد ریال)</th>
+                        <th scope="row">مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)</th>
                         <td><a onclick="otherEditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>

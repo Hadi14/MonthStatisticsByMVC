@@ -299,7 +299,7 @@ if (getaces(8) == 0) {
                     </tr>
                     <tr>
                         <th scope="row">جمع تعداد</th>
-                        <td><a onclick="editRecord('8')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a disabled style="color: gray;"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

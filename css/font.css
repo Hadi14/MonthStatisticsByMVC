@@ -12,7 +12,11 @@ body {
   font-family: vazirf, sans-serif;
 }
 
-.digitfont {
+.digitfont,
+.currentDate,
+#recentYR,
+#recentMn,
+.stat-cards-info__title {
   font-family: vazir-digit;
 
 }

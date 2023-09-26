@@ -12,7 +12,7 @@ if (getaces(11) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">درآمد صدقات ماه قبل</p>
+                        <p class="stat-cards-info__num">درآمد صدقات تا ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="charity" class="stat-cards-info__title">43,159</p>
@@ -30,7 +30,7 @@ if (getaces(11) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ پرداختی حامیان به ایتام در ماه قبل</p>
+                        <p class="stat-cards-info__num">مبلغ پرداختی حامیان به ایتام تا ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="orphan" class="stat-cards-info__title">43,159</p>
@@ -49,7 +49,7 @@ if (getaces(11) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ زکات و کفارات ماه قبل</p>
+                        <p class="stat-cards-info__num">مبلغ زکات و کفارات تا ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="zakat" class="stat-cards-info__title">43,159</p>
@@ -67,7 +67,7 @@ if (getaces(11) == 0) {
             <div class="col-md-6 col-xl-3">
                 <article class="stat-cards-item">
                     <div class="stat-cards-info">
-                        <p class="stat-cards-info__num">مبلغ مبتنی بر نیاز ماه قبل</p>
+                        <p class="stat-cards-info__num">مبلغ مبتنی بر نیاز تا ماه قبل</p>
                         <div class="d-flex  align-items-center">
                             <i class="fa-solid mx-2 fa-people-roof stat-cards-icon primary"></i>
                             <p id="baseneed" class="stat-cards-info__title">43,159</p>
@@ -201,7 +201,7 @@ if (getaces(11) == 0) {
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">صدقات (میلیارد ریال)</th>
+                        <th scope="row">صدقات(میلیارد ریال)</th>
                         <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
@@ -241,7 +241,7 @@ if (getaces(11) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">مبلغ :</label>
+                        <label id="incomefiledlabel1" for="otherrecipientName1" class="col-form-label">مبلغ :</label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>
@@ -323,18 +323,25 @@ if (getaces(11) == 0) {
                 } else {
                     const dValues = Object.values(data[0]);
                     $('#goal').val(id);
-                    if (id == 0)
+                    if (id == 0) {
                         $('#otherrecipientName1').val(dValues[0]);
-                    else if (id == 1)
+                        $('#incomefiledlabel1').text('صدقات(میلیارد ریال):');
+                    } else if (id == 1) {
                         $('#otherrecipientName1').val(dValues[1]);
-                    else if (id == 2)
+                        $('#incomefiledlabel1').text('مبلغ پرداختی حامیان(میلیارد ریال):');
+                    } else if (id == 2) {
                         $('#otherrecipientName1').val(dValues[2]);
-                    else if (id == 3)
+                        $('#incomefiledlabel1').text('زکات و کفارات(میلیارد ریال):');
+                    } else if (id == 3) {
                         $('#otherrecipientName1').val(dValues[3]);
-                    else if (id == 4)
+                        $('#incomefiledlabel1').text('مبتنی بر نیاز(میلیارد ریال):');
+                    } else if (id == 4) {
                         $('#otherrecipientName1').val(dValues[4]);
-                    else if (id == 5)
+                        $('#incomefiledlabel1').text('کل درآمدها(میلیارد ریال):');
+                    } else if (id == 5) {
                         $('#otherrecipientName1').val(dValues[5]);
+                        $('#incomefiledlabel1').text('درآمد مراکز نیکوکاری(میلیارد ریال):');
+                    }
                 }
             },
         });
