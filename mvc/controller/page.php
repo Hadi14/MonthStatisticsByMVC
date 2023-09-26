@@ -183,4 +183,23 @@ class PageController
             Render::render('/admin/allocationaccess.php');
         }
     }
+    /**************************************************************** */
+    function reportselect2month()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            Render::render('/report/reportselecttwomonth.php');
+        }
+    }
+    /**************************************************************** */
+    function reporttwoMon()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::renderReport('/report/reporttwomonth.php', $currdt[0], "reporttowmonth");
+        }
+    }
 }

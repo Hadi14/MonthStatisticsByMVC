@@ -71,7 +71,7 @@ div .row.mt-5 {
 }
 
 
-/* 
-.col-lg-9 form {
-    background-color: #126EFF;
-} */
+.sidebar-body-menu a.submenu {
+    padding-top: 0;
+    padding-bottom: 0;
+}

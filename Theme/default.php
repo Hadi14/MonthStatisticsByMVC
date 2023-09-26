@@ -61,16 +61,16 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li class="hemayat_LI_Pop">
-                                    <a href="<?= getBaseUrl() ?>page/population">آمار جمعیتی</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/population">آمار جمعیتی</a>
                                 </li>
                                 <li class="hemayat_LI_Mny">
-                                    <a href="<?= getBaseUrl() ?>page/money"> آمار معیشت</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/money"> آمار معیشت</a>
                                 </li>
                                 <li class="hemayat_LI_Dwry">
-                                    <a href="<?= getBaseUrl() ?>page/dowry">جهیزیه</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/dowry">جهیزیه</a>
                                 </li>
                                 <li class="hemayat_LI_Insur">
-                                    <a href="<?= getBaseUrl() ?>page/insure">بیمه های اجتماعی</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/insure">بیمه های اجتماعی</a>
                                 </li>
                             </ul>
                         </li>
@@ -149,10 +149,10 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li class="mosharekat_LI_Inc">
-                                    <a href="<?= getBaseUrl() ?>page/income">ثبت آمار درآمدها</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/income">ثبت آمار درآمدها</a>
                                 </li>
                                 <li class="mosharekat_LI_Ekrm">
-                                    <a href="<?= getBaseUrl() ?>page/ekram">ثبت آمار اکرام</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/ekram">ثبت آمار اکرام</a>
                                 </li>
 
                             </ul>
@@ -194,16 +194,16 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/registeruser">تعریف کاربر</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/registeruser">تعریف کاربر</a>
                                 </li>
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
                                 </li>
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/defineMenu">تعریف منوها</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/defineMenu">تعریف منوها</a>
                                 </li>
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/allocationaccess">تخصیص دسترسی</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/allocationaccess">تخصیص دسترسی</a>
                                 </li>
                             </ul>
                         </li>
@@ -217,10 +217,13 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/reportselect">گزارش ماهیانه</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/reportselect">گزارش ماهیانه</a>
                                 </li>
                                 <li>
-                                    <a href="<?= getBaseUrl() ?>page/reportselectwithname">گزارش ماهیانه (نام)</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/reportselectwithname">گزارش ماهیانه (نام)</a>
+                                </li>
+                                <li>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/reportselect2month">گزارش دوماهه</a>
                                 </li>
                             </ul>
                         </li>
