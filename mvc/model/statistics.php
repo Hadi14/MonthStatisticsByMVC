@@ -167,6 +167,17 @@
             echo json_encode($ar);
         }
     }
+    /*********************************************************************/
+    static  function enedits()
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='1' where title='enableEdit' ";
+        $rowAffect = $db->modify($sql);
+        if ($rowAffect) {
+            $ar = array("status" => true);
+            echo json_encode($ar);
+        }
+    }
     /***************************************************************** */
     static  function disinserts()
     {
@@ -179,10 +190,32 @@
         }
     }
     /***************************************************************** */
+    static  function disEdits()
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='0' where title='enableEdit' ";
+        $rowAffect = $db->modify($sql);
+        if ($rowAffect) {
+            $ar = array("status" => true);
+            echo json_encode($ar);
+        }
+    }
+    /***************************************************************** */
     static  function getinsertstatus()
     {
         $db = Db::getInstance();
         $sql = "select value from variables where title='enableinsert'";
+        $insertStatus = $db->query($sql);
+        // return $insertStatus;
+        $ar = array("status" =>  $insertStatus[0]['value']);
+        // dump($insertStatus[0]['value']);
+        echo json_encode($ar);
+    }
+    /***************************************************************** */
+    static  function getenablestatus()
+    {
+        $db = Db::getInstance();
+        $sql = "select value from variables where title='enableEdit'";
         $insertStatus = $db->query($sql);
         // return $insertStatus;
         $ar = array("status" =>  $insertStatus[0]['value']);

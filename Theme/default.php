@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/Custome-style.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/all.min.css">
     <script src="<?= getBaseUrl() ?>js/jquery-3.7.0.js"></script>
+    <script src="<?= getBaseUrl() ?>js/currentpage.js"></script>
 </head>
 
 <body>

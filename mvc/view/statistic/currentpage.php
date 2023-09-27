@@ -34,9 +34,12 @@ if ($_SESSION['level'] != 0) {
 </form>
 <!-- <button class="btn btn-primary mt-4" id="alertbtn" type="button">وضعیت</button> -->
 <div class="form-check form-switch mt-5">
-    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-    <label class="form-check-label" for="flexSwitchCheckDefault">فعال سازی/غیرفعال سازی ثبت</label>
+    <input class="form-check-input" type="checkbox" id="EnableInsert">
+    <label class="form-check-label" for="EnableInsert">فعال سازی/غیرفعال سازی ثبت</label>
 </div>
+<div class="form-check form-switch mt-5">
+    <input class="form-check-input" type="checkbox" id="EnableEdit">
+    <label class="form-check-label" for="EnableEdit">فعال سازی/غیرفعال سازی ویرایش ماه اخیر</label>
 </div>
 
 <script>
@@ -57,7 +60,7 @@ if ($_SESSION['level'] != 0) {
     }
 
     $(document).ready(function() {
-        $('input[type="checkbox"]').click(function() {
+        $('#EnableInsert').click(function() {
             if ($(this).prop("checked") == true) {
                 $.ajax('/MonthStatisticsByMVC/statistics/enableinserts/', {
                     type: 'post',
@@ -67,7 +70,7 @@ if ($_SESSION['level'] != 0) {
                     //     'cmonth': $('#mon').val(),
                     // },
                     success: function(data) {
-                        alert('فعالسازی با موفقیت انجام شد.');
+                        alert('فعالسازی درج با موفقیت انجام شد.');
                     },
                 });
             } else if ($(this).prop("checked") == false) {
@@ -79,7 +82,7 @@ if ($_SESSION['level'] != 0) {
                     //     'cmonth': $('#mon').val(),
                     // },
                     success: function(data) {
-                        alert('غیرفعالسازی با موفقیت انجام شد.');
+                        alert('غیرفعالسازی درج با موفقیت انجام شد.');
                     },
                 });
             }
@@ -95,9 +98,9 @@ if ($_SESSION['level'] != 0) {
             success: function(data) {
                 // important. must be write --> "==1" and "==0"
                 if (data.status[0] == 1) {
-                    $('#flexSwitchCheckDefault').prop('checked', true);
+                    $('#EnableInsert').prop('checked', true);
                 } else if (data.status[0] == 0) {
-                    $('#flexSwitchCheckDefault').removeProp('checked');
+                    $('#EnableInsert').removeProp('checked');
                 }
             },
         });

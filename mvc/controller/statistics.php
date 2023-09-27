@@ -162,14 +162,29 @@
         StatisticsModel::eninserts();
     }
     /**************************************************** */
+    public  function enableEdits()
+    {
+        StatisticsModel::enedits();
+    }
+    /**************************************************** */
     public  function disableinserts()
     {
         StatisticsModel::disinserts();
     }
     /**************************************************** */
+    public  function disableEdits()
+    {
+        StatisticsModel::disEdits();
+    }
+    /**************************************************** */
     public  function getinsertsstatus()
     {
         StatisticsModel::getinsertstatus();
+    }
+    /**************************************************** */
+    public  function getEnblstatus()
+    {
+        StatisticsModel::getenablestatus();
     }
     /**************************************************** */
     public  function getrecentmonth()
