@@ -4,3 +4,4 @@ show.forEach(element => {
         e.target.childNodes[3].classList.toggle('rotated');
     })
 });
+

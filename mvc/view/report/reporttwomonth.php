@@ -3,325 +3,328 @@ if ($_SESSION['level'] != 0) {
     exit;
 }
 ?>
-<header>
-    <?
-    $yr = $_POST['year'];
-    $mn1 = $_POST['month1'];
-    $mn2 = $_POST['month2'];
-    $mon1 = (int)$mn1;
-    $mon2 = (int)$mn2;
-    ?>
-    <h5 class="digitfont">عملکرد مقایسه ای کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری سال <?= $yr ?></h5>
-</header>
-<main>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ردیف</th>
-                <th colspan="4">عنوان فعالیت</th>
-                <th>آمارماه<?= $mon1 ?></th>
-                <th>آمارماه<?= $mon2 ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th rowspan="6" scope="row">1</th>
-                <td rowspan="6">مددجویان تحت حمایت</td>
-                <td rowspan="6">کل معیشت بگیر</td>
-                <td rowspan="5">خانوار</td>
-                <td>شهری</td>
-                <td id="citf">عدم ثبت</td>
-                <td id="citf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td>روستایی</td>
-                <td id="rurf">عدم ثبت</td>
-                <td id="rurf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td>زن سرپرست</td>
-                <td id="womf">عدم ثبت</td>
-                <td id="womf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td>مرد سرپرست</td>
-                <td id="menf">عدم ثبت</td>
-                <td id="menf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td>کل</td>
-                <td id="allf">عدم ثبت</td>
-                <td id="allf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">نفرات</td>
-                <td id="allpeop">عدم ثبت</td>
-                <td id="allpeop2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="3" scope="row">2</th>
-                <td rowspan="3">خانوار سالمند</td>
-                <td colspan="3">معیشت بگیر شهری</td>
-                <td id="ocityf">عدم ثبت</td>
-                <td id="ocityf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">معیشت بگیر روستایی</td>
-                <td id="orurf">عدم ثبت</td>
-                <td id="orurf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">جمع کل</td>
-                <td id="alloldf">عدم ثبت</td>
-                <td id="alloldf2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="3" scope="row">3</th>
-                <td rowspan="3">جمعیت سالمند</td>
-                <td colspan="3">معیشت بگیر شهری</td>
-                <td id="ocitypeop">عدم ثبت</td>
-                <td id="ocitypeop2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">معیشت بگیر روستایی</td>
+<div id="exportContent">
+    <header>
+        <?
+        $yr = $_POST['year'];
+        $mn1 = $_POST['month1'];
+        $mn2 = $_POST['month2'];
+        $mon1 = (int)$mn1;
+        $mon2 = (int)$mn2;
+        ?>
+        <h5 class="digitfont">عملکرد مقایسه ای کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری سال <?= $yr ?></h5>
+    </header>
+    <main>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ردیف</th>
+                    <th colspan="4">عنوان فعالیت</th>
+                    <th>آمارماه<?= $mon1 ?></th>
+                    <th>آمارماه<?= $mon2 ?></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th rowspan="6" scope="row">1</th>
+                    <td rowspan="6">مددجویان تحت حمایت</td>
+                    <td rowspan="6">کل معیشت بگیر</td>
+                    <td rowspan="5">خانوار</td>
+                    <td>شهری</td>
+                    <td id="citf">عدم ثبت</td>
+                    <td id="citf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td>روستایی</td>
+                    <td id="rurf">عدم ثبت</td>
+                    <td id="rurf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td>زن سرپرست</td>
+                    <td id="womf">عدم ثبت</td>
+                    <td id="womf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td>مرد سرپرست</td>
+                    <td id="menf">عدم ثبت</td>
+                    <td id="menf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td>کل</td>
+                    <td id="allf">عدم ثبت</td>
+                    <td id="allf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">نفرات</td>
+                    <td id="allpeop">عدم ثبت</td>
+                    <td id="allpeop2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="3" scope="row">2</th>
+                    <td rowspan="3">خانوار سالمند</td>
+                    <td colspan="3">معیشت بگیر شهری</td>
+                    <td id="ocityf">عدم ثبت</td>
+                    <td id="ocityf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">معیشت بگیر روستایی</td>
+                    <td id="orurf">عدم ثبت</td>
+                    <td id="orurf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">جمع کل</td>
+                    <td id="alloldf">عدم ثبت</td>
+                    <td id="alloldf2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="3" scope="row">3</th>
+                    <td rowspan="3">جمعیت سالمند</td>
+                    <td colspan="3">معیشت بگیر شهری</td>
+                    <td id="ocitypeop">عدم ثبت</td>
+                    <td id="ocitypeop2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">معیشت بگیر روستایی</td>
 
-                <td id="orurpeop">عدم ثبت</td>
-                <td id="orurpeop2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">جمع کل</td>
-                <td id="alloldpeop">عدم ثبت</td>
-                <td id="alloldpeop2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td colspan="4">کل کمک معیشت پرداخت شده از ابتدای سال (میلیارد ریال)</td>
-                <td id="Mmoney">عدم ثبت</td>
-                <td id="Mmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td colspan="4">تعداد جهیزیه پرداخت شده به مزدوجین</td>
-                <td id="downum">عدم ثبت</td>
-                <td id="downum2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td colspan="4">مبلغ جهیزیه و کمک هزینه ازدواج پرداخت شده(میلیارد ريال)</td>
-                <td id="dowmoney">عدم ثبت</td>
-                <td id="dowmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">7</th>
-                <td colspan="4">تعداد وام ازدواج پرداخت شده</td>
-                <td id="MrgLnum">عدم ثبت</td>
-                <td id="MrgLnum2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">8</th>
-                <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیارد ريال)</td>
-                <td id="MrgLmoney">عدم ثبت</td>
-                <td id="MrgLmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">9</th>
-                <td colspan="4">تعداد وام قرض الحسنه پرداخت شده به نیازمندان(وجوه اداره شده، حمایتی، ودیعه، درمان، فرهنگی، رسالت، مهر)</td>
-                <td id="leonnum">عدم ثبت</td>
-                <td id="leonnum2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">10</th>
-                <td colspan="4">مبلغ وام های قرض الحسنه پرداخت شده به نیازمندان(میلیارد ريال)</td>
-                <td id="leonmoney">عدم ثبت</td>
-                <td id="leonmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th scope="row">11</th>
-                <td colspan="4">تعداد دانش آموزان و دانشجویان تحت حمایت</td>
-                <td id="stunum">عدم ثبت</td>
-                <td id="stunum2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="9" scope="row">12</th>
-                <td rowspan="9">فعالیتهای عمرانی انجام شده </td>
-                <td colspan="3">تعمیرات مسکن</td>
-                <td id="fix">عدم ثبت</td>
-                <td id="fix2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">احداث سرویس بهداشتی و گازکشی</td>
-                <td id="wc">عدم ثبت</td>
-                <td id="wc2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td rowspan="2">خرید مسکن</td>
-                <td colspan="2">شهری</td>
-                <td id="buyc">عدم ثبت</td>
-                <td id="buyc2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">روستایی</td>
-                <td id="buyrur">عدم ثبت</td>
-                <td id="buyrur2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td rowspan="3">احداث مسکن</td>
-                <td colspan="2">شهری</td>
-                <td id="crtcity">عدم ثبت</td>
-                <td id="crtcity2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">روستایی</td>
-                <td id="crtrural">عدم ثبت</td>
-                <td id="crtrural2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">تفاهم نامه با بنیاد مستضعفان(ادامه سنوات قبل)</td>
-                <td id="bonyad">عدم ثبت</td>
-                <td id="bonyad2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">اجرای تفاهم نامه ساخت مسکن با سپاه(ادامه سنوات قبل)</td>
-                <td id="sepah">عدم ثبت</td>
-                <td id="sepah2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">جمع</td>
-                <td id="allmaskan">عدم ثبت</td>
-                <td id="allmaskan2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="8" scope="row">13</th>
-                <td rowspan="8">فعالیتهای اشتغال</td>
-                <td rowspan="6">اشتغال ایجاد شده</td>
-                <td colspan="2">اشتغال مستقیم از طریق کاریابی</td>
-                <td id="dsicj">عدم ثبت</td>
-                <td id="dsicj2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">اشتغال مستقیم از طریق پرداخت تسهیلات</td>
-                <td id="dljob">عدم ثبت</td>
-                <td id="dljob2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">جمع اشتغال مستقیم</td>
-                <td id="alldic">عدم ثبت</td>
-                <td id="alldic2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">اشتغال غیر مستقیم ایجاد شده</td>
-                <td id="ndjob">عدم ثبت</td>
-                <td id="ndjob2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">جمع کل اشتغال(مستقیم و غیر مستقیم)</td>
-                <td id="alljob">عدم ثبت</td>
-                <td id="alljob2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)</td>
-                <td id="jleonmoney">عدم ثبت</td>
-                <td id="jleonmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">آموزش های مهارتی و فنی و حرفه ای </td>
-                <td id="flearn">عدم ثبت</td>
-                <td id="flearn2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">طرح های اشتغال فعال تحت نظارت </td>
-                <td id="jsup">عدم ثبت</td>
-                <td id="jsup2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="4" scope="row">14</th>
-                <td rowspan="4">بیمه های اجتماعی</td>
-                <td colspan="3">تعداد زنان سرپرست خانوار</td>
-                <td id="inwom">عدم ثبت</td>
-                <td id="inwom2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">تعداد مجریان طرح های اشتغال</td>
-                <td id="insjob">عدم ثبت</td>
-                <td id="insjob2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">جمع</td>
-                <td id="insall">عدم ثبت</td>
-                <td id="insall2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">میزان هزینه(میلیون ریال)</td>
-                <td id="insmoney">عدم ثبت</td>
-                <td id="insmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="8" scope="row">15</th>
-                <td rowspan="8">مشارکتهای مردمی</td>
-                <td colspan="3">صدقات (میلیارد ریال)</td>
-                <td id="charity">عدم ثبت</td>
-                <td id="charity2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td rowspan="3">اکرام</td>
-                <td colspan="2">مبلغ پرداختی حامیان به ایتام(میلیارد ریال )</td>
-                <td id="orphmoney">عدم ثبت</td>
-                <td id="orphmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">تعداد ایتام و محسنین دارای حامی</td>
-                <td id="orphnum">عدم ثبت</td>
-                <td id="orphnum2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="2">تعداد حامیان طرح اکرام(حقیقی و حقوقی)و محسنین</td>
-                <td id="supports">عدم ثبت</td>
-                <td id="supports2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">زکات و کفارات (میلیارد ریال)</td>
-                <td id="zakat">عدم ثبت</td>
-                <td id="zakat2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">مبتنی بر نیاز</td>
-                <td id="basneed">عدم ثبت</td>
-                <td id="basneed2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">میزان کل درآمدهای اختصاصی و وجوهات امانی(میلیارد ریال) </td>
-                <td id="allmoney">عدم ثبت</td>
-                <td id="allmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">مراکز نیکوکاری(در جمع کل درآمدها لحاظ گردیده است-میلیارد ریال)</td>
-                <td id="marakezmoney">عدم ثبت</td>
-                <td id="marakezmoney2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <th rowspan="3" scope="row">16</th>
-                <td rowspan="3">تعداد پرسنل</td>
-                <td colspan="3">رسمی</td>
-                <td id="offi">عدم ثبت</td>
-                <td id="offi2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">غیررسمی</td>
-                <td id="comp">عدم ثبت</td>
-                <td id="comp2">عدم ثبت</td>
-            </tr>
-            <tr>
-                <td colspan="3">جمع کل</td>
-                <td id="esum">عدم ثبت</td>
-                <td id="esum2">عدم ثبت</td>
-            </tr>
-        </tbody>
-    </table>
+                    <td id="orurpeop">عدم ثبت</td>
+                    <td id="orurpeop2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">جمع کل</td>
+                    <td id="alloldpeop">عدم ثبت</td>
+                    <td id="alloldpeop2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td colspan="4">کل کمک معیشت پرداخت شده از ابتدای سال (میلیارد ریال)</td>
+                    <td id="Mmoney">عدم ثبت</td>
+                    <td id="Mmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td colspan="4">تعداد جهیزیه پرداخت شده به مزدوجین</td>
+                    <td id="downum">عدم ثبت</td>
+                    <td id="downum2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td colspan="4">مبلغ جهیزیه و کمک هزینه ازدواج پرداخت شده(میلیارد ريال)</td>
+                    <td id="dowmoney">عدم ثبت</td>
+                    <td id="dowmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td colspan="4">تعداد وام ازدواج پرداخت شده</td>
+                    <td id="MrgLnum">عدم ثبت</td>
+                    <td id="MrgLnum2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیارد ريال)</td>
+                    <td id="MrgLmoney">عدم ثبت</td>
+                    <td id="MrgLmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td colspan="4">تعداد وام قرض الحسنه پرداخت شده به نیازمندان(وجوه اداره شده، حمایتی، ودیعه، درمان، فرهنگی، رسالت، مهر)</td>
+                    <td id="leonnum">عدم ثبت</td>
+                    <td id="leonnum2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td colspan="4">مبلغ وام های قرض الحسنه پرداخت شده به نیازمندان(میلیارد ريال)</td>
+                    <td id="leonmoney">عدم ثبت</td>
+                    <td id="leonmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th scope="row">11</th>
+                    <td colspan="4">تعداد دانش آموزان و دانشجویان تحت حمایت</td>
+                    <td id="stunum">عدم ثبت</td>
+                    <td id="stunum2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="9" scope="row">12</th>
+                    <td rowspan="9">فعالیتهای عمرانی انجام شده </td>
+                    <td colspan="3">تعمیرات مسکن</td>
+                    <td id="fix">عدم ثبت</td>
+                    <td id="fix2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">احداث سرویس بهداشتی و گازکشی</td>
+                    <td id="wc">عدم ثبت</td>
+                    <td id="wc2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">خرید مسکن</td>
+                    <td colspan="2">شهری</td>
+                    <td id="buyc">عدم ثبت</td>
+                    <td id="buyc2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">روستایی</td>
+                    <td id="buyrur">عدم ثبت</td>
+                    <td id="buyrur2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">احداث مسکن</td>
+                    <td colspan="2">شهری</td>
+                    <td id="crtcity">عدم ثبت</td>
+                    <td id="crtcity2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">روستایی</td>
+                    <td id="crtrural">عدم ثبت</td>
+                    <td id="crtrural2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">تفاهم نامه با بنیاد مستضعفان(ادامه سنوات قبل)</td>
+                    <td id="bonyad">عدم ثبت</td>
+                    <td id="bonyad2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">اجرای تفاهم نامه ساخت مسکن با سپاه(ادامه سنوات قبل)</td>
+                    <td id="sepah">عدم ثبت</td>
+                    <td id="sepah2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">جمع</td>
+                    <td id="allmaskan">عدم ثبت</td>
+                    <td id="allmaskan2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="8" scope="row">13</th>
+                    <td rowspan="8">فعالیتهای اشتغال</td>
+                    <td rowspan="6">اشتغال ایجاد شده</td>
+                    <td colspan="2">اشتغال مستقیم از طریق کاریابی</td>
+                    <td id="dsicj">عدم ثبت</td>
+                    <td id="dsicj2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">اشتغال مستقیم از طریق پرداخت تسهیلات</td>
+                    <td id="dljob">عدم ثبت</td>
+                    <td id="dljob2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">جمع اشتغال مستقیم</td>
+                    <td id="alldic">عدم ثبت</td>
+                    <td id="alldic2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">اشتغال غیر مستقیم ایجاد شده</td>
+                    <td id="ndjob">عدم ثبت</td>
+                    <td id="ndjob2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">جمع کل اشتغال(مستقیم و غیر مستقیم)</td>
+                    <td id="alljob">عدم ثبت</td>
+                    <td id="alljob2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)</td>
+                    <td id="jleonmoney">عدم ثبت</td>
+                    <td id="jleonmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">آموزش های مهارتی و فنی و حرفه ای </td>
+                    <td id="flearn">عدم ثبت</td>
+                    <td id="flearn2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">طرح های اشتغال فعال تحت نظارت </td>
+                    <td id="jsup">عدم ثبت</td>
+                    <td id="jsup2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="4" scope="row">14</th>
+                    <td rowspan="4">بیمه های اجتماعی</td>
+                    <td colspan="3">تعداد زنان سرپرست خانوار</td>
+                    <td id="inwom">عدم ثبت</td>
+                    <td id="inwom2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">تعداد مجریان طرح های اشتغال</td>
+                    <td id="insjob">عدم ثبت</td>
+                    <td id="insjob2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">جمع</td>
+                    <td id="insall">عدم ثبت</td>
+                    <td id="insall2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">میزان هزینه(میلیون ریال)</td>
+                    <td id="insmoney">عدم ثبت</td>
+                    <td id="insmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="8" scope="row">15</th>
+                    <td rowspan="8">مشارکتهای مردمی</td>
+                    <td colspan="3">صدقات (میلیارد ریال)</td>
+                    <td id="charity">عدم ثبت</td>
+                    <td id="charity2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">اکرام</td>
+                    <td colspan="2">مبلغ پرداختی حامیان به ایتام(میلیارد ریال )</td>
+                    <td id="orphmoney">عدم ثبت</td>
+                    <td id="orphmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">تعداد ایتام و محسنین دارای حامی</td>
+                    <td id="orphnum">عدم ثبت</td>
+                    <td id="orphnum2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="2">تعداد حامیان طرح اکرام(حقیقی و حقوقی)و محسنین</td>
+                    <td id="supports">عدم ثبت</td>
+                    <td id="supports2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">زکات و کفارات (میلیارد ریال)</td>
+                    <td id="zakat">عدم ثبت</td>
+                    <td id="zakat2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">مبتنی بر نیاز</td>
+                    <td id="basneed">عدم ثبت</td>
+                    <td id="basneed2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">میزان کل درآمدهای اختصاصی و وجوهات امانی(میلیارد ریال) </td>
+                    <td id="allmoney">عدم ثبت</td>
+                    <td id="allmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">مراکز نیکوکاری(در جمع کل درآمدها لحاظ گردیده است-میلیارد ریال)</td>
+                    <td id="marakezmoney">عدم ثبت</td>
+                    <td id="marakezmoney2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <th rowspan="3" scope="row">16</th>
+                    <td rowspan="3">تعداد پرسنل</td>
+                    <td colspan="3">رسمی</td>
+                    <td id="offi">عدم ثبت</td>
+                    <td id="offi2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">غیررسمی</td>
+                    <td id="comp">عدم ثبت</td>
+                    <td id="comp2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3">جمع کل</td>
+                    <td id="esum">عدم ثبت</td>
+                    <td id="esum2">عدم ثبت</td>
+                </tr>
+            </tbody>
+        </table>
 
-</main>
+    </main>
+</div>
 <footer>
     <div class="btns">
         <button id="printbtn" onclick="window.print();">چاپ فرم</button>
+        <button id="printbtn" onclick="downloaWord('exportContent');">دانلود در قالب ورد</button>
         <a id="backbtn" href="<?= getBaseUrl() ?>page/reportselect2month">بازگشت</a>
     </div>
 </footer>

@@ -18,6 +18,7 @@
 
         <?= $out ?>
     </div>
+    <script src="<?= getBaseUrl() ?>js/commonreport.js"></script>
 </body>
 
 </html>

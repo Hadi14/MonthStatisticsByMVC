@@ -3,6 +3,7 @@ if ($_SESSION['level'] != 0) {
     exit;
 }
 ?>
+<div id="exportContent">
 <header>
     <?
     $yr = $_POST['year'];
@@ -316,9 +317,11 @@ if ($_SESSION['level'] != 0) {
     </table>
 
 </main>
+</div>
 <footer>
     <div class="btns">
         <button id="printbtn" onclick="window.print();">چاپ فرم</button>
+        <button id="printbtn" onclick="downloaWord('exportContent');">دانلود در قالب ورد</button>
         <a id="backbtn" href="<?= getBaseUrl() ?>page/reportselectwithname">بازگشت</a>
     </div>
 </footer>
