@@ -3,6 +3,7 @@ if ($_SESSION['level'] != 0) {
     exit;
 }
 ?>
+
 <header>
     <?
     $yr = $_POST['year'];
@@ -11,7 +12,7 @@ if ($_SESSION['level'] != 0) {
     ?>
     <h5 class="digitfont">عملکرد <?= $mon ?> ماهه کمیته امداد امام خمینی(ره) استان چهارمحال و بختیاری سال <?= $yr ?></h5>
 </header>
-<main>
+<main >
     <table class="table table-striped">
         <thead>
             <tr>
@@ -267,13 +268,49 @@ if ($_SESSION['level'] != 0) {
 <footer>
     <div class="btns">
         <button id="printbtn" onclick="window.print();">چاپ فرم</button>
-        <!-- <button id="printbtn" onclick="downloaWord();">دانلود در قالب ورد</button> -->
+        <button id="printbtn" onclick="downloaWord('exportContent');">دانلود در قالب ورد</button>
         <a id="backbtn" href="<?= getBaseUrl() ?>page/reportselect">بازگشت</a>
-        <a id="backbtn" href="<?= getBaseUrl() ?>download/downloadWord">word</a>
+        <!-- <a id="backbtn" href="<? //= getBaseUrl() 
+                                    ?>download/downloadWord">word</a> -->
     </div>
 </footer>
 
 <script>
+    function downloaWord(element, filename = '') {
+        var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+        var postHtml = "</body></html>";
+        var html = preHtml + document.getElementById(element).innerHTML + postHtml;
+
+        var blob = new Blob(['\ufeff', html], {
+            type: 'application/msword'
+        });
+
+        // Specify link url
+        var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+
+        // Specify file name
+        filename = filename ? filename + '.doc' : 'document.doc';
+
+        // Create download link element
+        var downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if (navigator.msSaveOrOpenBlob) {
+            navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+            // Create a link to the file
+            downloadLink.href = url;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+
+        document.body.removeChild(downloadLink);
+    }
     $(document).ready(function() {
         population();
         money();
