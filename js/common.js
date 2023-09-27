@@ -5,3 +5,15 @@ show.forEach(element => {
     })
 });
 
+$(document).ready(function () {
+    $.ajax('/MonthStatisticsByMVC/statistics/getEdtstatus/', {
+        type: 'post',
+        dataType: "json",
+        success: function (data) {
+            // important. must be write --> "==1" and "==0"
+            if (data.status[0] == 0) {
+                $('tbody tr td a').addClass('disEnable');
+            }
+        },
+    });
+});

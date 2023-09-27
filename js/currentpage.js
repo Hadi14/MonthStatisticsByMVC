@@ -20,7 +20,7 @@ $('#EnableEdit').click(function () {
 
 
 
-$.ajax('/MonthStatisticsByMVC/statistics/getEnblstatus/', {
+$.ajax('/MonthStatisticsByMVC/statistics/getEdtstatus/', {
     type: 'post',
     dataType: "json",
     success: function (data) {

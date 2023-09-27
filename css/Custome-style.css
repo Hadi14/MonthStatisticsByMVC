@@ -79,3 +79,8 @@ div .row.mt-5 {
 .spanDescription {
     font-size: 12px;
 }
+
+.disEnable {
+    color: gray;
+    pointer-events: none;
+}

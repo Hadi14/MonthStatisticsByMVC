@@ -211,8 +211,9 @@
         // dump($insertStatus[0]['value']);
         echo json_encode($ar);
     }
+
     /***************************************************************** */
-    static  function getenablestatus()
+    static  function geteditstatus()
     {
         $db = Db::getInstance();
         $sql = "select value from variables where title='enableEdit'";
@@ -220,7 +221,8 @@
         // return $insertStatus;
         $ar = array("status" =>  $insertStatus[0]['value']);
         // dump($insertStatus[0]['value']);
-        echo json_encode($ar);
+        // echo json_encode($ar);
+        return $ar;
     }
     /*****************************************************************/
     static  function getcurrdate()

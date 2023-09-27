@@ -181,10 +181,12 @@
     {
         StatisticsModel::getinsertstatus();
     }
+
     /**************************************************** */
-    public  function getEnblstatus()
+    public  function getEdtstatus()
     {
-        StatisticsModel::getenablestatus();
+        $ar = StatisticsModel::geteditstatus();
+        echo json_encode($ar);
     }
     /**************************************************** */
     public  function getrecentmonth()

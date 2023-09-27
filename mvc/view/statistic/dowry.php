@@ -176,24 +176,38 @@ if (getaces(4) == 0) {
     }
 
     function editDowry() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
-            type: 'post',
-            dataType: "json",
-            data: {
-                'goalf': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
-            success: function(data) {
-                // console.log(data);
-                alert('بروزرسانی با موفقیت انجام شد.');
-                $('.newColumn').remove();
-                getdowry();
-            },
-        });
+        <?
+        $status = StatisticsModel::geteditstatus();
+        if ($status['status'] == 0) {
+        ?>
+            alert("عملیات ویرایش رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.");
+        <?
+        }
+        // else {
+        // 
+        ?>
+        alert(<?= $status['status'] ?>);
+        //     let y = $('#recentYR').text();
+        //     let m = $('#recentMn').text();
+        //     gfield = $('#goal').val();
+        //     $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
+        //         type: 'post',
+        //         dataType: "json",
+        //         data: {
+        //             'goalf': +$('#otherrecipientName1').val(),
+        //             'yr': y,
+        //             'mn': m,
+        //         },
+        //         success: function(data) {
+        //             // console.log(data);
+        //             alert('بروزرسانی با موفقیت انجام شد.');
+        //             $('.newColumn').remove();
+        //             getdowry();
+        //         },
+        //     });
+        // <? //  }
+            // 
+            ?>
     }
 
     function editRecord(id) {
