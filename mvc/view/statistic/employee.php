@@ -232,7 +232,7 @@ if (getaces(13) == 0) {
         let y = $('#recentYR').text();
         let m = $('#recentMn').text();
         gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/employee/updateEkram/', {
+        $.ajax('/MonthStatisticsByMVC/employee/updateEmply/', {
             type: 'post',
             dataType: "json",
             data: {
@@ -243,9 +243,13 @@ if (getaces(13) == 0) {
                 'mn': m,
             },
             success: function(data) {
-                alert('بروزرسانی با موفقیت انجام شد.');
-                $('.newColumn').remove();
-                getEmployee();
+                if (data['disableEdit'] == true) {
+                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                } else {
+                    alert('بروزرسانی با موفقیت انجام شد.');
+                    $('.newColumn').remove();
+                    getEmployee();
+                }
             },
         });
     }

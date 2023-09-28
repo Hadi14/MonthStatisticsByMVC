@@ -36,17 +36,22 @@
         echo json_encode($goal);
     }
     /******************************************************** */
-    public  function updateEkram($param)
+    public  function updateEmply($param)
     {
-        $offic = $_POST['em_offic'];
-        $comp = $_POST['em_comp'];
-        $sum = $_POST['em_sum'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = EmployeeModel::updateEmployee($offic, $comp, $sum, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $offic = $_POST['em_offic'];
+            $comp = $_POST['em_comp'];
+            $sum = $_POST['em_sum'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = EmployeeModel::updateEmployee($offic, $comp, $sum, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
 }
