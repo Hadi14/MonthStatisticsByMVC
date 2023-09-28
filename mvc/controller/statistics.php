@@ -59,17 +59,22 @@
     /****************************************************************************************** */
     public  function updateAllPopulation()
     {
-        $CityFamily = $_POST['familycity'];
-        $RuralFamily = $_POST['familyrural'];
-        $MenFamily = $_POST['familymen'];
-        $WomenFamily = $_POST['familywomen'];
-        $AllFamily = $_POST['familycity'] + $_POST['familyrural'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily,  $AllFamily, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $CityFamily = $_POST['familycity'];
+            $RuralFamily = $_POST['familyrural'];
+            $MenFamily = $_POST['familymen'];
+            $WomenFamily = $_POST['familywomen'];
+            $AllFamily = $_POST['familycity'] + $_POST['familyrural'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = StatisticsModel::updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily,  $AllFamily, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
     /**************************************************** */
@@ -103,13 +108,18 @@
     /******************************************************** */
     public  function updatemoney()
     {
-        $mny = $_POST['mny'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateMoney($mny, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $mny = $_POST['mny'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = StatisticsModel::updateMoney($mny, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
     /******************************************************** */
@@ -132,26 +142,36 @@
     /******************************************************** */
     public  function updateNumInsure()
     {
-        $wn = $_POST['wn'];
-        $jn = $_POST['jn'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateNumInsure($wn, $jn, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $wn = $_POST['wn'];
+            $jn = $_POST['jn'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = StatisticsModel::updateNumInsure($wn, $jn, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
     /******************************************************** */
     public  function updateMonyInsure()
     {
-        $mn = $_POST['im'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateMoneyInsure($mn, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $mn = $_POST['im'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = StatisticsModel::updateMoneyInsure($mn, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
     /**************************************************** */

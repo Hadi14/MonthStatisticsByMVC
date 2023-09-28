@@ -36,13 +36,18 @@
     /******************************************************** */
     public  function updateFrng()
     {
-        $stu = $_POST['stu'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = FarhangiModel::updateFarhangi($stu, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $stu = $_POST['stu'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = FarhangiModel::updateFarhangi($stu, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
 }

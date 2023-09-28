@@ -42,30 +42,40 @@
     /****************************************************************************************** */
     public  function updatejob()
     {
-        $djsrch = $_POST['DNjob1'];
-        $djleon = $_POST['DNjob2'];
-        $djsum = $_POST['DNjob3'];
-        $ndj = $_POST['DNjob4'];
-        $sum = $_POST['DNjob5'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = JobModel::updateJob($djsrch, $djleon, $djsum, $ndj,  $sum, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $djsrch = $_POST['DNjob1'];
+            $djleon = $_POST['DNjob2'];
+            $djsum = $_POST['DNjob3'];
+            $ndj = $_POST['DNjob4'];
+            $sum = $_POST['DNjob5'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = JobModel::updateJob($djsrch, $djleon, $djsum, $ndj,  $sum, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
     /******************************************************** */
     public  function updateotherfielJob()
     {
-        $gfield = $_POST['gfield'];
-        $value = $_POST['value'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = JobModel::updateOtherFeildJob($gfield, $value, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $gfield = $_POST['gfield'];
+            $value = $_POST['value'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = JobModel::updateOtherFeildJob($gfield, $value, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
     }
 }

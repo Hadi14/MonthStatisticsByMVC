@@ -399,9 +399,13 @@ if (getaces(8) == 0) {
                         'mn': s,
                     },
                     success: function(data) {
-                        alert('بروزرسانی با موفقیت انجام شد.');
-                        $('.newColumn').remove();
-                        getmaskan();
+                        if (data['disableEdit'] == true) {
+                            alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                        } else {
+                            alert('بروزرسانی با موفقیت انجام شد.');
+                            $('.newColumn').remove();
+                            getmaskan();
+                        }
                     },
                 });
             },

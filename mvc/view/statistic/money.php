@@ -157,9 +157,13 @@ if (getaces(3) == 0) {
             },
             success: function(data) {
                 // console.log(data);
-                alert('بروزرسانی با موفقیت انجام شد.');
-                $('.newColumn').remove();
-                getmoney();
+                if (data['disableEdit'] == true) {
+                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                } else {
+                    alert('بروزرسانی با موفقیت انجام شد.');
+                    $('.newColumn').remove();
+                    getmoney();
+                }
             },
         });
     }
