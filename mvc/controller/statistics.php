@@ -115,6 +115,10 @@
     /******************************************************** */
     public  function updateDowry($param)
     {
+        // $row = StatisticsModel::geteditstatus();
+        // if ($row['status'] ) {
+        //     # code...
+        // } else {
         $goalf = $_POST['goalf'];
         $y = $_POST['yr'];
         $m = $_POST['mn'];
@@ -123,6 +127,7 @@
         if ($rowAffect) {
             echo json_encode($rowAffect);
         }
+        // }
     }
     /******************************************************** */
     public  function updateNumInsure()

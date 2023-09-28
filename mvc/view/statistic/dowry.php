@@ -118,7 +118,7 @@ if (getaces(4) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد جهیزیه:</label>
+                        <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label"></label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>
@@ -176,38 +176,25 @@ if (getaces(4) == 0) {
     }
 
     function editDowry() {
-        <?
-        $status = StatisticsModel::geteditstatus();
-        if ($status['status'] == 0) {
-        ?>
-            alert("عملیات ویرایش رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.");
-        <?
-        }
-        // else {
-        // 
-        ?>
-        alert(<?= $status['status'] ?>);
-        //     let y = $('#recentYR').text();
-        //     let m = $('#recentMn').text();
-        //     gfield = $('#goal').val();
-        //     $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
-        //         type: 'post',
-        //         dataType: "json",
-        //         data: {
-        //             'goalf': +$('#otherrecipientName1').val(),
-        //             'yr': y,
-        //             'mn': m,
-        //         },
-        //         success: function(data) {
-        //             // console.log(data);
-        //             alert('بروزرسانی با موفقیت انجام شد.');
-        //             $('.newColumn').remove();
-        //             getdowry();
-        //         },
-        //     });
-        // <? //  }
-            // 
-            ?>
+        let y = $('#recentYR').text();
+        let m = $('#recentMn').text();
+        gfield = $('#goal').val();
+        $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'goalf': +$('#otherrecipientName1').val(),
+                'yr': y,
+                'mn': m,
+            },
+            success: function(data) {
+                // console.log(data);
+                alert('بروزرسانی با موفقیت انجام شد.');
+                $('.newColumn').remove();
+                getdowry();
+            },
+        });
+
     }
 
     function editRecord(id) {
@@ -227,10 +214,13 @@ if (getaces(4) == 0) {
                 } else {
                     const dValues = Object.values(data[0]);
                     $('#goal').val(id);
-                    if (id == 0)
+                    if (id == 0) {
                         $('#otherrecipientName1').val(dValues[0]);
-                    else if (id == 1)
+                        $('#dowryfiledlabel1').text('تعداد جهیزیه:');
+                    } else if (id == 1) {
                         $('#otherrecipientName1').val(dValues[1]);
+                        $('#dowryfiledlabel1').text('مبلغ جهیزیه:');
+                    }
                 }
             },
         });
