@@ -2,6 +2,8 @@
 if (getaces(4) == 0) {
     exit;
 }
+
+
 ?>
 <main class="main users chart-page" id="skip-target">
     <div class="container">
@@ -179,6 +181,7 @@ if (getaces(4) == 0) {
         let y = $('#recentYR').text();
         let m = $('#recentMn').text();
         gfield = $('#goal').val();
+
         $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
             type: 'post',
             dataType: "json",
@@ -188,10 +191,14 @@ if (getaces(4) == 0) {
                 'mn': m,
             },
             success: function(data) {
-                // console.log(data);
-                alert('بروزرسانی با موفقیت انجام شد.');
-                $('.newColumn').remove();
-                getdowry();
+                console.log(data['disableEdit']);
+                if (data['disableEdit'] == true) {
+                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                } else {
+                    alert('بروزرسانی با موفقیت انجام شد.');
+                    $('.newColumn').remove();
+                    getdowry();
+                }
             },
         });
 

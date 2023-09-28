@@ -34,9 +34,15 @@
     /*********************************************************************/
     static  function updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $year, $month, $user)
     {
-        $db = Db::getInstance();
+        $dbu = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update hemayat set Hmy_CityFamily=$CityFamily ,Hmy_RuralFamily=$RuralFamily ,Hmy_MenFamily=$MenFamily,Hmy_WomenFamily=$WomenFamily,Hmy_AllFamily=$AllFamily  where Year= '$year' and Month= '$month' and user='$user'";
+        $level = $dbu->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update hemayat set Hmy_CityFamily=$CityFamily ,Hmy_RuralFamily=$RuralFamily ,Hmy_MenFamily=$MenFamily,Hmy_WomenFamily=$WomenFamily,Hmy_AllFamily=$AllFamily  where Year= '$year' and Month= '$month'"; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update hemayat set Hmy_CityFamily=$CityFamily ,Hmy_RuralFamily=$RuralFamily ,Hmy_MenFamily=$MenFamily,Hmy_WomenFamily=$WomenFamily,Hmy_AllFamily=$AllFamily  where Year= '$year' and Month= '$month' and user='$user'";
+
+        $db = Db::getInstance();
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
@@ -45,10 +51,17 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
+        $level = $db->query("select level from users where user='$un'");
         if ($goalFields == 6) {
-            $sql = "update hemayat set Hmy_OldFamCity=$one ,Hmy_OldFamRural=$two ,Hmy_AllOldFamily=$sum  where Year= '$y' and Month= '$m' and user='$un'";
+            if ($level[0]['level'] == "0")
+                $sql = "update hemayat set Hmy_OldFamCity=$one ,Hmy_OldFamRural=$two ,Hmy_AllOldFamily=$sum  where Year= '$y' and Month= '$m' "; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+            else
+                $sql = "update hemayat set Hmy_OldFamCity=$one ,Hmy_OldFamRural=$two ,Hmy_AllOldFamily=$sum  where Year= '$y' and Month= '$m' and user='$un'";
         } else if ($goalFields == 9) {
-            $sql = "update hemayat set Hmy_OldPopCity=$one ,Hmy_OldPopRural=$two ,Hmy_AllPopOld=$sum  where Year= '$y' and Month= '$m' and user='$un'";
+            if ($level[0]['level'] == "0")
+                $sql = "update hemayat set Hmy_OldPopCity=$one ,Hmy_OldPopRural=$two ,Hmy_AllPopOld=$sum  where Year= '$y' and Month= '$m' "; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+            else
+                $sql = "update hemayat set Hmy_OldPopCity=$one ,Hmy_OldPopRural=$two ,Hmy_AllPopOld=$sum  where Year= '$y' and Month= '$m' and user='$un'";
         }
         $rowAffect = $db->modify($sql);
         return $rowAffect;
@@ -58,7 +71,11 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update hemayat set Hmy_AllPop=$all where Year= '$y' and Month= '$m' and user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update hemayat set Hmy_AllPop=$all where Year= '$y' and Month= '$m' "; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update hemayat set Hmy_AllPop=$all where Year= '$y' and Month= '$m' and user='$un'";
 
         $rowAffect = $db->modify($sql);
         return $rowAffect;
@@ -68,7 +85,12 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update money set M_money=$mny where M_Year= '$y' and M_Month= '$m' and M_user='$un'";
+
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update money set M_money=$mny where M_Year= '$y' and M_Month= '$m'"; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update money set M_money=$mny where M_Year= '$y' and M_Month= '$m' and M_user='$un'";
 
         $rowAffect = $db->modify($sql);
         return $rowAffect;
@@ -83,8 +105,15 @@
         } else {
             $retVal = 'D_MoneyDowry';
         }
-        $sql = "update dowry set $retVal=$goalf where D_Year= '$y' and D_Month= '$m' and D_user='$un'";
 
+
+        $dbu = Db::getInstance();
+        $level = $dbu->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0") {
+            $sql = "update dowry set $retVal=$goalf where D_Year= '$y' and D_Month= '$m' "; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+        } else {
+            $sql = "update dowry set $retVal=$goalf where D_Year= '$y' and D_Month= '$m' and D_user='$un'";
+        }
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
@@ -93,7 +122,11 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update insure set I_NumWomen=$wn ,I_NumJob=$jn, I_Sum=$wn+$jn   where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update insure set I_NumWomen=$wn ,I_NumJob=$jn, I_Sum=$wn+$jn   where I_Year= '$y' and I_Month= '$m'"; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update insure set I_NumWomen=$wn ,I_NumJob=$jn, I_Sum=$wn+$jn   where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
@@ -102,7 +135,11 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update insure set I_Money=$im  where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update insure set I_Money=$im  where I_Year= '$y' and I_Month= '$m'"; // برای اینکه رکورد ثبت شده توسط هر کاربری ، قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update insure set I_Money=$im  where I_Year= '$y' and I_Month= '$m' and I_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }

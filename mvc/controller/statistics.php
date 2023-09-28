@@ -115,19 +115,20 @@
     /******************************************************** */
     public  function updateDowry($param)
     {
-        // $row = StatisticsModel::geteditstatus();
-        // if ($row['status'] ) {
-        //     # code...
-        // } else {
-        $goalf = $_POST['goalf'];
-        $y = $_POST['yr'];
-        $m = $_POST['mn'];
-        $un = $_SESSION['suname'];
-        $rowAffect = StatisticsModel::updateDowry($param[0], $goalf, $y, $m, $un);
-        if ($rowAffect) {
-            echo json_encode($rowAffect);
+        $row = StatisticsModel::geteditstatus();
+
+        if ($row['status'] == 0) {
+            echo json_encode(array("disableEdit" => true));
+        } else {
+            $goalf = $_POST['goalf'];
+            $y = $_POST['yr'];
+            $m = $_POST['mn'];
+            $un = $_SESSION['suname'];
+            $rowAffect = StatisticsModel::updateDowry($param[0], $goalf, $y, $m, $un);
+            if ($rowAffect) {
+                echo json_encode($rowAffect);
+            }
         }
-        // }
     }
     /******************************************************** */
     public  function updateNumInsure()
