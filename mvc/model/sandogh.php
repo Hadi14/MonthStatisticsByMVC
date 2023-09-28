@@ -50,7 +50,11 @@
         } else if ($Goal == 3) {
             $retVal = 'S_moneyLeon';
         }
-        $sql = "update sandogh set $retVal=$goalf where S_Year= '$y' and S_Month= '$m' and S_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update sandogh set $retVal=$goalf where S_Year= '$y' and S_Month= '$m' "; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update sandogh set $retVal=$goalf where S_Year= '$y' and S_Month= '$m' and S_user='$un'";
 
         $rowAffect = $db->modify($sql);
         return $rowAffect;

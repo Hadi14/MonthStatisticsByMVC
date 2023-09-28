@@ -45,8 +45,11 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-
-        $sql = "update farhangi set F_numStu=$stu where F_Year= '$y' and F_Month= '$m' and F_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update farhangi set F_numStu=$stu where F_Year= '$y' and F_Month= '$m' ";
+        else
+            $sql = "update farhangi set F_numStu=$stu where F_Year= '$y' and F_Month= '$m' and F_user='$un'";
 
         $rowAffect = $db->modify($sql);
         return $rowAffect;

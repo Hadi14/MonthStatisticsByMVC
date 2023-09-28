@@ -55,7 +55,11 @@
         } else  if ($Goal == 5) {
             $retVal = 'In_Nikookari';
         }
-        $sql = "update incomes set $retVal=$value where In_Year= '$y' and In_Month= '$m' and In_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update incomes set $retVal=$value where In_Year= '$y' and In_Month= '$m' ";
+        else
+            $sql = "update incomes set $retVal=$value where In_Year= '$y' and In_Month= '$m' and In_user='$un'";
 
         $rowAffect = $db->modify($sql);
         return $rowAffect;

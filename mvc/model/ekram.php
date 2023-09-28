@@ -47,7 +47,11 @@
         } else  if ($Goal == 1) {
             $retVal = 'E_supports';
         }
-        $sql = "update ekram set $retVal=$value where E_Year= '$y' and E_Month= '$m' and E_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update ekram set $retVal=$value where E_Year= '$y' and E_Month= '$m' ";
+        else
+            $sql = "update ekram set $retVal=$value where E_Year= '$y' and E_Month= '$m' and E_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }

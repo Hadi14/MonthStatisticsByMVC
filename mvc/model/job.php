@@ -40,7 +40,11 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $sql = "update job set J_djSrch=$djsrch , J_djLeon=$djleon , J_djSum=$djsum , J_ndj=$ndj , J_sum=$sum  where J_Year= '$year' and J_Month= '$month' and J_user='$user'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update job set J_djSrch=$djsrch , J_djLeon=$djleon , J_djSum=$djsum , J_ndj=$ndj , J_sum=$sum  where J_Year= '$year' and J_Month= '$month'";
+        else
+            $sql = "update job set J_djSrch=$djsrch , J_djLeon=$djleon , J_djSum=$djsum , J_ndj=$ndj , J_sum=$sum  where J_Year= '$year' and J_Month= '$month' and J_user='$user'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
@@ -56,7 +60,11 @@
         } else if ($gfield == 7) {
             $goalF = 'J_Supervision';
         }
-        $sql = "update job set $goalF=$value where J_Year= '$y' and J_Month= '$m' and J_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update job set $goalF=$value where J_Year= '$y' and J_Month= '$m' and ";
+        else
+            $sql = "update job set $goalF=$value where J_Year= '$y' and J_Month= '$m' and J_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }

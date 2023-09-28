@@ -41,8 +41,11 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-
-        $sql = "update employee set Em_official=$offic,Em_company=$comp ,Em_sum=$sum where Em_Year= '$y' and Em_Month= '$m' and Em_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update employee set Em_official=$offic,Em_company=$comp ,Em_sum=$sum where Em_Year= '$y' and Em_Month= '$m' ";
+        else
+            $sql = "update employee set Em_official=$offic,Em_company=$comp ,Em_sum=$sum where Em_Year= '$y' and Em_Month= '$m' and Em_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }
