@@ -41,7 +41,11 @@
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
         $ar = array("M_fix", "M_wcGas", "M_Bmc", "M_Bmr", "M_Cmc", "M_Cmr", "M_Tbm", "M_TSep", "M_sum");
-        $sql = "update maskan set $ar[$Goal]=$goalf where M_Year= '$y' and M_Month= '$m' and M_user='$un'";
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] == "0")
+            $sql = "update maskan set $ar[$Goal]=$goalf where M_Year= '$y' and M_Month= '$m'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
+        else
+            $sql = "update maskan set $ar[$Goal]=$goalf where M_Year= '$y' and M_Month= '$m' and M_user='$un'";
         $rowAffect = $db->modify($sql);
         return $rowAffect;
     }

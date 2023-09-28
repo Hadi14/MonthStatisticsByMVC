@@ -476,6 +476,7 @@ if (getaces(8) == 0) {
 
 
     function editMaskan() {
+        let y = $('#recentYR').text();
         let m = $('#recentMn').text();
         gfield = $('#goal').val();
         $.ajax('/MonthStatisticsByMVC/maskan/updateMskn/' + gfield, {
