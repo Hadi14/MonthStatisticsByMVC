@@ -233,6 +233,7 @@ if (getaces(6) == 0) {
     }
 
     function fillPageTable(data) {
+        console.log(data);
         data.forEach(element => {
             const dValues = Object.values(element);
             $("<th class='newColumn'>" + dValues[4] + "-" + dValues[5] + "</th>").insertAfter($('thead tr th:nth(0)'));

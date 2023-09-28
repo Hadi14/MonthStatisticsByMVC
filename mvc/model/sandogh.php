@@ -42,8 +42,12 @@
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
         if ($Goal == 0) {
+            $retVal = 'S_mrgNum';
+        } else if ($Goal == 1) {
+            $retVal = 'S_mrgMoney';
+        } else if ($Goal == 2) {
             $retVal = 'S_numLeon';
-        } else {
+        } else if ($Goal == 3) {
             $retVal = 'S_moneyLeon';
         }
         $sql = "update sandogh set $retVal=$goalf where S_Year= '$y' and S_Month= '$m' and S_user='$un'";

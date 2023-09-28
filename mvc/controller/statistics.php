@@ -116,7 +116,6 @@
     public  function updateDowry($param)
     {
         $row = StatisticsModel::geteditstatus();
-
         if ($row['status'] == 0) {
             echo json_encode(array("disableEdit" => true));
         } else {

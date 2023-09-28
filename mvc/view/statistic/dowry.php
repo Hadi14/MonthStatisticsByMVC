@@ -191,7 +191,7 @@ if (getaces(4) == 0) {
                 'mn': m,
             },
             success: function(data) {
-                console.log(data['disableEdit']);
+                // console.log(data['disableEdit']);
                 if (data['disableEdit'] == true) {
                     alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
                 } else {
