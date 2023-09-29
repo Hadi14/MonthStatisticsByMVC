@@ -2,6 +2,10 @@
 {
     public  function insertMskn($param)
     {
+        $row = StatisticsModel::getinsertstatus();
+        if ($row['status'] == '0') {
+            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/maskan';</script>";
+        } else {
         $fix = $_POST['fix'];
         $wc = $_POST['wc'];
         $buyc = $_POST['buyc'];
@@ -16,6 +20,7 @@
         $user = $_SESSION['suname'];
         MaskanModel::insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $sum, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/maskan");
+        }
     }
     /****************************************************************************************** */
     public  function getrecentmonth()

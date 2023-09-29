@@ -3,14 +3,19 @@
     /****************************************************************************************** */
     public  function insertEmpl($param)
     {
-        $official = $_POST['E_official'];
-        $company = $_POST['E_company'];
-        $sum = $_POST['E_sum'];
-        $year = $param[0];
-        $month = $param[1];
-        $un = $_SESSION['suname'];
-        EmployeeModel::insertEmployee($official, $company, $sum, $year, $month, $un);
-        header("Location:" . getBaseUrl() . "page/employee");
+        $row = StatisticsModel::getinsertstatus();
+        if ($row['status'] == '0') {
+            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/employee';</script>";
+        } else {
+            $official = $_POST['E_official'];
+            $company = $_POST['E_company'];
+            $sum = $_POST['E_sum'];
+            $year = $param[0];
+            $month = $param[1];
+            $un = $_SESSION['suname'];
+            EmployeeModel::insertEmployee($official, $company, $sum, $year, $month, $un);
+            header("Location:" . getBaseUrl() . "page/employee");
+        }
     }
     /**************************************************** */
     public  function getrecentEmplMonth()

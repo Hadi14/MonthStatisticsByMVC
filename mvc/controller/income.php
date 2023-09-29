@@ -3,6 +3,10 @@
     /****************************************************************************************** */
     public  function insertIncomes($param)
     {
+        $row = StatisticsModel::getinsertstatus();
+        if ($row['status'] == '0') {
+            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/income';</script>";
+        } else {
         $charity = $_POST['i_charity'];
         $Supports = $_POST['i_Supports'];
         $zakat = $_POST['i_zakat'];
@@ -14,6 +18,7 @@
         $un = $_SESSION['suname'];
         IncomeModel::insertIncomes($charity, $Supports, $zakat, $bsNeed, $allIncome, $Nikookari, $year, $month, $un);
         header("Location:" . getBaseUrl() . "page/income");
+        }
     }
     /**************************************************** */
     public  function getrecentincomemonth()

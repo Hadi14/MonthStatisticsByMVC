@@ -17,3 +17,17 @@ $(document).ready(function () {
         },
     });
 });
+
+
+$(document).ready(function () {
+    $.ajax('/MonthStatisticsByMVC/statistics/getinsertsstatus/', {
+        type: 'post',
+        dataType: "json",
+        success: function (data) {
+            // important. must be write --> "==1" and "==0"
+            if (data.status[0] == 0) {
+                $('#ins_frm input').addClass('dis_insrt');
+            }
+        },
+    });
+});

@@ -2,13 +2,17 @@
 {
     public  function insertFrng($param)
     {
+        $row = StatisticsModel::getinsertstatus();
+        if ($row['status'] == '0') {
+            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/farhangi';</script>";
+        } else {
         $stu = $_POST['stu'];
-
         $year = $param[0];
         $month = $param[1];
         $user = $_SESSION['suname'];
         FarhangiModel::insertFarhangi($stu, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/farhangi");
+        }
     }
     /****************************************************************************************** */
     public  function getrecentfarhangimonth()

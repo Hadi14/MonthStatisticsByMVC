@@ -3,6 +3,10 @@
     /****************************************************************************************** */
     public  function insertEkrm($param)
     {
+        $row = StatisticsModel::getinsertstatus();
+        if ($row['status'] == '0') {
+            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/ekram';</script>";
+        } else {
         $orphan = $_POST['E_orphan'];
         $supports = $_POST['E_supports'];
         $year = $param[0];
@@ -10,6 +14,7 @@
         $un = $_SESSION['suname'];
         EkramModel::insertEkram($orphan, $supports, $year, $month, $un);
         header("Location:" . getBaseUrl() . "page/ekram");
+        }
     }
     /**************************************************** */
     public  function getrecentEkrmMonth()

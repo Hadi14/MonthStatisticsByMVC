@@ -2,6 +2,10 @@
 {
     public  function insertsandogh($param)
     {
+        $row = StatisticsModel::getinsertstatus();
+        if ($row['status'] == '0') {
+            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+        } else {
         $snum = $_POST['s_num'];
         $smoney = $_POST['s_mny'];
         $mrgnum = $_POST['s_Mrgnum'];
@@ -11,6 +15,7 @@
         $user = $_SESSION['suname'];
         SandoghModel::insertSandogh($mrgnum, $mrgmonry, $snum, $smoney, $year, $month, $user);
         header("Location:" . getBaseUrl() . "page/sandogh");
+        }
     }
     /****************************************************************************************** */
     public  function getrecentsandoghmonth()
