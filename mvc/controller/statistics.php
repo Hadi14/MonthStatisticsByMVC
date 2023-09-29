@@ -49,13 +49,21 @@
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/dowry';</script>";
         } else {
-            $money = $_POST['mny'];
-            $dnum = $_POST['dnum'];
-            $year = $param[0];
-            $month = $param[1];
-            $user = $_SESSION['suname'];
-            StatisticsModel::insertDowry($dnum, $money, $year, $month, $user);
-            header("Location:" . getBaseUrl() . "page/dowry");
+            try {
+                $money = $_POST['mny'];
+                $dnum = $_POST['dnum'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                StatisticsModel::insertDowry($dnum, $money, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/dowry");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('رکورد تکراری می باشد لطفا رکورد قبلی را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/dowry';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /****************************************************************************************** */
