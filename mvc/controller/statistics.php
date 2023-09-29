@@ -59,7 +59,7 @@
                 header("Location:" . getBaseUrl() . "page/dowry");
             } catch (mysqli_sql_exception $e) {
                 if ($e->getCode() == 1062) {
-                    echo "<script>alert('رکورد تکراری می باشد لطفا رکورد قبلی را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/dowry';</script>";
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/dowry';</script>";
                 } else {
                     throw $e; // in case it's any other error
                 }

@@ -2,19 +2,27 @@
 {
     public  function insertsandogh($param)
     {
-        $row = StatisticsModel::getinsertstatus();
-        if ($row['status'] == '0') {
-            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
-        } else {
-        $snum = $_POST['s_num'];
-        $smoney = $_POST['s_mny'];
-        $mrgnum = $_POST['s_Mrgnum'];
-        $mrgmonry = $_POST['s_MrgMonry'];
-        $year = $param[0];
-        $month = $param[1];
-        $user = $_SESSION['suname'];
-        SandoghModel::insertSandogh($mrgnum, $mrgmonry, $snum, $smoney, $year, $month, $user);
-        header("Location:" . getBaseUrl() . "page/sandogh");
+        try {
+            $row = StatisticsModel::getinsertstatus();
+            if ($row['status'] == '0') {
+                echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+            } else {
+                $snum = $_POST['s_num'];
+                $smoney = $_POST['s_mny'];
+                $mrgnum = $_POST['s_Mrgnum'];
+                $mrgmonry = $_POST['s_MrgMonry'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                SandoghModel::insertSandogh($mrgnum, $mrgmonry, $snum, $smoney, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/sandogh");
+            }
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) {
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+            } else {
+                throw $e; // in case it's any other error
+            }
         }
     }
     /****************************************************************************************** */
