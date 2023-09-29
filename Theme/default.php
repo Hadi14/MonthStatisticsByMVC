@@ -263,7 +263,8 @@
                         </div>
                         <div class="namelable">
                             <?
-                            echo "<b>" . $_SESSION['name'] . ' ' . $_SESSION['family'] . "</b>" . ' ' . 'خوش آمدید.';
+                            echo "حوزه: " . "<b>" . $_SESSION['scope'] . "</b>";
+                            echo " - <b>" . $_SESSION['name'] . ' ' . $_SESSION['family'] . "</b>" . ' ' . 'خوش آمدید.';
                             ?>
                         </div>
                     </div>

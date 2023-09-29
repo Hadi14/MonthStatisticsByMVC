@@ -29,6 +29,7 @@
             $_SESSION['level'] = $record['level'];
             $_SESSION['name'] = $record['name'];
             $_SESSION['family'] = $record['family'];
+            $_SESSION['scope'] = $record['scope'];
             header("Location:" . getBaseUrl() . 'page/home/');
         }
     }
