@@ -206,6 +206,9 @@
                                 <li>
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/allocationaccess">تخصیص دسترسی</a>
                                 </li>
+                                <li>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/uploadfile">آپلود فایل</a>
+                                </li>
                             </ul>
                         </li>
                         <li>

@@ -202,4 +202,14 @@ class PageController
             Render::renderReport('/report/reporttwomonth.php', $currdt[0], "reporttowmonth");
         }
     }
+    /**************************************************************** */
+    function uploadfile()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/statistic/uploadform.php', "", $currdt[0]);
+        }
+    }
 }
