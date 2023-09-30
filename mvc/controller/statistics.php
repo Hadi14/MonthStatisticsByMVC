@@ -4,42 +4,59 @@
     public  function insertPopulation($param)
     {
         // dump($_POST);
-        $row = StatisticsModel::getinsertstatus();
-        if ($row['status'] == '0') {
-            echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/population';</script>";
-        } else {
-            $CityFamily = $_POST['familycity'];
-            $RuralFamily = $_POST['familyrural'];
-            $MenFamily = $_POST['familymen'];
-            $WomenFamily = $_POST['familywomen'];
-            $AllFamily = $_POST['allfamily'];
-            $AllPop = $_POST['allpeople'];
-            $OldFamCity = $_POST['familyoldcity'];
-            $OldFamRural = $_POST['familyoldrural'];
-            $AllOldFamily = $_POST['alloldfamily'];
-            $OldPopCity = $_POST['peopleoldcity'];
-            $OldPopRural = $_POST['peopleoldrural'];
-            $AllPopOld = $_POST['alloldpeople'];
-            $year = $param[0];
-            $month = $param[1];
-            $user = $_SESSION['suname'];
-            StatisticsModel::insertpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
-            header("Location:" . getBaseUrl() . "page/population");
+        try {
+            $row = StatisticsModel::getinsertstatus();
+            if ($row['status'] == '0') {
+                echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/population';</script>";
+            } else {
+                $CityFamily = $_POST['familycity'];
+                $RuralFamily = $_POST['familyrural'];
+                $MenFamily = $_POST['familymen'];
+                $WomenFamily = $_POST['familywomen'];
+                $AllFamily = $_POST['allfamily'];
+                $AllPop = $_POST['allpeople'];
+                $OldFamCity = $_POST['familyoldcity'];
+                $OldFamRural = $_POST['familyoldrural'];
+                $AllOldFamily = $_POST['alloldfamily'];
+                $OldPopCity = $_POST['peopleoldcity'];
+                $OldPopRural = $_POST['peopleoldrural'];
+                $AllPopOld = $_POST['alloldpeople'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                StatisticsModel::insertpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $AllPop, $OldFamCity, $OldFamRural, $AllOldFamily, $OldPopCity, $OldPopRural, $AllPopOld, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/population");
+            }
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) {
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+            } else {
+                throw $e; // in case it's any other error
+            }
         }
     }
     /****************************************************************************************** */
     public  function insertMoney($param)
     {
+
         $row = StatisticsModel::getinsertstatus();
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/money';</script>";
         } else {
-            $money = $_POST['mny'];
-            $year = $param[0];
-            $month = $param[1];
-            $user = $_SESSION['suname'];
-            StatisticsModel::insertmoney($money, $year, $month, $user);
-            header("Location:" . getBaseUrl() . "page/money");
+            try {
+                $money = $_POST['mny'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                StatisticsModel::insertmoney($money, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/money");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /****************************************************************************************** */
@@ -73,15 +90,23 @@
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/insure';</script>";
         } else {
-            $wn = $_POST['wnum'];
-            $jn = $_POST['jnum'];
-            $is = $_POST['isum'];
-            $imoney = $_POST['imoney'];
-            $year = $param[0];
-            $month = $param[1];
-            $user = $_SESSION['suname'];
-            StatisticsModel::inserInsure($wn, $jn, $is, $imoney, $year, $month, $user);
-            header("Location:" . getBaseUrl() . "page/insure");
+            try {
+                $wn = $_POST['wnum'];
+                $jn = $_POST['jnum'];
+                $is = $_POST['isum'];
+                $imoney = $_POST['imoney'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                StatisticsModel::inserInsure($wn, $jn, $is, $imoney, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/insure");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /****************************************************************************************** */

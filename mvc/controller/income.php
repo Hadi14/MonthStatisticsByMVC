@@ -7,17 +7,25 @@
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/income';</script>";
         } else {
-        $charity = $_POST['i_charity'];
-        $Supports = $_POST['i_Supports'];
-        $zakat = $_POST['i_zakat'];
-        $bsNeed = $_POST['i_bsNeed'];
-        $allIncome = $_POST['i_allIncome'];
-        $Nikookari = $_POST['i_Nikookari'];
-        $year = $param[0];
-        $month = $param[1];
-        $un = $_SESSION['suname'];
-        IncomeModel::insertIncomes($charity, $Supports, $zakat, $bsNeed, $allIncome, $Nikookari, $year, $month, $un);
-        header("Location:" . getBaseUrl() . "page/income");
+            try {
+                $charity = $_POST['i_charity'];
+                $Supports = $_POST['i_Supports'];
+                $zakat = $_POST['i_zakat'];
+                $bsNeed = $_POST['i_bsNeed'];
+                $allIncome = $_POST['i_allIncome'];
+                $Nikookari = $_POST['i_Nikookari'];
+                $year = $param[0];
+                $month = $param[1];
+                $un = $_SESSION['suname'];
+                IncomeModel::insertIncomes($charity, $Supports, $zakat, $bsNeed, $allIncome, $Nikookari, $year, $month, $un);
+                header("Location:" . getBaseUrl() . "page/income");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /**************************************************** */

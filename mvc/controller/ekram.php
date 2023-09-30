@@ -7,13 +7,21 @@
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/ekram';</script>";
         } else {
-        $orphan = $_POST['E_orphan'];
-        $supports = $_POST['E_supports'];
-        $year = $param[0];
-        $month = $param[1];
-        $un = $_SESSION['suname'];
-        EkramModel::insertEkram($orphan, $supports, $year, $month, $un);
-        header("Location:" . getBaseUrl() . "page/ekram");
+            try {
+                $orphan = $_POST['E_orphan'];
+                $supports = $_POST['E_supports'];
+                $year = $param[0];
+                $month = $param[1];
+                $un = $_SESSION['suname'];
+                EkramModel::insertEkram($orphan, $supports, $year, $month, $un);
+                header("Location:" . getBaseUrl() . "page/ekram");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /**************************************************** */

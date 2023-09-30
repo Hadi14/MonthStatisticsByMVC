@@ -6,19 +6,27 @@
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/job';</script>";
         } else {
-            $jds = $_POST['i_jds'];
-            $jdl = $_POST['i_jdl'];
-            $jdsum = $_POST['i_jdsum'];
-            $nj = $_POST['i_nj'];
-            $jsum = $_POST['i_jsum'];
-            $jmoney = $_POST['i_jmoney'];
-            $flearn = $_POST['i_flearn'];
-            $supervi = $_POST['i_supervi'];
-            $year = $param[0];
-            $month = $param[1];
-            $user = $_SESSION['suname'];
-            JobModel::insertJob($jds, $jdl, $jdsum, $nj, $jsum, $jmoney, $flearn, $supervi, $year, $month, $user);
-            header("Location:" . getBaseUrl() . "page/job");
+            try {
+                $jds = $_POST['i_jds'];
+                $jdl = $_POST['i_jdl'];
+                $jdsum = $_POST['i_jdsum'];
+                $nj = $_POST['i_nj'];
+                $jsum = $_POST['i_jsum'];
+                $jmoney = $_POST['i_jmoney'];
+                $flearn = $_POST['i_flearn'];
+                $supervi = $_POST['i_supervi'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                JobModel::insertJob($jds, $jdl, $jdsum, $nj, $jsum, $jmoney, $flearn, $supervi, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/job");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /****************************************************************************************** */

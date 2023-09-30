@@ -6,20 +6,28 @@
         if ($row['status'] == '0') {
             echo "<script>alert('عملیات درج غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');  window.location.href ='"  . getBaseUrl() . "page/maskan';</script>";
         } else {
-        $fix = $_POST['fix'];
-        $wc = $_POST['wc'];
-        $buyc = $_POST['buyc'];
-        $buyr = $_POST['buyr'];
-        $crtc = $_POST['crtc'];
-        $crtr = $_POST['crtr'];
-        $tbm = $_POST['tbm'];
-        $tsep = $_POST['tsep'];
-        $sum =  $_POST['sum'];
-        $year = $param[0];
-        $month = $param[1];
-        $user = $_SESSION['suname'];
-        MaskanModel::insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $sum, $year, $month, $user);
-        header("Location:" . getBaseUrl() . "page/maskan");
+            try {
+                $fix = $_POST['fix'];
+                $wc = $_POST['wc'];
+                $buyc = $_POST['buyc'];
+                $buyr = $_POST['buyr'];
+                $crtc = $_POST['crtc'];
+                $crtr = $_POST['crtr'];
+                $tbm = $_POST['tbm'];
+                $tsep = $_POST['tsep'];
+                $sum =  $_POST['sum'];
+                $year = $param[0];
+                $month = $param[1];
+                $user = $_SESSION['suname'];
+                MaskanModel::insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $sum, $year, $month, $user);
+                header("Location:" . getBaseUrl() . "page/maskan");
+            } catch (mysqli_sql_exception $e) {
+                if ($e->getCode() == 1062) {
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                } else {
+                    throw $e; // in case it's any other error
+                }
+            }
         }
     }
     /****************************************************************************************** */
