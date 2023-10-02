@@ -5,4 +5,5 @@ require_once('system/db.php');
 require_once('system/common.php');
 require_once('system/render.php');
 require_once('system/admin.php');
+require_once('system/jdf.php');
 session_start();

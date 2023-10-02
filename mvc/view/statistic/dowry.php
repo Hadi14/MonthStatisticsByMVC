@@ -5,17 +5,9 @@ if (getaces(4) == 0) {
 
 // $row = StatisticsModel::getinsertstatus();
 // dump($row);
+echo jdate('Y/m/d');
 ?>
-<?
-// try {
-// } catch (mysqli_sql_exception $e) {
-//     if ($e->getCode() == 1062) {
-//         echo "NOOOOOOOOOOOOOOOOOO";
-//     } else {
-//         throw $e; // in case it's any other error
-//     }
-// }
-?>
+
 <main class="main users chart-page" id="skip-target">
     <div class="container">
         <h2 class="main-title">آمار جهیزیه ماه اخیر: <span id="recentYR"></span>-<span id="recentMn"></span></h2>

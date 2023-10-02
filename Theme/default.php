@@ -265,10 +265,15 @@
                             <input type="text" placeholder="جستجو ...." required>
                         </div>
                         <div class="namelable">
-                            <?
-                            echo "حوزه: " . "<b>" . $_SESSION['scope'] . "</b>";
-                            echo " - <b>" . $_SESSION['name'] . ' ' . $_SESSION['family'] . "</b>" . ' ' . 'خوش آمدید.';
-                            ?>
+                            <div>
+                                <?
+                                echo "حوزه: " . "<b>" . $_SESSION['scope'] . "</b>";
+                                echo " - <b>" . $_SESSION['name'] . ' ' . $_SESSION['family'] . "</b>" . ' ' . 'خوش آمدید.';
+                                ?>
+                            </div>
+                            <div class="nowdate">
+                                <? echo  'امروز: ' . jdate('Y/m/d')  ?>
+                            </div>
                         </div>
                     </div>
 

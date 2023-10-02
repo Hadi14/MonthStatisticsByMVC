@@ -63,6 +63,12 @@ div .row.mt-5 {
 .namelable {
     font-size: 12px;
     margin-right: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nowdate {
+    margin-right: 20px;
 }
 
 .main-nav-start {
