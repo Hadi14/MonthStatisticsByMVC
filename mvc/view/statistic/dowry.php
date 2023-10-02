@@ -5,7 +5,7 @@ if (getaces(4) == 0) {
 
 // $row = StatisticsModel::getinsertstatus();
 // dump($row);
-echo jdate('Y/m/d');
+
 ?>
 
 <main class="main users chart-page" id="skip-target">
