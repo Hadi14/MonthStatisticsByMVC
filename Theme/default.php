@@ -272,7 +272,7 @@
                                 ?>
                             </div>
                             <div class="nowdate">
-                                <? echo  'امروز: ' . jdate('Y/m/d')  ?>
+                                <? echo  'امروز: ' . jdate('l j F Y')  ?>
                             </div>
                         </div>
                     </div>
