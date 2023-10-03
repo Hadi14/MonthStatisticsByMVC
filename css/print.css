@@ -5,8 +5,8 @@
 
 
 
-#printbtn {
+#printbtn,
+#backbtn {
     display: none;
     visibility: none;
 }
-
