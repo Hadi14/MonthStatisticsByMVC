@@ -13,7 +13,8 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into ekram (E_orphan, E_supports, E_Year, E_Month, E_user) values($E_orphan, $E_supports,'$year','$month','$un')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into ekram (E_orphan, E_supports, E_Year, E_Month, E_user,datetime) values($E_orphan, $E_supports,'$year','$month','$un','$date')");
     }
     /*********************************************************************/
     static  function getallEkram($year, $un)

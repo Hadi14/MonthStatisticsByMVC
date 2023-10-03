@@ -3,7 +3,8 @@
     static  function insertSandogh($mrgnum, $mrgmonry, $snum, $smny, $year, $month, $user)
     {
         $db = Db::getInstance();
-        $db->insert("insert into sandogh (S_mrgNum,S_mrgMoney,S_numLeon,S_moneyLeon,S_Year,S_Month,S_user) values  ($mrgnum, $mrgmonry,$snum,$smny,'$year','$month','$user')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into sandogh (S_mrgNum,S_mrgMoney,S_numLeon,S_moneyLeon,S_Year,S_Month,S_user,datetime) values  ($mrgnum, $mrgmonry,$snum,$smny,'$year','$month','$user','$date')");
     }
     /*********************************************************************/
     static  function recentSandoghMonth()

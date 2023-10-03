@@ -3,7 +3,8 @@
     static  function insertJob($jds, $jdl, $jdsum, $nj, $jsum, $jmoney, $flearn, $supervi, $year, $month, $user)
     {
         $db = Db::getInstance();
-        $db->insert("insert into job (J_djSrch, J_djLeon, J_djSum, J_ndj, J_sum, J_leonMny, J_faniLearn, J_Supervision, J_Year, J_Month, J_user) values  ($jds, $jdl, $jdsum, $nj, $jsum, $jmoney, $flearn, $supervi, '$year','$month','$user')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into job (J_djSrch, J_djLeon, J_djSum, J_ndj, J_sum, J_leonMny, J_faniLearn, J_Supervision, J_Year, J_Month, J_user,datetime) values  ($jds, $jdl, $jdsum, $nj, $jsum, $jmoney, $flearn, $supervi, '$year','$month','$user','$date')");
     }
     /*********************************************************************/
     static  function recentJobMonth()

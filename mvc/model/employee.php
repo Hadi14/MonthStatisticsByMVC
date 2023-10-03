@@ -4,7 +4,8 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into employee (Em_official, Em_company, Em_sum, Em_Year, Em_Month, Em_user) values($Em_official, $Em_company,$Em_sum,'$year','$month','$un')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into employee (Em_official, Em_company, Em_sum, Em_Year, Em_Month, Em_user,datetime) values($Em_official, $Em_company,$Em_sum,'$year','$month','$un','$date')");
     }
     /*****************************************************************/
     static  function recentEmployeeMonth()

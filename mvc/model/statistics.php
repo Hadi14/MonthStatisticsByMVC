@@ -5,9 +5,10 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
+        $date = date("Y-m-d H:i:s");
         $db->insert("insert into hemayat (Hmy_CityFamily,Hmy_RuralFamily,Hmy_MenFamily,Hmy_WomenFamily,Hmy_AllFamily,Hmy_AllPop,Hmy_OldFamCity,
-        Hmy_OldFamRural,Hmy_AllOldFamily,Hmy_OldPopCity,Hmy_OldPopRural,Hmy_AllPopOld,Year,Month,user) 
-        values  ($CityFamily, $RuralFamily, $MenFamily, $WomenFamily,$AllFamily,$AllPop,$OldFamCity,$OldFamRural,$AllOldFamily,$OldPopCity,$OldPopRural,$AllPopOld,'$year','$month','$un')");
+        Hmy_OldFamRural,Hmy_AllOldFamily,Hmy_OldPopCity,Hmy_OldPopRural,Hmy_AllPopOld,Year,Month,user,datetime) 
+        values  ($CityFamily, $RuralFamily, $MenFamily, $WomenFamily,$AllFamily,$AllPop,$OldFamCity,$OldFamRural,$AllOldFamily,$OldPopCity,$OldPopRural,$AllPopOld,'$year','$month','$un','$date')");
         // header("Location: " . getBaseUrl() . "page/population");
     }
     /*********************************************************************/
@@ -15,7 +16,8 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into money (M_money,M_Year,M_month,M_user)values($money,'$year','$month','$un')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into money (M_money,M_Year,M_month,M_user,datetime)values($money,'$year','$month','$un','$date')");
     }
     /*********************************************************************/
     static  function insertDowry($dNum, $dMoney, $year, $month, $un)
@@ -30,7 +32,8 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into insure (I_NumWomen,I_NumJob,I_Sum,I_Money,I_Year,I_month,I_user)values($wNum, $jNum,$sum,$money,'$year','$month','$un')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into insure (I_NumWomen,I_NumJob,I_Sum,I_Money,I_Year,I_month,I_user,datetime)values($wNum, $jNum,$sum,$money,'$year','$month','$un','$date')");
     }
     /*********************************************************************/
     static  function updateAllpopulation($CityFamily, $RuralFamily, $MenFamily, $WomenFamily, $AllFamily, $year, $month, $user)

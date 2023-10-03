@@ -5,7 +5,8 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into incomes (In_charity, In_Supports, In_zakat, In_bsNeed, In_allIncome, In_Nikookari, In_Year, In_Month, In_user) values($charity, $Supports,$zakat,$bsNeed,$allIncome,$Nikookari,'$year','$month','$un')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into incomes (In_charity, In_Supports, In_zakat, In_bsNeed, In_allIncome, In_Nikookari, In_Year, In_Month, In_user,datetime) values($charity, $Supports,$zakat,$bsNeed,$allIncome,$Nikookari,'$year','$month','$un','$date')");
     }
     /*****************************************************************/
     static  function recentIncomeMonth()

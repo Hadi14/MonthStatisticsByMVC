@@ -1,13 +1,11 @@
 <? class FarhangiModel
 {
-    public function __construct()
-    {
-    }
+
     static  function insertFarhangi($stu, $year, $month, $user)
     {
         $db = Db::getInstance();
-        $db->insert("insert into farhangi (F_numStu,F_Year,F_Month,F_user) 
-        values  ($stu,'$year','$month','$user')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into farhangi (F_numStu,F_Year,F_Month,F_user,datetime) values  ($stu,'$year','$month','$user','$date')");
     }
     /*********************************************************************/
     static  function recentFarhangiMonth()
