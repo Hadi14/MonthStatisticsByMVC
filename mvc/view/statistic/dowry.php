@@ -3,8 +3,25 @@ if (getaces(4) == 0) {
     exit;
 }
 
+date_default_timezone_set('Asia/Tehran');
 // $row = StatisticsModel::getinsertstatus();
 // dump($row);
+$date = date("Y-m-d H:i:s");
+echo $date;
+
+$db = Db::getInstance();
+$un = $_SESSION['suname'];
+$db->insert("update dowry set datetime='$date' where D_Month='02'");
+$date_db = $db->query("select datetime from dowry where D_Month='02'");
+
+dump(($date_db[0]['datetime']));
+echo "<br>";
+$dt = date("Y-m-d", strtotime($date_db[0]['datetime']));
+echo $dt;
+echo "<br>";
+$t = date("H:i:s", strtotime($date_db[0]['datetime']));
+echo $t;
+
 
 ?>
 
