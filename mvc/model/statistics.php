@@ -22,7 +22,8 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $db->insert("insert into dowry (D_NumberDowry,D_MoneyDowry,D_Year,D_month,D_user)values($dNum,$dMoney,'$year','$month','$un')");
+        $date = date("Y-m-d H:i:s");
+        $db->insert("insert into dowry (D_NumberDowry,D_MoneyDowry,D_Year,D_month,D_user,datetime)values($dNum,$dMoney,'$year','$month','$un','$date')");
     }
     /*********************************************************************/
     static  function inserInsure($wNum, $jNum, $sum, $money, $year, $month, $un)
