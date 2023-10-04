@@ -460,6 +460,24 @@ if ($_SESSION['level'] != 0) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
                 let un = dValues[14];
+                let pdate = dValues[15];
+
+
+
+
+                var date = new Date(pdate);
+                console.log(date);
+                let day = date.getDate();
+                // let year = date.getFullYear();
+                let year = "2023";
+                let month = date.getMonth() + 1;
+
+                // year=String(year);
+
+
+                let fulld = "<?= gregorian_to_jalali('2023', '10', '2', '/'); ?>";
+                let fulld = <?= gregorian_to_jalali(echo "<script>year</script>",'10', '2', '/'); ?>;
+                console.log(fulld);
 
 
                 $('#citf').text(toLocalStr(dValues[0]));
@@ -488,6 +506,7 @@ if ($_SESSION['level'] != 0) {
                 $('#u_ocitypeop').text(un);
                 $('#u_orurpeop').text(un);
                 $('#u_alloldpeop').text(un);
+                // $('#date_citf').text(dt);
             },
         });
     }
