@@ -3151,7 +3151,7 @@ label {
   margin-right: 20px;
 }
 
-.footer-end li:last-child {
+.footer-end li:first-child {
   margin-right: 0;
 }
 
