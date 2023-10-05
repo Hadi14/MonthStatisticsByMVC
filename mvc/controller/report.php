@@ -112,4 +112,68 @@
         $recs = ReportModel::getDowryDateTimeRpt($year, $mn);
         echo json_encode($recs);
     }
+    /****************************************************************************************** */
+    public  function getySandoghDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getSandoghDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getFarhangiDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getFarhangiDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getMaskanDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getMaskanDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getJobDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getJobDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getInsureDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getInsureDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getIncomeDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getIncomeDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getEkramDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getEkramDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
+    /****************************************************************************************** */
+    public  function getEmployeeDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getEmployeeDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
 }

@@ -146,40 +146,40 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="4">تعداد وام ازدواج پرداخت شده</td>
                     <td id="MrgLnum">عدم ثبت</td>
                     <td id="u_MrgLnum">NoUser</td>
-                    <td class="MrgLnumdate">-</td>
-                    <td class="MrgLnumtime">-</td>
+                    <td class="Mrgdate">-</td>
+                    <td class="Mrgtime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">8</th>
                     <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیارد ريال)</td>
                     <td id="MrgLmoney">عدم ثبت</td>
                     <td id="u_MrgLmoney">NoUser</td>
-                    <td class="MrgLmoneydate">-</td>
-                    <td class="MrgLmoneytime">-</td>
+                    <td class="Mrgdate">-</td>
+                    <td class="Mrgtime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">9</th>
                     <td colspan="4">تعداد وام قرض الحسنه پرداخت شده به نیازمندان(وجوه اداره شده، حمایتی، ودیعه، درمان، فرهنگی، رسالت، مهر)</td>
                     <td id="leonnum">عدم ثبت</td>
                     <td id="u_leonnum">NoUser</td>
-                    <td class="leonnumdate">-</td>
-                    <td class="leonnumtime">-</td>
+                    <td class="Mrgdate">-</td>
+                    <td class="Mrgtime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">10</th>
                     <td colspan="4">مبلغ وام های قرض الحسنه پرداخت شده به نیازمندان(میلیارد ريال)</td>
                     <td id="leonmoney">عدم ثبت</td>
                     <td id="u_leonmoney">NoUser</td>
-                    <td class="leonmoneydate">-</td>
-                    <td class="leonmoney">-</td>
+                    <td class="Mrgdate">-</td>
+                    <td class="Mrgtime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">11</th>
                     <td colspan="4">تعداد دانش آموزان و دانشجویان تحت حمایت</td>
                     <td id="stunum">عدم ثبت</td>
                     <td id="u_stunum">NoUser</td>
-                    <td class="stunumdate">-</td>
-                    <td class="stunumtime">-</td>
+                    <td class="studate">-</td>
+                    <td class="stutime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="9" scope="row">12</th>
@@ -187,66 +187,66 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">تعمیرات مسکن</td>
                     <td id="fix">عدم ثبت</td>
                     <td id="u_fix">NoUser</td>
-                    <td class="fixdate">-</td>
-                    <td class="fixtime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">احداث سرویس بهداشتی و گازکشی</td>
                     <td id="wc">عدم ثبت</td>
                     <td id="u_wc">NoUser</td>
-                    <td class="wcdate">-</td>
-                    <td class="wctime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td rowspan="2">خرید مسکن</td>
                     <td colspan="2">شهری</td>
                     <td id="buyc">عدم ثبت</td>
                     <td id="u_buyc">NoUser</td>
-                    <td class="buycdate">-</td>
-                    <td class="buyctime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">روستایی</td>
                     <td id="buyrur">عدم ثبت</td>
                     <td id="u_buyrur">NoUser</td>
-                    <td class="buyrurdate">-</td>
-                    <td class="buyrurtime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td rowspan="3">احداث مسکن</td>
                     <td colspan="2">شهری</td>
                     <td id="crtcity">عدم ثبت</td>
                     <td id="u_crtcity">NoUser</td>
-                    <td class="crtcitydate">-</td>
-                    <td class="crtcitytime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">روستایی</td>
                     <td id="crtrural">عدم ثبت</td>
                     <td id="u_crtrural">NoUser</td>
-                    <td class="crtruraldate">-</td>
-                    <td class="crtruraltime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">تفاهم نامه با بنیاد مستضعفان(ادامه سنوات قبل)</td>
                     <td id="bonyad">عدم ثبت</td>
                     <td id="u_bonyad">NoUser</td>
-                    <td class="bonyaddate">-</td>
-                    <td class="bonyadtime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">اجرای تفاهم نامه ساخت مسکن با سپاه(ادامه سنوات قبل)</td>
                     <td id="sepah">عدم ثبت</td>
                     <td id="u_sepah">NoUser</td>
-                    <td class="sepahdate">-</td>
-                    <td class="sepahtime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">جمع</td>
                     <td id="allmaskan">عدم ثبت</td>
                     <td id="u_allmaskan">NoUser</td>
-                    <td class="allmaskandate">-</td>
-                    <td class="allmaskantime">-</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="8" scope="row">13</th>
@@ -255,57 +255,57 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="2">اشتغال مستقیم از طریق کاریابی</td>
                     <td id="dsicj">عدم ثبت</td>
                     <td id="u_dsicj">NoUser</td>
-                    <td class="dsicjdate">-</td>
-                    <td class="dsicjtime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">اشتغال مستقیم از طریق پرداخت تسهیلات</td>
                     <td id="dljob">عدم ثبت</td>
                     <td id="u_dljob">NoUser</td>
-                    <td class="dljobdate">-</td>
-                    <td class="dljobtime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">جمع اشتغال مستقیم</td>
                     <td id="alldic">عدم ثبت</td>
                     <td id="u_alldic">NoUser</td>
-                    <td class="alldicdate">-</td>
-                    <td class="alldictime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">اشتغال غیر مستقیم ایجاد شده</td>
                     <td id="ndjob">عدم ثبت</td>
                     <td id="u_ndjob">NoUser</td>
-                    <td class="ndjobdate">-</td>
-                    <td class="ndjobtime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">جمع کل اشتغال(مستقیم و غیر مستقیم)</td>
                     <td id="alljob">عدم ثبت</td>
                     <td id="u_alljob">NoUser</td>
-                    <td class="alljobdate">-</td>
-                    <td class="alljobtime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)</td>
                     <td id="jleonmoney">عدم ثبت</td>
                     <td id="u_jleonmoney">NoUser</td>
-                    <td class="jleonmoneydate">-</td>
-                    <td class="jleonmoneytime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">آموزش های مهارتی و فنی و حرفه ای </td>
                     <td id="flearn">عدم ثبت</td>
                     <td id="u_flearn">NoUser</td>
-                    <td class="flearndate">-</td>
-                    <td class="flearntime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">طرح های اشتغال فعال تحت نظارت </td>
                     <td id="jsup">عدم ثبت</td>
                     <td id="u_jsup">NoUser</td>
-                    <td class="jsupdate">-</td>
-                    <td class="jsuptime">-</td>
+                    <td class="jobdate">-</td>
+                    <td class="jobtime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="4" scope="row">14</th>
@@ -313,29 +313,29 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">تعداد زنان سرپرست خانوار</td>
                     <td id="inwom">عدم ثبت</td>
                     <td id="u_inwom">NoUser</td>
-                    <td class="inwomdate">-</td>
-                    <td class="inwomtime">-</td>
+                    <td class="insuredate">-</td>
+                    <td class="insuretime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">تعداد مجریان طرح های اشتغال</td>
                     <td id="insjob">عدم ثبت</td>
                     <td id="u_insjob">NoUser</td>
-                    <td class="insjobdate">-</td>
-                    <td class="insjobtime">-</td>
+                    <td class="insuredate">-</td>
+                    <td class="insuretime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">جمع</td>
                     <td id="insall">عدم ثبت</td>
                     <td id="u_insall">NoUser</td>
-                    <td class="insalldate">-</td>
-                    <td class="insalltime">-</td>
+                    <td class="insuredate">-</td>
+                    <td class="insuretime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">میزان هزینه(میلیون ریال)</td>
                     <td id="insmoney">عدم ثبت</td>
                     <td id="u_insmoney">NoUser</td>
-                    <td class="insmoneydate">-</td>
-                    <td class="insmoneytime">-</td>
+                    <td class="insuredate">-</td>
+                    <td class="insuretime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="8" scope="row">15</th>
@@ -343,58 +343,58 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">صدقات (میلیارد ریال)</td>
                     <td id="charity">عدم ثبت</td>
                     <td id="u_charity">NoUser</td>
-                    <td class="charitydate">-</td>
-                    <td class="charitytime">-</td>
+                    <td class="incomedate">-</td>
+                    <td class="incometime">-</td>
                 </tr>
                 <tr>
                     <td rowspan="3">اکرام</td>
                     <td colspan="2">مبلغ پرداختی حامیان به ایتام(میلیارد ریال )</td>
                     <td id="orphmoney">عدم ثبت</td>
                     <td id="u_orphmoney">NoUser</td>
-                    <td class="orphmoneydate">-</td>
-                    <td class="orphmoneytime">-</td>
+                    <td class="incomedate">-</td>
+                    <td class="incometime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">تعداد ایتام و محسنین دارای حامی</td>
                     <td id="orphnum">عدم ثبت</td>
                     <td id="u_orphnum">NoUser</td>
-                    <td class="orphnumdate">-</td>
-                    <td class="orphnumtime">-</td>
+                    <td class="ekramdate">-</td>
+                    <td class="ekramtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">تعداد حامیان طرح اکرام(حقیقی و حقوقی)و محسنین</td>
                     <td id="supports">عدم ثبت</td>
                     <td id="u_supports">NoUser</td>
-                    <td class="supportsdate">-</td>
-                    <td class="supportstime">-</td>
+                    <td class="ekramdate">-</td>
+                    <td class="ekramtime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">زکات و کفارات (میلیارد ریال)</td>
                     <td id="zakat">عدم ثبت</td>
                     <td id="u_zakat">NoUser</td>
-                    <td class="zakatdate">-</td>
-                    <td class="zakattime">-</td>
+                    <td class="incomedate">-</td>
+                    <td class="incometime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">مبتنی بر نیاز</td>
                     <td id="basneed">عدم ثبت</td>
                     <td id="u_basneed">NoUser</td>
-                    <td class="basneeddate">-</td>
-                    <td class="basneedtime">-</td>
+                    <td class="incomedate">-</td>
+                    <td class="incometime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">میزان کل درآمدهای اختصاصی و وجوهات امانی(میلیارد ریال) </td>
                     <td id="allmoney">عدم ثبت</td>
                     <td id="u_allmoney">NoUser</td>
-                    <td class="allmoneydate">-</td>
-                    <td class="allmoneytime">-</td>
+                    <td class="incomedate">-</td>
+                    <td class="incometime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">مراکز نیکوکاری(در جمع کل درآمدها لحاظ گردیده است-میلیارد ریال)</td>
                     <td id="marakezmoney">عدم ثبت</td>
                     <td id="u_marakezmoney">NoUser</td>
-                    <td class="marakezmoneydate">-</td>
-                    <td class="marakezmoneytime">-</td>
+                    <td class="incomedate">-</td>
+                    <td class="incometime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="3" scope="row">16</th>
@@ -402,22 +402,22 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">رسمی</td>
                     <td id="offi">عدم ثبت</td>
                     <td id="u_offi">NoUser</td>
-                    <td class="offidate">-</td>
-                    <td class="offitime">-</td>
+                    <td class="emplydate">-</td>
+                    <td class="emplytime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">غیررسمی</td>
                     <td id="comp">عدم ثبت</td>
                     <td id="u_comp">NoUser</td>
-                    <td class="compdate">-</td>
-                    <td class="comptime">-</td>
+                    <td class="emplydate">-</td>
+                    <td class="emplytime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">جمع کل</td>
                     <td id="esum">عدم ثبت</td>
                     <td id="u_esum">NoUser</td>
-                    <td class="esumdate">-</td>
-                    <td class="esumtime">-</td>
+                    <td class="emplydate">-</td>
+                    <td class="emplytime">-</td>
                 </tr>
             </tbody>
         </table>
@@ -441,13 +441,21 @@ if ($_SESSION['level'] != 0) {
         dowry();
         getDowrydatetime();
         sandogh();
+        getSandoghdatetime()
         farhangi();
+        getFarhangidatetime();
         maskan();
+        getMaskandatetime();
         job();
+        getjobdatetime();
         insure();
+        getinsuredatetime();
         mosharekat();
+        getincomedatetime();
         ekram();
+        getekramdatetime();
         employee();
+        getemployeedatetime();
     });
     // ***********************************************************
     function population() {
@@ -834,6 +842,134 @@ if ($_SESSION['level'] != 0) {
             success: function(data) {
                 $('.dowrydate').text(data[0]);
                 $('.dowrytime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getSandoghdatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getySandoghDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.Mrgdate').text(data[0]);
+                $('.Mrgtime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getFarhangidatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getFarhangiDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.studate').text(data[0]);
+                $('.stutime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getMaskandatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getMaskanDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.maskandate').text(data[0]);
+                $('.maskantime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getjobdatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getJobDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.jobdate').text(data[0]);
+                $('.jobtime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getinsuredatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getInsureDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.insuredate').text(data[0]);
+                $('.insuretime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getincomedatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getIncomeDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.incomedate').text(data[0]);
+                $('.incometime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getekramdatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getEkramDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.ekramdate').text(data[0]);
+                $('.ekramtime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getemployeedatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getEmployeeDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.emplydate').text(data[0]);
+                $('.emplytime').text(data[1]);
             },
         });
     }
