@@ -33,43 +33,43 @@ if ($_SESSION['level'] != 0) {
                     <td>شهری</td>
                     <td id="citf">عدم ثبت</td>
                     <td id="u_citf">NoUser</td>
-                    <td id="date_citf">-</td>
-                    <td id="time_citf">-</td>
+                    <td id="date_citf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td>روستایی</td>
                     <td id="rurf">عدم ثبت</td>
                     <td id="u_rurf">NoUser</td>
-                    <td id="date_rurf">-</td>
-                    <td id="time_rurf">-</td>
+                    <td id="date_rurf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td>زن سرپرست</td>
                     <td id="womf">عدم ثبت</td>
                     <td id="u_womf">NoUser</td>
-                    <td id="date_womf">-</td>
-                    <td id="time_womf">-</td>
+                    <td id="date_womf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td>مرد سرپرست</td>
                     <td id="menf">عدم ثبت</td>
                     <td id="u_menf">NoUser</td>
-                    <td id="date_menf">-</td>
-                    <td id="time_menf">-</td>
+                    <td id="date_menf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td>کل</td>
                     <td id="allf">عدم ثبت</td>
                     <td id="u_allf">NoUser</td>
-                    <td id="date_allf">-</td>
-                    <td id="time_allf">-</td>
+                    <td id="date_allf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td colspan="2">نفرات</td>
                     <td id="allpeop">عدم ثبت</td>
                     <td id="u_allpeop">NoUser</td>
-                    <td id="date_allpeop">-</td>
-                    <td id="time_allpeop">-</td>
+                    <td id="date_allpeop" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="3" scope="row">2</th>
@@ -77,22 +77,22 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">معیشت بگیر شهری</td>
                     <td id="ocityf">عدم ثبت</td>
                     <td id="u_ocityf">NoUser</td>
-                    <td id="date_ocityf">-</td>
-                    <td id="time_ocityf">-</td>
+                    <td id="date_ocityf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">معیشت بگیر روستایی</td>
                     <td id="orurf">عدم ثبت</td>
                     <td id="u_orurf">NoUser</td>
-                    <td id="date_orurf">-</td>
-                    <td id="time_orurf">-</td>
+                    <td id="date_orurf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">جمع کل</td>
                     <td id="alloldf">عدم ثبت</td>
                     <td id="u_alloldf">NoUser</td>
-                    <td id="date_alloldf">-</td>
-                    <td id="time_alloldf">-</td>
+                    <td id="date_alloldf" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <th rowspan="3" scope="row">3</th>
@@ -100,22 +100,22 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">معیشت بگیر شهری</td>
                     <td id="ocitypeop">عدم ثبت</td>
                     <td id="u_ocitypeop">NoUser</td>
-                    <td id="date_ocitypeop">-</td>
-                    <td id="time_ocitypeop">-</td>
+                    <td id="date_ocitypeop" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">معیشت بگیر روستایی</td>
                     <td id="orurpeop">عدم ثبت</td>
                     <td id="u_orurpeop">NoUser</td>
-                    <td id="date_orurpeop">-</td>
-                    <td id="time_orurpeop">-</td>
+                    <td id="date_orurpeop" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <td colspan="3">جمع کل</td>
                     <td id="alloldpeop">عدم ثبت</td>
                     <td id="u_alloldpeop">NoUser</td>
-                    <td id="date_alloldpeop">-</td>
-                    <td id="time_alloldpeop">-</td>
+                    <td id="date_alloldpeop" class="popdate">-</td>
+                    <td class="poptime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
@@ -435,6 +435,7 @@ if ($_SESSION['level'] != 0) {
 <script>
     $(document).ready(function() {
         population();
+        getpopdatetime();
         money();
         dowry();
         sandogh();
@@ -460,24 +461,21 @@ if ($_SESSION['level'] != 0) {
                 // console.log(data);
                 const dValues = Object.values(data[0]);
                 let un = dValues[14];
-                let pdate = dValues[15];
 
 
-
-
-                var date = new Date(pdate);
-                console.log(date);
-                let day = date.getDate();
+                // let pdate = dValues[15];
+                // var date = new Date(pdate);
+                // console.log(date);
+                // let day = date.getDate();
                 // let year = date.getFullYear();
-                let year = "2023";
-                let month = date.getMonth() + 1;
-
+                // let year = "2023";
+                // let month = date.getMonth() + 1;
                 // year=String(year);
-
-
-                let fulld = "<?= gregorian_to_jalali('2023', '10', '2', '/'); ?>";
-                let fulld = <?= gregorian_to_jalali(echo "<script>year</script>",'10', '2', '/'); ?>;
-                console.log(fulld);
+                // let fulld = "<? //= gregorian_to_jalali('2023', '10', '2', '/'); 
+                                ?>";
+                // let fulld = <? //= gregorian_to_jalali(echo "<script>year</script>",'10', '2', '/'); 
+                                ?>;
+                // console.log(fulld);
 
 
                 $('#citf').text(toLocalStr(dValues[0]));
@@ -786,6 +784,22 @@ if ($_SESSION['level'] != 0) {
                 $('#u_comp').text(un);
                 $('#u_esum').text(un);
 
+            },
+        });
+    }
+    // ***********************************************************
+    function getpopdatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getPopDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.popdate').text(data[0]);
+                $('.poptime').text(data[1]);
             },
         });
     }

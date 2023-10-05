@@ -88,4 +88,12 @@
         $recs = ReportModel::getSelectedEmployeeRpt($year, $mn);
         echo json_encode($recs);
     }
+    /****************************************************************************************** */
+    public  function getPopDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getPopDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
 }
