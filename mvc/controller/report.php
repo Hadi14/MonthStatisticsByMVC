@@ -96,4 +96,12 @@
         $recs = ReportModel::getPopDateTimeRpt($year, $mn);
         echo json_encode($recs);
     }
+    /****************************************************************************************** */
+    public  function getMoneyDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getMoneyDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
 }
