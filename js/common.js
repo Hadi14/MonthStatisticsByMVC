@@ -13,6 +13,8 @@ $(document).ready(function () {
             // important. must be write --> "==1" and "==0"
             if (data.status[0] == 0) {
                 $('tbody tr td a').addClass('disEnable');
+                $('#disEditNote').append('<i class="bi bi-exclamation-circle-fill"></i>')
+                $('#disEditNote').append('<spsan>عملیات ویرایش غیر فعال می باشد به مدیر سیستم مراجعه کنید.</spsan>')
             }
         },
     });
@@ -27,6 +29,9 @@ $(document).ready(function () {
             // important. must be write --> "==1" and "==0"
             if (data.status[0] == 0) {
                 $('#ins_frm input').addClass('dis_insrt');
+                $('#disInsertNote').append('<i class="bi bi-exclamation-circle-fill"></i>')
+                $('#disInsertNote').append('<spsan>عملیات درج غیر فعال می باشد به مدیر سیستم مراجعه کنید.</spsan>')
+
             }
         },
     });

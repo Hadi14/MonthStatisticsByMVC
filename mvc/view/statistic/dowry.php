@@ -50,13 +50,11 @@ if (getaces(4) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-
+                <span id="disInsertNote"></span>
                 <form id="ins_frm" action="<?= getBaseUrl() ?>statistics/insertDowry/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
-
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
                         <label id="cm" class="currentDate badge rounded-pill text-bg-light col-md-2">ماه: <?= $data['Month']; ?></label>
-
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
@@ -85,6 +83,7 @@ if (getaces(4) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
