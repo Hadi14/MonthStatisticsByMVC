@@ -104,4 +104,12 @@
         $recs = ReportModel::getMoneyDateTimeRpt($year, $mn);
         echo json_encode($recs);
     }
+    /****************************************************************************************** */
+    public  function getDowryDateTime()
+    {
+        $year = $_POST['year'];
+        $mn =  $_POST['month'];
+        $recs = ReportModel::getDowryDateTimeRpt($year, $mn);
+        echo json_encode($recs);
+    }
 }

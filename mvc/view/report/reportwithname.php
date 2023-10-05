@@ -47,7 +47,7 @@ if ($_SESSION['level'] != 0) {
                     <td>زن سرپرست</td>
                     <td id="womf">عدم ثبت</td>
                     <td id="u_womf">NoUser</td>
-                    <td class="womf" class="popdate">-</td>
+                    <td class="popdate">-</td>
                     <td class="poptime">-</td>
                 </tr>
                 <tr>
@@ -127,19 +127,19 @@ if ($_SESSION['level'] != 0) {
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td colspan="4">تعداد جهیزیه پرداخت شده به مزدوجین</td>
+                    <td colspan="4">تعداد جهیزیه اهدا شده به مزدوجین</td>
                     <td id="downum">عدم ثبت</td>
                     <td id="u_downum">NoUser</td>
-                    <td class="downumdate">-</td>
-                    <td class="downumtime">-</td>
+                    <td class="dowrydate">-</td>
+                    <td class="dowrytime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">6</th>
                     <td colspan="4">مبلغ جهیزیه و کمک هزینه ازدواج پرداخت شده(میلیارد ريال)</td>
                     <td id="dowmoney">عدم ثبت</td>
                     <td id="u_dowmoney">NoUser</td>
-                    <td class="dowmoneydate">-</td>
-                    <td class="dowmoneytime">-</td>
+                    <td class="dowrydate">-</td>
+                    <td class="dowrytime">-</td>
                 </tr>
                 <tr>
                     <th scope="row">7</th>
@@ -439,6 +439,7 @@ if ($_SESSION['level'] != 0) {
         money();
         getmoneydatetime()
         dowry();
+        getDowrydatetime();
         sandogh();
         farhangi();
         maskan();
@@ -817,6 +818,22 @@ if ($_SESSION['level'] != 0) {
             success: function(data) {
                 $('.Mmoneydate').text(data[0]);
                 $('.Mmoneytime').text(data[1]);
+            },
+        });
+    }
+    // ***********************************************************
+    function getDowrydatetime() {
+        let s = String(<?= json_encode($mn); ?>);
+        $.ajax('/MonthStatisticsByMVC/report/getDowryDateTime/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                year: <?= $yr; ?>,
+                month: s
+            },
+            success: function(data) {
+                $('.dowrydate').text(data[0]);
+                $('.dowrytime').text(data[1]);
             },
         });
     }

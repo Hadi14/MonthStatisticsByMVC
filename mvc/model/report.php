@@ -117,4 +117,18 @@
         $arydate[] = $grtime;
         return $arydate;
     }
+    /*********************************************************************/
+    static  function getDowryDateTimeRpt($year, $mn)
+    {
+        $db = Db::getInstance();
+        $sql = "select datetime from dowry where D_Year='$year' and D_Month='$mn'";
+        $record = $db->query($sql);
+        $grdate = date("Y-m-d", strtotime($record[0]['datetime']));
+        $grtime = date("H:i:s", strtotime($record[0]['datetime']));
+        $param = explode('-', $grdate);
+        $prdate = gregorian_to_jalali($param[0], $param[1], $param[2], '/');
+        $arydate[] = $prdate;
+        $arydate[] = $grtime;
+        return $arydate;
+    }
 }
