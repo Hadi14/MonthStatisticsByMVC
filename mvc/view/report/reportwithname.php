@@ -472,22 +472,6 @@ if ($_SESSION['level'] != 0) {
                 const dValues = Object.values(data[0]);
                 let un = dValues[14];
 
-
-                // let pdate = dValues[15];
-                // var date = new Date(pdate);
-                // console.log(date);
-                // let day = date.getDate();
-                // let year = date.getFullYear();
-                // let year = "2023";
-                // let month = date.getMonth() + 1;
-                // year=String(year);
-                // let fulld = "<? //= gregorian_to_jalali('2023', '10', '2', '/'); 
-                                ?>";
-                // let fulld = <? //= gregorian_to_jalali(echo "<script>year</script>",'10', '2', '/'); 
-                                ?>;
-                // console.log(fulld);
-
-
                 $('#citf').text(toLocalStr(dValues[0]));
                 $('#rurf').text(toLocalStr(dValues[1]));
                 $('#menf').text(toLocalStr(dValues[2]));
