@@ -2,6 +2,10 @@
 if ($_SESSION['level'] != 0) {
     exit;
 }
+if ($err) {
+    echo "<script>alert('این دسترسی قبلا به شخص دیگر با سطح ثبت کننده داده شده است');</script>";
+}
+
 ?>
 <main class="main users chart-page" id="skip-target">
     <div class="container">

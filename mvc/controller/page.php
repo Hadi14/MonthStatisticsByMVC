@@ -175,12 +175,21 @@ class PageController
             Render::render('/admin/definemenu.php');
         }
     }
-    function allocationaccess()
+    /****************************************************************** */
+    function allocationaccess($err = array())
     {
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/admin/allocationaccess.php');
+            // echo $err[0];
+            // exit;
+            if (isset($err[0])) {
+                if ($err[0] == 'error') {
+                    Render::render('admin/allocationaccess.php', "custom-script", array(), true);
+                }
+            } else {
+                Render::render('/admin/allocationaccess.php');
+            }
         }
     }
     /**************************************************************** */

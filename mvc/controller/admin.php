@@ -84,7 +84,80 @@
         $aloIncome = !isset($_POST['income_chb_insrt']) ? 0 : 1;
         $aloEkram = !isset($_POST['ekram_chb_insrt']) ? 0 : 1;
         $aloEmployee = !isset($_POST['employee_chb_insrt']) ? 0 : 1;
-        AdminModel::inserAllocations($user, $aloHemayat, $aloPopulation, $aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee);
-        header("Location:" . getBaseUrl() . "page/allocationaccess");
+        $flag = false;
+        switch (1) {
+            case  $aloPopulation:
+                $res = AdminModel::getPreviousAllocation('A_aloPopulation');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case  $aloMoney:
+                $res = AdminModel::getPreviousAllocation('A_aloMoney');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloDowry:
+                $res = AdminModel::getPreviousAllocation('A_aloDowry');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloInsure:
+                $res = AdminModel::getPreviousAllocation('A_aloInsure');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloSandogh:
+                $res = AdminModel::getPreviousAllocation('A_aloSandogh');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloFarhangi:
+                $res = AdminModel::getPreviousAllocation('A_aloFarhangi');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloMaskan:
+                $res = AdminModel::getPreviousAllocation('A_aloMaskan');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloJob:
+                $res = AdminModel::getPreviousAllocation('A_aloJob');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloIncome:
+                $res = AdminModel::getPreviousAllocation('A_aloIncome');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloEkram:
+                $res = AdminModel::getPreviousAllocation('A_aloEkram');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+            case   $aloEmployee:
+                $res = AdminModel::getPreviousAllocation('A_aloEmployee');
+                if ($res != "") {
+                    $flag = true;
+                }
+                break;
+        }
+        if ($flag == false) {
+            AdminModel::inserAllocations($user, $aloHemayat, $aloPopulation, $aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee);
+            header("Location:" . getBaseUrl() . "page/allocationaccess");
+        } else {
+            header("Location:" . getBaseUrl() . "page/allocationaccess/error");
+        }
     }
 }
