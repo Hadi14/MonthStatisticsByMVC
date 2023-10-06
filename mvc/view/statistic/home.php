@@ -77,50 +77,71 @@ function getnameAccess($filed)
         </div>
         <ul class="top-cat-list">
             <?
-
+            $count = 0;
             $row = getLastInsert('hemayat', 'Year', 'Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['user'];
-            $insrtRecord[0]['datetime'] = $row[0]['datetime'];
-
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
             $row = getLastInsert('dowry', 'D_Year', 'D_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['D_user'];
-            $insrtRecord[1]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['D_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('ekram', 'E_Year', 'E_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['E_user'];
-            $insrtRecord[2]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['E_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('employee', 'Em_Year', 'Em_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['Em_user'];
-            $insrtRecord[3]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['Em_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('farhangi', 'F_Year', 'F_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['F_user'];
-            $insrtRecord[4]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['F_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('incomes', 'In_Year', 'In_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['In_user'];
-            $insrtRecord[5]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['In_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('insure', 'I_Year', 'I_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['I_user'];
-            $insrtRecord[6]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['I_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('job', 'J_Year', 'J_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['J_user'];
-            $insrtRecord[7]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['J_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('maskan', 'M_Year', 'M_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['M_user'];
-            $insrtRecord[8]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['M_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('money', 'M_Year', 'M_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['M_user'];
-            $insrtRecord[9]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['M_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
             $row = getLastInsert('sandogh', 'S_Year', 'S_Month', $yer, $mnth);
-            $insrtRecord[]['user'] = $row[0]['S_user'];
-            $insrtRecord[10]['datetime'] = $row[0]['datetime'];
+            if ($row != "") {
+                $insrtRecord[]['user'] = $row[0]['S_user'];
+                $insrtRecord[$count++]['datetime'] = $row[0]['datetime'];
+            }
 
 
             // dump($insrtRecord);
@@ -156,12 +177,10 @@ function getnameAccess($filed)
                 } else if ($i >= 9 && $i <= 11) {
                     $color = "danger";
                 }
-
-
                 echo '<script>$(".top-cat-list").append("<li><a href=##><div class=top-cat-list__title>' . $scop . '<span>' . $ti . '</span></div><div class=top-cat-list__subtitle>' . $username . '<span class=' . $color . '>' . $dtjalali . '</span></div></a><li>")</script>';
-                // dump($value['user']);
                 $i++;
             }
+            echo $i - 1;
             ?>
         </ul>
     </article>
