@@ -180,7 +180,27 @@ function getnameAccess($filed)
                 echo '<script>$(".top-cat-list").append("<li><a href=##><div class=top-cat-list__title>' . $scop . '<span>' . $ti . '</span></div><div class=top-cat-list__subtitle>' . $username . '<span class=' . $color . '>' . $dtjalali . '</span></div></a><li>")</script>';
                 $i++;
             }
-            echo $i - 1;
+            // echo $i - 1;
+            // dump($insrtRecord);
+            $insertedUsers = array();
+            foreach ($insrtRecord as $key => $value) {
+                $insertedUsers[] = strtolower($value['user']);
+            }
+            foreach ($aces as $key => $value) {
+                if (!in_array($value, $insertedUsers)) {
+                    $db = Db::getInstance();
+                    $sql = "select name,family from users where user='$value'";
+                    $namefamily = $db->query($sql);
+
+                    $username = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+                    echo '<script>$(".top-cat-list").append("<li><a href=##><div class=top-cat-list__title>' . $key . '<span>' . 'عدم ثبت' . '</span></div><div class=top-cat-list__subtitle>' . $username . '<span class=danger>عدم ثبت</span></div></a><li>")</script>';
+                    // echo "<br>" . $key . " " . $value;
+                }
+            }
+            // dump($aces);
+            // echo in_array('hajihasani', $insertedUsers);
+
+
             ?>
         </ul>
     </article>
