@@ -44,7 +44,13 @@ function strHas($str, $srch, $caseSensitive = false)
         return strpos(strtolower($str), strtolower($srch)) !== false;
     }
 }
-
+function getLastInsert($tbl, $yrFieldName, $monFieldName, $yer, $mnth)
+{
+    $db = Db::getInstance();
+    $sql = "select * from $tbl where $yrFieldName='$yer' and $monFieldName='$mnth' ";
+    $row = $db->query($sql);
+    return $row;
+}
 // function showmsg($type, $msg, $exit)
 // {
 //     $ar['msg'] = $msg;

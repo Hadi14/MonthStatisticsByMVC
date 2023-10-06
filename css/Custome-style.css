@@ -102,3 +102,11 @@ div .row.mt-5 {
 #disEditNote i {
     color: orangered;
 }
+
+article.white-block {
+    font-family: vazir-digit;
+}
+
+h4.my-2 {
+    text-align: center;
+}
