@@ -86,4 +86,5 @@
         UserModel::inserUser($user, $password, $level, $name, $family, $scope);
         header("Location:" . getBaseUrl() . "page/registeruser");
     }
+    /****************************************************************************************** */
 }

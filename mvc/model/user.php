@@ -23,6 +23,14 @@
         $g = $db->query($sql);
         return $g;
     }
+    /*****************************************************************/
+    static  function getUserLevel($user)
+    {
+        $db = Db::getInstance();
+        $sql = "select level from users where user='$user'";
+        $g = $db->query($sql);
+        return $g;
+    }
     /********************************************************************** */
     static function EditUser($name, $family, $un, $pass, $level, $scope)
     {
