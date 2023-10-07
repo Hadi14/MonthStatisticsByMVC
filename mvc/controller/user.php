@@ -14,7 +14,7 @@
     /*-----------------------------*/
     private function LoginCheck()
     {
-        $u = $_POST['uname'];
+        $u = strtolower($_POST['uname']);
         $p = $_POST['pass'];
         $record = UserModel::getFirst($u, $p);
         if ($record == null) {
@@ -85,6 +85,21 @@
         $scope = $_POST['usr_scope'];
         UserModel::inserUser($user, $password, $level, $name, $family, $scope);
         header("Location:" . getBaseUrl() . "page/registeruser");
+    }
+    /****************************************************************************************** */
+    public  function changePassword()
+    {
+
+        $nowpass = $_POST['nowpass'];
+        $newpass = $_POST['newpass'];
+        $result = UserModel::changepass($nowpass, $newpass);
+        if ($result == "NoCorrectNowPassword") {
+            $fail = array('result' => 'fail');
+            echo json_encode($fail);
+        } elseif ($result == "PasswordChanged") {
+            $ok = array('result' => 'ok');
+            echo json_encode($ok);
+        }
     }
     /****************************************************************************************** */
 }

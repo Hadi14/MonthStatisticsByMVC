@@ -45,4 +45,20 @@
         $db = Db::getInstance();
         $db->insert("insert into users (user, password, level, name, family, scope) values('$user', '$password','$level','$name','$family','$scope')");
     }
+
+    /*********************************************************************/
+    static  function changepass($now, $new,)
+    {
+        $db = Db::getInstance();
+        $user = $_SESSION['suname'];
+        $sql =   $sql = "select password from users where user='$user'";
+        $g = $db->query($sql);
+        if ($g[0]['password'] != $now) {
+            return "NoCorrectNowPassword";
+        } else if ($g[0]['password'] == $now) {
+            $sql = "update users set password='$new' where user='$user'";
+            $db->modify($sql);
+            return "PasswordChanged";
+        }
+    }
 }

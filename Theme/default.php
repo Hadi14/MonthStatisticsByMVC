@@ -173,12 +173,12 @@
 
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="###">
                                 <span class="icon message" aria-hidden="true"></span>
                                 تست </a>
                             <span class="msg-counter">7</span>
-                        </li>
+                        </li> -->
                     </ul>
                     <span class="system-menu__title mt-5">پنل مدیر سیستم</span>
                     <ul class="sidebar-body-menu admin_menu">
@@ -361,7 +361,7 @@
                                 <li>
                                     <a href="" data-bs-toggle="modal" data-bs-target="#changePassModal">
                                         <i data-feather="settings" aria-hidden="true"></i>
-                                        <span>تنظیمات</span>
+                                        <span>تغییر رمز</span>
                                     </a>
                                 </li>
                                 <li><a class="log-out danger" href="<?= getBaseUrl() ?>user/logoute">
@@ -406,24 +406,24 @@
                 <div class="modal-body py-0">
                     <form>
                         <div class="mb-0">
-                            <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">رمز فعلی:</label>
-                            <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                            <label id="dowryfiledlabel1" for="nowpass" class="col-form-label">رمز فعلی:</label>
+                            <input id="nowpass" name="nowpass" type="password" class="form-control">
                         </div>
                     </form>
                 </div>
                 <div class="modal-body py-0">
                     <form>
                         <div class="mb-0">
-                            <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">رمز جدید:</label>
-                            <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                            <label id="dowryfiledlabel1" for="newpass" class="col-form-label">رمز جدید:</label>
+                            <input id="newpass" name="newpass" type="password" class="form-control">
                         </div>
                     </form>
                 </div>
                 <div class="modal-body py-0">
                     <form>
                         <div class="mb-0">
-                            <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تکرار رمز جدید:</label>
-                            <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                            <label id="dowryfiledlabel1" for="repnewpass" class="col-form-label">تکرار رمز جدید:</label>
+                            <input id="repnewpass" name="repnewpass" type="password" class="form-control">
                         </div>
                     </form>
                 </div>
@@ -551,6 +551,30 @@ if ($_SESSION['level'] != 0) {
 
 <script>
     function changePassword() {
+        let nowpass = $('#nowpass').val();
+        let newpass = $('#newpass').val();
+        let repnewpass = $('#repnewpass').val();
+        // console.log(nowpass, newpass, repnewpass);
+        if (newpass != repnewpass) {
+            alert('رمز جدید و تکرار رمز جدید برابر نیستند لطفا مجدد سعی کنید.');
+        } else {
+            $.ajax('/MonthStatisticsByMVC/user/changePassword/', {
+                type: 'post',
+                dataType: "json",
+                data: {
+                    'nowpass': nowpass,
+                    'newpass': newpass,
+                },
+                success: function(data) {
+                    // console.log(data.result);
+                    if (data.result == 'fail') {
+                        alert("رمز فعلی شما اشتباه است لطفا مجدد سعی کنید.");
+                    } else if (data.result == 'ok') {
+                        alert("تغییر رمز با موفقیت انجام شد.");
 
+                    }
+                },
+            });
+        }
     }
 </script>
