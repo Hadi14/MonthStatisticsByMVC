@@ -358,10 +358,12 @@
                                         <i data-feather="user" aria-hidden="true"></i>
                                         <span>پروفایل</span>
                                     </a></li>
-                                <li><a href="##">
+                                <li>
+                                    <a href="" data-bs-toggle="modal" data-bs-target="#changePassModal">
                                         <i data-feather="settings" aria-hidden="true"></i>
                                         <span>تنظیمات</span>
-                                    </a></li>
+                                    </a>
+                                </li>
                                 <li><a class="log-out danger" href="<?= getBaseUrl() ?>user/logoute">
                                         <i data-feather="log-out" aria-hidden="true"></i>
                                         <span>خروج</span>
@@ -371,6 +373,7 @@
                     </div>
                 </div>
             </nav>
+
             <!--Main !-->
             <main class="main users chart-page" id="skip-target">
                 <div class="container">
@@ -392,6 +395,46 @@
             </footer>
         </div>
     </div>
+    <!--------------------------- change Pass modal  ------------------------------------------------------------------------->
+    <div class="modal fade" id="changePassModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" dir="rtl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="otherModalLabel">تغییر رمز:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-0">
+                    <form>
+                        <div class="mb-0">
+                            <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">رمز فعلی:</label>
+                            <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body py-0">
+                    <form>
+                        <div class="mb-0">
+                            <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">رمز جدید:</label>
+                            <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-body py-0">
+                    <form>
+                        <div class="mb-0">
+                            <label id="dowryfiledlabel1" for="otherrecipientName1" class="col-form-label">تکرار رمز جدید:</label>
+                            <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-bs-dismiss="modal" onclick="changePassword()">تغییر رمز</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------- End of Modal ----------------------------------------------------------->
     <!-- Chart library -->
     <script src="<?= getBaseUrl() ?>plugins/chart.min.js"></script>
     <!-- Icons library -->
@@ -504,3 +547,10 @@ if ($_SESSION['level'] != 0) {
 <?
 }
 ?>
+
+
+<script>
+    function changePassword() {
+
+    }
+</script>

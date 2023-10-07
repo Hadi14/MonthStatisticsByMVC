@@ -64,7 +64,7 @@ function getnameAccess($filed)
 
 ?>
 
-<h4 class="my-2">به سامانه آمار کمیته امداد استان چهارمحال و بختیاری خوش آمدید</h4>
+<h4 class="my-2 homewelcome">به سامانه آمار کمیته امداد استان چهارمحال و بختیاری خوش آمدید</h4>
 <div class="col-lg-3">
     <article class="customers-wrapper">
         <canvas id="customersChart" aria-label="Customers statistics" role="img"></canvas>

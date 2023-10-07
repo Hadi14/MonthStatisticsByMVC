@@ -85,9 +85,6 @@ if (getaces(4) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-
-
-            
                 <p id="disEditNote"></p>
                 <thead>
                     <tr>
