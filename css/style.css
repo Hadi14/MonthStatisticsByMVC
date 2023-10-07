@@ -3415,7 +3415,8 @@ label {
   box-shadow: none;
 }
 
-.darkmode .stat-cards-info__num {
+.darkmode .stat-cards-info__num,
+.darkmode .namelable {
   color: #EFF0F6;
 }
 
