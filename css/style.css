@@ -3416,7 +3416,8 @@ label {
 }
 
 .darkmode .stat-cards-info__num,
-.darkmode .namelable {
+.darkmode .namelable,
+.darkmode #disInsertNote {
   color: #EFF0F6;
 }
 
