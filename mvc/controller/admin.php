@@ -164,4 +164,13 @@
             header("Location:" . getBaseUrl() . "page/allocationaccess/error");
         }
     }
+    /****************************************************************************************** */
+    public  function removeDowry()
+    {
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveDowry($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/dowry");
+    }
 }

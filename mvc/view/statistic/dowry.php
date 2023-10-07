@@ -90,6 +90,7 @@ if (getaces(4) == 0) {
                     <tr>
                         <th scope="col">عنوان/ماه</th>
                         <th scope="col">ویرایش</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -100,6 +101,10 @@ if (getaces(4) == 0) {
                     <tr>
                         <th scope="row">مبلغ جهیزیه(میلیارد ريال)</th>
                         <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th id="removeRcrd" scope="row">حذف رکورد</th>
+                        <td></td>
                     </tr>
 
                 </tbody>
@@ -129,6 +134,29 @@ if (getaces(4) == 0) {
             <div class="modal-footer">
                 <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editDowry()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
+<!--------------------------- Remove modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="RemoveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">عملیات حذف</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= getBaseUrl() ?>admin/removeDowry/" method="post">
+                    <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
+                    <input id="goalrec" type="hidden" name="goalrec">
+                    <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خیر</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- <button class="btn btn-primary" data-bs-dismiss="modal" onclick="removeDowry()">ویرایش</button> -->
             </div>
         </div>
     </div>
@@ -174,9 +202,11 @@ if (getaces(4) == 0) {
     function fillPageTable(data) {
         data.forEach(element => {
             const dValues = Object.values(element);
+            let grec = String(dValues[2]) + String(dValues[3]);
             $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
+            $("<td><a onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(2)'));
         });
     }
 
@@ -235,5 +265,9 @@ if (getaces(4) == 0) {
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');
+    }
+
+    function removeRecord(grec) {
+        $('#goalrec').val(grec);
     }
 </script>

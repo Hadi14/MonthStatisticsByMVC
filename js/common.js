@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 $('.modal.fade').on('hidden.bs.modal', function (e) {
     $(this)
-        .find("input,textarea,select")
+        .find("input[type=text],textarea,select")
         .val('')
         .end()
         .find("input[type=checkbox], input[type=radio]")

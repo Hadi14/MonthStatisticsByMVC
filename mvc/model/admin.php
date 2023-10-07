@@ -69,4 +69,12 @@
         $db = Db::getInstance();
         $db->insert("insert into accesses (A_user,A_aloHemayat, A_aloPopulation, A_aloMoney, A_aloDowry, A_aloInsure, A_aloSandogh, A_aloFarhangi, A_aloMaskan, A_aloJob, A_aloMosharekat, A_aloIncome, A_aloEkram, A_aloEmployee) values('$user',$aloHemayat, $aloPopulation,$aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee)");
     }
+    /********************************************************************** */
+    static function RemoveDowry($year, $month)
+    {
+        $db = Db::getInstance();
+        $sql = "delete FROM dowry WHERE D_Year='$year' and D_Month='$month'";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
 }
