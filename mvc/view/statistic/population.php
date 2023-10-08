@@ -164,7 +164,7 @@ if (getaces(2) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-            <p id="disInsertNote"></p>
+                <p id="disInsertNote"></p>
                 <form id="ins_frm" action="<?= getBaseUrl() ?>statistics/insertPopulation/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
@@ -285,7 +285,7 @@ if (getaces(2) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-            <p id="disEditNote"></p>
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -340,6 +340,10 @@ if (getaces(2) == 0) {
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
                         <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th id="removeRcrd" scope="row">حذف رکورد</th>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -439,6 +443,29 @@ if (getaces(2) == 0) {
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<!--------------------------- Remove modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="RemoveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">عملیات حذف</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= getBaseUrl() ?>admin/removeDowry/" method="post">
+                    <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
+                    <input id="goalrec" type="hidden" name="goalrec">
+                    <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خیر</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- <button class="btn btn-primary" data-bs-dismiss="modal" onclick="removeDowry()">ویرایش</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
     $(document).ready(function() {
         recentMonth();
@@ -481,6 +508,7 @@ if (getaces(2) == 0) {
 
     function fillPageTable(data) {
         data.forEach(element => {
+            let grec = String(element['Year']) + String(element['Month']);
             $("<th class='newColumn'>" + element['Year'] + "-" + element['Month'] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + element['Hmy_CityFamily'] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + element['Hmy_RuralFamily'] + "</td>").insertAfter($('tbody tr th:nth(1)'));
@@ -494,6 +522,7 @@ if (getaces(2) == 0) {
             $("<td class='newColumn'>" + element['Hmy_OldPopCity'] + "</td>").insertAfter($('tbody tr th:nth(9)'));
             $("<td class='newColumn'>" + element['Hmy_OldPopRural'] + "</td>").insertAfter($('tbody tr th:nth(10)'));
             $("<td class='newColumn'>" + element['Hmy_AllPopOld'] + "</td>").insertAfter($('tbody tr th:nth(11)'));
+            $("<td><a onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(12)'));
 
         });
     }
@@ -702,5 +731,9 @@ if (getaces(2) == 0) {
                 }
             },
         });
+    }
+
+    function removeRecord(grec) {
+        $('#goalrec').val(grec);
     }
 </script>
