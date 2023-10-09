@@ -268,6 +268,19 @@ if (getaces(4) == 0) {
     }
 
     function removeRecord(grec) {
-        $('#goalrec').val(grec);
+
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data['status'] == 0) {
+                    // alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                    $('#RemoveModal').modal('hide');
+                } else {
+                    $('#goalrec').val(grec);
+                }
+            },
+        });
+
     }
 </script>
