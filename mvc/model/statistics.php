@@ -258,10 +258,16 @@
         $db = Db::getInstance();
         $sql = "select value from variables where title='enableEdit'";
         $insertStatus = $db->query($sql);
-        // return $insertStatus;
         $ar = array("status" =>  $insertStatus[0]['value']);
-        // dump($insertStatus[0]['value']);
-        // echo json_encode($ar);
+        return $ar;
+    }
+    /***************************************************************** */
+    static  function getremovestatus()
+    {
+        $db = Db::getInstance();
+        $sql = "select value from variables where title='removeRecord'";
+        $insertStatus = $db->query($sql);
+        $ar = array("status" =>  $insertStatus[0]['value']);
         return $ar;
     }
     /*****************************************************************/

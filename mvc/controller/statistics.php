@@ -269,6 +269,12 @@
         echo json_encode($ar);
     }
     /**************************************************** */
+    public  function getRemvstatus()
+    {
+        $ar = StatisticsModel::getremovestatus();
+        echo json_encode($ar);
+    }
+    /**************************************************** */
     public  function getrecentmonth()
     {
         $recentMonth = StatisticsModel::recentMonth();

@@ -96,14 +96,14 @@ if (getaces(4) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد جهیزیه</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ جهیزیه(میلیارد ريال)</th>
-                        <td><a id="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
-                        <th id="removeRcrd" scope="row">حذف رکورد</th>
+                        <th scope="row">حذف رکورد</th>
                         <td></td>
                     </tr>
 
