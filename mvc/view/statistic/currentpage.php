@@ -41,6 +41,10 @@ if ($_SESSION['level'] != 0) {
     <input class="form-check-input" type="checkbox" id="EnableEdit">
     <label class="form-check-label" for="EnableEdit">فعال سازی/غیرفعال سازی ویرایش ماه اخیر</label>
 </div>
+<div class="form-check form-switch mt-5">
+    <input class="form-check-input" type="checkbox" id="EnableRemove">
+    <label class="form-check-label" for="EnableRemove">فعال سازی/غیرفعال سازی حذف رکورد</label>
+</div>
 
 <script>
     function insertcurrent() {

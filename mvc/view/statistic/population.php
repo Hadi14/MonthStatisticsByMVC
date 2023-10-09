@@ -460,7 +460,6 @@ if (getaces(2) == 0) {
                 </form>
             </div>
             <div class="modal-footer">
-                <!-- <button class="btn btn-primary" data-bs-dismiss="modal" onclick="removeDowry()">ویرایش</button> -->
             </div>
         </div>
     </div>

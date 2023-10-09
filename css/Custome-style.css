@@ -86,7 +86,8 @@ div .row.mt-5 {
     font-size: 12px;
 }
 
-.disEnable {
+.disEnable,
+.disRemove {
     color: gray;
     pointer-events: none;
 }

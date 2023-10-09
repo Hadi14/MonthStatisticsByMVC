@@ -12,14 +12,27 @@ $(document).ready(function () {
         success: function (data) {
             // important. must be write --> "==1" and "==0"
             if (data.status[0] == 0) {
-                $('tbody tr td a').addClass('disEnable');
+                $('tbody tr td a#editbtn').addClass('disEnable');
                 $('#disEditNote').append('<i class="bi bi-exclamation-circle-fill"></i>')
                 $('#disEditNote').append('<spsan>عملیات ویرایش غیر فعال می باشد به مدیر سیستم مراجعه کنید.</spsan>')
             }
         },
     });
 });
-
+/************************************************************** */
+$(document).ready(function () {
+    $.ajax('/MonthStatisticsByMVC/statistics/getEdtstatus/', {
+        type: 'post',
+        dataType: "json",
+        success: function (data) {
+            // important. must be write --> "==1" and "==0"
+            if (data.status[0] == 0) {
+                $('tbody tr td a#removebtn').addClass('disRemove');
+            }
+        },
+    });
+});
+/**************************************************************/
 
 $(document).ready(function () {
     $.ajax('/MonthStatisticsByMVC/statistics/getinsertsstatus/', {
