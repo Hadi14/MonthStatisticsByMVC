@@ -22,11 +22,13 @@ $(document).ready(function () {
 /************************************************************** */
 $(document).ready(function () {
     $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+
+        ???
         type: 'post',
         dataType: "json",
         success: function (data) {
             // important. must be write --> "==1" and "==0"
-            if (data.status[0] == 0) {
+            if (data.status[0] == 0 && data.level[0] == '2') {
                 $('tbody tr td a.removebtn').addClass('disRemove');
             }
         },

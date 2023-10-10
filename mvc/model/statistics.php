@@ -288,7 +288,7 @@
         $db = Db::getInstance();
         $sql = "select value from variables where title='removeRecord'";
         $insertStatus = $db->query($sql);
-        $ar = array("status" =>  $insertStatus[0]['value']);
+        $ar = array("status" =>  $insertStatus[0]['value'], "level" => $_SESSION['level'] != '2');
         return $ar;
     }
     /*****************************************************************/
