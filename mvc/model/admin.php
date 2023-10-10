@@ -93,4 +93,28 @@
             return $rowAffect;
         }
     }
+    /********************************************************************** */
+    static function RemoveMoney($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM money WHERE M_Year='$year' and M_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
+    /********************************************************************** */
+    static function RemoveInsure($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM insure WHERE I_Year='$year' and I_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
 }

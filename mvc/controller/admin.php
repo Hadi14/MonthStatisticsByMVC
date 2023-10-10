@@ -184,4 +184,24 @@
         AdminModel::RemovePopulation($yr, $mn);
         header("Location:" . getBaseUrl() . "page/population");
     }
+    /****************************************************************************************** */
+    public  function rmovMoney()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveMoney($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/money");
+    }
+    /****************************************************************************************** */
+    public  function rmovInsure()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveInsure($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/insure");
+    }
 }

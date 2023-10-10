@@ -287,7 +287,6 @@ if (getaces(4) == 0) {
     }
 
     function removeRecord(grec) {
-
         $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
             type: 'post',
             dataType: "json",
