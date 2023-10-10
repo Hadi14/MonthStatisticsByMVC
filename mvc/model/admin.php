@@ -81,4 +81,16 @@
             return $rowAffect;
         }
     }
+    /********************************************************************** */
+    static function RemovePopulation($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM hemayat WHERE Year='$year' and Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
 }

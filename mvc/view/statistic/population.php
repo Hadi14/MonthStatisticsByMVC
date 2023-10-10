@@ -452,7 +452,7 @@ if (getaces(2) == 0) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="<?= getBaseUrl() ?>admin/removeDowry/" method="post">
+                <form action="<?= getBaseUrl() ?>admin/rmovPopulation/" method="post">
                     <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
                     <input id="goalrec" type="hidden" name="goalrec">
                     <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
