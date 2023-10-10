@@ -165,7 +165,7 @@
         }
     }
     /****************************************************************************************** */
-    public  function removeDowry()
+    public  function rmovDowry()
     {
 
         $goalrec = $_POST['goalrec'];

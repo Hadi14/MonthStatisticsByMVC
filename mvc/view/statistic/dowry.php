@@ -150,7 +150,7 @@ if (getaces(4) == 0) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="<?= getBaseUrl() ?>admin/removeDowry/" method="post">
+                <form action="<?= getBaseUrl() ?>admin/rmovDowry/" method="post">
                     <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
                     <input id="goalrec" type="hidden" name="goalrec">
                     <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
@@ -158,7 +158,6 @@ if (getaces(4) == 0) {
                 </form>
             </div>
             <div class="modal-footer">
-                <!-- <button class="btn btn-primary" data-bs-dismiss="modal" onclick="removeDowry()">ویرایش</button> -->
             </div>
         </div>
     </div>
@@ -179,7 +178,7 @@ if (getaces(4) == 0) {
             type: 'post',
             dataType: "json",
             success: function(data) {
-                if (data['status'] == 0) {
+                if (data['status'] == 0 && data['level'] == '2') {
                     $(".removebtn").mousedown(function() {
                         // console.log("mouse down event")
                         $(".removebtn").removeAttr('data-bs-toggle');
@@ -293,7 +292,7 @@ if (getaces(4) == 0) {
             type: 'post',
             dataType: "json",
             success: function(data) {
-                if (data['status'] == 1) {
+                if (data['status'] == 1 || data['level'] != '2') {
                     $('#goalrec').val(grec);
                 }
             },

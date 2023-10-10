@@ -73,8 +73,12 @@
     static function RemoveDowry($year, $month)
     {
         $db = Db::getInstance();
-        $sql = "delete FROM dowry WHERE D_Year='$year' and D_Month='$month'";
-        $rowAffect = $db->modify($sql);
-        return $rowAffect;
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM dowry WHERE D_Year='$year' and D_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
     }
 }
