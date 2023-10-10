@@ -99,15 +99,15 @@ if (getaces(13) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد نیروهای رسمی</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نیروهای غیر رسمی</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نیروها</th>
-                        <td><a onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

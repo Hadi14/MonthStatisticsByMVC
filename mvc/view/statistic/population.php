@@ -295,51 +295,51 @@ if (getaces(2) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد خانوار شهری</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forAllModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار روستایی</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست زن</th>
-                        <td><a onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار باسرپرست مرد</th>
-                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#forAllModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات</th>
-                        <td><a onclick="othereditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="othereditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند شهری</th>
-                        <td><a onclick="OldeditRecord('6')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="OldeditRecord('6')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خانوار سالمند روستایی</th>
-                        <td><a onclick="OldeditRecord('7')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="OldeditRecord('7')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل خانوار سالمند</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند شهری</th>
-                        <td><a onclick="OldeditRecord('9')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="OldeditRecord('9')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد نفرات سالمند روستایی</th>
-                        <td><a onclick="OldeditRecord('10')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="OldeditRecord('10')" data-bs-toggle="modal" data-bs-target="#forOldModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد کل نفرات سالمند</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th id="removeRcrd" scope="row">حذف رکورد</th>

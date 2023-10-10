@@ -165,7 +165,7 @@ if (getaces(8) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-            <p id="disInsertNote"></p>
+                <p id="disInsertNote"></p>
                 <form id="ins_frm" action="<?= getBaseUrl() ?>maskan/insertMskn/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
@@ -258,7 +258,7 @@ if (getaces(8) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-            <p id="disEditNote"></p>
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -268,39 +268,39 @@ if (getaces(8) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد تعمیرات مسکن</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">احداث سرویس بهداشتی و گازکشی</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خرید مسکن شهری</th>
-                        <td><a onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد خرید مسکن روستایی</th>
-                        <td><a onclick="editRecord('3')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('3')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد احداث مسکن شهری</th>
-                        <td><a onclick="editRecord('4')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('4')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد احداث مسکن روستایی</th>
-                        <td><a onclick="editRecord('5')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('5')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تفاهم نامه با بنیاد مستضعفان</th>
-                        <td><a onclick="editRecord('6')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('6')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تفاهم نامه با سپاه</th>
-                        <td><a onclick="editRecord('7')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" onclick="editRecord('7')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع تعداد</th>
-                        <td><a disabled style="color: gray;"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a  class="editbtn" disabled style="color: gray;"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

@@ -126,7 +126,7 @@ if (getaces(9) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-            <p id="disInsertNote"></p>
+                <p id="disInsertNote"></p>
                 <form id="ins_frm" action="<?= getBaseUrl() ?>job/insertjob/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
@@ -213,7 +213,7 @@ if (getaces(9) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-            <p id="disEditNote"></p>
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -223,35 +223,35 @@ if (getaces(9) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">اشتغال مستقیم از طریق کاریابی</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#JobModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#JobModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">اشتغال مستقیم از طریق پرداخت تسهیلات</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع اشتغال مستقیم</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">اشتغال غیر مستقیم ایجاد شده</th>
-                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#JobModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع کل اشتغال(مستقیم و غیر مستقیم)</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ کل تسهیلات پرداخت شده(میلیارد ریال)</th>
-                        <td><a onclick="otherEditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="otherEditRecord('5')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">آموزش های مهارتی و فنی و حرفه ای </th>
-                        <td><a onclick="otherEditRecord('6')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="otherEditRecord('6')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">طرح های اشتغال فعال تحت نظارت </th>
-                        <td><a onclick="otherEditRecord('7')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="otherEditRecord('7')" data-bs-toggle="modal" data-bs-target="#otherModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

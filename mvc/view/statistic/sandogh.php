@@ -150,19 +150,19 @@ if (getaces(6) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد وام ازدواج پرداخت شده</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ وام ازدواج پرداخت شده(میلیون ريال)</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row"></span>تعداد کل وام های پرداخت شده<span class="spanDescription">(وجوه اداره شده،حمایتی،ودیعه،درمان،فرهنگی،رسالت،مهر)</th>
-                        <td><a onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('2')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ کل وام های پرداخت شده(میلیارد ريال)</th>
-                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <!-- <a onclick='editRecord('3')' data-bs-toggle='modal' data-bs-target='#dryModal' href='#'>-->
                 </tbody>

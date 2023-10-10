@@ -69,7 +69,7 @@ if (getaces(7) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد دانش آموز و دانشجو</th>
-                        <td><a onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#FarhangiModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#FarhangiModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

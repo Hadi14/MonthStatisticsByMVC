@@ -69,7 +69,7 @@ if (getaces(3) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">مبلغ معیشت (میلیارد ريال)</th>
-                        <td><a onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#MoneyModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#MoneyModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

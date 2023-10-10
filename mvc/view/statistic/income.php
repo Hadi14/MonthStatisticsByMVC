@@ -123,7 +123,7 @@ if (getaces(11) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-            <p id="disInsertNote"></p>
+                <p id="disInsertNote"></p>
                 <form id="ins_frm" action="<?= getBaseUrl() ?>income/insertIncomes/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
@@ -194,7 +194,7 @@ if (getaces(11) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-            <p id="disEditNote"></p>
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -204,27 +204,27 @@ if (getaces(11) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">صدقات(میلیارد ریال)</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ پرداختی حامیان به ایتام(میلیارد ریال)</th>
-                        <td><a onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">زکات و کفارات(میلیارد ریال)</th>
-                        <td><a onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('2')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبتنی بر نیاز(میلیارد ریال)</th>
-                        <td><a onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">کل درآمدها(میلیارد ریال)</th>
-                        <td><a onclick="editRecord('4')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('4')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">درآمد مراکز نیکوکاری(میلیارد ریال)</th>
-                        <td><a onclick="editRecord('5')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('5')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>

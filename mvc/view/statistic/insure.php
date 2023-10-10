@@ -69,7 +69,7 @@ if (getaces(5) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-            <p id="disInsertNote"></p>
+                <p id="disInsertNote"></p>
                 <form id="ins_frm" action="<?= getBaseUrl() ?>statistics/insertInsure/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
@@ -120,7 +120,7 @@ if (getaces(5) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-            <p id="disEditNote"></p>
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -130,19 +130,19 @@ if (getaces(5) == 0) {
                 <tbody>
                     <tr>
                         <th scope="row">تعداد زنان سرپرست خانوار</th>
-                        <td><a onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('0')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">تعداد مجریان طرح اشتغال</th>
-                        <td><a onclick="editRecord('1')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editRecord('1')" href="#" data-bs-toggle="modal" data-bs-target="#forNumModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع تعداد</th>
-                        <td><a style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" style="color: gray;" disabled><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">مبلغ بیمه های اجتماعی(میلیون ريال)</th>
-                        <td><a onclick="editMoneyRecord()" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a class="editbtn" onclick="editMoneyRecord()" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                 </tbody>
             </table>
