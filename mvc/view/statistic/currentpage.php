@@ -92,6 +92,31 @@ if ($_SESSION['level'] != 0) {
             }
         });
     });
+    /************************************************************************************* */
+    $(document).ready(function() {
+        $('#EnableRemove').click(function() {
+            if ($(this).prop("checked") == true) {
+                $.ajax('/MonthStatisticsByMVC/statistics/enblRemove/', {
+                    type: 'post',
+                    dataType: "json",
+
+                    success: function(data) {
+                        alert('فعالسازی عملیات حذف با موفقیت انجام شد.');
+                    },
+                });
+            } else if ($(this).prop("checked") == false) {
+                $.ajax('/MonthStatisticsByMVC/statistics/disblRemove/', {
+                    type: 'post',
+                    dataType: "json",
+
+                    success: function(data) {
+                        alert('غیرفعالسازی عملیات حذف با موفقیت انجام شد.');
+                    },
+                });
+            }
+        });
+    });
+    /************************************************************************************* */
 
 
 
@@ -105,6 +130,23 @@ if ($_SESSION['level'] != 0) {
                     $('#EnableInsert').prop('checked', true);
                 } else if (data.status[0] == 0) {
                     $('#EnableInsert').removeProp('checked');
+                }
+            },
+        });
+    });
+
+
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                console.log(data);
+                // important. must be write --> "==1" and "==0"
+                if (data.status[0] == 1) {
+                    $('#EnableRemove').prop('checked', true);
+                } else if (data.status[0] == 0) {
+                    $('#EnableRemove').removeProp('checked');
                 }
             },
         });

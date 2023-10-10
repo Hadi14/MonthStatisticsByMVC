@@ -209,6 +209,17 @@
         }
     }
     /*********************************************************************/
+    static  function enableRemove()
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='1' where title='removeRecord' ";
+        $rowAffect = $db->modify($sql);
+        if ($rowAffect) {
+            $ar = array("status" => true);
+            echo json_encode($ar);
+        }
+    }
+    /*********************************************************************/
     static  function enedits()
     {
         $db = Db::getInstance();
@@ -224,6 +235,17 @@
     {
         $db = Db::getInstance();
         $sql = "update variables set value='0' where title='enableinsert' ";
+        $rowAffect = $db->modify($sql);
+        if ($rowAffect) {
+            $ar = array("status" => true);
+            echo json_encode($ar);
+        }
+    }
+    /***************************************************************** */
+    static  function disableRemove()
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='0' where title='removeRecord' ";
         $rowAffect = $db->modify($sql);
         if ($rowAffect) {
             $ar = array("status" => true);
@@ -248,7 +270,6 @@
         $sql = "select value from variables where title='enableinsert'";
         $insertStatus = $db->query($sql);
         $ar = array("status" =>  $insertStatus[0]['value']);
-        // echo json_encode($ar);
         return $ar;
     }
 

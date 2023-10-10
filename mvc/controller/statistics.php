@@ -241,6 +241,11 @@
         StatisticsModel::eninserts();
     }
     /**************************************************** */
+    public  function enblRemove()
+    {
+        StatisticsModel::enableRemove();
+    }
+    /**************************************************** */
     public  function enableEdits()
     {
         StatisticsModel::enedits();
@@ -249,6 +254,11 @@
     public  function disableinserts()
     {
         StatisticsModel::disinserts();
+    }
+    /**************************************************** */
+    public  function disblRemove()
+    {
+        StatisticsModel::disableRemove();
     }
     /**************************************************** */
     public  function disableEdits()
