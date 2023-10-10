@@ -22,8 +22,6 @@ $(document).ready(function () {
 /************************************************************** */
 $(document).ready(function () {
     $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
-
-        ???
         type: 'post',
         dataType: "json",
         success: function (data) {
