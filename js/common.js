@@ -27,7 +27,7 @@ $(document).ready(function () {
         success: function (data) {
             // important. must be write --> "==1" and "==0"
             if (data.status[0] == 0) {
-                $('tbody tr td a#removebtn').addClass('disRemove');
+                $('tbody tr td a.removebtn').addClass('disRemove');
             }
         },
     });

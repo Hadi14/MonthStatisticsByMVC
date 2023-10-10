@@ -178,10 +178,11 @@ if (getaces(4) == 0) {
             dataType: "json",
             success: function(data) {
                 if (data['status'] == 0) {
-                    $("#removebtn").mousedown(function() {
+                    $(".removebtn").mousedown(function() {
                         // console.log("mouse down event")
-                        $("#removebtn").removeAttr('data-bs-toggle');
-                        $("#removebtn").removeAttr('data-bs-target');
+                        $(".removebtn").removeAttr('data-bs-toggle');
+                        $(".removebtn").removeAttr('data-bs-target');
+                        alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
                     })
                 }
             },
@@ -223,7 +224,7 @@ if (getaces(4) == 0) {
             $("<th class='newColumn'>" + dValues[2] + "-" + dValues[3] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
-            $("<td><a id='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(2)'));
+            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(2)'));
         });
     }
 
@@ -290,9 +291,7 @@ if (getaces(4) == 0) {
             type: 'post',
             dataType: "json",
             success: function(data) {
-                if (data['status'] == 0) {
-                    alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
-                } else {
+                if (data['status'] == 1) {
                     $('#goalrec').val(grec);
                 }
             },
