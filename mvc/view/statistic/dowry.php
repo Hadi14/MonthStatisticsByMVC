@@ -169,6 +169,23 @@ if (getaces(4) == 0) {
     $(document).ready(function() {
         recentMonth();
         getdowry();
+
+
+    });
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data['status'] == 0) {
+                    $("#removebtn").mousedown(function() {
+                        // console.log("mouse down event")
+                        $("#removebtn").removeAttr('data-bs-toggle');
+                        $("#removebtn").removeAttr('data-bs-target');
+                    })
+                }
+            },
+        });
     });
 
     function recentMonth() {
@@ -274,13 +291,11 @@ if (getaces(4) == 0) {
             dataType: "json",
             success: function(data) {
                 if (data['status'] == 0) {
-                    // alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
-                    $('#RemoveModal').modal('hide');
+                    alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
                 } else {
                     $('#goalrec').val(grec);
                 }
             },
         });
-
     }
 </script>
