@@ -209,7 +209,7 @@ if (getaces(6) == 0) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="<?= getBaseUrl() ?>admin/rmovDowry/" method="post">
+                <form action="<?= getBaseUrl() ?>admin/rmovSandogh/" method="post">
                     <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
                     <input id="goalrec" type="hidden" name="goalrec">
                     <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
@@ -227,20 +227,16 @@ if (getaces(6) == 0) {
         recentMonth();
         getsandogh();
     });
-    $(document).ready(function() {
-        // console.log("DDDDDDDDD");
+
+    $(document).on('mousedown', '.removebtn', function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
             type: 'post',
             dataType: "json",
             success: function(data) {
-                if (data['status'] == false && data['level'] == '2') {
-                    $(".removebtn").mousedown(function() {
-                        // console.log("mouse down event")
-                        $(".removebtn").removeAttr('data-bs-toggle');
-                        $(".removebtn").removeAttr('data-bs-target');
-                        alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
-                        // console.log("sssssssssssss");
-                    })
+                if (data['status'] == 0 && data['level'] == '2') {
+                    $(".removebtn").removeAttr('data-bs-toggle');
+                    $(".removebtn").removeAttr('data-bs-target');
+                    alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
                 }
             },
         });
@@ -280,11 +276,13 @@ if (getaces(6) == 0) {
         console.log(data);
         data.forEach(element => {
             const dValues = Object.values(element);
+            let grec = String(dValues[2]) + String(dValues[3]);
             $("<th class='newColumn'>" + dValues[4] + "-" + dValues[5] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
             $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
             $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
+            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(4)'));
         });
     }
 
@@ -347,6 +345,18 @@ if (getaces(6) == 0) {
                     alert('بروزرسانی با موفقیت انجام شد.');
                     $('.newColumn').remove();
                     getsandogh();
+                }
+            },
+        });
+    }
+
+    function removeRecord(grec) {
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data['status'] == 1 || data['level'] != '2') {
+                    $('#goalrec').val(grec);
                 }
             },
         });
