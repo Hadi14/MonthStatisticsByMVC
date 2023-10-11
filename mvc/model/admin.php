@@ -165,4 +165,40 @@
             return $rowAffect;
         }
     }
+    /********************************************************************** */
+    static function RemoveIncome($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM incomes WHERE In_Year='$year' and In_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
+    /********************************************************************** */
+    static function RemoveEkram($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM ekram WHERE E_Year='$year' and E_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
+    /********************************************************************** */
+    static function RemoveEmployee($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM employee WHERE Em_Year='$year' and Em_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
 }

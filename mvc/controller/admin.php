@@ -244,4 +244,34 @@
         AdminModel::RemoveJob($yr, $mn);
         header("Location:" . getBaseUrl() . "page/job");
     }
+    /****************************************************************************************** */
+    public  function rmovIncome()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveIncome($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/income");
+    }
+    /****************************************************************************************** */
+    public  function rmovEkram()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveEkram($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/ekram");
+    }
+    /****************************************************************************************** */
+    public  function rmovEmployee()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveEmployee($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/employee");
+    }
 }
