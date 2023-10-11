@@ -135,18 +135,18 @@ if (getaces(3) == 0) {
         recentMonth();
         getmoney();
     });
-    $(document).ready(function() {
+
+
+    // $(document).ready(function() {
+    $(document).on('mousedown', '.removebtn', function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
             type: 'post',
             dataType: "json",
             success: function(data) {
                 if (data['status'] == 0 && data['level'] == '2') {
-                    $(".removebtn").mousedown(function() {
-                        // console.log("mouse down event")
-                        $(".removebtn").removeAttr('data-bs-toggle');
-                        $(".removebtn").removeAttr('data-bs-target');
-                        alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
-                    })
+                    $(".removebtn").removeAttr('data-bs-toggle');
+                    $(".removebtn").removeAttr('data-bs-target');
+                    alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
                 }
             },
         });

@@ -164,7 +164,10 @@ if (getaces(6) == 0) {
                         <th scope="row">مبلغ کل وام های پرداخت شده(میلیارد ريال)</th>
                         <td><a class="editbtn" onclick="editRecord('3')" data-bs-toggle="modal" data-bs-target="#dryModal" href="#"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
-                    <!-- <a onclick='editRecord('3')' data-bs-toggle='modal' data-bs-target='#dryModal' href='#'>-->
+                    <tr>
+                        <th scope="row">حذف رکورد</th>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -197,10 +200,50 @@ if (getaces(6) == 0) {
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<!--------------------------- Remove modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="RemoveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">عملیات حذف</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= getBaseUrl() ?>admin/rmovDowry/" method="post">
+                    <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
+                    <input id="goalrec" type="hidden" name="goalrec">
+                    <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خیر</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
     $(document).ready(function() {
         recentMonth();
         getsandogh();
+    });
+    $(document).ready(function() {
+        // console.log("DDDDDDDDD");
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data['status'] == false && data['level'] == '2') {
+                    $(".removebtn").mousedown(function() {
+                        // console.log("mouse down event")
+                        $(".removebtn").removeAttr('data-bs-toggle');
+                        $(".removebtn").removeAttr('data-bs-target');
+                        alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                        // console.log("sssssssssssss");
+                    })
+                }
+            },
+        });
     });
 
     function recentMonth() {

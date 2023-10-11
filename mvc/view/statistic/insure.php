@@ -233,22 +233,24 @@ if (getaces(5) == 0) {
         recentMonth();
         getInsure();
     });
-    $(document).ready(function() {
+
+
+    $(document).on('mousedown', '.removebtn', function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
             type: 'post',
             dataType: "json",
             success: function(data) {
                 if (data['status'] == 0 && data['level'] == '2') {
-                    $(".removebtn").mousedown(function() {
-                        // console.log("mouse down event")
-                        $(".removebtn").removeAttr('data-bs-toggle');
-                        $(".removebtn").removeAttr('data-bs-target');
-                        alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
-                    })
+                    // console.log("mouse down event")
+                    $(".removebtn").removeAttr('data-bs-toggle');
+                    $(".removebtn").removeAttr('data-bs-target');
+                    alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
                 }
             },
         });
     });
+
+
 
     function recentMonth() {
         $.ajax('/MonthStatisticsByMVC/statistics/getrecentinsuremonth/', {
@@ -287,9 +289,16 @@ if (getaces(5) == 0) {
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
             $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
             $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
-            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(4)'));
+            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") href='#' data-bs-toggle='modal' data-bs-target='#RemoveModal' ><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(4)'));
+            // $("<td><button class='bbb'>dfgf</button></td>").insertAfter($('tbody tr th:nth(4)'));
         });
     }
+
+
+    // $(document).on('mousedown', '.bbb', function() {
+    //     console.log("edtgdfgdfgdfg");
+    // });
+
 
     function editRecord(id) {
         let y = $('#recentYR').text();
