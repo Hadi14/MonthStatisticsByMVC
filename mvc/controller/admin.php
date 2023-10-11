@@ -214,4 +214,34 @@
         AdminModel::RemoveSandogh($yr, $mn);
         header("Location:" . getBaseUrl() . "page/sandogh");
     }
+    /****************************************************************************************** */
+    public  function rmovFarhangi()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveFarhangi($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/farhangi");
+    }
+    /****************************************************************************************** */
+    public  function rmovMaskan()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveMaskan($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/maskan");
+    }
+    /****************************************************************************************** */
+    public  function rmovJob()
+    {
+
+        $goalrec = $_POST['goalrec'];
+        $yr = substr($goalrec, 0, 4);
+        $mn = substr($goalrec, 4, 2);
+        AdminModel::RemoveJob($yr, $mn);
+        header("Location:" . getBaseUrl() . "page/job");
+    }
 }

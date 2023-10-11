@@ -124,7 +124,43 @@
         $un = $_SESSION['sunmae'];
         $level = $db->query("select level from users where user='$un'");
         if ($level[0]['level'] != "2") {
-            $sql = "delete FROM sandogh WHERE I_Year='$year' and I_Month='$month'";
+            $sql = "delete FROM sandogh WHERE S_Year='$year' and S_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
+    /********************************************************************** */
+    static function RemoveFarhangi($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM farhangi WHERE F_Year='$year' and F_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
+    /********************************************************************** */
+    static function RemoveMaskan($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM maskan WHERE M_Year='$year' and M_Month='$month'";
+            $rowAffect = $db->modify($sql);
+            return $rowAffect;
+        }
+    }
+    /********************************************************************** */
+    static function RemoveJob($year, $month)
+    {
+        $db = Db::getInstance();
+        $un = $_SESSION['sunmae'];
+        $level = $db->query("select level from users where user='$un'");
+        if ($level[0]['level'] != "2") {
+            $sql = "delete FROM job WHERE J_Year='$year' and J_Month='$month'";
             $rowAffect = $db->modify($sql);
             return $rowAffect;
         }

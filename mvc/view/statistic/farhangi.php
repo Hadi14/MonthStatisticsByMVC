@@ -32,8 +32,8 @@ if (getaces(7) == 0) {
         <!-- ******************** -->
         <div class="row">
             <div class="col-lg-9">
-            <p id="disInsertNote"></p>
-                <form id="ins_frm"  action="<?= getBaseUrl() ?>farhangi/insertFrng/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
+                <p id="disInsertNote"></p>
+                <form id="ins_frm" action="<?= getBaseUrl() ?>farhangi/insertFrng/<?= $data['Year']; ?>/<?= $data['Month']; ?>" class="insert-form p-5 rounded" method="post">
                     <div class="row">
 
                         <label id="cy" class="currentDate badge rounded-pill text-bg-info col-md-2">سال: <?= $data['Year']; ?></label>
@@ -59,7 +59,7 @@ if (getaces(7) == 0) {
         </div>
         <div class="row mt-5">
             <table class="table table-striped">
-            <p id="disEditNote"></p>
+                <p id="disEditNote"></p>
                 <thead>
                     <tr>
                         <th scope="col">عنوان/ماه</th>
@@ -70,6 +70,10 @@ if (getaces(7) == 0) {
                     <tr>
                         <th scope="row">تعداد دانش آموز و دانشجو</th>
                         <td><a class="editbtn" onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#FarhangiModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">حذف رکورد</th>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -103,11 +107,48 @@ if (getaces(7) == 0) {
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<!--------------------------- Remove modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="RemoveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">عملیات حذف</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= getBaseUrl() ?>admin/rmovFarhangi/" method="post">
+                    <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
+                    <input id="goalrec" type="hidden" name="goalrec">
+                    <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خیر</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
     $(document).ready(function() {
         recentMonth();
         getfarhangi();
     });
+
+    $(document).on('mousedown', '.removebtn', function() {
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data['status'] == 0 && data['level'] == '2') {
+                    $(".removebtn").removeAttr('data-bs-toggle');
+                    $(".removebtn").removeAttr('data-bs-target');
+                    alert('عملیات حذف رکورد غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                }
+            },
+        });
+    });
+
 
     function recentMonth() {
         $.ajax('/MonthStatisticsByMVC/farhangi/getrecentfarhangimonth/', {
@@ -139,8 +180,10 @@ if (getaces(7) == 0) {
     function fillPageTable(data) {
         data.forEach(element => {
             const dValues = Object.values(element);
+            let grec = String(dValues[1]) + String(dValues[2]);
             $("<th class='newColumn'>" + dValues[1] + "-" + dValues[2] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
+            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(1)'));
         });
     }
 
@@ -190,6 +233,18 @@ if (getaces(7) == 0) {
                     alert('بروزرسانی با موفقیت انجام شد.');
                     $('.newColumn').remove();
                     getfarhangi();
+                }
+            },
+        });
+    }
+
+    function removeRecord(grec) {
+        $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data['status'] == 1 || data['level'] != '2') {
+                    $('#goalrec').val(grec);
                 }
             },
         });
