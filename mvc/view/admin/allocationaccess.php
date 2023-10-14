@@ -98,6 +98,7 @@ if ($err) {
                     <tr>
                         <th scope="col">ردیف</th>
                         <th scope="col">نام کاربری</th>
+                        <!-- <th scope="col">نام</th> -->
                         <th scope="col">حمایتی</th>
                         <th scope="col">جمعیت</th>
                         <th scope="col">معیشت</th>
@@ -280,4 +281,49 @@ if ($err) {
             },
         });
     }
+
+
+
+
+
+
+    $('#user_nm').on('change', function() {
+        $('#hemayat_chb_insrt').prop('checked', 0);
+        $('#popu_chb_insrt').prop('checked', 0);
+        $('#money_chb_insrt').prop('checked', 0);
+        $('#dowry_chb_insrt').prop('checked', 0);
+        $('#insure_chb_insrt').prop('checked', 0);
+        $('#sandogh_chb_insrt').prop('checked', 0);
+        $('#farhangi_chb_insrt').prop('checked', 0);
+        $('#maskan_chb_insrt').prop('checked', 0);
+        $('#job_chb_insrt').prop('checked', 0);
+        $('#mosharekat_chb_insrt').prop('checked', 0);
+        $('#income_chb_insrt').prop('checked', 0);
+        $('#ekram_chb_insrt').prop('checked', 0);
+        $('#employee_chb_insrt').prop('checked', 0);
+        $.ajax('/MonthStatisticsByMVC/admin/getAccessGoalField/', {
+            type: 'post',
+            dataType: "json",
+            data: {
+                'ukey': this.value,
+            },
+            success: function(data) {
+                const dValues = Object.values(data[0]);
+                // $('#otherrecipientName1').val(ukey);
+                $('#hemayat_chb_insrt').prop('checked', +dValues[1]);
+                $('#popu_chb_insrt').prop('checked', +dValues[2]);
+                $('#money_chb_insrt').prop('checked', +dValues[3]);
+                $('#dowry_chb_insrt').prop('checked', +dValues[4]);
+                $('#insure_chb_insrt').prop('checked', +dValues[5]);
+                $('#sandogh_chb_insrt').prop('checked', +dValues[6]);
+                $('#farhangi_chb_insrt').prop('checked', +dValues[7]);
+                $('#maskan_chb_insrt').prop('checked', +dValues[8]);
+                $('#job_chb_insrt').prop('checked', +dValues[9]);
+                $('#mosharekat_chb_insrt').prop('checked', +dValues[10]);
+                $('#income_chb_insrt').prop('checked', +dValues[11]);
+                $('#ekram_chb_insrt').prop('checked', +dValues[12]);
+                $('#employee_chb_insrt').prop('checked', +dValues[13]);
+            },
+        });
+    });
 </script>
