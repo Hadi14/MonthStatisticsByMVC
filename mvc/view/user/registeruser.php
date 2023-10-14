@@ -61,7 +61,7 @@ if ($_SESSION['level'] != 0) {
                                 <option value="مشارکت">مشارکت</option>
                                 <option value="اشتغال">اشتغال</option>
                                 <option value="مسکن">مسکن</option>
-                                <option value="مالی">مالی</option>
+                                <option value="مالی اداری">مالی اداری</option>
                                 <option value="حمایت">حمایت</option>
                                 <option value="صندوق">صندوق</option>
                             </select>
@@ -136,7 +136,7 @@ if ($_SESSION['level'] != 0) {
                             <option value="مشارکت">مشارکت</option>
                             <option value="اشتغال">اشتغال</option>
                             <option value="مسکن">مسکن</option>
-                            <option value="مالی">مالی</option>
+                            <option value="مالی اداری">مالی اداری</option>
                             <option value="حمایت">حمایت</option>
                             <option value="صندوق">صندوق</option>
                         </select>
