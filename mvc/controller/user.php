@@ -76,7 +76,6 @@
     /****************************************************************************************** */
     public  function insertUsr()
     {
-
         $name = $_POST['usr_name'];
         $family = $_POST['usr_family'];
         $user = $_POST['usr_un'];
