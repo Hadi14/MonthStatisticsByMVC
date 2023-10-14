@@ -98,7 +98,7 @@ if ($err) {
                     <tr>
                         <th scope="col">ردیف</th>
                         <th scope="col">نام کاربری</th>
-                        <!-- <th scope="col">نام</th> -->
+                        <th scope="col">نام</th>
                         <th scope="col">حمایتی</th>
                         <th scope="col">جمعیت</th>
                         <th scope="col">معیشت</th>
@@ -218,9 +218,21 @@ if ($err) {
         let i = 1;
         data.forEach(element => {
             const dValues = Object.values(element);
-
-            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'>" + dValues[3] + "</td><td class='newColumn'>" + dValues[4] + "</td><td class='newColumn'>" + dValues[5] + "</td><td class='newColumn'>" + dValues[6] + "</td><td class='newColumn'>" + dValues[7] + "</td><td class='newColumn'>" + dValues[8] + "</td><td class='newColumn'>" + dValues[9] + "</td><td class='newColumn'>" + dValues[10] + "</td><td class='newColumn'>" + dValues[11] + "</td><td class='newColumn'>" + dValues[12] + "</td><td class='newColumn'>" + dValues[13] + "</td><td class='newColumn'><a onclick=editRecord(" + "'" + dValues[0] + "'" + ") data-bs-toggle='modal' data-bs-target='#AllocModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
-
+            var namefamily = "";
+            // console.log(dValues[0]);
+            $.ajax('/MonthStatisticsByMVC/user/getUsrGoalField/', {
+                type: 'post',
+                dataType: "json",
+                data: {
+                    'ukey': dValues[0],
+                },
+                success: function(data) {
+                    const dValues = Object.values(data[0]);
+                    namefamily = dValues[3] + " " + dValues[4];
+                },
+                async: false // make ajax request synchronous
+            });
+            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn namecol'>" + namefamily + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'>" + dValues[3] + "</td><td class='newColumn'>" + dValues[4] + "</td><td class='newColumn'>" + dValues[5] + "</td><td class='newColumn'>" + dValues[6] + "</td><td class='newColumn'>" + dValues[7] + "</td><td class='newColumn'>" + dValues[8] + "</td><td class='newColumn'>" + dValues[9] + "</td><td class='newColumn'>" + dValues[10] + "</td><td class='newColumn'>" + dValues[11] + "</td><td class='newColumn'>" + dValues[12] + "</td><td class='newColumn'>" + dValues[13] + "</td><td class='newColumn'><a onclick=editRecord(" + "'" + dValues[0] + "'" + ") data-bs-toggle='modal' data-bs-target='#AllocModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
             $('tbody').append(row);
         });
     }
