@@ -7,7 +7,12 @@
         $db = Db::getInstance();
         $sql = "select * from hemayat where Year='$year' and Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedMoneyReport($year, $mn)
@@ -15,7 +20,12 @@
         $db = Db::getInstance();
         $sql = "select * from money where M_Year='$year' and M_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['M_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedDowryReport($year, $mn)
@@ -23,7 +33,12 @@
         $db = Db::getInstance();
         $sql = "select * from dowry where D_Year='$year' and D_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['D_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedSandoghReport($year, $mn)
@@ -31,7 +46,12 @@
         $db = Db::getInstance();
         $sql = "select * from sandogh where S_Year='$year' and S_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['S_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedStudentRpt($year, $mn)
@@ -39,7 +59,12 @@
         $db = Db::getInstance();
         $sql = "select * from farhangi where F_Year='$year' and F_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['F_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedMaskanRpt($year, $mn)
@@ -47,7 +72,12 @@
         $db = Db::getInstance();
         $sql = "select * from maskan where M_Year='$year' and M_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['M_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedJobRpt($year, $mn)
@@ -68,7 +98,12 @@
         $db = Db::getInstance();
         $sql = "select * from insure where I_Year='$year' and I_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['I_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedIncomeRpt($year, $mn)
@@ -76,7 +111,12 @@
         $db = Db::getInstance();
         $sql = "select * from incomes where In_Year='$year' and In_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['In_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedEkramRpt($year, $mn)
@@ -84,7 +124,12 @@
         $db = Db::getInstance();
         $sql = "select * from ekram where E_Year='$year' and E_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['E_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedEmployeeRpt($year, $mn)
@@ -92,7 +137,12 @@
         $db = Db::getInstance();
         $sql = "select * from employee where Em_Year='$year' and Em_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['Em_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getPopDateTimeRpt($year, $mn)

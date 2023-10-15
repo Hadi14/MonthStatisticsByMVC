@@ -2,6 +2,7 @@
 if ($_SESSION['level'] != 0) {
     exit;
 }
+
 ?>
 <div id="exportContent">
     <header>
@@ -469,8 +470,8 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[14];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#citf').text(toLocalStr(dValues[0]));
                 $('#rurf').text(toLocalStr(dValues[1]));
@@ -486,18 +487,18 @@ if ($_SESSION['level'] != 0) {
                 $('#alloldpeop').text(toLocalStr(dValues[11]));
 
 
-                $('#u_citf').text(un);
-                $('#u_rurf').text(un);
-                $('#u_menf').text(un);
-                $('#u_womf').text(un);
-                $('#u_allf').text(un);
-                $('#u_allpeop').text(un);
-                $('#u_ocityf').text(un);
-                $('#u_orurf').text(un);
-                $('#u_alloldf').text(un);
-                $('#u_ocitypeop').text(un);
-                $('#u_orurpeop').text(un);
-                $('#u_alloldpeop').text(un);
+                $('#u_citf').text(data[1]);
+                $('#u_rurf').text(data[1]);
+                $('#u_menf').text(data[1]);
+                $('#u_womf').text(data[1]);
+                $('#u_allf').text(data[1]);
+                $('#u_allpeop').text(data[1]);
+                $('#u_ocityf').text(data[1]);
+                $('#u_orurf').text(data[1]);
+                $('#u_alloldf').text(data[1]);
+                $('#u_ocitypeop').text(data[1]);
+                $('#u_orurpeop').text(data[1]);
+                $('#u_alloldpeop').text(data[1]);
                 // $('#date_citf').text(dt);
             },
         });
@@ -519,10 +520,10 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[3];
+                const dValues = Object.values(data[0][0]);
+
                 $('#Mmoney').text(toLocalStr(dValues[0]));
-                $('#u_Mmoney').text(un);
+                $('#u_Mmoney').text(data[1]);
             },
         });
     }
@@ -538,14 +539,14 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[4];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#downum').text(toLocalStr(dValues[0]));
                 $('#dowmoney').text(toLocalStr(dValues[1]));
 
-                $('#u_downum').text(un);
-                $('#u_dowmoney').text(un);
+                $('#u_downum').text(data[1]);
+                $('#u_dowmoney').text(data[1]);
             },
         });
     }
@@ -561,8 +562,8 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[6];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#leonnum').text(toLocalStr(dValues[2]));
                 $('#leonmoney').text(toLocalStr(dValues[3]));
@@ -570,10 +571,10 @@ if ($_SESSION['level'] != 0) {
                 $('#MrgLmoney').text(toLocalStr(dValues[1]));
 
 
-                $('#u_leonnum').text(un);
-                $('#u_leonmoney').text(un);
-                $('#u_MrgLnum').text(un);
-                $('#u_MrgLmoney').text(un);
+                $('#u_leonnum').text(data[1]);
+                $('#u_leonmoney').text(data[1]);
+                $('#u_MrgLnum').text(data[1]);
+                $('#u_MrgLmoney').text(data[1]);
             },
         });
     }
@@ -589,10 +590,10 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 let un = dValues[3];
                 $('#stunum').text(toLocalStr(dValues[0]));
-                $('#u_stunum').text(un);
+                $('#u_stunum').text(data[1]);
             },
         });
     }
@@ -608,8 +609,8 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[11];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#fix').text(toLocalStr(dValues[0]));
                 $('#wc').text(toLocalStr(dValues[1]));
@@ -622,15 +623,15 @@ if ($_SESSION['level'] != 0) {
                 $('#allmaskan').text(toLocalStr(dValues[8]));
 
 
-                $('#u_fix').text(un);
-                $('#u_wc').text(un);
-                $('#u_buyc').text(un);
-                $('#u_buyrur').text(un);
-                $('#u_crtcity').text(un);
-                $('#u_crtrural').text(un);
-                $('#u_bonyad').text(un);
-                $('#u_sepah').text(un);
-                $('#u_allmaskan').text(un);
+                $('#u_fix').text(data[1]);
+                $('#u_wc').text(data[1]);
+                $('#u_buyc').text(data[1]);
+                $('#u_buyrur').text(data[1]);
+                $('#u_crtcity').text(data[1]);
+                $('#u_crtrural').text(data[1]);
+                $('#u_bonyad').text(data[1]);
+                $('#u_sepah').text(data[1]);
+                $('#u_allmaskan').text(data[1]);
             },
         });
     }
@@ -682,8 +683,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[6];
+                const dValues = Object.values(data[0][0]);
 
                 $('#inwom').text(toLocalStr(dValues[0]));
                 $('#insjob').text(toLocalStr(dValues[1]));
@@ -691,10 +691,10 @@ if ($_SESSION['level'] != 0) {
                 $('#insmoney').text(toLocalStr(dValues[3]));
 
 
-                $('#u_inwom').text(un);
-                $('#u_insjob').text(un);
-                $('#u_insall').text(un);
-                $('#u_insmoney').text(un);
+                $('#u_inwom').text(data[1]);
+                $('#u_insjob').text(data[1]);
+                $('#u_insall').text(data[1]);
+                $('#u_insmoney').text(data[1]);
             },
         });
     }
@@ -710,8 +710,8 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[8];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#charity').text(toLocalStr(dValues[0]));
                 $('#orphmoney').text(toLocalStr(dValues[1]));
@@ -721,12 +721,12 @@ if ($_SESSION['level'] != 0) {
                 $('#marakezmoney').text(toLocalStr(dValues[5]));
 
 
-                $('#u_charity').text(un);
-                $('#u_orphmoney').text(un);
-                $('#u_zakat').text(un);
-                $('#u_basneed').text(un);
-                $('#u_allmoney').text(un);
-                $('#u_marakezmoney').text(un);
+                $('#u_charity').text(data[1]);
+                $('#u_orphmoney').text(data[1]);
+                $('#u_zakat').text(data[1]);
+                $('#u_basneed').text(data[1]);
+                $('#u_allmoney').text(data[1]);
+                $('#u_marakezmoney').text(data[1]);
             },
         });
     }
@@ -742,14 +742,14 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[4];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#orphnum').text(toLocalStr(dValues[0]));
                 $('#supports').text(toLocalStr(dValues[1]));
 
-                $('#u_orphnum').text(un);
-                $('#u_supports').text(un);
+                $('#u_orphnum').text(data[1]);
+                $('#u_supports').text(data[1]);
             },
         });
     }
@@ -765,17 +765,17 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
-                let un = dValues[5];
+                const dValues = Object.values(data[0][0]);
+
 
                 $('#offi').text(toLocalStr(dValues[0]));
                 $('#comp').text(toLocalStr(dValues[1]));
                 $('#esum').text(toLocalStr(dValues[2]));
 
 
-                $('#u_offi').text(un);
-                $('#u_comp').text(un);
-                $('#u_esum').text(un);
+                $('#u_offi').text(data[1]);
+                $('#u_comp').text(data[1]);
+                $('#u_esum').text(data[1]);
 
             },
         });
