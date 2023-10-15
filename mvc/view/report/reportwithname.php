@@ -636,7 +636,6 @@ if ($_SESSION['level'] != 0) {
     }
     // ***********************************************************
     function job() {
-
         let s = String(<?= json_encode($mn); ?>);
         $.ajax('/MonthStatisticsByMVC/report/getSelectedJBRpt/', {
             type: 'post',
@@ -646,8 +645,8 @@ if ($_SESSION['level'] != 0) {
                 month: s
             },
             success: function(data) {
-                // console.log(data);
-                const dValues = Object.values(data[0]);
+                // console.log(data[1]);
+                const dValues = Object.values(data[0][0]);
                 let un = dValues[10];
 
                 $('#dsicj').text(toLocalStr(dValues[0]));
@@ -659,14 +658,14 @@ if ($_SESSION['level'] != 0) {
                 $('#flearn').text(toLocalStr(dValues[6]));
                 $('#jsup').text(toLocalStr(dValues[7]));
 
-                $('#u_dsicj').text(un);
-                $('#u_dljob').text(un);
-                $('#u_alldic').text(un);
-                $('#u_ndjob').text(un);
-                $('#u_alljob').text(un);
-                $('#u_jleonmoney').text(un);
-                $('#u_flearn').text(un);
-                $('#u_jsup').text(un);
+                $('#u_dsicj').text(data[1]);
+                $('#u_dljob').text(data[1]);
+                $('#u_alldic').text(data[1]);
+                $('#u_ndjob').text(data[1]);
+                $('#u_alljob').text(data[1]);
+                $('#u_jleonmoney').text(data[1]);
+                $('#u_flearn').text(data[1]);
+                $('#u_jsup').text(data[1]);
             },
         });
     }

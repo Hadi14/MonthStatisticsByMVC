@@ -55,7 +55,12 @@
         $db = Db::getInstance();
         $sql = "select * from job where J_Year='$year' and J_Month='$mn'";
         $record = $db->query($sql);
-        return $record;
+        $un = $record[0]['J_user'];
+        $sql = "select * from users where user='$un'";
+        $namefamily = $db->query($sql);
+        $res[] = $record;
+        $res[] = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+        return $res;
     }
     /*********************************************************************/
     static  function getSelectedInsureRpt($year, $mn)
