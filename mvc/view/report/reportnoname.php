@@ -302,7 +302,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 // let n = +dValues[0];
                 $('#citf').text(toLocalStr(dValues[0]));
 
@@ -337,7 +337,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#Mmoney').text(toLocalStr(dValues[0]));
             },
         });
@@ -354,7 +354,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#downum').text(toLocalStr(dValues[0]));
                 $('#dowmoney').text(toLocalStr(dValues[1]));
             },
@@ -372,7 +372,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#leonnum').text(toLocalStr(dValues[2]));
                 $('#leonmoney').text(toLocalStr(dValues[3]));
                 $('#MrgLnum').text(toLocalStr(dValues[0]));
@@ -392,7 +392,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#stunum').text(toLocalStr(dValues[0]));
             },
         });
@@ -409,7 +409,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#fix').text(toLocalStr(dValues[0]));
                 $('#wc').text(toLocalStr(dValues[1]));
                 $('#buyc').text(toLocalStr(dValues[2]));
@@ -435,7 +435,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#dsicj').text(toLocalStr(dValues[0]));
                 $('#dljob').text(toLocalStr(dValues[1]));
                 $('#alldic').text(toLocalStr(dValues[2]));
@@ -460,7 +460,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#inwom').text(toLocalStr(dValues[0]));
                 $('#insjob').text(toLocalStr(dValues[1]));
                 $('#insall').text(toLocalStr(dValues[2]));
@@ -480,7 +480,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#charity').text(toLocalStr(dValues[0]));
                 $('#orphmoney').text(toLocalStr(dValues[1]));
                 $('#zakat').text(toLocalStr(dValues[2]));
@@ -502,7 +502,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#orphnum').text(toLocalStr(dValues[0]));
                 $('#supports').text(toLocalStr(dValues[1]));
             },
@@ -520,7 +520,7 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 // console.log(data);
-                const dValues = Object.values(data[0]);
+                const dValues = Object.values(data[0][0]);
                 $('#offi').text(toLocalStr(dValues[0]));
                 $('#comp').text(toLocalStr(dValues[1]));
                 $('#esum').text(toLocalStr(dValues[2]));
