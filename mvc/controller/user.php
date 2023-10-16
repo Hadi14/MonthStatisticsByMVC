@@ -76,14 +76,22 @@
     /****************************************************************************************** */
     public  function insertUsr()
     {
-        $name = $_POST['usr_name'];
-        $family = $_POST['usr_family'];
-        $user = $_POST['usr_un'];
-        $password = $_POST['usr_pass'];
-        $level = $_POST['usr_level'];
-        $scope = $_POST['usr_scope'];
-        UserModel::inserUser($user, $password, $level, $name, $family, $scope);
-        header("Location:" . getBaseUrl() . "page/registeruser");
+        try {
+            $name = $_POST['usr_name'];
+            $family = $_POST['usr_family'];
+            $user = $_POST['usr_un'];
+            $password = $_POST['usr_pass'];
+            $level = $_POST['usr_level'];
+            $scope = $_POST['usr_scope'];
+            UserModel::inserUser($user, $password, $level, $name, $family, $scope);
+            header("Location:" . getBaseUrl() . "page/registeruser");
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) {
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+            } else {
+                throw $e; // in case it's any other error
+            }
+        }
     }
     /****************************************************************************************** */
     public  function changePassword()

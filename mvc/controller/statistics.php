@@ -231,9 +231,17 @@
     /**************************************************** */
     public  function insertcurrentdate()
     {
-        $year = $_POST['cyear'];
-        $month = $_POST['cmonth'];
-        StatisticsModel::insertcurrentdate($year, $month);
+        try {
+            $year = $_POST['cyear'];
+            $month = $_POST['cmonth'];
+            StatisticsModel::insertcurrentdate($year, $month);
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) {
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+            } else {
+                throw $e; // in case it's any other error
+            }
+        }
     }
     /**************************************************** */
     public  function enableinserts()
