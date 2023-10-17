@@ -119,4 +119,5 @@ h4.my-2 {
 body[class="modal-open"] {
     overflow: visible !important;
     padding-right: 0 !important;
+
 }
