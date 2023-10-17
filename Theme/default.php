@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emdad Dashboard</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= getBaseUrl() ?>img/st.png" type="image/x-icon">
     <!-- Custom styles -->
     <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="<?= getBaseUrl() ?>img/bootstrap-icons-1.11.1/bootstrap-icons.css">
