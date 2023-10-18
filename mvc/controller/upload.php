@@ -1,18 +1,33 @@
 <? class uploadController
 {
-    static $count = 1;
+
     function uploadPdf()
     {
+        $db = Db::getInstance();
+        $sql = "select count from filecount ";
+        $record = $db->query($sql);
+        // dump($record[0]['count']);
+
 
         $target_dir = "uploads/";
         // dump($_FILES);
         $pureName = basename($_FILES["fileToUpload"]["name"]);
         $sepName = explode('.', $pureName);
-        dump($sepName[0] . self::$count++ . '.pdf');
-        $fileName = $sepName[0] . self::$count++ . '.pdf';
+        // dump($sepName[0] . $record[0]['count'] . '.pdf');
+        $fileName = $sepName[0] . $record[0]['count'] . '.pdf';
+
 
         $target_file = $target_dir . $fileName;
-        dump($target_file);
+        // dump($target_file);
+
+        $sql = "update filecount set count=" . $record[0]['count'] + 1;
+        $newrecord = $db->modify($sql);
+
+
+        // $sql = "select count from filecount ";
+        // $record = $db->query($sql);
+        // dump($record[0]['count']);
+
 
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -32,7 +47,7 @@
 
 
 
-        exit;
+        // exit;
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
             echo "Sorry, your file is too large.";
@@ -59,5 +74,28 @@
                 echo "Sorry, there was an error uploading your file.";
             }
         }
+
+
+
+        // $dirpath = "../../uploads";
+        // $files = scandir($dirpath);
+        // foreach ($files as $file) {
+        //     $filePath = "../../uploads" . '/' . $file;
+        //     if (is_file($filePath)) {
+        //         echo $file . "<br>";
+        //     }
+        // }
+        // echo getcwd() . "<hr>";
+
+        $dir = __DIR__ . "/../../uploads";
+        // Sort in ascending order - this is default
+        $a = scandir($dir);
+
+        // Sort in descending order
+        // $b = scandir($dir, 1);
+
+        dump($a);
+
+        // print_r($b);
     }
 }
