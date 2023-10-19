@@ -85,14 +85,14 @@
             if (is_file($filePath)) {
                 $path = __DIR__ . "/../../uploads/" . $file;
                 // echo "<a class='dl'  href='#' onclick='down()'>" . $file . "</a>";
-                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF' >" . $file . "</a>";
+                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF/$file' >" . $file . "</a>";
                 echo "<br>";
             }
         }
     }
 
 
-    function downloadPDF()
+    function downloadPDF($file)
     {
         // echo "<br>";
         // $path = __DIR__ . "/../../uploads/1.pdf";
@@ -104,10 +104,12 @@
         //     echo "Nok";
         // }
 
+        // dump($file[0]);
+        // exit;
+        $fileNm = $file[0];
 
-
-        $fileName = basename("1.pdf");
-        $filePath = __DIR__ . "/../../uploads/1.pdf";
+        $fileName = basename($fileNm);
+        $filePath = __DIR__ . "/../../uploads/$fileNm";
         /***************************************** */
         header("Cache-Control: public");
         header("Content-Description: File Transfer");
