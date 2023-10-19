@@ -166,7 +166,7 @@
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
     function LoadnameFile(res) {
-        $('#otherrecipientName1').val(res);
+        $('#otherrecipientName1').val(res.substr(0, res.length - 4));
         // console.log(String(res));
     }
 </script>
