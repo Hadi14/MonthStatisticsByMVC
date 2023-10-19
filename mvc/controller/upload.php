@@ -94,38 +94,23 @@
 
     function downloadPDF($file)
     {
-        $fn = iconv(mb_detect_encoding($dir, "auto"), 'Windows-1252', $file[0]);
-        echo $fn;
-        dump($file);
+
+        // echo $file[0];
         // echo "<br>";
-        // $path = __DIR__ . "/../../uploads/1.pdf";
-        // echo $path;
-        // echo "<br>";
-        // if (file_exists($path)) {
-        //     echo "oooooooooooook";
-        // } else {
-        //     echo "Nok";
-        // }
 
-        // dump($file[0]);
-        // exit;
-        $fileNm = utf8_encode($file[0]);
-        // $fileNm = $file[0];
-        echo $fileNm;
+        $fileNm =  rawurldecode($file[0]);
 
+        $fileName = basename($fileNm);
+        $filePath = __DIR__ . "/../../uploads/$fileNm";
+        /***************************************** */
+        header("Cache-Control: public");
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$fileName");
+        header("Content-Type: application/zip");
+        header("Content-Transfer-Encoding: binary");
 
-
-        // $fileName = basename($fileNm);
-        // $filePath = __DIR__ . "/../../uploads/$fileNm";
-        // /***************************************** */
-        // header("Cache-Control: public");
-        // header("Content-Description: File Transfer");
-        // header("Content-Disposition: attachment; filename=$fileName");
-        // header("Content-Type: application/zip");
-        // header("Content-Transfer-Encoding: binary");
-
-        // /********************************************** */
-        // readfile($filePath);
+        /********************************************** */
+        readfile($filePath);
         // exit;
     }
 }
