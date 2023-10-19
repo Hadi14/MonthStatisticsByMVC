@@ -94,6 +94,8 @@
 
     function downloadPDF($file)
     {
+        $fn = iconv(mb_detect_encoding($dir, "auto"), 'Windows-1252', $file[0]);
+        echo $fn;
         dump($file);
         // echo "<br>";
         // $path = __DIR__ . "/../../uploads/1.pdf";
@@ -110,7 +112,7 @@
         $fileNm = utf8_encode($file[0]);
         // $fileNm = $file[0];
         echo $fileNm;
-        // exit;
+
 
 
         // $fileName = basename($fileNm);
