@@ -83,14 +83,18 @@
         echo "<br>";
         $dirpath  = __DIR__ . "/../../uploads";
         $files = scandir($dirpath);
-
+        // dump($files);
         foreach ($files as $file) {
-            $rest = substr($file, 0, -4);
+            // $rest = substr($file, 0, -4);
+            // echo $rest;
+            // $rest = explode('.', $file);
+            // dump($rest);
             $filePath = __DIR__ . "\/..\/..\/uploads" . '/' . $file;
             if (is_file($filePath)) {
+                $rest = str_replace(' ', '&nbsp;', $file);
                 $path = __DIR__ . "/../../uploads/" . $file;
                 // echo "<a class='dl'  href='#' onclick='down()'>" . $file . "</a>";
-                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF/$file' >" . $file . "</a>" . "&nbsp;&nbsp;&nbsp;" . "<a class='del'  href='" . getBaseUrl() . "upload/RemovePDF/$file' >Delete</a>" . "&nbsp;&nbsp;&nbsp;" . "<a data-bs-toggle='modal' data-bs-target='#renameModal' class='del'  onclick=LoadnameFile('$file','$rest') href='' >Rename</a>";
+                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF/$file' >" . $file . "</a>" . "&nbsp;&nbsp;&nbsp;" . "<a class='del'  href='" . getBaseUrl() . "upload/RemovePDF/$file' >Delete</a>" . "&nbsp;&nbsp;&nbsp;" . "<a data-bs-toggle='modal' data-bs-target='#renameModal' class='del'  onclick=LoadnameFile('$rest') href='' >Rename</a>";
                 echo "<br>";
             }
         }
@@ -161,9 +165,9 @@
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <script>
-    function LoadnameFile(name, res) {
-        $('#otherrecipientName1').val(name);
-        console.log(res);
+    function LoadnameFile(res) {
+        $('#otherrecipientName1').val(res);
+        // console.log(String(res));
     }
 </script>
 <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
