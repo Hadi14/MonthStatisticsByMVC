@@ -35,6 +35,10 @@ function getBaseUrl()
 {
     return "/MonthStatisticsByMVC/";
 }
+function getBaseUrlNoLastslash()
+{
+    return "/MonthStatisticsByMVC";
+}
 
 function strHas($str, $srch, $caseSensitive = false)
 {

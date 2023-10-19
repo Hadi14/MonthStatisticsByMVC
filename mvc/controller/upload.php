@@ -75,45 +75,48 @@
             }
         }
 
-        // dump(__DIR__);
-        // echo "<br>";
-        // $dirpath  = __DIR__ . "/../../uploads";
-        // $files = scandir($dirpath);
+        /****************************************** */
+        echo "<br>";
+        $dirpath  = __DIR__ . "/../../uploads";
+        $files = scandir($dirpath);
 
-        // foreach ($files as $file) {
-        //     $filePath = __DIR__ . "/../../uploads" . '/' . $file;
-        //     if (is_file($filePath)) {
-        //         echo "<a href= '" .  __DIR__ . "/../../uploads/" . $file . "'>" . $file . "</a> <br>";
-        //         // echo $filePath . "<br>";
-        //     }
+        foreach ($files as $file) {
+            $filePath = __DIR__ . "\/..\/..\/uploads" . '/' . $file;
+            if (is_file($filePath)) {
+                $path = __DIR__ . "/../../uploads/" . $file;
+                // echo "<a class='dl'  href='#' onclick='down()'>" . $file . "</a>";
+                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF' >" . $file . "</a>";
+                echo "<br>";
+            }
+        }
+    }
+
+
+    function downloadPDF()
+    {
+        // echo "<br>";
+        // $path = __DIR__ . "/../../uploads/1.pdf";
+        // echo $path;
+        // echo "<br>";
+        // if (file_exists($path)) {
+        //     echo "oooooooooooook";
+        // } else {
+        //     echo "Nok";
         // }
 
-        echo "<hr>";
+
 
         $fileName = basename("1.pdf");
-        $filePath = "../../uploads/" .  $fileName;
-        // dump($filePath);
-        echo getBaseUrl() . "uploads/1.pdf";
-        echo "<br>";
-        if (file_exists("http://localhost/MonthStatisticsByMVC/uploads/1.pdf")) {
-            echo "oooooooooooook";
-        } else {
-            echo "Nok";
-        }
+        $filePath = __DIR__ . "/../../uploads/1.pdf";
+        /***************************************** */
+        header("Cache-Control: public");
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$fileName");
+        header("Content-Type: application/zip");
+        header("Content-Transfer-Encoding: binary");
 
-        // if (!empty($fileName) && file_exists($filePath)) {
-        //     // Define headers 
-        //     header("Cache-Control: public");
-        //     header("Content-Description: File Transfer");
-        //     header("Content-Disposition: attachment; filename=$fileName");
-        //     header("Content-Type: application/zip");
-        //     header("Content-Transfer-Encoding: binary");
-
-        //     // Read the file 
-        //     readfile($filePath);
-        //     exit;
-        // } else {
-        //     echo 'The file does not exist.';
-        // }
+        /********************************************** */
+        readfile($filePath);
+        exit;
     }
 }
