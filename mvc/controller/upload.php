@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="<?= getBaseUrl() ?>css/bootstrap.rtl.min.css">
+    <script src="<?= getBaseUrl() ?>js/jquery-3.7.0.js"></script>
+</head>
 <? class uploadController
 {
 
@@ -49,8 +53,8 @@
 
         // exit;
         // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
+        if ($_FILES["fileToUpload"]["size"] > 20000000) {
+            echo  $_FILES['fileToUpload']['size'] .  "******Sorry, your file is too large.";
             $uploadOk = 0;
         }
 
@@ -81,11 +85,12 @@
         $files = scandir($dirpath);
 
         foreach ($files as $file) {
+            $rest = substr($file, 0, -4);
             $filePath = __DIR__ . "\/..\/..\/uploads" . '/' . $file;
             if (is_file($filePath)) {
                 $path = __DIR__ . "/../../uploads/" . $file;
                 // echo "<a class='dl'  href='#' onclick='down()'>" . $file . "</a>";
-                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF/$file' >" . $file . "</a>";
+                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF/$file' >" . $file . "</a>" . "&nbsp;&nbsp;&nbsp;" . "<a class='del'  href='" . getBaseUrl() . "upload/RemovePDF/$file' >Delete</a>" . "&nbsp;&nbsp;&nbsp;" . "<a data-bs-toggle='modal' data-bs-target='#renameModal' class='del'  onclick=LoadnameFile('$file','$rest') href='' >Rename</a>";
                 echo "<br>";
             }
         }
@@ -113,4 +118,52 @@
         readfile($filePath);
         // exit;
     }
+    function RemovePDF($file)
+    {
+        $fileNm =  rawurldecode($file[0]);
+        echo $fileNm;
+        echo "<br>";
+        $path = __DIR__ . "/../../uploads/$fileNm";
+        echo file_exists($path) . "<br>";
+        @unlink($path);
+        // if (@unlink($path)) {
+        //     // header("Location: page.php?msg=success");
+        //     echo "Success";
+        // } else {
+        //     // header("Location: page.php?msg=fail&reason=cannot-delete");
+        //     echo "Fail";
+        // }
+    }
 }
+?>
+<!--------------------------- other Edit modal  ------------------------------------------------------------------------->
+<div class="modal fade" id="renameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">ویرایش نام فایل</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-0">
+                        <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">نام فایل:</label>
+                        <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="renameFile()">ویرایش</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
+<script>
+    function LoadnameFile(name, res) {
+        $('#otherrecipientName1').val(name);
+        console.log(res);
+    }
+</script>
+<script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
