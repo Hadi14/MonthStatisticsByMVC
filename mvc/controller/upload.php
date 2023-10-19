@@ -94,6 +94,7 @@
 
     function downloadPDF($file)
     {
+        dump($file);
         // echo "<br>";
         // $path = __DIR__ . "/../../uploads/1.pdf";
         // echo $path;
@@ -106,19 +107,23 @@
 
         // dump($file[0]);
         // exit;
-        $fileNm = $file[0];
+        $fileNm = utf8_encode($file[0]);
+        // $fileNm = $file[0];
+        echo $fileNm;
+        // exit;
 
-        $fileName = basename($fileNm);
-        $filePath = __DIR__ . "/../../uploads/$fileNm";
-        /***************************************** */
-        header("Cache-Control: public");
-        header("Content-Description: File Transfer");
-        header("Content-Disposition: attachment; filename=$fileName");
-        header("Content-Type: application/zip");
-        header("Content-Transfer-Encoding: binary");
 
-        /********************************************** */
-        readfile($filePath);
-        exit;
+        // $fileName = basename($fileNm);
+        // $filePath = __DIR__ . "/../../uploads/$fileNm";
+        // /***************************************** */
+        // header("Cache-Control: public");
+        // header("Content-Description: File Transfer");
+        // header("Content-Disposition: attachment; filename=$fileName");
+        // header("Content-Type: application/zip");
+        // header("Content-Transfer-Encoding: binary");
+
+        // /********************************************** */
+        // readfile($filePath);
+        // exit;
     }
 }
