@@ -75,27 +75,45 @@
             }
         }
 
-
-
-        // $dirpath = "../../uploads";
+        // dump(__DIR__);
+        // echo "<br>";
+        // $dirpath  = __DIR__ . "/../../uploads";
         // $files = scandir($dirpath);
+
         // foreach ($files as $file) {
-        //     $filePath = "../../uploads" . '/' . $file;
+        //     $filePath = __DIR__ . "/../../uploads" . '/' . $file;
         //     if (is_file($filePath)) {
-        //         echo $file . "<br>";
+        //         echo "<a href= '" .  __DIR__ . "/../../uploads/" . $file . "'>" . $file . "</a> <br>";
+        //         // echo $filePath . "<br>";
         //     }
         // }
-        // echo getcwd() . "<hr>";
 
-        $dir = __DIR__ . "/../../uploads";
-        // Sort in ascending order - this is default
-        $a = scandir($dir);
+        echo "<hr>";
 
-        // Sort in descending order
-        // $b = scandir($dir, 1);
+        $fileName = basename("1.pdf");
+        $filePath = "../../uploads/" .  $fileName;
+        // dump($filePath);
+        echo getBaseUrl() . "uploads/1.pdf";
+        echo "<br>";
+        if (file_exists("http://localhost/MonthStatisticsByMVC/uploads/1.pdf")) {
+            echo "oooooooooooook";
+        } else {
+            echo "Nok";
+        }
 
-        dump($a);
+        // if (!empty($fileName) && file_exists($filePath)) {
+        //     // Define headers 
+        //     header("Cache-Control: public");
+        //     header("Content-Description: File Transfer");
+        //     header("Content-Disposition: attachment; filename=$fileName");
+        //     header("Content-Type: application/zip");
+        //     header("Content-Transfer-Encoding: binary");
 
-        // print_r($b);
+        //     // Read the file 
+        //     readfile($filePath);
+        //     exit;
+        // } else {
+        //     echo 'The file does not exist.';
+        // }
     }
 }
