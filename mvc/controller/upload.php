@@ -138,6 +138,23 @@
         //     echo "Fail";
         // }
     }
+    function renamePDF()
+    {
+        $path = __DIR__ . "/../../uploads/";
+        $old = $path . $_POST['oldname'];
+        $new = $path . $_POST['newName'] . ".pdf";
+
+
+
+        $old = str_replace(' ', '%20', $old);
+        if (file_exists($old))
+            echo "<br>**********Exist**********";
+        // if (file_exists($new))
+        //     echo "<br>**********Exist**********";
+        // rename($old, $olduner);
+
+
+    }
 }
 ?>
 <!--------------------------- other Edit modal  ------------------------------------------------------------------------->
@@ -149,16 +166,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="post" action="<?= getBaseUrl() ?>upload/renamePDF">
                     <div class="mb-0">
                         <label id="otherfiledlabel" for="recipient-name1" class="col-form-label">نام فایل:</label>
-                        <input id="otherrecipientName1" name="otherrecipientName" type="text" class="form-control">
+                        <input id="otherrecipientName1" name="newName" type="text" class="form-control">
+                        <input id="oldname" name="oldname" type="hidden">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="ویرایش">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="renameFile()">ویرایش</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
     </div>
@@ -167,7 +185,8 @@
 <script>
     function LoadnameFile(res) {
         $('#otherrecipientName1').val(res.substr(0, res.length - 4));
-        // console.log(String(res));
+        $('#oldname').val(res);
+        console.log($('#oldname').val());
     }
 </script>
 <script src="<?= getBaseUrl() ?>js/bootstrap.bundle.min.js"></script>
