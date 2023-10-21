@@ -140,20 +140,24 @@
     }
     function renamePDF()
     {
+        $n = $_POST['oldname'];
+        // $m = str_replace('&nbsp;', '*', $n);
+        // $m = preg_replace('/\s+/u', '%20', $n);
+        // echo $m;
         $path = __DIR__ . "/../../uploads/";
-        $old = $path . $_POST['oldname'];
+        $oldname = preg_replace('/\s+/u', ' ', $n);
+        $old = $path .   $oldname;
         $new = $path . $_POST['newName'] . ".pdf";
+        // echo  $_POST['oldname'] . "<br>";
+        // echo $oldname . "<br>";
+        // echo $old . "<br>";
 
 
-
-        $old = str_replace(' ', '%20', $old);
         if (file_exists($old))
             echo "<br>**********Exist**********";
         // if (file_exists($new))
         //     echo "<br>**********Exist**********";
-        // rename($old, $olduner);
-
-
+        rename($old, $new);
     }
 }
 ?>
