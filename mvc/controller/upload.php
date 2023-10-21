@@ -94,34 +94,12 @@
                 $rest = str_replace(' ', '&nbsp;', $file);
                 $path = __DIR__ . "/../../uploads/" . $file;
                 // echo "<a class='dl'  href='#' onclick='down()'>" . $file . "</a>";
-                echo "<a class='dl'  href='" . getBaseUrl() . "upload/downloadPDF/$file' >" . $file . "</a>" . "&nbsp;&nbsp;&nbsp;" . "<a class='del'  href='" . getBaseUrl() . "upload/RemovePDF/$file' >Delete</a>" . "&nbsp;&nbsp;&nbsp;" . "<a data-bs-toggle='modal' data-bs-target='#renameModal' class='del'  onclick=LoadnameFile('$rest') href='' >Rename</a>";
+                echo "<a class='dl'  href='" . getBaseUrl() . "downloadfile/downloadPDF/$file' >" . $file . "</a>" . "&nbsp;&nbsp;&nbsp;" . "<a class='del'  href='" . getBaseUrl() . "upload/RemovePDF/$file' >Delete</a>" . "&nbsp;&nbsp;&nbsp;" . "<a data-bs-toggle='modal' data-bs-target='#renameModal' class='del'  onclick=LoadnameFile('$rest') href='' >Rename</a>";
                 echo "<br>";
             }
         }
     }
 
-
-    function downloadPDF($file)
-    {
-
-        // echo $file[0];
-        // echo "<br>";
-
-        $fileNm =  rawurldecode($file[0]);
-
-        $fileName = basename($fileNm);
-        $filePath = __DIR__ . "/../../uploads/$fileNm";
-        /***************************************** */
-        header("Cache-Control: public");
-        header("Content-Description: File Transfer");
-        header("Content-Disposition: attachment; filename=$fileName");
-        header("Content-Type: application/zip");
-        header("Content-Transfer-Encoding: binary");
-
-        /********************************************** */
-        readfile($filePath);
-        // exit;
-    }
     function RemovePDF($file)
     {
         $fileNm =  rawurldecode($file[0]);
