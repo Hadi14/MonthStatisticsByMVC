@@ -7,25 +7,33 @@
 
     function uploadPdf()
     {
-        $db = Db::getInstance();
-        $sql = "select count from filecount ";
-        $record = $db->query($sql);
-        // dump($record[0]['count']);
-
+        /***************************************************************** */
+        // $db = Db::getInstance();
+        // $sql = "select count from filecount ";
+        // $record = $db->query($sql);
+        /***************************************************************** */
 
         $target_dir = "uploads/";
         // dump($_FILES);
         $pureName = basename($_FILES["fileToUpload"]["name"]);
         $sepName = explode('.', $pureName);
         // dump($sepName[0] . $record[0]['count'] . '.pdf');
-        $fileName = $sepName[0] . $record[0]['count'] . '.pdf';
 
+
+        /***************************************************************** */
+        // $fileName = $sepName[0] . $record[0]['count'] . '.pdf';
+        /***************************************************************** */
+
+
+        $fileName = $sepName[0] . '.pdf';
 
         $target_file = $target_dir . $fileName;
         // dump($target_file);
 
-        $sql = "update filecount set count=" . $record[0]['count'] + 1;
-        $newrecord = $db->modify($sql);
+        /***************************************************************** */
+        // $sql = "update filecount set count=" . $record[0]['count'] + 1;
+        // $newrecord = $db->modify($sql);
+        /***************************************************************** */
 
 
         // $sql = "select count from filecount ";
