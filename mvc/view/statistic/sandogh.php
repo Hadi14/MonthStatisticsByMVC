@@ -273,10 +273,10 @@ if (getaces(6) == 0) {
     }
 
     function fillPageTable(data) {
-        console.log(data);
+        // console.log(data);
         data.forEach(element => {
             const dValues = Object.values(element);
-            let grec = String(dValues[2]) + String(dValues[3]);
+            let grec = String(dValues[4]) + String(dValues[5]);
             $("<th class='newColumn'>" + dValues[4] + "-" + dValues[5] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
