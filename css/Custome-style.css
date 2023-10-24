@@ -120,3 +120,7 @@ body[class="modal-open"] {
     overflow: visible !important;
     padding-right: 0 !important;
 }
+
+#NoteModal .modal-body p {
+    line-height: 25px;
+}

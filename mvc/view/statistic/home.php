@@ -204,8 +204,29 @@ function getnameAccess($filed)
             ?>
         </ul>
     </article>
+    <!--------------------------- Remove modal  ------------------------------------------------------------------------->
+    <div class="modal fade" id="NoteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" dir="rtl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="otherModalLabel">پیام مدیر سیستم:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>همکاران محترم حوزه های حمایت، صندوق امداد ولایت، مسکن، اشتغال و مشارکتها(درآمدها) لطفا آمار خود را به صورت تجمیعی از ابتدای سال تا کنون ثبت نمائید.</p>
+                    <p class="mt-2">با تشکر</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------- End of Modal ----------------------------------------------------------->
 </div>
 
 <script>
-
+    $(window).on('load', function() {
+        $('#NoteModal').modal('show');
+    });
 </script>
