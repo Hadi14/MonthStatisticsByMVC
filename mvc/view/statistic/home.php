@@ -213,7 +213,7 @@ function getnameAccess($filed)
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>همکاران محترم حوزه های حمایت، صندوق امداد ولایت، مسکن، اشتغال و مشارکتها(درآمدها) لطفا آمار خود را به صورت تجمیعی از ابتدای سال تا کنون ثبت نمائید.</p>
+                    <p id="NoteText"></p>
                     <p class="mt-2">با تشکر</p>
                 </div>
                 <div class="modal-footer">
@@ -227,6 +227,15 @@ function getnameAccess($filed)
 
 <script>
     $(window).on('load', function() {
-        $('#NoteModal').modal('show');
+        $.ajax('/MonthStatisticsByMVC/admin/getLastNote/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data != null) {
+                    $('#NoteModal').modal('show');
+                    $('#NoteText').text(data[0]['text']);
+                }
+            },
+        });
     });
 </script>

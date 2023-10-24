@@ -17,6 +17,12 @@
         $recs = AdminModel::getAllNotes();
         echo json_encode($recs);
     }
+    // *****************************************************
+    function getLastNote()
+    {
+        $recs = AdminModel::getLastNotes();
+        echo json_encode($recs);
+    }
     /************************************************ */
     public  function getNoteGoalField()
     {

@@ -58,6 +58,14 @@
         $record = $db->query($sql);
         return $record;
     }
+    /*********************************************************************/
+    static  function getLastNotes()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from notes where status=1 order by id desc limit 1 ";
+        $record = $db->query($sql);
+        return $record;
+    }
     /********************************************************************** */
     static function EditMenu($name, $code)
     {
