@@ -43,8 +43,18 @@
     {
         $name = $_POST['nam'];
         $code = $_POST['cod'];
-
         $rowAffect = AdminModel::EditMenu($name, $code);
+        if ($rowAffect) {
+            echo json_encode($rowAffect);
+        }
+    }
+    /******************************************************** */
+    public  function EditNoteRecord()
+    {
+        $txt = $_POST['txt'];
+        $status = $_POST['status'];
+        $grecord = $_POST['grecord'];
+        $rowAffect = AdminModel::EditNote($txt, $status, $grecord);
         if ($rowAffect) {
             echo json_encode($rowAffect);
         }

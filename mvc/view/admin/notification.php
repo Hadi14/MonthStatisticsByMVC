@@ -73,7 +73,7 @@ if ($_SESSION['level'] != 0) {
                 </form>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editOldPopulation000000000()">ویرایش</button>
+                <button class="btn btn-primary" data-bs-dismiss="modal" onclick="editNote()">ویرایش</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
             </div>
         </div>
@@ -83,10 +83,10 @@ if ($_SESSION['level'] != 0) {
 
 <script>
     $(document).ready(function() {
-        getInsure();
+        getNotes();
     });
 
-    function getInsure() {
+    function getNotes() {
         $.ajax('/MonthStatisticsByMVC/admin/getAllNotes/', {
             type: 'post',
             dataType: "json",
@@ -102,7 +102,7 @@ if ($_SESSION['level'] != 0) {
         data.forEach(element => {
             const dValues = Object.values(element);
             // console.log(dValues[0]);
-            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[0] + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'><a onclick=editRecord('" + encodeURIComponent(dValues[0]) + "') data-bs-toggle='modal' data-bs-target='#EditNoteModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
+            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'><a onclick=editRecord('" + encodeURIComponent(dValues[1]) + "') data-bs-toggle='modal' data-bs-target='#EditNoteModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
 
             $('tbody').append(row);
         });
@@ -119,27 +119,33 @@ if ($_SESSION['level'] != 0) {
             },
             success: function(data) {
                 const dValues = Object.values(data[0]);
-                $('#ModalText').val(dValues[0]);
-                $('#Modalcheckbox').prop('checked', +dValues[1]);
+                $('#ModalText').val(dValues[1]);
+                $('#Modalcheckbox').prop('checked', +dValues[2]);
+                $('#gfiled').val(dValues[0]);
 
             },
         });
     }
 
-    function editUser() {
+    function editNote() {
         // console.log($('#userrecipientName3').val());
-        $.ajax('/MonthStatisticsByMVC/user/EditUserRecord', {
+        // console.log($('#ModalText').val());
+        console.log($('#ModalText').val());
+        console.log($('#Modalcheckbox').val());
+        console.log($('#gfiled').val());
+
+        $.ajax('/MonthStatisticsByMVC/admin/EditNoteRecord', {
             type: 'post',
             dataType: "json",
             data: {
                 'txt': $('#ModalText').val(),
-                'status': $('#userrecipientName2').val(),
-               
+                'status': $('#Modalcheckbox').val(),
+                'grecord': $('#gfiled').val(),
             },
             success: function(data) {
                 alert('بروزرسانی با موفقیت انجام شد.');
                 $('.newColumn').remove();
-                getInsure();
+                getNotes();
             },
         });
     }
