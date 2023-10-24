@@ -123,4 +123,9 @@ body[class="modal-open"] {
 
 #NoteModal .modal-body p {
     line-height: 25px;
+    text-align: justify;
+}
+
+#noteForm textarea {
+    font-size: 15px;
 }

@@ -26,6 +26,14 @@
         return $g;
     }
     /*****************************************************************/
+    static  function getNoteGoal($txt)
+    {
+        $db = Db::getInstance();
+        $sql = "select * from notes where text='$txt'";
+        $g = $db->query($sql);
+        return $g;
+    }
+    /*****************************************************************/
     static  function getAccessGoal($u)
     {
         $db = Db::getInstance();
@@ -40,6 +48,15 @@
         $sql = "select * from accesses where A_aloMaskan=1 and A_user in(select user from users where level=2)";
         $g = $db->query($sql);
         return $g;
+    }
+
+    /*********************************************************************/
+    static  function getAllNotes()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from notes ";
+        $record = $db->query($sql);
+        return $record;
     }
     /********************************************************************** */
     static function EditMenu($name, $code)
@@ -62,6 +79,12 @@
     {
         $db = Db::getInstance();
         $db->insert("insert into menus (M_name, M_code) values('$mname', $mcode)");
+    }
+    /*********************************************************************/
+    static  function inserNotes($text, $status)
+    {
+        $db = Db::getInstance();
+        $db->insert("insert into notes(text, status) VALUES ('$text', $status)");
     }
     /*********************************************************************/
     static  function inserAllocations($user, $aloHemayat, $aloPopulation, $aloMoney, $aloDowry, $aloInsure, $aloSandogh, $aloFarhangi, $aloMaskan, $aloJob, $aloMosharekat, $aloIncome, $aloEkram, $aloEmployee)

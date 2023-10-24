@@ -221,4 +221,14 @@ class PageController
             Render::render('/statistic/uploadform.php', "", $currdt[0]);
         }
     }
+    /**************************************************************** */
+    function notification()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/admin/notification.php', "", $currdt[0]);
+        }
+    }
 }

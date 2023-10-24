@@ -11,6 +11,19 @@
         $recs = AdminModel::getAllAllocations();
         echo json_encode($recs);
     }
+    // *****************************************************
+    function getAllNotes()
+    {
+        $recs = AdminModel::getAllNotes();
+        echo json_encode($recs);
+    }
+    /************************************************ */
+    public  function getNoteGoalField()
+    {
+        $user = $_POST['ukey'];
+        $goal = AdminModel::getNoteGoal($user);
+        echo json_encode($goal);
+    }
     /************************************************ */
     public  function getMnuGoalField()
     {
@@ -66,6 +79,19 @@
         $mcode = $_POST['mcode'];
         AdminModel::inserMenus($mname, $mcode);
         header("Location:" . getBaseUrl() . "page/defineMenu");
+    }
+    /****************************************************************************************** */
+    public  function inserNotific()
+    {
+        $text = $_POST['notific'];
+        $status = isset($_POST['status']) ? 1 : 0;
+        // $retVal = (condition) ? a : b ;
+        // echo $text;
+        // echo br();
+        // echo $status;
+        // exit;
+        AdminModel::inserNotes($text, $status);
+        header("Location:" . getBaseUrl() . "page/notification");
     }
     /****************************************************************************************** */
     public  function insertAlloc()

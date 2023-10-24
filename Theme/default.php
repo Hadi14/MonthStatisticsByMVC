@@ -209,6 +209,9 @@
                                 <li>
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/uploadfile">آپلود فایل</a>
                                 </li>
+                                <li>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/notification">ثبت نوتیفیکیشن</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
