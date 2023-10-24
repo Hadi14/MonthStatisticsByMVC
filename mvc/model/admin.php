@@ -69,14 +69,7 @@
     /********************************************************************** */
     static function EditNote($txt, $status, $grecord)
     {
-        // echo $txt;
-        // echo br();
-        // echo $status;
-        // echo br();
-        // echo $grecord;
-        // exit;
         $db = Db::getInstance();
-        $status = ($status == 'on') ? 1 : 0;
         $sql = "update notes set text='$txt',status=$status where id=$grecord";
         $rowAffect = $db->modify($sql);
         return $rowAffect;

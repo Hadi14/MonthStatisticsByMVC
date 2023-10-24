@@ -128,18 +128,12 @@ if ($_SESSION['level'] != 0) {
     }
 
     function editNote() {
-        // console.log($('#userrecipientName3').val());
-        // console.log($('#ModalText').val());
-        console.log($('#ModalText').val());
-        console.log($('#Modalcheckbox').val());
-        console.log($('#gfiled').val());
-
         $.ajax('/MonthStatisticsByMVC/admin/EditNoteRecord', {
             type: 'post',
             dataType: "json",
             data: {
                 'txt': $('#ModalText').val(),
-                'status': $('#Modalcheckbox').val(),
+                'status': $('#Modalcheckbox').is(":checked"),
                 'grecord': $('#gfiled').val(),
             },
             success: function(data) {
