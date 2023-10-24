@@ -16,13 +16,12 @@ if ($_SESSION['level'] != 0) {
                         <div class="col-md-6 col-lg-6 ">
                             <div class="input-group mb-2">
                                 <span class="input-group-text">
-                                    <i class="fa-solid fa-envelope"></i>
+                                    <i class="fa fa-file-text"></i>
                                 </span>
                                 <textarea name="notific" id="notific" cols="50" rows="10"></textarea>
                             </div>
                             <div class="form-check form-switch">
                                 <input name="status" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                                <!-- <input type="checkbox" id="hemayat_chb_insrt" name="status"> -->
                                 <label class="form-check-label" for="flexSwitchCheckChecked">وضعیت نمایش نوتیفیکیشن</label>
                             </div>
                         </div>
@@ -42,6 +41,7 @@ if ($_SESSION['level'] != 0) {
                         <th scope="col">متن</th>
                         <th scope="col">وضعیت</th>
                         <th scope="col">ویرایش</th>
+                        <th scope="col">حذف</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,6 +80,28 @@ if ($_SESSION['level'] != 0) {
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<!--------------------------------- Remove Modal ----------------------------------------------------------->
+<div class="modal fade" id="RemoveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" dir="rtl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="otherModalLabel">عملیات حذف</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= getBaseUrl() ?>admin/rmovNote/" method="post">
+                    <label for="">آیا از حذف رکورد مطمئن هستید؟</label>
+                    <input id="goalrec" type="hidden" name="goalrec">
+                    <input type="submit" class="btn btn-primary" data-bs-dismiss="modal" value="بله">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خیر</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------------- End of Modal ----------------------------------------------------------->
 
 <script>
     $(document).ready(function() {
@@ -102,7 +124,7 @@ if ($_SESSION['level'] != 0) {
         data.forEach(element => {
             const dValues = Object.values(element);
             // console.log(dValues[0]);
-            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'><a onclick=editRecord('" + encodeURIComponent(dValues[1]) + "') data-bs-toggle='modal' data-bs-target='#EditNoteModal' href='#'><i class='bi bi-pencil-square'></i></a></td></tr>";
+            let row = "<tr><td class='newColumn'>" + i++ + "</td><td class='newColumn'>" + dValues[1] + "</td><td class='newColumn'>" + dValues[2] + "</td><td class='newColumn'><a onclick=editRecord('" + encodeURIComponent(dValues[1]) + "') data-bs-toggle='modal' data-bs-target='#EditNoteModal' href='#'><i class='bi bi-pencil-square'></i></a></td><td class='newColumn'><a onclick=removeRecord('" + dValues[0] + "') data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td></tr>";
 
             $('tbody').append(row);
         });
@@ -142,5 +164,25 @@ if ($_SESSION['level'] != 0) {
                 getNotes();
             },
         });
+    }
+
+    function removeRecord(id) {
+
+        $('#goalrec').val(id);
+
+        // console.log(id);
+
+        // $.ajax('/MonthStatisticsByMVC/admin/rmovNote', {
+        //     type: 'post',
+        //     dataType: "json",
+        //     data: {
+        //         'goalrec': id,
+        //     },
+        //     success: function(data) {
+        //         alert('عملیات حذف با موفقیت انجام شد.');
+        //         $('.newColumn').remove();
+        //         getNotes();
+        //     },
+        // });
     }
 </script>

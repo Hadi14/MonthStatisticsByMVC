@@ -232,4 +232,12 @@
             return $rowAffect;
         }
     }
+    /********************************************************************** */
+    static function RemoveNotes($id)
+    {
+        $db = Db::getInstance();
+        $sql = "delete FROM notes WHERE id=$id";
+        $rowAffect = $db->modify($sql);
+        return $rowAffect;
+    }
 }

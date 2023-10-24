@@ -318,4 +318,11 @@
         AdminModel::RemoveEmployee($yr, $mn);
         header("Location:" . getBaseUrl() . "page/employee");
     }
+    /****************************************************************************************** */
+    public  function rmovNote()
+    {
+        $id = $_POST['goalrec'];
+        AdminModel::RemoveNotes($id);
+        header("Location:" . getBaseUrl() . "page/notification");
+    }
 }
