@@ -29,7 +29,7 @@
             }
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1062) {
-                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/population';</script>";
             } else {
                 throw $e; // in case it's any other error
             }
@@ -52,7 +52,7 @@
                 header("Location:" . getBaseUrl() . "page/money");
             } catch (mysqli_sql_exception $e) {
                 if ($e->getCode() == 1062) {
-                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/money';</script>";
                 } else {
                     throw $e; // in case it's any other error
                 }
@@ -102,7 +102,7 @@
                 header("Location:" . getBaseUrl() . "page/insure");
             } catch (mysqli_sql_exception $e) {
                 if ($e->getCode() == 1062) {
-                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                    echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/insure';</script>";
                 } else {
                     throw $e; // in case it's any other error
                 }
@@ -237,7 +237,7 @@
             StatisticsModel::insertcurrentdate($year, $month);
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1062) {
-                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/currentpage';</script>";
             } else {
                 throw $e; // in case it's any other error
             }

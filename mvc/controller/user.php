@@ -87,7 +87,7 @@
             header("Location:" . getBaseUrl() . "page/registeruser");
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1062) {
-                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/sandogh';</script>";
+                echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/registeruser';</script>";
             } else {
                 throw $e; // in case it's any other error
             }
