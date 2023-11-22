@@ -833,13 +833,17 @@ if ($_SESSION['level'] != 0) {
                 popup();
             },
         });
+        // popup();
     }
 
     function popup() {
 
         let citf1 = +$('#citf').text().replace(/,/g, "");
         let citf2 = +$('#citf2').text().replace(/,/g, "");
-        (citf1 > citf2) ? $('#citf2').css('color', 'red'): 0;
+
+        console.log($('#citf').text().replace(/,/g, ""));
+        // console.log(citf2);
+        (citf > citf2) ? $('#citf2').css('color', 'red'): 0;
 
         let rurf = +$('#rurf').text().replace(/,/g, "");
         let rurf2 = +$('#rurf2').text().replace(/,/g, "");
