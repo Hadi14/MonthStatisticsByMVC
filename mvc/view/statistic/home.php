@@ -78,6 +78,7 @@ function getnameAccess($filed)
         <ul class="top-cat-list">
             <?
             $count = 0;
+            $insrtRecord=array();
             $row = getLastInsert('hemayat', 'Year', 'Month', $yer, $mnth);
             if ($row != "") {
                 $insrtRecord[]['user'] = $row[0]['user'];
