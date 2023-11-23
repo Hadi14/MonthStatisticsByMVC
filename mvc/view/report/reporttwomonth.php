@@ -419,7 +419,7 @@ if ($_SESSION['level'] != 0) {
                 $('#ocitypeop2').text(toLocalStr(dValues[9]));
                 $('#orurpeop2').text(toLocalStr(dValues[10]));
                 $('#alloldpeop2').text(toLocalStr(dValues[11]));
-
+                popup();
             },
         });
     }
@@ -830,10 +830,9 @@ if ($_SESSION['level'] != 0) {
                 $('#offi2').text(toLocalStr(dValues[0]));
                 $('#comp2').text(toLocalStr(dValues[1]));
                 $('#esum2').text(toLocalStr(dValues[2]));
-                popup();
+                // popup();
             },
         });
-        // popup();
     }
 
     function popup() {
@@ -841,9 +840,9 @@ if ($_SESSION['level'] != 0) {
         let citf1 = +$('#citf').text().replace(/,/g, "");
         let citf2 = +$('#citf2').text().replace(/,/g, "");
 
-        console.log($('#citf').text().replace(/,/g, ""));
+        // console.log($('#citf').text().replace(/,/g, ""));
         // console.log(citf2);
-        (citf > citf2) ? $('#citf2').css('color', 'red'): 0;
+        (citf1 > citf2) ? $('#citf2').css('color', 'red'): 0;
 
         let rurf = +$('#rurf').text().replace(/,/g, "");
         let rurf2 = +$('#rurf2').text().replace(/,/g, "");
