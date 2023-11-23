@@ -419,7 +419,7 @@ if ($_SESSION['level'] != 0) {
                 $('#ocitypeop2').text(toLocalStr(dValues[9]));
                 $('#orurpeop2').text(toLocalStr(dValues[10]));
                 $('#alloldpeop2').text(toLocalStr(dValues[11]));
-                popup();
+                popCompare();
             },
         });
     }
@@ -459,6 +459,7 @@ if ($_SESSION['level'] != 0) {
                 // console.log(data);
                 const dValues = Object.values(data[0][0]);
                 $('#Mmoney2').text(toLocalStr(dValues[0]));
+                MoneyCompare();
             },
         });
     }
@@ -495,6 +496,7 @@ if ($_SESSION['level'] != 0) {
                 const dValues = Object.values(data[0][0]);
                 $('#downum2').text(toLocalStr(dValues[0]));
                 $('#dowmoney2').text(toLocalStr(dValues[1]));
+                dowryCompare();
             },
         });
     }
@@ -535,6 +537,7 @@ if ($_SESSION['level'] != 0) {
                 $('#leonmoney2').text(toLocalStr(dValues[3]));
                 $('#MrgLnum2').text(toLocalStr(dValues[0]));
                 $('#MrgLmoney2').text(toLocalStr(dValues[1]));
+                SandoghCompare();
             },
         });
     }
@@ -569,6 +572,7 @@ if ($_SESSION['level'] != 0) {
                 // console.log(data);
                 const dValues = Object.values(data[0][0]);
                 $('#stunum2').text(toLocalStr(dValues[0]));
+                farhangiCompare();
             },
         });
     }
@@ -619,6 +623,7 @@ if ($_SESSION['level'] != 0) {
                 $('#bonyad2').text(toLocalStr(dValues[6]));
                 $('#sepah2').text(toLocalStr(dValues[7]));
                 $('#allmaskan2').text(toLocalStr(dValues[8]));
+                MaskanCompare();
             },
         });
     }
@@ -669,6 +674,7 @@ if ($_SESSION['level'] != 0) {
                 $('#jleonmoney2').text(toLocalStr(dValues[5]));
                 $('#flearn2').text(toLocalStr(dValues[6]));
                 $('#jsup2').text(toLocalStr(dValues[7]));
+                JobCompare();
             },
         });
     }
@@ -711,6 +717,7 @@ if ($_SESSION['level'] != 0) {
                 $('#insjob2').text(toLocalStr(dValues[1]));
                 $('#insall2').text(toLocalStr(dValues[2]));
                 $('#insmoney2').text(toLocalStr(dValues[3]));
+                InsureCompare();
             },
         });
     }
@@ -755,6 +762,7 @@ if ($_SESSION['level'] != 0) {
                 $('#basneed2').text(toLocalStr(dValues[3]));
                 $('#allmoney2').text(toLocalStr(dValues[4]));
                 $('#marakezmoney2').text(toLocalStr(dValues[5]));
+                IncomesCompare();
             },
         });
     }
@@ -791,6 +799,7 @@ if ($_SESSION['level'] != 0) {
                 const dValues = Object.values(data[0][0]);
                 $('#orphnum2').text(toLocalStr(dValues[0]));
                 $('#supports2').text(toLocalStr(dValues[1]));
+                EkramCompare();
             },
         });
     }
@@ -830,18 +839,14 @@ if ($_SESSION['level'] != 0) {
                 $('#offi2').text(toLocalStr(dValues[0]));
                 $('#comp2').text(toLocalStr(dValues[1]));
                 $('#esum2').text(toLocalStr(dValues[2]));
-                // popup();
+                employeeCompare()
             },
         });
     }
 
-    function popup() {
-
+    function popCompare() {
         let citf1 = +$('#citf').text().replace(/,/g, "");
         let citf2 = +$('#citf2').text().replace(/,/g, "");
-
-        // console.log($('#citf').text().replace(/,/g, ""));
-        // console.log(citf2);
         (citf1 > citf2) ? $('#citf2').css('color', 'red'): 0;
 
         let rurf = +$('#rurf').text().replace(/,/g, "");
@@ -887,11 +892,15 @@ if ($_SESSION['level'] != 0) {
         let alloldpeop = +$('#alloldpeop').text().replace(/,/g, "");
         let alloldpeop2 = +$('#alloldpeop2').text().replace(/,/g, "");
         (alloldpeop > alloldpeop2) ? $('#alloldpeop2').css('color', 'red'): 0;
+    }
 
+    function MoneyCompare() {
         let Mmoney = +$('#Mmoney').text().replace(/,/g, "");
         let Mmoney2 = +$('#Mmoney2').text().replace(/,/g, "");
         (Mmoney > Mmoney2) ? $('#Mmoney2').css('color', 'red'): 0;
+    }
 
+    function dowryCompare() {
         let downum = +$('#downum').text().replace(/,/g, "");
         let downum2 = +$('#downum2').text().replace(/,/g, "");
         (downum > downum2) ? $('#downum2').css('color', 'red'): 0;
@@ -899,7 +908,9 @@ if ($_SESSION['level'] != 0) {
         let dowmoney = +$('#dowmoney').text().replace(/,/g, "");
         let dowmoney2 = +$('#dowmoney2').text().replace(/,/g, "");
         (dowmoney > dowmoney2) ? $('#dowmoney2').css('color', 'red'): 0;
+    }
 
+    function SandoghCompare() {
         let leonnum = +$('#leonnum').text().replace(/,/g, "");
         let leonnum2 = +$('#leonnum2').text().replace(/,/g, "");
         (leonnum > leonnum2) ? $('#leonnum2').css('color', 'red'): 0;
@@ -915,11 +926,15 @@ if ($_SESSION['level'] != 0) {
         let MrgLmoney = +$('#MrgLmoney').text().replace(/,/g, "");
         let MrgLmoney2 = +$('#MrgLmoney2').text().replace(/,/g, "");
         (MrgLmoney > MrgLmoney2) ? $('#MrgLmoney2').css('color', 'red'): 0;
+    }
 
+    function farhangiCompare() {
         let stunum = +$('#stunum').text().replace(/,/g, "");
         let stunum2 = +$('#stunum2').text().replace(/,/g, "");
         (stunum > stunum2) ? $('#stunum2').css('color', 'red'): 0;
+    }
 
+    function MaskanCompare() {
         let fix = +$('#fix').text().replace(/,/g, "");
         let fix2 = +$('#fix2').text().replace(/,/g, "");
         (fix > fix2) ? $('#fix2').css('color', 'red'): 0;
@@ -955,7 +970,9 @@ if ($_SESSION['level'] != 0) {
         let allmaskan = +$('#allmaskan').text().replace(/,/g, "");
         let allmaskan2 = +$('#allmaskan2').text().replace(/,/g, "");
         (allmaskan > allmaskan2) ? $('#allmaskan2').css('color', 'red'): 0;
+    }
 
+    function JobCompare() {
         let dsicj = +$('#dsicj').text().replace(/,/g, "");
         let dsicj2 = +$('#dsicj2').text().replace(/,/g, "");
         (dsicj > dsicj2) ? $('#dsicj2').css('color', 'red'): 0;
@@ -987,7 +1004,11 @@ if ($_SESSION['level'] != 0) {
         let jsup = +$('#jsup').text().replace(/,/g, "");
         let jsup2 = +$('#jsup2').text().replace(/,/g, "");
         (jsup > jsup2) ? $('#jsup2').css('color', 'red'): 0;
+    }
 
+
+
+    function InsureCompare() {
         let inwom = +$('#inwom').text().replace(/,/g, "");
         let inwom2 = +$('#inwom2').text().replace(/,/g, "");
         (inwom > inwom2) ? $('#inwom2').css('color', 'red'): 0;
@@ -1003,6 +1024,9 @@ if ($_SESSION['level'] != 0) {
         let insmoney = +$('#insmoney').text().replace(/,/g, "");
         let insmoney2 = +$('#insmoney2').text().replace(/,/g, "");
         (insmoney > insmoney2) ? $('#insmoney2').css('color', 'red'): 0;
+    }
+
+    function IncomesCompare() {
 
         let charity = +$('#charity').text().replace(/,/g, "");
         let charity2 = +$('#charity2').text().replace(/,/g, "");
@@ -1027,6 +1051,9 @@ if ($_SESSION['level'] != 0) {
         let marakezmoney = +$('#marakezmoney').text().replace(/,/g, "");
         let marakezmoney2 = +$('#marakezmoney2').text().replace(/,/g, "");
         (marakezmoney > marakezmoney2) ? $('#marakezmoney2').css('color', 'red'): 0;
+    }
+
+    function EkramCompare() {
 
         let orphnum = +$('#orphnum').text().replace(/,/g, "");
         let orphnum2 = +$('#orphnum2').text().replace(/,/g, "");
@@ -1035,6 +1062,11 @@ if ($_SESSION['level'] != 0) {
         let supports = +$('#supports').text().replace(/,/g, "");
         let supports2 = +$('#supports2').text().replace(/,/g, "");
         (supports > supports2) ? $('#supports2').css('color', 'red'): 0;
+    }
+
+
+
+    function employeeCompare() {
 
         let offi = +$('#offi').text().replace(/,/g, "");
         let offi2 = +$('#offi2').text().replace(/,/g, "");
