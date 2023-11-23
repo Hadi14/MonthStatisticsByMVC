@@ -2,7 +2,10 @@
 if (getaces(4) == 0) {
     exit;
 }
-
+// $db = Db::getInstance();
+// $sql = "select * from currentdate order by Year desc, Month desc limit 1";
+// $currdate = $db->query($sql);
+// dump($currdate);
 
 ?>
 
@@ -228,29 +231,41 @@ if (getaces(4) == 0) {
     }
 
     function editDowry() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        gfield = $('#goal').val();
-
-        $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'goalf': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data['disableEdit']);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    gfield = $('#goal').val();
+
+                    $.ajax('/MonthStatisticsByMVC/statistics/updateDowry/' + gfield, {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'goalf': +$('#otherrecipientName1').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data['disableEdit']);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getdowry();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getdowry();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });
+        /***************************************** */
+
 
     }
 

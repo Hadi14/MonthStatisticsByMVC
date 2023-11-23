@@ -384,4 +384,10 @@
         $goal = StatisticsModel::getinsureGoal($year, $month, $un);
         echo json_encode($goal);
     }
+    /************************************************ */
+    public  function getCurrentDate()
+    {
+        $currdt = StatisticsModel::getcurrdate();
+        echo json_encode($currdt);
+    }
 }
