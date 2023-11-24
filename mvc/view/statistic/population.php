@@ -647,86 +647,114 @@ if (getaces(2) == 0) {
     }
 
     function editAllpopulation() {
-        if (+$('#forAllrecipientName1').val() + +$('#forAllrecipientName2').val() != +$('#forAllrecipientName3').val() + +$('#forAllrecipientName4').val()) {
-            alert("جمع خانوارشهری و روستایی با خانوار با سرپرست مرد و زن برابر نیست!!!")
-            $('#forAllModal').addClass('show');
-            // $('#forAllModal').css('display', 'block');
-        } else {
-            // let s = String(<? //= json_encode($data['Month']); 
-                                ?>);
-            let m = $('#recentMn').text();
-            $.ajax('/MonthStatisticsByMVC/statistics/updateAllPopulation/', {
-                type: 'post',
-                dataType: "json",
-                data: {
-                    'familycity': +$('#forAllrecipientName1').val(),
-                    'familyrural': +$('#forAllrecipientName2').val(),
-                    'familymen': +$('#forAllrecipientName3').val(),
-                    'familywomen': +$('#forAllrecipientName4').val(),
-                    'yr': $('#recentYR').text(),
-                    'mn': m,
-                },
-                success: function(data) {
-                    // console.log(data);
-                    if (data['disableEdit'] == true) {
-                        alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    if (+$('#forAllrecipientName1').val() + +$('#forAllrecipientName2').val() != +$('#forAllrecipientName3').val() + +$('#forAllrecipientName4').val()) {
+                        alert("جمع خانوارشهری و روستایی با خانوار با سرپرست مرد و زن برابر نیست!!!")
+                        $('#forAllModal').addClass('show');
+                        // $('#forAllModal').css('display', 'block');
                     } else {
-                        alert('بروزرسانی با موفقیت انجام شد.');
-                        $('.newColumn').remove();
-                        getAllPopulation();
+                        // let s = String(<? //= json_encode($data['Month']); 
+                                            ?>);
+                        let m = $('#recentMn').text();
+                        $.ajax('/MonthStatisticsByMVC/statistics/updateAllPopulation/', {
+                            type: 'post',
+                            dataType: "json",
+                            data: {
+                                'familycity': +$('#forAllrecipientName1').val(),
+                                'familyrural': +$('#forAllrecipientName2').val(),
+                                'familymen': +$('#forAllrecipientName3').val(),
+                                'familywomen': +$('#forAllrecipientName4').val(),
+                                'yr': $('#recentYR').text(),
+                                'mn': m,
+                            },
+                            success: function(data) {
+                                // console.log(data);
+                                if (data['disableEdit'] == true) {
+                                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                                } else {
+                                    alert('بروزرسانی با موفقیت انجام شد.');
+                                    $('.newColumn').remove();
+                                    getAllPopulation();
+                                }
+                            },
+                        });
                     }
-                },
-            });
-        }
+                    // var x = 0;
+                } else {
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
+                }
+            },
+        });
     }
 
     function editOldPopulation() {
-        // let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
-        let m = $('#recentMn').text();
-        $.ajax('/MonthStatisticsByMVC/statistics/updateOldPopulation/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'one': +$('#forOldrecipientName1').val(),
-                'two': +$('#forOldrecipientName2').val(),
-                'goalFields': +$('#gfiled').val(),
-                'yr': $('#recentYR').text(),
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let m = $('#recentMn').text();
+                    $.ajax('/MonthStatisticsByMVC/statistics/updateOldPopulation/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'one': +$('#forOldrecipientName1').val(),
+                            'two': +$('#forOldrecipientName2').val(),
+                            'goalFields': +$('#gfiled').val(),
+                            'yr': $('#recentYR').text(),
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getAllPopulation();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getAllPopulation();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });
     }
 
     function editAllPeoplePopulation() {
-        // let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
-        let m = $('#recentMn').text();
-        $.ajax('/MonthStatisticsByMVC/statistics/updateAllPeoplePopulation/', {
+
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'AllPeople': +$('#otherrecipientName1').val(),
-                'yr': $('#recentYR').text(),
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let m = $('#recentMn').text();
+                    $.ajax('/MonthStatisticsByMVC/statistics/updateAllPeoplePopulation/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'AllPeople': +$('#otherrecipientName1').val(),
+                            'yr': $('#recentYR').text(),
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getAllPopulation();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getAllPopulation();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });

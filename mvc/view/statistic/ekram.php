@@ -213,8 +213,9 @@ if (getaces(12) == 0) {
             $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(2)'));
         });
     }
-
+    /********************************************* */
     function editRecord(id) {
+
         let y = $('#recentYR').text();
         let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/ekram/getEkrmGoalField/', {
@@ -225,7 +226,6 @@ if (getaces(12) == 0) {
                 'mn': m,
             },
             success: function(data) {
-                // console.log(data[0]);
                 if (data == null) {
                     alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
                 } else {
@@ -243,29 +243,40 @@ if (getaces(12) == 0) {
             },
         });
         $('#otherrecipientName1').addClass('goalfiled');
+
     }
 
-
+    /******************************************************** */
     function editIncome() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/ekram/updateEkram/' + gfield, {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'goalf': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    gfield = $('#goal').val();
+                    $.ajax('/MonthStatisticsByMVC/ekram/updateEkram/' + gfield, {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'goalf': +$('#otherrecipientName1').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getEkram();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getEkram();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });

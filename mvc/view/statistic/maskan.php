@@ -523,19 +523,29 @@ if (getaces(8) == 0) {
 
 
     function editMaskan() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/maskan/updateMskn/' + gfield, {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'goalf': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                upsum();
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    gfield = $('#goal').val();
+                    $.ajax('/MonthStatisticsByMVC/maskan/updateMskn/' + gfield, {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'goalf': +$('#otherrecipientName1').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            upsum();
+                        },
+                    });
+                } else {
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
+                }
             },
         });
     }

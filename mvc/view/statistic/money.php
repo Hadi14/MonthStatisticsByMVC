@@ -190,24 +190,34 @@ if (getaces(3) == 0) {
     }
 
     function editMoney() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        $.ajax('/MonthStatisticsByMVC/statistics/updatemoney/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'mny': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    $.ajax('/MonthStatisticsByMVC/statistics/updatemoney/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'mny': +$('#otherrecipientName1').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getmoney();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getmoney();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });

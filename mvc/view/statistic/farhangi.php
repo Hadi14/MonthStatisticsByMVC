@@ -215,24 +215,34 @@ if (getaces(7) == 0) {
 
 
     function editFarhangi() {
-        let s = String(<?= json_encode($data['Month']); ?>);
-        $.ajax('/MonthStatisticsByMVC/farhangi/updateFrng/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'stu': +$('#otherrecipientName1').val(),
-                'yr': $('#recentYR').text(),
-                // 'mn': s,
-                'mn': $('#recentMn').text(),
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let s = String(<?= json_encode($data['Month']); ?>);
+                    $.ajax('/MonthStatisticsByMVC/farhangi/updateFrng/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'stu': +$('#otherrecipientName1').val(),
+                            'yr': $('#recentYR').text(),
+                            // 'mn': s,
+                            'mn': $('#recentMn').text(),
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getfarhangi();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getfarhangi();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });

@@ -348,47 +348,67 @@ if (getaces(5) == 0) {
     }
 
     function editNumsInsure() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        $.ajax('/MonthStatisticsByMVC/statistics/updateNumInsure/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'wn': +$('#forNumrecipientName1').val(),
-                'jn': +$('#forNumrecipientName2').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': m,
-            },
             success: function(data) {
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    $.ajax('/MonthStatisticsByMVC/statistics/updateNumInsure/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'wn': +$('#forNumrecipientName1').val(),
+                            'jn': +$('#forNumrecipientName2').val(),
+                            'yr': <?= $data['Year']; ?>,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getInsure();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getInsure();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });
     }
 
     function editMoneyInsure() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        $.ajax('/MonthStatisticsByMVC/statistics/updateMonyInsure/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'im': +$('#otherrecipientName1').val(),
-                'yr': <?= $data['Year']; ?>,
-                'mn': m,
-            },
             success: function(data) {
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    $.ajax('/MonthStatisticsByMVC/statistics/updateMonyInsure/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'im': +$('#otherrecipientName1').val(),
+                            'yr': <?= $data['Year']; ?>,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getInsure();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getInsure();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });

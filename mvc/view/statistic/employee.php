@@ -273,26 +273,36 @@ if (getaces(13) == 0) {
 
 
     function editEmployee() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/employee/updateEmply/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'em_offic': +$('#otherrecipientName1').val(),
-                'em_comp': +$('#otherrecipientName2').val(),
-                'em_sum': +$('#otherrecipientName3').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    gfield = $('#goal').val();
+                    $.ajax('/MonthStatisticsByMVC/employee/updateEmply/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'em_offic': +$('#otherrecipientName1').val(),
+                            'em_comp': +$('#otherrecipientName2').val(),
+                            'em_sum': +$('#otherrecipientName3').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getEmployee();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getEmployee();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });

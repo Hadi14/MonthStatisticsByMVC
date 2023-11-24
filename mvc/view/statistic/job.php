@@ -499,28 +499,38 @@ if (getaces(9) == 0) {
 
 
     function editjob() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        $.ajax('/MonthStatisticsByMVC/job/updatejob/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'DNjob1': +$('#DNjob1').val(),
-                'DNjob2': +$('#DNjob2').val(),
-                'DNjob3': +$('#DNjob3').val(),
-                'DNjob4': +$('#DNjob4').val(),
-                'DNjob5': +$('#DNjob5').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    $.ajax('/MonthStatisticsByMVC/job/updatejob/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'DNjob1': +$('#DNjob1').val(),
+                            'DNjob2': +$('#DNjob2').val(),
+                            'DNjob3': +$('#DNjob3').val(),
+                            'DNjob4': +$('#DNjob4').val(),
+                            'DNjob5': +$('#DNjob5').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getAllJobes();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getAllJobes();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });
@@ -529,30 +539,41 @@ if (getaces(9) == 0) {
 
 
     function editotherfieldJob() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        let value = $('#goalf').val();
-        $.ajax('/MonthStatisticsByMVC/job/updateotherfielJob/', {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'gfield': +$('#goalf').val(),
-                'value': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    let value = $('#goalf').val();
+                    $.ajax('/MonthStatisticsByMVC/job/updateotherfielJob/', {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'gfield': +$('#goalf').val(),
+                            'value': +$('#otherrecipientName1').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getAllJobes();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getAllJobes();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });
     }
+
     function removeRecord(grec) {
         $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
             type: 'post',

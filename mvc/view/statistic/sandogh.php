@@ -326,25 +326,35 @@ if (getaces(6) == 0) {
 
 
     function editSandogh() {
-        let y = $('#recentYR').text();
-        let m = $('#recentMn').text();
-        gfield = $('#goal').val();
-        $.ajax('/MonthStatisticsByMVC/sandogh/updateSndgh/' + gfield, {
+        $.ajax('/MonthStatisticsByMVC/statistics/getCurrentDate/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'goalf': +$('#otherrecipientName1').val(),
-                'yr': y,
-                'mn': m,
-            },
             success: function(data) {
-                // console.log(data);
-                if (data['disableEdit'] == true) {
-                    alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                if (data[0]['Year'] == $('#recentYR').text() && data[0]['Month'] == $('#recentMn').text()) {
+                    let y = $('#recentYR').text();
+                    let m = $('#recentMn').text();
+                    gfield = $('#goal').val();
+                    $.ajax('/MonthStatisticsByMVC/sandogh/updateSndgh/' + gfield, {
+                        type: 'post',
+                        dataType: "json",
+                        data: {
+                            'goalf': +$('#otherrecipientName1').val(),
+                            'yr': y,
+                            'mn': m,
+                        },
+                        success: function(data) {
+                            // console.log(data);
+                            if (data['disableEdit'] == true) {
+                                alert('عملیات ویرایش غیر فعال می باشد لطفا به مدیر سیستم مراجعه کنید.');
+                            } else {
+                                alert('بروزرسانی با موفقیت انجام شد.');
+                                $('.newColumn').remove();
+                                getsandogh();
+                            }
+                        },
+                    });
                 } else {
-                    alert('بروزرسانی با موفقیت انجام شد.');
-                    $('.newColumn').remove();
-                    getsandogh();
+                    alert('همکار گرامی!! با توجه به اینکه ماه جاری برای ثبت آمار باز شده است شما امکان ویرایش ماه قبل را ندارید.');
                 }
             },
         });
