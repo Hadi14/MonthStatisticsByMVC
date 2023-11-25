@@ -2,11 +2,6 @@
 if (getaces(4) == 0) {
     exit;
 }
-// $db = Db::getInstance();
-// $sql = "select * from currentdate order by Year desc, Month desc limit 1";
-// $currdate = $db->query($sql);
-// dump($currdate);
-
 ?>
 
 <main class="main users chart-page" id="skip-target">
