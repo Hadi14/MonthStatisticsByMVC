@@ -324,7 +324,7 @@ if (getaces(8) == 0) {
             <div class="modal-body">
                 <form>
                     <div class="mb-0">
-                        <label id="msknfiledlabel1" for="otherrecipientName1" class="col-form-label">تعداد :</label>
+                        <label id="msknfiledlabel1" for="otherrecipientName1" class="col-form-label"></label>
                         <input id="otherrecipientName1" name="otherrecipientName1" type="text" class="form-control">
                         <input id="goal" type="hidden">
                     </div>
@@ -426,7 +426,7 @@ if (getaces(8) == 0) {
             success: function(data) {
                 const dValues = Object.values(data[0]);
                 let sum = 0;
-                for (let i = 0; i < dValues.length - 4; i++) {
+                for (let i = 0; i < dValues.length - 5; i++) {
                     sum += +dValues[i];
                 }
                 let s = String(<?= json_encode($data['Month']); ?>);
@@ -455,6 +455,7 @@ if (getaces(8) == 0) {
     /**************************************************************************************/
     function fillPageTable(data) {
         data.forEach(element => {
+            console.log("*");
             const dValues = Object.values(element);
             let grec = String(dValues[9]) + String(dValues[10]);
             $("<th class='newColumn'>" + dValues[9] + "-" + dValues[10] + "</th>").insertAfter($('thead tr th:nth(0)'));
