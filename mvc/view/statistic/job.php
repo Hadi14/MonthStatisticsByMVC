@@ -419,7 +419,7 @@ if (getaces(9) == 0) {
             $("<td class='newColumn'>" + dValues[5] + "</td>").insertAfter($('tbody tr th:nth(5)'));
             $("<td class='newColumn'>" + dValues[6] + "</td>").insertAfter($('tbody tr th:nth(6)'));
             $("<td class='newColumn'>" + dValues[7] + "</td>").insertAfter($('tbody tr th:nth(7)'));
-            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(8)'));
+            $("<td class='removetd'><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(8)'));
         });
     }
 
@@ -525,6 +525,7 @@ if (getaces(9) == 0) {
                             } else {
                                 alert('بروزرسانی با موفقیت انجام شد.');
                                 $('.newColumn').remove();
+                                $('.removetd').remove();
                                 getAllJobes();
                             }
                         },

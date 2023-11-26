@@ -289,7 +289,7 @@ if (getaces(5) == 0) {
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
             $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
             $("<td class='newColumn'>" + dValues[3] + "</td>").insertAfter($('tbody tr th:nth(3)'));
-            $("<td><a class='removebtn' onclick=removeRecord(" + grec + ") href='#' data-bs-toggle='modal' data-bs-target='#RemoveModal' ><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(4)'));
+            $("<td class='removetd'><a class='removebtn' onclick=removeRecord(" + grec + ") href='#' data-bs-toggle='modal' data-bs-target='#RemoveModal' ><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(4)'));
             // $("<td><button class='bbb'>dfgf</button></td>").insertAfter($('tbody tr th:nth(4)'));
         });
     }
@@ -370,6 +370,7 @@ if (getaces(5) == 0) {
                             } else {
                                 alert('بروزرسانی با موفقیت انجام شد.');
                                 $('.newColumn').remove();
+                                $('.removetd').remove();
                                 getInsure();
                             }
                         },

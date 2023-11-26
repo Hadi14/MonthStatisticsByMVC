@@ -521,7 +521,7 @@ if (getaces(2) == 0) {
             $("<td class='newColumn'>" + element['Hmy_OldPopCity'] + "</td>").insertAfter($('tbody tr th:nth(9)'));
             $("<td class='newColumn'>" + element['Hmy_OldPopRural'] + "</td>").insertAfter($('tbody tr th:nth(10)'));
             $("<td class='newColumn'>" + element['Hmy_AllPopOld'] + "</td>").insertAfter($('tbody tr th:nth(11)'));
-            $("<td><a onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(12)'));
+            $("<td class='removetd'><a onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(12)'));
 
         });
     }
@@ -715,6 +715,7 @@ if (getaces(2) == 0) {
                             } else {
                                 alert('بروزرسانی با موفقیت انجام شد.');
                                 $('.newColumn').remove();
+                                $('.removetd').remove();
                                 getAllPopulation();
                             }
                         },
@@ -749,6 +750,7 @@ if (getaces(2) == 0) {
                             } else {
                                 alert('بروزرسانی با موفقیت انجام شد.');
                                 $('.newColumn').remove();
+                                $('.removetd').remove();
                                 getAllPopulation();
                             }
                         },
