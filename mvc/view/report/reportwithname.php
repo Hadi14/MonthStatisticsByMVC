@@ -152,7 +152,7 @@ if ($_SESSION['level'] != 0) {
                 </tr>
                 <tr>
                     <th scope="row">8</th>
-                    <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیارد ريال)</td>
+                    <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیون ريال)</td>
                     <td id="MrgLmoney">عدم ثبت</td>
                     <td id="u_MrgLmoney">NoUser</td>
                     <td class="Mrgdate">-</td>

@@ -101,7 +101,7 @@ if ($_SESSION['level'] != 0) {
                 </tr>
                 <tr>
                     <th scope="row">8</th>
-                    <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیارد ريال)</td>
+                    <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیون ريال)</td>
                     <td id="MrgLmoney">عدم ثبت</td>
                 </tr>
                 <tr>
@@ -271,12 +271,11 @@ if ($_SESSION['level'] != 0) {
         <button id="printbtn" onclick="window.print();">چاپ فرم</button>
         <button id="printbtn" onclick="downloaWord('exportContent');">دانلود در قالب ورد</button>
         <a id="backbtn" href="<?= getBaseUrl() ?>page/reportselect">بازگشت</a>
-  
+
     </div>
 </footer>
 
 <script>
-   
     $(document).ready(function() {
         population();
         money();
