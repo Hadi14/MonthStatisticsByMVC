@@ -183,8 +183,8 @@ if ($_SESSION['level'] != 0) {
                     <td class="stutime">-</td>
                 </tr>
                 <tr>
-                    <th rowspan="9" scope="row">12</th>
-                    <td rowspan="9">فعالیتهای عمرانی انجام شده </td>
+                    <th rowspan="10" scope="row">12</th>
+                    <td rowspan="10">فعالیتهای عمرانی انجام شده </td>
                     <td colspan="3">تعمیرات مسکن</td>
                     <td id="fix">عدم ثبت</td>
                     <td id="u_fix">NoUser</td>
@@ -239,6 +239,13 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">اجرای تفاهم نامه ساخت مسکن با سپاه(ادامه سنوات قبل)</td>
                     <td id="sepah">عدم ثبت</td>
                     <td id="u_sepah">NoUser</td>
+                    <td class="maskandate">-</td>
+                    <td class="maskantime">-</td>
+                </tr>
+                <tr>
+                    <td colspan="3"> تفاهم نامه ساخت مسکن با بنیاد مسکن</td>
+                    <td id="bonyadmskn">عدم ثبت</td>
+                    <td id="u_bonyadmskn">NoUser</td>
                     <td class="maskandate">-</td>
                     <td class="maskantime">-</td>
                 </tr>
@@ -620,7 +627,8 @@ if ($_SESSION['level'] != 0) {
                 $('#crtrural').text(toLocalStr(dValues[5]));
                 $('#bonyad').text(toLocalStr(dValues[6]));
                 $('#sepah').text(toLocalStr(dValues[7]));
-                $('#allmaskan').text(toLocalStr(dValues[8]));
+                $('#bonyadmskn').text(toLocalStr(dValues[8]));
+                $('#allmaskan').text(toLocalStr(dValues[9]));
 
 
                 $('#u_fix').text(data[1]);
@@ -631,6 +639,7 @@ if ($_SESSION['level'] != 0) {
                 $('#u_crtrural').text(data[1]);
                 $('#u_bonyad').text(data[1]);
                 $('#u_sepah').text(data[1]);
+                $('#u_bonyadmskn').text(data[1]);
                 $('#u_allmaskan').text(data[1]);
             },
         });

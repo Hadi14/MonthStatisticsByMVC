@@ -143,8 +143,8 @@ if ($_SESSION['level'] != 0) {
                     <td id="stunum2">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th rowspan="9" scope="row">12</th>
-                    <td rowspan="9">فعالیتهای عمرانی انجام شده </td>
+                    <th rowspan="10" scope="row">12</th>
+                    <td rowspan="10">فعالیتهای عمرانی انجام شده </td>
                     <td colspan="3">تعمیرات مسکن</td>
                     <td id="fix">عدم ثبت</td>
                     <td id="fix2">عدم ثبت</td>
@@ -185,6 +185,11 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="3">اجرای تفاهم نامه ساخت مسکن با سپاه(ادامه سنوات قبل)</td>
                     <td id="sepah">عدم ثبت</td>
                     <td id="sepah2">عدم ثبت</td>
+                </tr>
+                <tr>
+                    <td colspan="3"> تفاهم نامه ساخت مسکن با بنیاد مسکن</td>
+                    <td id="bonyadmskn">عدم ثبت</td>
+                    <td id="bonyadmskn2">عدم ثبت</td>
                 </tr>
                 <tr>
                     <td colspan="3">جمع</td>
@@ -597,7 +602,8 @@ if ($_SESSION['level'] != 0) {
                 $('#crtrural').text(toLocalStr(dValues[5]));
                 $('#bonyad').text(toLocalStr(dValues[6]));
                 $('#sepah').text(toLocalStr(dValues[7]));
-                $('#allmaskan').text(toLocalStr(dValues[8]));
+                $('#bonyadmskn').text(toLocalStr(dValues[8]));
+                $('#allmaskan').text(toLocalStr(dValues[9]));
             },
         });
     }
@@ -622,7 +628,8 @@ if ($_SESSION['level'] != 0) {
                 $('#crtrural2').text(toLocalStr(dValues[5]));
                 $('#bonyad2').text(toLocalStr(dValues[6]));
                 $('#sepah2').text(toLocalStr(dValues[7]));
-                $('#allmaskan2').text(toLocalStr(dValues[8]));
+                $('#bonyadmskn2').text(toLocalStr(dValues[8]));
+                $('#allmaskan2').text(toLocalStr(dValues[9]));
                 MaskanCompare();
             },
         });
@@ -966,6 +973,10 @@ if ($_SESSION['level'] != 0) {
         let sepah = +$('#sepah').text().replace(/,/g, "");
         let sepah2 = +$('#sepah2').text().replace(/,/g, "");
         (sepah > sepah2) ? $('#sepah2').css('color', 'red'): 0;
+
+        let bmskn = +$('#bonyadmskn').text().replace(/,/g, "");
+        let bmskn2 = +$('#bonyadmskn2').text().replace(/,/g, "");
+        (bmskn > bmskn2) ? $('#bonyadmskn2').css('color', 'red'): 0;
 
         let allmaskan = +$('#allmaskan').text().replace(/,/g, "");
         let allmaskan2 = +$('#allmaskan2').text().replace(/,/g, "");
