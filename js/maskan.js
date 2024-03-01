@@ -6,6 +6,7 @@ var crtc = document.getElementById('crtc');
 var crtr = document.getElementById('crtr');
 var tbm = document.getElementById('tbm');
 var tsep = document.getElementById('tsep');
+var tbmaskan = document.getElementById('tbmaskan');
 
 
 fix.addEventListener('input', () => {
@@ -33,6 +34,9 @@ tbm.addEventListener('input', () => {
 tsep.addEventListener('input', () => {
     sum();
 })
+tbmaskan.addEventListener('input', () => {
+    sum();
+})
 
 
 function sum() {
@@ -44,5 +48,6 @@ function sum() {
     let crtr = +$('#crtr').val();
     let tbm = +$('#tbm').val();
     let tsep = +$('#tsep').val();
-    $('#sum').val(fix + wc + buyc + buyr + crtc + crtr + tbm + tsep);
+    let tbmskn = +$('#tbmaskan').val();
+    $('#sum').val(fix + wc + buyc + buyr + crtc + crtr + tbm + tsep + tbmskn);
 }

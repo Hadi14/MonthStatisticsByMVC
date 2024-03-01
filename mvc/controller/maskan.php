@@ -15,11 +15,12 @@
                 $crtr = $_POST['crtr'];
                 $tbm = $_POST['tbm'];
                 $tsep = $_POST['tsep'];
+                $tbmaskan = $_POST['tbmaskan'];
                 $sum =  $_POST['sum'];
                 $year = $param[0];
                 $month = $param[1];
                 $user = $_SESSION['suname'];
-                MaskanModel::insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $sum, $year, $month, $user);
+                MaskanModel::insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $tbmaskan, $sum, $year, $month, $user);
                 header("Location:" . getBaseUrl() . "page/maskan");
             } catch (mysqli_sql_exception $e) {
                 if ($e->getCode() == 1062) {

@@ -244,6 +244,14 @@ if (getaces(8) == 0) {
                         <div class="col-md-6 ">
                             <div class="input-group mb-2">
                                 <span class="input-group-text">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+                                <input required name="tbmaskan" id="tbmaskan" type="number" class="form-control" placeholder="تعداد ت.نامه با بنیاد مسکن">
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
                                 </span>
                                 <input readonly required name="sum" id="sum" type="number" class="form-control familyoldcity" placeholder="جمع تعداد">
@@ -297,6 +305,10 @@ if (getaces(8) == 0) {
                     <tr>
                         <th scope="row">تفاهم نامه با سپاه</th>
                         <td><a class="editbtn" onclick="editRecord('7')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">تفاهم نامه با بنیاد مسکن</th>
+                        <td><a class="editbtn" onclick="editRecord('8')" href="#" data-bs-toggle="modal" data-bs-target="#dryModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>
                         <th scope="row">جمع تعداد</th>
@@ -387,8 +399,8 @@ if (getaces(8) == 0) {
             success: function(data) {
                 // cnsole.log(data[0]);
                 const dValues = Object.values(data[0]);
-                $('#recentYR').text(dValues[9]);
-                $('#recentMn').text(dValues[10]);
+                $('#recentYR').text(dValues[10]);
+                $('#recentMn').text(dValues[11]);
                 $('#c_fix').text(dValues[0]);
                 $('#c_wc').text(dValues[1]);
                 $('#c_buyc').text(dValues[2]);
@@ -430,7 +442,7 @@ if (getaces(8) == 0) {
                     sum += +dValues[i];
                 }
                 let s = String(<?= json_encode($data['Month']); ?>);
-                gfield = 8;
+                gfield = 9;
                 $.ajax('/MonthStatisticsByMVC/maskan/updateMskn/' + gfield, {
                     type: 'post',
                     dataType: "json",
@@ -458,8 +470,8 @@ if (getaces(8) == 0) {
         data.forEach(element => {
             console.log("*");
             const dValues = Object.values(element);
-            let grec = String(dValues[9]) + String(dValues[10]);
-            $("<th class='newColumn'>" + dValues[9] + "-" + dValues[10] + "</th>").insertAfter($('thead tr th:nth(0)'));
+            let grec = String(dValues[10]) + String(dValues[11]);
+            $("<th class='newColumn'>" + dValues[10] + "-" + dValues[11] + "</th>").insertAfter($('thead tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[0] + "</td>").insertAfter($('tbody tr th:nth(0)'));
             $("<td class='newColumn'>" + dValues[1] + "</td>").insertAfter($('tbody tr th:nth(1)'));
             $("<td class='newColumn'>" + dValues[2] + "</td>").insertAfter($('tbody tr th:nth(2)'));
@@ -469,7 +481,8 @@ if (getaces(8) == 0) {
             $("<td class='newColumn'>" + dValues[6] + "</td>").insertAfter($('tbody tr th:nth(6)'));
             $("<td class='newColumn'>" + dValues[7] + "</td>").insertAfter($('tbody tr th:nth(7)'));
             $("<td class='newColumn'>" + dValues[8] + "</td>").insertAfter($('tbody tr th:nth(8)'));
-            $("<td class='removetd'><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(9)'));
+            $("<td class='newColumn'>" + dValues[9] + "</td>").insertAfter($('tbody tr th:nth(9)'));
+            $("<td class='removetd'><a class='removebtn' onclick=removeRecord(" + grec + ") data-bs-toggle='modal' data-bs-target='#RemoveModal' href='#'><i class='bi bi-trash'></i></a></td>").insertAfter($('tbody tr th:nth(10)'));
         });
     }
 
@@ -516,6 +529,9 @@ if (getaces(8) == 0) {
                     } else if (id == 7) {
                         $('#otherrecipientName1').val(dValues[7]);
                         $('#msknfiledlabel1').text("تفاهم نامه با سپاه:");
+                    } else if (id == 8) {
+                        $('#otherrecipientName1').val(dValues[8]);
+                        $('#msknfiledlabel1').text("تفاهم نامه با بنیاد مسکن:");
                     }
                 }
             },

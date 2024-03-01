@@ -1,10 +1,10 @@
 <? class MaskanModel
 {
-    static  function insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $sum, $year, $month, $user)
+    static  function insertMaskan($fix, $wc, $buyc, $buyr, $crtc, $crtr, $tbm, $tsep, $tbmaskan, $sum, $year, $month, $user)
     {
         $db = Db::getInstance();
         $date = date("Y-m-d H:i:s");
-        $db->insert("insert into maskan (M_fix,M_wcGas,M_Bmc,M_Bmr,M_Cmc,M_Cmr,M_Tbm,M_TSep,M_sum,M_Year,M_Month,M_user,datetime) values  ($fix ,$wc ,$buyc ,$buyr ,$crtc ,$crtr ,$tbm ,$tsep ,$sum ,'$year','$month','$user','$date')");
+        $db->insert("insert into maskan (M_fix,M_wcGas,M_Bmc,M_Bmr,M_Cmc,M_Cmr,M_Tbm,M_TSep,M_Tbmskn,M_sum,M_Year,M_Month,M_user,datetime) values  ($fix ,$wc ,$buyc ,$buyr ,$crtc ,$crtr ,$tbm ,$tsep,$tbmaskan ,$sum ,'$year','$month','$user','$date')");
     }
     /*********************************************************************/
     static  function recentmsknMonth()
@@ -41,8 +41,16 @@
     {
         $db = Db::getInstance();
         $un = $_SESSION['suname'];
-        $ar = array("M_fix", "M_wcGas", "M_Bmc", "M_Bmr", "M_Cmc", "M_Cmr", "M_Tbm", "M_TSep", "M_sum");
+        $ar = array("M_fix", "M_wcGas", "M_Bmc", "M_Bmr", "M_Cmc", "M_Cmr", "M_Tbm", "M_TSep", "M_Tbmskn", "M_sum");
         $level = $db->query("select level from users where user='$un'");
+        // echo $Goal;
+        // echo "<br>";
+        // echo $goalf;
+        // echo "<br>";
+        // echo $ar[$Goal];
+        // echo "<br>";
+        // echo $goalf;
+        // exit;
         if ($level[0]['level'] == "0")
             $sql = "update maskan set $ar[$Goal]=$goalf where M_Year= '$y' and M_Month= '$m'"; // برای اینکه رکورد ثبت شده توسط هر کاربری قابل ویرایش توسط مدیر اصلی باشد 
         else
