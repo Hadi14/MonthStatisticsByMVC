@@ -275,7 +275,7 @@ if ($_SESSION['level'] != 0) {
     <div class="btns">
         <button id="printbtn" onclick="window.print();">چاپ فرم</button>
         <button id="printbtn" onclick="downloaWord('exportContent');">دانلود در قالب ورد</button>
-        <a id="backbtn" href="<?= getBaseUrl() ?>page/reportselect2month">بازگشت</a>
+        <a id="backbtn" href="<?= getBaseUrl() ?>page/reporttwoMonListly">بازگشت</a>
     </div>
 </footer>
 
