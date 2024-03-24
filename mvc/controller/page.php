@@ -212,6 +212,26 @@ class PageController
         }
     }
     /**************************************************************** */
+    function reporttwoMonByList()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::renderReport('/report/reporttwomonthListly.php', $currdt[0], "reporttowmonth");
+        }
+    }
+    /**************************************************************** */
+    function reporttwoMonListly()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::render('/report/reportselecttwomonthforListCompare.php');
+        }
+    }
+    /**************************************************************** */
     function uploadfile()
     {
         if (!isset($_SESSION['suname'])) {

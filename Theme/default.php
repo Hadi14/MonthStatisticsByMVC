@@ -230,7 +230,8 @@
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/reportselectwithname">گزارش ماهیانه (نام)</a>
                                 </li>
                                 <li>
-                                    <a class="submenu" href="<?= getBaseUrl() ?>page/reportselect2month">گزارش دوماهه</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/reportselect2month">گزارش دوماهه ستونی</a>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/reporttwoMonListly">گزارش دوماهه لیستی</a>
                                 </li>
                             </ul>
                         </li>

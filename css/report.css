@@ -23,6 +23,12 @@ table {
 
 }
 
+#ListTD {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 td,
 th {
     border: 1px solid lightgray;
