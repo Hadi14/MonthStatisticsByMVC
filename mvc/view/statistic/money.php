@@ -46,7 +46,7 @@ if (getaces(3) == 0) {
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="mny" type="number" class="form-control familycity" placeholder="مبلغ معیشت (میلیارد ريال)">
+                                <input required name="mny" type="number" class="form-control familycity" placeholder="مبلغ معیشت از ابتدای سال(میلیارد ريال)">
                             </div>
 
                         </div>
@@ -68,7 +68,7 @@ if (getaces(3) == 0) {
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">مبلغ معیشت (میلیارد ريال)</th>
+                        <th scope="row">مبلغ معیشت از ابتدای سال(میلیارد ريال)</th>
                         <td><a class="editbtn" onclick="editRecord()" href="#" data-bs-toggle="modal" data-bs-target="#MoneyModal"><i class="bi bi-pencil-square"></i></a></td>
                     </tr>
                     <tr>

@@ -94,7 +94,7 @@ if ($_SESSION['level'] != 0) {
                     <td colspan="4">مبلغ جهیزیه و کمک هزینه ازدواج پرداخت شده(میلیارد ريال)</td>
                     <td id="dowmoney">عدم ثبت</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <th scope="row">7</th>
                     <td colspan="4">تعداد وام ازدواج پرداخت شده</td>
                     <td id="MrgLnum">عدم ثبت</td>
@@ -103,24 +103,28 @@ if ($_SESSION['level'] != 0) {
                     <th scope="row">8</th>
                     <td colspan="4">مبلغ وام ازدواج پرداخت شده(میلیون ريال)</td>
                     <td id="MrgLmoney">عدم ثبت</td>
-                </tr>
+                </tr> -->
                 <tr>
-                    <th scope="row">9</th>
+                    <!-- <th scope="row">9</th> -->
+                    <th scope="row">7</th>
                     <td colspan="4">تعداد وام قرض الحسنه پرداخت شده به نیازمندان(وجوه اداره شده، حمایتی، ودیعه، درمان، فرهنگی، رسالت، مهر)</td>
                     <td id="leonnum">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th scope="row">10</th>
+                    <!-- <th scope="row">10</th> -->
+                    <th scope="row">8</th>
                     <td colspan="4">مبلغ وام های قرض الحسنه پرداخت شده به نیازمندان(میلیارد ريال)</td>
                     <td id="leonmoney">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th scope="row">11</th>
+                    <!-- <th scope="row">11</th> -->
+                    <th scope="row">9</th>
                     <td colspan="4">تعداد دانش آموزان و دانشجویان تحت حمایت</td>
                     <td id="stunum">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th rowspan="10" scope="row">12</th>
+                    <!-- <th rowspan="10" scope="row">12</th> -->
+                    <th rowspan="10" scope="row">10</th>
                     <td rowspan="10">فعالیتهای عمرانی انجام شده </td>
                     <td colspan="3">تعمیرات مسکن</td>
                     <td id="fix">عدم ثبت</td>
@@ -164,7 +168,8 @@ if ($_SESSION['level'] != 0) {
                     <td id="allmaskan">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th rowspan="8" scope="row">13</th>
+                    <!-- <th rowspan="8" scope="row">13</th> -->
+                    <th rowspan="8" scope="row">11</th>
                     <td rowspan="8">فعالیتهای اشتغال</td>
                     <td rowspan="6">اشتغال ایجاد شده</td>
                     <td colspan="2">اشتغال مستقیم از طریق کاریابی</td>
@@ -199,7 +204,8 @@ if ($_SESSION['level'] != 0) {
                     <td id="jsup">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th rowspan="4" scope="row">14</th>
+                    <!-- <th rowspan="4" scope="row">14</th> -->
+                    <th rowspan="4" scope="row">12</th>
                     <td rowspan="4">بیمه های اجتماعی</td>
                     <td colspan="3">تعداد زنان سرپرست خانوار</td>
                     <td id="inwom">عدم ثبت</td>
@@ -217,7 +223,8 @@ if ($_SESSION['level'] != 0) {
                     <td id="insmoney">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th rowspan="8" scope="row">15</th>
+                    <!-- <th rowspan="8" scope="row">15</th> -->
+                    <th rowspan="8" scope="row">13</th>
                     <td rowspan="8">مشارکتهای مردمی</td>
                     <td colspan="3">صدقات (میلیارد ریال)</td>
                     <td id="charity">عدم ثبت</td>
@@ -236,11 +243,11 @@ if ($_SESSION['level'] != 0) {
                     <td id="supports">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <td colspan="3">زکات و کفارات (میلیارد ریال)</td>
+                    <td colspan="3">زکات و کفارات(میلیارد ریال)</td>
                     <td id="zakat">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <td colspan="3">مبتنی بر نیاز</td>
+                    <td colspan="3">مبتنی بر نیاز(میلیارد ریال)</td>
                     <td id="basneed">عدم ثبت</td>
                 </tr>
                 <tr>
@@ -252,7 +259,8 @@ if ($_SESSION['level'] != 0) {
                     <td id="marakezmoney">عدم ثبت</td>
                 </tr>
                 <tr>
-                    <th rowspan="3" scope="row">16</th>
+                    <!-- <th rowspan="3" scope="row">16</th> -->
+                    <th rowspan="3" scope="row">14</th>
                     <td rowspan="3">تعداد پرسنل</td>
                     <td colspan="3">رسمی</td>
                     <td id="offi">عدم ثبت</td>

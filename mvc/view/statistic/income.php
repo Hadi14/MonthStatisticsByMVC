@@ -167,7 +167,7 @@ if (getaces(11) == 0) {
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <label class="mt-3 mb-0" for="">کل درآمدها(میلیارد ريال):</label>
+                            <label class="mt-3 mb-0" for="">کل درآمدهای اختصاصی+و.امانی(میلیارد ريال):</label>
                             <div class="input-group pt-0 mb-2">
                                 <span class="input-group-text">
                                     <i class="fas fa-pen"></i>
