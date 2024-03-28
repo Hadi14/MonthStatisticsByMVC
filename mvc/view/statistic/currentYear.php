@@ -18,25 +18,10 @@ if ($_SESSION['level'] != 0) {
             <button class="btn btn-primary" type="submit">ثبت</button>
         </div>
 </form>
-<div class="mt-3"><span>سال جاری فعلی: </span><b id="curYear"></span>
-</div>
+<div class="mt-3"><span>سال جاری فعلی: </span><b id="curYear"></b></div>
+
+
 <script>
-    function insertcurrent() {
-        // alert($('#year').val() + $('#mon').val());
-
-        // $.ajax('/MonthStatisticsByMVC/statistics/insertcurrentdate/', {
-        //     type: 'post',
-        //     dataType: "json",
-        //     data: {
-        //         'cyear': $('#year').val(),
-        //         'cmonth': $('#mon').val(),
-        //     },
-        //     success: function(data) {
-        //         alert('ثبت با موفقیت انجام شد.');
-        //     },
-        // });
-    }
-
     $(document).ready(function() {
         $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
             type: 'post',

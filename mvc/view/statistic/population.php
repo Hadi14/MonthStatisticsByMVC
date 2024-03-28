@@ -283,6 +283,7 @@ if (getaces(2) == 0) {
                 </form>
             </div>
         </div>
+        <div class="mt-3"><span>سال جاری نمایش اطلاعات: </span><b id="curYear"></b></div>
         <div class="row mt-5">
             <table class="table table-striped">
                 <p id="disEditNote"></p>
@@ -497,10 +498,13 @@ if (getaces(2) == 0) {
             type: 'post',
             dataType: "json",
             data: {
-                year: <?= $data['Year']; ?>
+                'year': <?= $data['Year']; ?>
+                // 'year': '1402'
             },
             success: function(data) {
-                fillPageTable(data);
+                // console.log(<?= $data['Year']; ?>);
+                // console.log($('#curYear').text());
+                // fillPageTable(data);
             },
         });
     }
@@ -765,4 +769,14 @@ if (getaces(2) == 0) {
     function removeRecord(grec) {
         $('#goalrec').val(grec);
     }
+
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                $('#curYear').text(data[0]['value']);
+            },
+        });
+    });
 </script>
