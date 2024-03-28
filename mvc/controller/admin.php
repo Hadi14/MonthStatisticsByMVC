@@ -23,6 +23,12 @@
         $recs = AdminModel::getLastNotes();
         echo json_encode($recs);
     }
+    // *****************************************************
+    function getCurrentYear()
+    {
+        $recs = AdminModel::getCurYear();
+        echo json_encode($recs);
+    }
     /************************************************ */
     public  function getNoteGoalField()
     {
@@ -43,6 +49,13 @@
         $user = $_POST['ukey'];
         $goal = AdminModel::getAccessGoal($user);
         echo json_encode($goal);
+    }
+    /************************************************ */
+    public  function currentyear()
+    {
+        $yr = $_POST['year'];
+        $goal = AdminModel::currentyear($yr);
+        header("Location:" . getBaseUrl() . "page/currentyear");
     }
     /******************************************************** */
     public  function EditMenuRecord()

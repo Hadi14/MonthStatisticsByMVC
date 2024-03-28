@@ -42,6 +42,14 @@
         return $g;
     }
     /*****************************************************************/
+    static  function currentyear($yr)
+    {
+        $db = Db::getInstance();
+        $sql = "update variables set value='$yr' where title='currentYear'";
+        $g = $db->modify($sql);
+        return $g;
+    }
+    /*****************************************************************/
     static  function getPreviousAllocation($field)
     {
         $db = Db::getInstance();
@@ -63,6 +71,14 @@
     {
         $db = Db::getInstance();
         $sql = "select * from notes where status=1 order by id desc limit 1 ";
+        $record = $db->query($sql);
+        return $record;
+    }
+    /*********************************************************************/
+    static  function getCurYear()
+    {
+        $db = Db::getInstance();
+        $sql = "select * from variables where title='currentYear'";
         $record = $db->query($sql);
         return $record;
     }

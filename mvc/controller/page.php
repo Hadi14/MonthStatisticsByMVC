@@ -27,6 +27,14 @@ class PageController
             Render::render('/statistic/currentpage.php', "currentpage");
         }
     }
+    function currentyear()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            Render::render('/statistic/currentYear.php', "currentyear");
+        }
+    }
     function money()
     {
         if (!isset($_SESSION['suname'])) {
