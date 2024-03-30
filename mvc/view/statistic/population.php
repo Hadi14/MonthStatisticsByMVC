@@ -510,6 +510,7 @@ if (getaces(2) == 0) {
             dataType: "json",
             success: function(data) {
                 yerr = data[0]['value'];
+                
                 $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
                     type: 'post',
                     dataType: "json",

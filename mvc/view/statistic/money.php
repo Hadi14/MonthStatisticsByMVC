@@ -57,6 +57,7 @@ if (getaces(3) == 0) {
                 </form>
             </div>
         </div>
+        <div class="mt-3"><span>سال جاری نمایش اطلاعات: </span><b id="curYear"></b></div>
         <div class="row mt-5">
             <table class="table table-striped">
                 <p id="disEditNote"></p>
@@ -136,6 +137,15 @@ if (getaces(3) == 0) {
         getmoney();
     });
 
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                $('#curYear').text(data[0]['value']);
+            },
+        });
+    });
 
     // $(document).ready(function() {
     $(document).on('mousedown', '.removebtn', function() {
@@ -167,14 +177,22 @@ if (getaces(3) == 0) {
     }
 
     function getmoney() {
-        $.ajax('/MonthStatisticsByMVC/statistics/getallmoney/', {
+        let yerr = "";
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
             type: 'post',
             dataType: "json",
-            data: {
-                year: <?= $data['Year']; ?>
-            },
             success: function(data) {
-                fillPageTable(data);
+                yerr = data[0]['value'];
+                $.ajax('/MonthStatisticsByMVC/statistics/getallmoney/', {
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        'year': yerr
+                    },
+                    success: function(data) {
+                        fillPageTable(data);
+                    },
+                });
             },
         });
     }

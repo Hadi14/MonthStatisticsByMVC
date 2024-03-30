@@ -87,6 +87,7 @@ if (getaces(13) == 0) {
                 </form>
             </div>
         </div>
+        <div class="mt-3"><span>سال جاری نمایش اطلاعات: </span><b id="curYear"></b></div>
         <div class="row mt-5">
             <table class="table table-striped">
                 <p id="disEditNote"></p>
@@ -180,6 +181,16 @@ if (getaces(13) == 0) {
         getEmployee();
     });
 
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                $('#curYear').text(data[0]['value']);
+            },
+        });
+    });
+
     $(document).on('mousedown', '.removebtn', function() {
         $.ajax('/MonthStatisticsByMVC/statistics/getRemvstatus/', {
             type: 'post',
@@ -209,16 +220,25 @@ if (getaces(13) == 0) {
     }
 
     function getEmployee() {
-        $.ajax('/MonthStatisticsByMVC/employee/getallEmpl/', {
+        let yerr = "";
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
             type: 'post',
             dataType: "json",
-            data: {
-                year: <?= $data['Year']; ?>
-            },
             success: function(data) {
-                fillPageTable(data);
+                yerr = data[0]['value'];
+                $.ajax('/MonthStatisticsByMVC/employee/getallEmpl/', {
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        'year': yerr
+                    },
+                    success: function(data) {
+                        fillPageTable(data);
+                    },
+                });
             },
         });
+
     }
 
     function fillPageTable(data) {
