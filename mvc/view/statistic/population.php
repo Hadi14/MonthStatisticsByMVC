@@ -472,6 +472,16 @@ if (getaces(2) == 0) {
         getAllPopulation();
     });
 
+    $(document).ready(function() {
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
+            type: 'post',
+            dataType: "json",
+            success: function(data) {
+                $('#curYear').text(data[0]['value']);
+            },
+        });
+    });
+
     function recentMonth() {
         $.ajax('/MonthStatisticsByMVC/statistics/getrecentmonth/', {
             type: 'post',
@@ -494,19 +504,25 @@ if (getaces(2) == 0) {
     }
 
     function getAllPopulation() {
-        $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
+        let yerr = "";
+        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
             type: 'post',
             dataType: "json",
-            data: {
-                'year': <?= $data['Year']; ?>
-                // 'year': '1402'
-            },
             success: function(data) {
-                // console.log(<?= $data['Year']; ?>);
-                // console.log($('#curYear').text());
-                // fillPageTable(data);
+                yerr = data[0]['value'];
+                $.ajax('/MonthStatisticsByMVC/statistics/getallpopulation/', {
+                    type: 'post',
+                    dataType: "json",
+                    data: {
+                        'year': yerr
+                    },
+                    success: function(data) {
+                        fillPageTable(data);
+                    },
+                });
             },
         });
+
     }
 
     function fillPageTable(data) {
@@ -531,23 +547,16 @@ if (getaces(2) == 0) {
     }
 
     function editRecord(id) {
-        // let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
         let y = $('#recentYR').text();
         let m = $('#recentMn').text();
-        // console.log(y, m);
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                // 'yr': <? //= $data['Year']; 
-                            //                     
-                            ?>//,
                 'yr': y,
                 'mn': m,
             },
             success: function(data) {
-                // console.log(data[0]);
                 if (data == null) {
                     alert("رکورد ماه اخیر قابل ویرایش نیست زیرا توسط شما ثبت نشده است لطفا به مدیر سیستم مراجعه کنید.");
                 } else {
@@ -579,16 +588,13 @@ if (getaces(2) == 0) {
     }
 
     function othereditRecord(id) {
-        // let s = String(<? //= json_encode($data['Month']); 
-                            ?>);
+
         let y = $('#recentYR').text();
         let m = $('#recentMn').text();
         $.ajax('/MonthStatisticsByMVC/statistics/getGoalField/', {
             type: 'post',
             dataType: "json",
             data: {
-                // 'yr': <? //= $data['Year']; 
-                            ?>,
                 'yr': y,
                 'mn': m,
             },
@@ -662,6 +668,7 @@ if (getaces(2) == 0) {
                         // $('#forAllModal').css('display', 'block');
                     } else {
                         // let s = String(<? //= json_encode($data['Month']); 
+                                            //                                     
                                             ?>);
                         let m = $('#recentMn').text();
                         $.ajax('/MonthStatisticsByMVC/statistics/updateAllPopulation/', {
@@ -769,14 +776,4 @@ if (getaces(2) == 0) {
     function removeRecord(grec) {
         $('#goalrec').val(grec);
     }
-
-    $(document).ready(function() {
-        $.ajax('/MonthStatisticsByMVC/admin/getCurrentYear/', {
-            type: 'post',
-            dataType: "json",
-            success: function(data) {
-                $('#curYear').text(data[0]['value']);
-            },
-        });
-    });
 </script>

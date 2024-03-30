@@ -201,6 +201,9 @@
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/currentpage">ماه جاری ثبت</a>
                                 </li>
                                 <li>
+                                    <a class="submenu" href="<?= getBaseUrl() ?>page/currentyear">تعریف سال نمایش</a>
+                                </li>
+                                <li>
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/defineMenu">تعریف منوها</a>
                                 </li>
                                 <li>
@@ -212,9 +215,7 @@
                                 <li>
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/notification">ثبت نوتیفیکیشن</a>
                                 </li>
-                                <li>
-                                    <a class="submenu" href="<?= getBaseUrl() ?>page/currentyear">تعریف سال جاری</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li>

@@ -320,9 +320,6 @@
     public  function getallpopulation()
     {
         $year = $_POST['year'];
-        echo $year;
-        exit;
-        
         $u = $_SESSION['suname'];
         $recs = StatisticsModel::allPopulation($year, $u);
         echo json_encode($recs);
