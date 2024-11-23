@@ -7,7 +7,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/statistic/home.php', "custom-script");
+            Render::renderPage('/statistic/home.php', "custom-script");
         }
     }
     function population()
@@ -16,7 +16,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/population.php', "population", $currdt[0]);
+            Render::renderPage('/statistic/population.php', "population", $currdt[0]);
         }
     }
     function currentpage()
@@ -24,7 +24,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/statistic/currentpage.php', "currentpage");
+            Render::renderPage('/statistic/currentpage.php', "currentpage");
         }
     }
     function currentyear()
@@ -32,7 +32,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/statistic/currentYear.php', "currentyear");
+            Render::renderPage('/statistic/currentYear.php', "currentyear");
         }
     }
     function money()
@@ -41,7 +41,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/money.php', "money", $currdt[0]);
+            Render::renderPage('/statistic/money.php', "money", $currdt[0]);
         }
     }
     function dowry()
@@ -50,7 +50,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/dowry.php', "dowry", $currdt[0]);
+            Render::renderPage('/statistic/dowry.php', "dowry", $currdt[0]);
         }
     }
     function insure()
@@ -59,7 +59,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/insure.php', "insure", $currdt[0]);
+            Render::renderPage('/statistic/insure.php', "insure", $currdt[0]);
         }
     }
     function sandogh()
@@ -68,7 +68,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/sandogh.php', "sandogh", $currdt[0]);
+            Render::renderPage('/statistic/sandogh.php', "sandogh", $currdt[0]);
         }
     }
     function farhangi()
@@ -77,7 +77,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/farhangi.php', "farhangi", $currdt[0]);
+            Render::renderPage('/statistic/farhangi.php', "farhangi", $currdt[0]);
         }
     }
     function maskan()
@@ -86,7 +86,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/maskan.php', "maskan", $currdt[0]);
+            Render::renderPage('/statistic/maskan.php', "maskan", $currdt[0]);
         }
     }
     function job()
@@ -95,7 +95,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/job.php', "job", $currdt[0]);
+            Render::renderPage('/statistic/job.php', "job", $currdt[0]);
         }
     }
     function income()
@@ -104,7 +104,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/income.php', "income", $currdt[0]);
+            Render::renderPage('/statistic/income.php', "income", $currdt[0]);
         }
     }
     function ekram()
@@ -113,7 +113,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/ekram.php', "ekram", $currdt[0]);
+            Render::renderPage('/statistic/ekram.php', "ekram", $currdt[0]);
         }
     }
     function employee()
@@ -122,7 +122,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/employee.php', "employee", $currdt[0]);
+            Render::renderPage('/statistic/employee.php', "employee", $currdt[0]);
         }
     }
     /**************************************************************** */
@@ -152,7 +152,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/report/reportselectwithnam.php', $currdt[0]);
+            Render::renderPage('/report/reportselectwithnam.php', $currdt[0]);
         }
     }
     /**************************************************************** */
@@ -162,7 +162,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/report/reportselect.php', $currdt[0]);
+            Render::renderPage('/report/reportselect.php', $currdt[0]);
         }
     }
     /**************************************************************** */
@@ -172,7 +172,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/user/registeruser.php', $currdt[0]);
+            Render::renderPage('/user/registeruser.php', $currdt[0]);
         }
     }
     function defineMenu()
@@ -180,7 +180,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/admin/definemenu.php');
+            Render::renderPage('/admin/definemenu.php');
         }
     }
     /****************************************************************** */
@@ -193,10 +193,10 @@ class PageController
             // exit;
             if (isset($err[0])) {
                 if ($err[0] == 'error') {
-                    Render::render('admin/allocationaccess.php', "custom-script", array(), true);
+                    Render::renderPage('admin/allocationaccess.php', "custom-script", array(), true);
                 }
             } else {
-                Render::render('/admin/allocationaccess.php');
+                Render::renderPage('/admin/allocationaccess.php');
             }
         }
     }
@@ -206,7 +206,7 @@ class PageController
         if (!isset($_SESSION['suname'])) {
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
-            Render::render('/report/reportselecttwomonth.php');
+            Render::renderPage('/report/reportselecttwomonth.php');
         }
     }
     /**************************************************************** */
@@ -236,7 +236,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/report/reportselecttwomonthforListCompare.php');
+            Render::renderPage('/report/reportselecttwomonthforListCompare.php');
         }
     }
     /**************************************************************** */
@@ -246,7 +246,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/statistic/uploadform.php', "", $currdt[0]);
+            Render::renderPage('/statistic/uploadform.php', "", $currdt[0]);
         }
     }
     /**************************************************************** */
@@ -256,7 +256,7 @@ class PageController
             header("Location:" . getBaseUrl() . 'user/login/');
         } else {
             $currdt = StatisticsModel::getcurrdate();
-            Render::render('/admin/notification.php', "", $currdt[0]);
+            Render::renderPage('/admin/notification.php', "", $currdt[0]);
         }
     }
 }
