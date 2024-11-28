@@ -50,7 +50,7 @@
     }
 
     /*********************************************************************/
-    static  function changepass($now, $new,)
+    static  function changepass($now, $new)
     {
         $db = Db::getInstance();
         $user = $_SESSION['suname'];

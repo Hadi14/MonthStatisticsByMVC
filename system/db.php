@@ -20,9 +20,12 @@
         // Create connection
         $this->connect = new mysqli($s, $u, $p, $db);
         // Check connection
+        // mysqli($db, "SET NAMES utf8");
         if ($this->connect->connect_error) {
             echo "Connection failed: " . $this->connect->connect_error;
         }
+        $this->connect->query("SET NAMES 'utf8'");
+
     }
     /******************************************************************** */
     public static function getInstance($options = null)
