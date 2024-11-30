@@ -182,18 +182,18 @@
                     </ul>
                     <span class="system-menu__title mt-5">پنل مدیر سیستم</span>
                     <ul class="sidebar-body-menu admin_menu">
-                        <li>
+                        <li class="definitionText">
                             <a href="#"><span class="icon edit" aria-hidden="true"></span>تعریف و ویرایش کاربران</a>
                         </li>
                         <li>
-                            <a class="show-cat-btn" href="##">
+                            <a class="show-cat-btn definitionTitle" href="##">
                                 <span class="icon category" aria-hidden="true"></span>تعاریف
                                 <span class="category__btn transparent-btn" title="Open list">
                                     <span class="sr-only">Open list</span>
                                     <span class="icon arrow-down" aria-hidden="true"></span>
                                 </span>
                             </a>
-                            <ul class="cat-sub-menu">
+                            <ul class="cat-sub-menu definitionItems">
                                 <li>
                                     <a class="submenu" href="<?= getBaseUrl() ?>page/registeruser">تعریف کاربر</a>
                                 </li>
@@ -459,10 +459,11 @@
 
 <?
 $arr = getallaces();
-if ($arr === "") {
+// dump($arr);
+// dump($_SESSION['level']);
+if ($arr === "" && $_SESSION['level']!=0 && $_SESSION['level']!=1 ) {
 ?>
     <script>
-        alert("هیچگونه دسترسی برای شما تعریف نشده است به مدیر سیستم مراجعه کنید.");
         $('.hemayat_LI').css('display', 'none');
         $('.sandogh_LI').css('display', 'none');
         $('.fargangi_LI').css('display', 'none');
@@ -472,16 +473,21 @@ if ($arr === "") {
         $('.employee_LI').css('display', 'none');
         $('.admin_menu').css('display', 'none');
         $('.system-menu__title').css('display', 'none');
+        alert("هیچگونه دسترسی برای شما تعریف نشده است به مدیر سیستم مراجعه کنید.");
     </script>
 <?
     exit;
 }
-if ($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) {
+
+
+
+if ($_SESSION['level']!=0 && $_SESSION['level']!=1 ){
+if (($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) ) {
 ?>
     <script>
         $('.hemayat_LI').css('display', 'none');
     </script>
-    <? } else {
+    <? } elseif($_SESSION['level']!=0 && $_SESSION['level']!=1) {
     if ($arr[2] == 0) { ?>
         <script>
             $('.hemayat_LI_Pop').css('display', 'none');
@@ -503,31 +509,35 @@ if ($arr[2] == 0 && $arr[3] == 0 && $arr[4] == 0 && $arr[5] == 0) {
         </script>
     <? }
 }
-if ($arr[6] == 0) { ?>
+}
+
+if ($_SESSION['level']!=0 && $_SESSION['level']!=1 ){
+
+if ($arr[6] == 0 ) { ?>
     <script>
         $('.sandogh_LI').css('display', 'none');
     </script>
 <? }
-if ($arr[7] == 0) { ?>
+if ($arr[7] == 0 ) { ?>
     <script>
         $('.fargangi_LI').css('display', 'none');
     </script>
 <? }
-if ($arr[8] == 0) { ?>
+if ($arr[8] == 0 ) { ?>
     <script>
         $('.maskan_LI').css('display', 'none');
     </script>
 <? }
-if ($arr[9] == 0) { ?>
+if ($arr[9] == 0 ) { ?>
     <script>
         $('.job_LI').css('display', 'none');
     </script>
 <? }
-if ($arr[11] == 0 && $arr[12] == 0) { ?>
+if ($arr[11] == 0 && $arr[12] == 0 ) { ?>
     <script>
         $('.mosharekat_LI').css('display', 'none');
     </script>
-    <? } else {
+    <? } elseif($_SESSION['level']!=0 && $_SESSION['level']!=1) {
     if ($arr[11] == 0) {
     ?>
         <script>
@@ -540,17 +550,39 @@ if ($arr[11] == 0 && $arr[12] == 0) { ?>
         </script>
     <? }
 }
-if ($arr[13] == 0) { ?>
+}
+
+
+
+if ($_SESSION['level']!=0 && $_SESSION['level']!=1 ){
+if ($arr[13] == 0 ) { ?>
     <script>
         $('.employee_LI').css('display', 'none');
     </script>
-<? } ?>
+<? }} ?>
 <?
-if ($_SESSION['level'] != 0) {
+if ($_SESSION['level'] != 0 && $_SESSION['level'] != 1 ) {
 ?>
     <script>
         $('.system-menu__title').css('display', 'none');
         $('.admin_menu').css('display', 'none');
+
+    </script>
+<?
+}
+?>
+
+
+
+
+<?
+if ( $_SESSION['level'] == 1) {
+?>
+    <script>
+        // $('.system-menu__title').css('display', 'none');
+        $('.definitionTitle').css('display', 'none'); 
+        $('.definitionItems').css('display', 'none'); 
+        $('.definitionText').css('display', 'none'); 
     </script>
 <?
 }

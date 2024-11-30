@@ -1,5 +1,5 @@
 <?
-if (getaces(8) == 0) {
+if (getaces(8) == 0 && $_SESSION['level']!=0 && $_SESSION['level']!=1) {
     exit;
 }
 ?>

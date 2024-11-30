@@ -1,5 +1,5 @@
 <?
-if ($_SESSION['level'] != 0) {
+if ($_SESSION['level'] != 0 && $_SESSION['level'] != 1) {
     exit;
 }
 
