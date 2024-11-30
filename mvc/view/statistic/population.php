@@ -206,7 +206,7 @@ if (getaces(2) == 0 && $_SESSION['level']!=0 && $_SESSION['level']!=1) {
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
-                                <input required name="familymen" id="familymen" type="number" class="form-control familymen" placeholder="تعداد خانوار باسرپرست مزد">
+                                <input required name="familymen" id="familymen" type="number" class="form-control familymen" placeholder="تعداد خانوار باسرپرست مرد">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
