@@ -22,6 +22,10 @@ function getnameAccess($filed)
     $db = Db::getInstance();
     $sql = "select A_user from accesses where $filed=1";
     $acesUsers = $db->query($sql);
+    if (!$acesUsers)
+        return "NoAccess";
+
+    // exit;
     if (sizeof($acesUsers) == 1) {
         return $acesUsers[0]['A_user'];
     } else if (sizeof($acesUsers) > 1) {
@@ -78,7 +82,7 @@ function getnameAccess($filed)
         <ul class="top-cat-list">
             <?
             $count = 0;
-            $insrtRecord=array();
+            $insrtRecord = array();
             $row = getLastInsert('hemayat', 'Year', 'Month', $yer, $mnth);
             if ($row != "") {
                 $insrtRecord[]['user'] = $row[0]['user'];
@@ -185,6 +189,9 @@ function getnameAccess($filed)
             // dump($insrtRecord);
             $insertedUsers = array();
             foreach ($insrtRecord as $key => $value) {
+                // if ($value['user']="") {
+                //     echo "ddddddddddddd";
+                // }
                 $insertedUsers[] = strtolower($value['user']);
             }
             foreach ($aces as $key => $value) {
@@ -192,8 +199,7 @@ function getnameAccess($filed)
                     $db = Db::getInstance();
                     $sql = "select name,family from users where user='$value'";
                     $namefamily = $db->query($sql);
-
-                    $username = $namefamily[0]['name'] . " " . $namefamily[0]['family'];
+                    $username = (!$namefamily) ? "بدون کاربر تخصیص یافته" : $namefamily[0]['name'] . " " . $namefamily[0]['family'];
                     echo '<script>$(".top-cat-list").append("<li><a href=##><div class=top-cat-list__title>' . $key . '<span>' . 'عدم ثبت' . '</span></div><div class=top-cat-list__subtitle>' . $username . '<span class=danger>عدم ثبت</span></div></a><li>")</script>';
                     // echo "<br>" . $key . " " . $value;
                 }
