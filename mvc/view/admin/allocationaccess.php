@@ -320,8 +320,13 @@ if ($err) {
                 'ukey': this.value,
             },
             success: function(data) {
+                if (data == null) {
+                    alert("برای این کاربر هیچ دسترسی تعریف نشده است");
+                    
+                }else{
                 const dValues = Object.values(data[0]);
                 // $('#otherrecipientName1').val(ukey);
+
                 $('#hemayat_chb_insrt').prop('checked', +dValues[1]);
                 $('#popu_chb_insrt').prop('checked', +dValues[2]);
                 $('#money_chb_insrt').prop('checked', +dValues[3]);
@@ -335,6 +340,8 @@ if ($err) {
                 $('#income_chb_insrt').prop('checked', +dValues[11]);
                 $('#ekram_chb_insrt').prop('checked', +dValues[12]);
                 $('#employee_chb_insrt').prop('checked', +dValues[13]);
+            }
+                
             },
         });
     });

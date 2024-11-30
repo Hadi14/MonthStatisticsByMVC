@@ -220,6 +220,7 @@
                 header("Location:" . getBaseUrl() . "page/allocationaccess/error");
             }
         } catch (mysqli_sql_exception $e) {
+               echo "<script>console.log('salam Aleykom')</script>";
             if ($e->getCode() == 1062) {
                 echo "<script>alert('این رکورد قبلا ثبت شده است در صورت نیاز آن را ویرایش نمائید.');  window.location.href ='"  . getBaseUrl() . "page/allocationaccess';</script>";
             } else {
