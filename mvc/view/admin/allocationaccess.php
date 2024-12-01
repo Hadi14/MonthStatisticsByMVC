@@ -321,27 +321,27 @@ if ($err) {
             },
             success: function(data) {
                 if (data == null) {
-                    alert("برای این کاربر هیچ دسترسی تعریف نشده است");
-                    
-                }else{
-                const dValues = Object.values(data[0]);
-                // $('#otherrecipientName1').val(ukey);
+                    alert("برای این کاربر هم اکنون هیچ دسترسی تعریف نشده است");
 
-                $('#hemayat_chb_insrt').prop('checked', +dValues[1]);
-                $('#popu_chb_insrt').prop('checked', +dValues[2]);
-                $('#money_chb_insrt').prop('checked', +dValues[3]);
-                $('#dowry_chb_insrt').prop('checked', +dValues[4]);
-                $('#insure_chb_insrt').prop('checked', +dValues[5]);
-                $('#sandogh_chb_insrt').prop('checked', +dValues[6]);
-                $('#farhangi_chb_insrt').prop('checked', +dValues[7]);
-                $('#maskan_chb_insrt').prop('checked', +dValues[8]);
-                $('#job_chb_insrt').prop('checked', +dValues[9]);
-                $('#mosharekat_chb_insrt').prop('checked', +dValues[10]);
-                $('#income_chb_insrt').prop('checked', +dValues[11]);
-                $('#ekram_chb_insrt').prop('checked', +dValues[12]);
-                $('#employee_chb_insrt').prop('checked', +dValues[13]);
-            }
-                
+                } else {
+                    const dValues = Object.values(data[0]);
+                    // $('#otherrecipientName1').val(ukey);
+
+                    $('#hemayat_chb_insrt').prop('checked', +dValues[1]);
+                    $('#popu_chb_insrt').prop('checked', +dValues[2]);
+                    $('#money_chb_insrt').prop('checked', +dValues[3]);
+                    $('#dowry_chb_insrt').prop('checked', +dValues[4]);
+                    $('#insure_chb_insrt').prop('checked', +dValues[5]);
+                    $('#sandogh_chb_insrt').prop('checked', +dValues[6]);
+                    $('#farhangi_chb_insrt').prop('checked', +dValues[7]);
+                    $('#maskan_chb_insrt').prop('checked', +dValues[8]);
+                    $('#job_chb_insrt').prop('checked', +dValues[9]);
+                    $('#mosharekat_chb_insrt').prop('checked', +dValues[10]);
+                    $('#income_chb_insrt').prop('checked', +dValues[11]);
+                    $('#ekram_chb_insrt').prop('checked', +dValues[12]);
+                    $('#employee_chb_insrt').prop('checked', +dValues[13]);
+                }
+
             },
         });
     });

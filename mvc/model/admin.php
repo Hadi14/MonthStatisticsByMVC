@@ -53,7 +53,7 @@
     static  function getPreviousAllocation($field)
     {
         $db = Db::getInstance();
-        $sql = "select * from accesses where A_aloMaskan=1 and A_user in(select user from users where level=2)";
+        $sql = "select * from accesses where '$field'=1 and A_user in(select user from users where level=2)";
         $g = $db->query($sql);
         return $g;
     }
