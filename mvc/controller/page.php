@@ -260,13 +260,5 @@ class PageController
         }
     }
     /**************************************************************** */
-    function proxy()
-    {
-        if (!isset($_SESSION['suname'])) {
-            header("Location:" . getBaseUrl() . 'user/login/');
-        } else {
-            $currdt = StatisticsModel::getcurrdate();
-            Render::renderPage('/admin/proxy.php', "", $currdt[0]);
-        }
-    }
+
 }

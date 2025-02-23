@@ -103,46 +103,11 @@ if ($_SESSION['level'] != 0) {
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<!--------------------------------- POWERBI REPORT ----------------------------------------------------------->
 <?
-$config = require __DIR__ . '/../../../system/env.php';
-$reportServerUrl = $config['report_server']['url'];
-$serviceAccount = $config['report_server']['user'];
-$servicePassword = $config['report_server']['password'];
 
-// دریافت پارامتر گزارش
-$reportPath = isset($_GET['reportPath']) ? $_GET['reportPath'] : '';
-if (empty($reportPath)) {
-    die("پارامتر گزارش نامعتبر است!");
-}
-
-// ایجاد درخواست به Power BI Report Server
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $reportServerUrl . "/api/v2.0/PowerBIReports" . $reportPath);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "$serviceAccount:$servicePassword");
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true); // فعال در محیط تولید!
-
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-if ($httpCode === 200) {
-    $reportData = json_decode($response, true);
-    $embedUrl = $reportData['EmbedUrl'] . "?rs:Embed=true";
-    header("Location: $embedUrl");
-} else {
-    echo "خطا: کد وضعیت $httpCode";
-}
-
-curl_close($ch);
 ?>
-<iframe
-    width="100%"
-    height="100%"
-    src="<?= getBaseUrl() . 'page/home/' ?>?action=embed_report&reportPath=/newhemayat"
-    frameborder="0"
-    allowfullscreen>
-</iframe>
+<!--------------------------------- POWERBI REPORT ----------------------------------------------------------->
 
 <script>
     $(document).ready(function() {
