@@ -104,9 +104,114 @@ if ($_SESSION['level'] != 0) {
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
 <!--------------------------------- POWERBI REPORT ----------------------------------------------------------->
+<!-- <h3>hadi kiani</h3> -->
 <?
+// function getReportUrl($reportPath)
+// {
 
+//     $reportServerUrl = "http://172.19.66.154:8010/Reports/api/v2.0/PowerBIReports";
+//     $username = "hadi";
+//     $password = "@h61259";
+//     $url = $reportServerUrl . "PowerBIReports(Path='$reportPath')/Export(PBIX)";
+
+//     $ch = curl_init($url);
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//     curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+//     curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
+
+//     $response = curl_exec($ch);
+//     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+//     curl_close($ch);
+
+//     if ($httpCode === 200) {
+//         return $response;
+//     } else {
+//         return "Error: Unable to fetch report.";
+//     }
+//  }
+// $reportPath = "/NewHemayat";
+// $reportData = getReportUrl($reportPath);
+
+
+/******************************* لیست کل گزارشها************************************************** */
+// $reportServerUrl = "http://172.19.66.154:8010/Reports/api/v2.0/PowerBIReports";
+// $username = "hadi";
+// $password = "@h61259";
+// $ch = curl_init($reportServerUrl);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+// curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
+// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+// curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+// curl_setopt($ch, CURLOPT_VERBOSE, true); // لاگ گیری را فعال کنید
+// $response = curl_exec($ch);
+// $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+// $curlError = curl_error($ch);
+// curl_close($ch);
+// echo "HTTP Code: " . $httpCode . "<br>";
+// echo "Response: " . $response . "<br>";
+// echo "cURL Error: " . $curlError;
+
+/****************************************** لیست نام گزارشها *************************************** */
+// $reportServerUrl = "http://172.19.66.154:8010/Reports/api/v2.0/PowerBIReports";
+// $username = "hadi";
+// $password = "@h61259";
+
+// $ch = curl_init($reportServerUrl);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
+// curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
+// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+// curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
+// $response = curl_exec($ch);
+// $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+// curl_close($ch);
+
+// if ($httpCode === 200) {
+//     $reports = json_decode($response, true);
+//     foreach ($reports["value"] as $report) {
+//         echo "Report Name: " . $report["Name"] . "<br>";
+//         echo "Embed URL: <a href='" . $report["Path"] . "' target='_blank'>" . $report["Path"] . "</a><br><br>";
+//     }
+// } else {
+//     echo "Error fetching reports.";
+// }
+/******************************************************************************************************* */
+
+
+
+
+$reportServerUrl = "http://172.19.66.154:8010/Reports/powerbi/NewHemayat";
+$username = "hadi";
+$password = "@h61259";
+
+// ابتدا یک درخواست ارسال می‌کنیم تا احراز هویت انجام شود
+$ch = curl_init($reportServerUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");  // احراز هویت با نام کاربری و رمز عبور
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);  // استفاده از NTLM برای احراز هویت
+curl_setopt($ch, CURLOPT_COOKIEJAR, "/tmp/cookies.txt");  // ذخیره کوکی‌ها
+curl_setopt($ch, CURLOPT_COOKIEFILE, "/tmp/cookies.txt");  // استفاده از کوکی‌ها در درخواست‌های بعدی
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);  // غیرفعال کردن بررسی SSL (اگر از SSL استفاده نمی‌شود)
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);  // غیرفعال کردن بررسی SSL Host
+curl_setopt($ch, CURLOPT_VERBOSE, true);  // فعال کردن نمایش لاگ کامل برای دیباگ کردن
+
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);  // گرفتن کد وضعیت HTTP
+$curlError = curl_error($ch);  // گرفتن ارور در صورت بروز خطا
+curl_close($ch);
+
+if ($httpCode === 200) {
+    echo "Report fetched successfully: <br>" . $response;
+} else {
+    echo "Error fetching report: " . $curlError . " (HTTP Code: $httpCode)";
+}
 ?>
+
+<iframe src="<?= $reportServerUrl ?>" width="100%" height="600px" frameborder="0"></iframe>
+
+
 <!--------------------------------- POWERBI REPORT ----------------------------------------------------------->
 
 <script>
