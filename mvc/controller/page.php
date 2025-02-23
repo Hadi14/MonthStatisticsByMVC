@@ -259,4 +259,14 @@ class PageController
             Render::renderPage('/admin/notification.php', "", $currdt[0]);
         }
     }
+    /**************************************************************** */
+    function proxy()
+    {
+        if (!isset($_SESSION['suname'])) {
+            header("Location:" . getBaseUrl() . 'user/login/');
+        } else {
+            $currdt = StatisticsModel::getcurrdate();
+            Render::renderPage('/admin/proxy.php', "", $currdt[0]);
+        }
+    }
 }

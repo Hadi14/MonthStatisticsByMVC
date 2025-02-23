@@ -102,6 +102,13 @@ if ($_SESSION['level'] != 0) {
     </div>
 </div>
 <!--------------------------------- End of Modal ----------------------------------------------------------->
+<iframe
+    width="100%"
+    height="600"
+    src="http://172.19.66.154:8010/Reports/powerbi/NewHemayat?rs:Embed=true"
+    frameborder="0"
+    allowfullscreen>
+</iframe>
 
 <script>
     $(document).ready(function() {
