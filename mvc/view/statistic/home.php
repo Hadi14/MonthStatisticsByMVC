@@ -1,4 +1,10 @@
 <?
+// بررسی action درخواستی
+if (isset($_GET['action']) && $_GET['action'] === 'embed_report') {
+    require __DIR__ . '../../../view/admin/proxy.php';
+    exit();
+}
+
 $currdt = StatisticsModel::getcurrdate();
 
 $yer = $currdt[0]['Year'];
